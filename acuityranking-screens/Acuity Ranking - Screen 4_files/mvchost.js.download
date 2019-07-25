@@ -1,0 +1,70 @@
+﻿var COMSNamespace = COMSNamespace || {};
+
+$(document).ready(function () {
+    ko.bindingHandlers.datePickerISO = {
+        init: function (element, valueAccessor, allBindingsAccessor) {
+            var options = allBindingsAccessor().datepickerOptions || {};
+
+            //handle the field changing
+            ko.utils.registerEventHandler(element, "change", function () {
+                var observable = valueAccessor();
+                var controlDate = $(element).datepicker("getDate");
+                if (controlDate) {
+                    observable(controlDate.format("yyyy-MM-ddThh:mm:ss"));
+                }
+                else {
+                    observable(null);
+                }
+            });
+
+            //handle disposal (if KO removes by the template binding)
+            ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+                $(element).datepicker("destroy");
+            });
+
+        },
+        update: function (element, valueAccessor) {
+            var value = ko.utils.unwrapObservable(valueAccessor());
+            if (!value) {
+                $(element).datepicker("setDate", null);
+            }
+            else {
+                $(element).datepicker("setDate", new Date(value));
+            }
+        }
+    };
+
+    var path = "/" + $('#' + MVCPathInfo.hdnController).val();
+    var view = $('#' + MVCPathInfo.hdnView).val();
+    if (view) {
+        path += "/" + view;
+    }
+    else {
+         path += "/index";
+    }
+    var area = $('#' + MVCPathInfo.hdnArea).val();
+    if (area) {
+        path = "/" + area + path;
+    }
+    var qs = $('#' + MVCPathInfo.hdnQuery).val();
+    if (qs) {
+        path += "?" + qs;
+    }
+    ShowProgressDisplay("Loading page...");
+    $("#divGroupViewContainer").html('');
+    $(document).find("#divGroupViewContainer").load(path, function () {
+        if ($("#divGroupViewContainer").html() == "***Unauthorized***") {
+            window.location = "../common/accessviolation.aspx";
+            return;
+        }
+        $("#divGroupViewContainer").show();
+    });
+});
+
+COMSNamespace.SetMVCHostTitle = function(title) {
+    $('#spanMVCHostTitle').text(title);
+    HideProgressDisplay();
+}
+
+
+

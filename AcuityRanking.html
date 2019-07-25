@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Acuity Ranking</title>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <!-- CSS files -->
+   <link rel="stylesheet" href="../styles/hover.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/core.css">
+
+   <script src="./care-planning-screens/Care Plan Triggers - 1_files/jquery-1.9.0.min.js.download"></script>
+   <link id="ctl00_cssStyle" rel="Stylesheet" type="text/css" lang="en" href="./styles/Style.css"><link rel="Stylesheet" type="text/css" media="print" href="./acuityranking-screens/Acuity Ranking - Screen 1_files/PrintStyle.css" lang="en"><link rel="Stylesheet" type="text/css" href="./styles/ResidentProfile.css"><link rel="Stylesheet" media="(min-width: 0) and (max-width: 50em)" href="./acuityranking-screens/Acuity Ranking - Screen 1_files/responsive_radGrid.css" type="text/css"><link rel="Stylesheet" media="(min-width: 0) and (max-width: 50em)" href="./styles/responsive_search.css" type="text/css"><link rel="SHORTCUT ICON" href="https://www.comsllc.net/favicon.ico">
+
+   <link rel="stylesheet" href="./styles/main.css">
+   <!-- Icon -->
+   <link rel="icon" href="./icons/circlelogo.png">
+</head>
+<body style="height: 10px;" id="body">  
+   <!-- Static Navbar -->
+   <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(241, 185, 166);">
+      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+         <img class="img" id="homeImg" src="./icons/mandon2-icon.png" alt="Home">
+      </a>
+      <ul class="navbar-nav">
+         <li class="nav-item" style="margin-left: 5px;">
+            <a href="./Alerting.html" class="nav-link imgBtn">
+               <img class="img arrowImg overlay hvr-grow" src="./icons/angle-left.png" alt="info" height="80px" width="50px">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="carousel-control-next imgBtn carousel-control-page-prev" href="#carouselSlide" role="button" data-slide="prev">
+               <img class="img-fluid arrowImgSm overlay hvr-grow" id="prevBtn" src="./icons/angle-left.png" alt="info" onclick="updateIndex(event)">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav m-auto">
+         <li class="nav-item ARnotFeature">
+            <a href="./Alerting.html" class="ARnav-link">
+               <button class="feature-btn">Alerting</button>
+            </a>
+         </li>
+         <li class="nav-item">
+            <a href="./AcuityRanking.html" class="ARnav-link">
+               <button class="feature-btn ARfeature">Acuity Ranking</button>
+            </a>
+         </li>
+         <li class="nav-item ARnotFeature">
+            <a href="./CareOversight.html" class="ARnav-link">
+               <button class="feature-btn">Care Oversight</button>
+            </a>
+         </li>
+         <li class="nav-item ARnotFeature">
+            <a href="./Analytics.html" class="ARnav-link">
+               <button class="feature-btn">Analytics</button>
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="carousel-control-next imgBtn carousel-control-page-next" href="#carouselSlide" role="button" data-slide="next">
+               <img class="img-fluid arrowImgSm overlay hvr-grow" id="nextBtn" onclick="updateIndex(event)" src="./icons/angle-right.png" alt="info">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item" style="margin-right: 5px;">
+            <a href="./CareOversight.html" class="nav-link imgBtn">
+               <img class="img arrowImg overlay hvr-grow" src="./icons/angle-right.png" alt="info" height="80px" width="50px">
+            </a>
+         </li>
+      </ul>
+      <a href="#" class="nav-item imgBtn" id="info" style="margin-right:-10px;" onclick="showModal(event)">
+         <img class="img-fluid infoImg hvr-grow" src="./icons/infobtn2.png" alt="info">
+      </a>
+      <!-- Info Modal -->
+      <div class="modal fade" id="infoModal">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-body">
+                  <h6 class="modalText" id="bodyText">screen 1 text</h6>
+                  <hr>
+                  <h6 class="modalText"><b>Supporting Documents</b></h6>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic2" class="modalText">Existing UDA Experience</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic3" class="modalText">New Evaluation Experience</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic4" class="modalText">COMS Evaluations List</h6></a>
+               </div>
+               <button class="btn-lg closeBtn" type="button" style="border-width: 0px; border-radius: 0px; background-color: dimgrey" data-dismiss="modal"><h6 class="imgBtn modalText" style="margin-bottom: -1px; color: white;">Close</h6></button>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Carousel -->
+   <div id="carouselSlide" class="carousel slide fullPage" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators fixed-bottom">
+         <li data-target="#carouselSlide" style="background-color: rgb(241, 185, 166);" id="btn0" data-slide-to="0" class="active" onclick="indicatorUpdate(event)"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(241, 185, 166);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(241, 185, 166);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(241, 185, 166);" id="btn3" onclick="indicatorUpdate(event)" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+         <!-- Screen 1 -->
+         <div class="carousel-item active" id="slide0">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+               <a href="#" class="navbar-brand">
+                  <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+               </a>
+               <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+               </ul>
+               <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                  <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+
+                  <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                  <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                     <p style="color: white;">Chris Smith</p>
+                     <p>Lock Screen Logout</p>
+                  </div>
+                  <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+               </ul>
+            
+            </nav>
+
+            <div style="zoom: 1; margin: 0px 10px;">
+               <!-- Search -->
+               <div class="row" style="background-color: rgb(238, 238, 238); padding-top: 10px; padding-bottom: 10px; margin-top: 0px; width: 100%; margin-left: 0px; border-bottom: 1px solid rgba(104, 104, 104, 0.61); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)"">
+                     <div class="col-2" style="margin-left: 10px;">
+                        <span><input type="text" placeholder="keyword" class="searchBox"></span> 
+                        <span class="searchIcon"><img style="margin-top: -10px; margin-left: 7px;" src="./icons/search-icon.png" alt=""></span>
+                     </div>
+                     <div class="col-2 dividerRes" style="margin-right: -20px;">
+                        <div class="row">
+                           <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Payer: -select-</div>
+                           <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                        </div>
+                     </div>
+                     <div class="col-2 dividerRes" style="margin-right: -20px;">
+                        <div class="row">
+                           <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Unit: -select-</div>
+                           <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                        </div>
+                     </div>
+                     <div class="col-2 dividerRes" style="margin-right: -20px;">
+                        <div class="row">
+                           <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Physician: -select-</div>
+                           <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                        </div>
+                     </div>
+                     <div class="col-3 dividerRes" id="box2" onclick="toggleOutline2()" style="margin-right: -20px;">
+                        <div class="row">
+                           <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Sort By: # Abnormal Findings (Desc)</div>
+                           <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                        </div>
+                     </div>
+                     <div class="col-1" style="text-align: right; margin-top: 7px; margin-left: 45px;">clear</div>
+               </div>
+      
+               <!-- Residents -->
+               <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
+                  <span class="col-1">expand all</span>
+                  <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
+               </div>
+               <div class="rowGreen" style="margin-top: 30px;">
+                  <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                     <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                        <span class="circle circleTeal" id="circleTeal"></span>
+                        <span>23</span>
+                        <span class="arrow-upOrange"></span>
+                        <span style="margin-left: 4px;">15</span>
+                     </div>
+                     <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                     </div>
+                     <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CARNEY, KEITH</div>
+                     <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                     </div>
+                     <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        <span class="resUnit" style="color: dimgrey">D / 166-2</span>
+                     </div>
+                     <div class="col-6">
+                        <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                           <div class="col-5" style="white-space: nowrap;">3 Memos | 93921000</div>
+                           <div class="col-6" style="white-space: nowrap; text-align: right">
+                              <span>Medicare MC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <span class="dropdown dropdown-toggle" >view more</span>
+                           </div>
+                           <div class="col-1 btnCenter" style="white-space: nowrap;">
+                              <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                           </div>
+                        </div>
+                        <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                           <div class="col-11" style="white-space: nowrap;">Arrhythmia - Atrial Fibrillation (A-Fib) | Aaron Miller
+                           </div>
+                           <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                        </div>
+                     </div>
+                     <div class="col-1" style="text-align: right;">
+                        <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                     </div>
+                  </div>
+               </div>
+               <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>19</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">13</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CASE, DON</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 165-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">3 Memos | 93292000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                       <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Infection - Other | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">14</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">BOYD, NANCY</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 125-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">1 Memo | 93924000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                                    <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Cellulitis | Aaron Miller
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+               </div>
+               <div class="rowWhite" id="box1" onclick="toggleOutline1();">
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">12</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">SMITH, STELLA</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 167-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93080</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Cognitive Deficits | Aaron Miller
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">10</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FARMER, FRED</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 156-2</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93707000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                    
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Intracranial Injury | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">7</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">GRIFFITH, JAMES</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 119-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">0 Memos | 93860000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Private</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Pneumonia | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">8</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">KING, WILLIAM</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 158-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">1 Memo | 93644000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Urinary Tract Infection (UTI) | Jim Gale
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;"></div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+               </div>
+               <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>12</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">11</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">SMITH, NEIL</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 167-2</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93103</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                       <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Upper Respiratory Infection | Aaron Miller
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>11</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">4</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FIELDS, NORMA</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">A / 116-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">2 Memos | 93831000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                                    <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Hemiplegia / Hemiparesis | Abigail Simpson
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+               </div>
+               <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>10</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">4</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">MILLER, ANN</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 124-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">0 Memos | 93816000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Ischemic heart disease | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>9</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">7</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">MERRIX, DOTTIE</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 155-1</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">0 Memos | 93349000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Infection - Other | Jim Gale
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;"></div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+               </div>
+               <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>9</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">7</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">BROWN, AUDREY</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 158-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">0 Memos | 93511000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Cognitive Deficits | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>8</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">3</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">DALE, PAULA</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">A / 111-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">0 Memos | 93108</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Urinary Tract Infection (UTI) | Jim Gale
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;"></div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+               </div>
+               <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>8</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">5</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FISHER. LUKE</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 133-2</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93864000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Cerebrovascular Accident (CVA) | Aaron Miller
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+               </div>
+               <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>8</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">7</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">PERRY, BRENDA</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 123-1</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">0 Memos | 93357000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                                    <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Urinary Tract Infection (UTI) | Jim Gale
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+               </div>
+            </div>
+
+         </div>
+         <!-- Screen 2: -->
+         <div class="carousel-item" id="slide1">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+                  <a href="#" class="navbar-brand">
+                     <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+                  </a>
+                  <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                     <span class="navItem">
+                        <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                     </span>
+                     <span class="navItem">
+                        <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                     </span>
+                     <span class="navItem">
+                        <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                     </span>
+                  </ul>
+                  <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                     <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+   
+                     <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                     <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                        <p style="color: white;">Chris Smith</p>
+                        <p>Lock Screen Logout</p>
+                     </div>
+                     <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+                  </ul>
+               
+               </nav>
+   
+               <div style="zoom: 1; margin: 0px 10px;">
+                  <!-- Search -->
+                  <div class="row" style="background-color: rgb(238, 238, 238); padding-top: 10px; padding-bottom: 10px; margin-top: 0px; width: 100%; margin-left: 0px; border-bottom: 1px solid rgba(104, 104, 104, 0.61); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)"">
+                        <div class="col-2" style="margin-left: 10px;">
+                           <span><input type="text" placeholder="keyword" class="searchBox"></span> 
+                           <span class="searchIcon"><img style="margin-top: -10px; margin-left: 7px;" src="./icons/search-icon.png" alt=""></span>
+                        </div>
+                        <div class="col-2 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Payer: -select-</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-2 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Unit: -select-</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-2 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Physician: -select-</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-3 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Sort By: # Abnormal Findings (Desc)</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right; margin-top: 7px; margin-left: 45px;">clear</div>
+                  </div>
+         
+                  <!-- Residents -->
+                  <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
+                     <span class="col-1">expand all</span>
+                     <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
+                  </div>
+                  <div class="rowGreen" style="margin-top: 30px;">
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>23</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">15</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+   
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CARNEY, KEITH</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 166-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">3 Memos | 93921000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare MC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1 btnCenter" style="white-space: nowrap;">
+                                 <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Arrhythmia - Atrial Fibrillation (A-Fib) | Aaron Miller
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid">
+                        <div class="memoOutline">
+                           <a class="btn-pad btn-primary" style="border: 1px solid red;">Memos</a>
+                        </div>
+                        <div class="memoOther">
+                           <a class="btn-pad btn-primary" style="border: 1px solid red;">Vitals</a>
+                        </div>
+                        <div class="memoOther">
+                           <a class="btn-pad btn-primary" style="border: 1px solid red;">Condition Alerts / Abnormalities</a>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="memoBox" style="margin-top: 10px;">
+                           <p class="memoDate">07/10/2019 07:44 AM</p>
+                           <p>C: PLANS TO D/C ON FRIDAY. Do OXYGEN TEST---- Ambulate without oxygen and monitor with spo2 monitor for dropping.</p>
+                        </div>
+                        <div class="memoBox">
+                           <p class="memoDate">07/09/2019 07:42 AM</p>
+                           <p>C: monitor b/p and any s/s. Monitor sleep habits and encourage rest.</p>
+                        </div>
+                        <div class="memoBox">
+                           <p class="memoDate">07/08/2019 07:33 AM</p>
+                           <p>S: APPLY CLINICAL SUGGESTIONS</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>19</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">13</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CASE, DON</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 165-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">3 Memos | 93292000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                       <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Infection - Other | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid">
+                        <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+                     </div>
+                     <div class="row">
+                           <div class="memoBox" style="margin-top: 10px;">
+                              <p class="memoDate">07/10/2019 07:56 AM</p>
+                              <p>C: ENCOURAGE SUN SCREEN WHEN GOING OUTSIDE</p>
+                           </div>
+                           <div class="memoBox">
+                              <p class="memoDate">07/09/2019 07:54 AM</p>
+                              <p>C: MONITOR ABDOMINAL CIRCUMFERENCE; WEIGHTS; FLUID LOSS; HAS ASCITES</p>
+                           </div>
+                           <div class="memoBox">
+                              <p class="memoDate">07/08/2019 07:39 AM</p>
+                              <p>C: MONITOR WEIGHTS; ABDOMINAL CIRCUMFERENCE. HAD C/O COUGH AND SOB; EINTERACT COMPLETED</p>
+                           </div>
+                        </div>
+                  </div>
+                  <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">14</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">BOYD, NANCY</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 125-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">1 Memo | 93924000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                                    <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Cellulitis | Aaron Miller
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid">
+                        <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+                     </div>
+                     <div class="row">
+                        <div class="memoBox" style="margin-top: 10px;">
+                           <p class="memoDate">07/10/2019 07:42 AM</p>
+                           <p>C: Does she have incontinence episodes? Encourage to get up to toilet, KEEP CLEAN AND DRY, TREATMENT IN PLACE</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowWhite">
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">12</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">SMITH, STELLA</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 167-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93080</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Cognitive Deficits | Aaron Miller
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                        <div class="row container-fluid">
+                           <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                           <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                           <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+
+                        </div>
+                        <div class="row">
+                              <div class="memoBox" style="margin-top: 10px;">
+                                 <p class="memoDate">07/08/2019 07:34 AM</p>
+                                 <p>S: APPLY CLINICAL SUGGESTIONS</p>
+                              </div>
+                           </div>
+                  </div>
+                  <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">10</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FARMER, FRED</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 156-2</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93707000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                    
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Intracranial Injury | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid">
+                        <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+
+                     </div>
+                     <div class="row">
+                        <div class="memoBox" style="margin-top: 10px;">
+                           <p class="memoDate">07/09/2019 07:49 AM</p>
+                           <p>C: Encourage FLUIDS had previous nausea and vomiting.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+         </div>
+         <!-- Screen 3: -->
+         <div class="carousel-item" id="slide2">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+                  <a href="#" class="navbar-brand">
+                     <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+                  </a>
+                  <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                     <span class="navItem">
+                        <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                     </span>
+                     <span class="navItem">
+                        <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                     </span>
+                     <span class="navItem">
+                        <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                     </span>
+                  </ul>
+                  <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                     <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+   
+                     <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                     <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                        <p style="color: white;">Chris Smith</p>
+                        <p>Lock Screen Logout</p>
+                     </div>
+                     <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+                  </ul>
+               
+               </nav>
+   
+            <div style="zoom: 1; margin: 0px 10px;">
+                  <!-- Search -->
+                  <div class="row" style="background-color: rgb(238, 238, 238); padding-top: 10px; padding-bottom: 10px; margin-top: 0px; width: 100%; margin-left: 0px; border-bottom: 1px solid rgba(104, 104, 104, 0.61); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)"">
+                        <div class="col-2" style="margin-left: 10px;">
+                           <span><input type="text" placeholder="keyword" class="searchBox"></span> 
+                           <span class="searchIcon"><img style="margin-top: -10px; margin-left: 7px;" src="./icons/search-icon.png" alt=""></span>
+                        </div>
+                        <div class="col-2 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Payer: -select-</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-2 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Unit: -select-</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-2 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Physician: -select-</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-3 dividerRes" style="margin-right: -20px;">
+                           <div class="row">
+                              <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Sort By: # Abnormal Findings (Desc)</div>
+                              <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right; margin-top: 7px; margin-left: 45px;">clear</div>
+                  </div>
+         
+                  <!-- Residents -->
+                  <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
+                     <span class="col-1">expand all</span>
+                     <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
+                  </div>
+                  <div class="rowGreen" style="margin-top: 30px;">
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>23</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">15</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+   
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CARNEY, KEITH</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 166-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">3 Memos | 93921000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare MC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1 btnCenter" style="white-space: nowrap;">
+                                 <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Arrhythmia - Atrial Fibrillation (A-Fib) | Aaron Miller
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid" >
+                        <div class="memoOther">
+                           <a class="btn-pad btn-primary" style="border: 1px solid red;">Memos</a>
+                        </div>
+                        <div class="memoOutline">
+                           <a class="btn-pad btn-primary" style="border: 1px solid red;">Vitals</a>
+                        </div>
+                        <div class="memoOther">
+                           <a class="btn-pad btn-primary" style="border: 1px solid red;">Condition Alerts / Abnormalities</a>
+                        </div>
+                        <table class="table table-striped table-condensed" data-bind="visible: Vitals().length > 0" style="margin-top: 10px; margin-bottom: 20px;">
+                              <thead>
+                                <tr>
+                                  <th style="text-align: center;">Date</th>
+                                  <th style="text-align: center;">Temp</th>
+                                  <th style="text-align: center;">BP</th>
+                                  <th style="text-align: center;">HR</th>
+                                  <th style="text-align: center;">Resp</th>
+                                  <th style="text-align: center;">Pox</th>
+                                  <th style="text-align: center;">Pain</th>
+                                  <th style="text-align: center;">Weight</th>
+                                  <th style="text-align: center;">BM</th>
+                                  <th style="text-align: center;">BS</th>
+                                  <th style="text-align: center;">Abn:Obs</th>
+                                </tr>
+                              </thead>
+                              <tbody data-bind="foreach: Vitals">
+                                <tr>
+                                  <td style="text-align:center" data-bind="text: Date">07/11/2019 06:12 AM</td>
+                                  <td style="text-align:center" data-bind="text: Temp, css: {VitalAbnormal: IsTempAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: BPH, css: {VitalAbnormal: IsBPAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: HR, css: {VitalAbnormal: IsHRAbnormal}">82 /min</td>
+                                  <td style="text-align:center" data-bind="text: Resp, css: {VitalAbnormal: IsRespAbnormal}">14 /min</td>
+                                  <td style="text-align:center" data-bind="text: POx, css: {VitalAbnormal: IsPOxAbnormal}">92%</td>
+                                  <td style="text-align:center" data-bind="text: Pain, css: {VitalAbnormal: IsPainAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: Weight, css: {VitalAbnormal: IsWeightAbnormal}">215.2 lbs</td>
+                                  <td style="text-align:center" data-bind="text: BM">n/a</td>
+                                  <td style="text-align:center" data-bind="text: BS, css: {VitalAbnormal: IsBSAbnormal}">n/a</td>
+                                  <td style="text-align:center">
+                                    <span data-bind="text:Abnormals">0</span>:<span data-bind="text:Observations">31</span>
+                                  </td>
+                                </tr>
+                              
+                                <tr>
+                                  <td style="text-align:center" data-bind="text: Date">07/10/2019 12:19 PM</td>
+                                  <td style="text-align:center" data-bind="text: Temp, css: {VitalAbnormal: IsTempAbnormal}">98.1 F</td>
+                                  <td style="text-align:center" data-bind="text: BPH, css: {VitalAbnormal: IsBPAbnormal}">134 / 72</td>
+                                  <td style="text-align:center" data-bind="text: HR, css: {VitalAbnormal: IsHRAbnormal}">71 /min</td>
+                                  <td style="text-align:center" data-bind="text: Resp, css: {VitalAbnormal: IsRespAbnormal}">16 /min</td>
+                                  <td style="text-align:center" data-bind="text: POx, css: {VitalAbnormal: IsPOxAbnormal}">97%</td>
+                                  <td style="text-align:center" data-bind="text: Pain, css: {VitalAbnormal: IsPainAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: Weight, css: {VitalAbnormal: IsWeightAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: BM">07/10/2019</td>
+                                  <td style="text-align:center" data-bind="text: BS, css: {VitalAbnormal: IsBSAbnormal}">n/a</td>
+                                  <td style="text-align:center">
+                                    <span data-bind="text:Abnormals">1</span>:<span data-bind="text:Observations">77</span>
+                                  </td>
+                                </tr>
+                              
+                                <tr>
+                                  <td style="text-align:center" data-bind="text: Date">07/10/2019 12:05 PM</td>
+                                  <td style="text-align:center" data-bind="text: Temp, css: {VitalAbnormal: IsTempAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: BPH, css: {VitalAbnormal: IsBPAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: HR, css: {VitalAbnormal: IsHRAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: Resp, css: {VitalAbnormal: IsRespAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: POx, css: {VitalAbnormal: IsPOxAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: Pain, css: {VitalAbnormal: IsPainAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: Weight, css: {VitalAbnormal: IsWeightAbnormal}">n/a</td>
+                                  <td style="text-align:center" data-bind="text: BM">n/a</td>
+                                  <td style="text-align:center" data-bind="text: BS, css: {VitalAbnormal: IsBSAbnormal}">n/a</td>
+                                  <td style="text-align:center">
+                                    <span data-bind="text:Abnormals">7</span>:<span data-bind="text:Observations">7</span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                     </div>
+                  </div>
+                  <div class="rowWhite" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>19</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">13</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CASE, DON</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 165-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">3 Memos | 93292000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                       <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Infection - Other | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid">
+                        <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+                     </div>
+                     <div class="row">
+                           <div class="memoBox" style="margin-top: 10px;">
+                              <p class="memoDate">07/10/2019 07:56 AM</p>
+                              <p>C: ENCOURAGE SUN SCREEN WHEN GOING OUTSIDE</p>
+                           </div>
+                           <div class="memoBox">
+                              <p class="memoDate">07/09/2019 07:54 AM</p>
+                              <p>C: MONITOR ABDOMINAL CIRCUMFERENCE; WEIGHTS; FLUID LOSS; HAS ASCITES</p>
+                           </div>
+                           <div class="memoBox">
+                              <p class="memoDate">07/08/2019 07:39 AM</p>
+                              <p>C: MONITOR WEIGHTS; ABDOMINAL CIRCUMFERENCE. HAD C/O COUGH AND SOB; EINTERACT COMPLETED</p>
+                           </div>
+                        </div>
+                  </div>
+                  <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">14</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">BOYD, NANCY</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">B / 125-2</span>
+                        </div>
+                        <div class="col-6">
+                           <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                              <div class="col-5" style="white-space: nowrap;">1 Memo | 93924000</div>
+                              <div class="col-6" style="white-space: nowrap; text-align: right">
+                                 <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <span class="dropdown dropdown-toggle" >view more</span>
+                              </div>
+                              <div class="col-1" style="white-space: nowrap;">
+                                    <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                              </div>
+                           </div>
+                           <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                              <div class="col-11" style="white-space: nowrap;">Cellulitis | Aaron Miller
+                              </div>
+                              <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                           </div>
+                        </div>
+                        <div class="col-1" style="text-align: right;">
+                           <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                     <div class="row container-fluid">
+                        <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                        <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+                     </div>
+                     <div class="row">
+                        <div class="memoBox" style="margin-top: 10px;">
+                           <p class="memoDate">07/10/2019 07:42 AM</p>
+                           <p>C: Does she have incontinence episodes? Encourage to get up to toilet, KEEP CLEAN AND DRY, TREATMENT IN PLACE</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="rowWhite">
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">12</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">SMITH, STELLA</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 167-1</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93080</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                 
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Cognitive Deficits | Aaron Miller
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                        <div class="row container-fluid">
+                           <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                           <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                           <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+
+                        </div>
+                        <div class="row">
+                              <div class="memoBox" style="margin-top: 10px;">
+                                 <p class="memoDate">07/08/2019 07:34 AM</p>
+                                 <p>S: APPLY CLINICAL SUGGESTIONS</p>
+                              </div>
+                           </div>
+                  </div>
+                  <div class="rowGreen" >
+                     <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
+                           <span style="margin-left: 4px;">10</span>
+                        </div>
+                        <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FARMER, FRED</div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                        </div>
+                        <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           <span class="resUnit" style="color: dimgrey">D / 156-2</span>
+                        </div>
+                        <div class="col-6">
+                              <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                 <div class="col-5" style="white-space: nowrap;">1 Memo | 93707000</div>
+                                 <div class="col-6" style="white-space: nowrap; text-align: right">
+                                    <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="dropdown dropdown-toggle" >view more</span>
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;">
+                                    
+                                 </div>
+                              </div>
+                              <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                 <div class="col-11" style="white-space: nowrap;">Intracranial Injury | Jim Gale
+                                 </div>
+                                 <div class="col-1" style="white-space: nowrap;"></div>
+                              </div>
+                           </div>
+                           <div class="col-1" style="text-align: right;">
+                              <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                           </div>
+                     </div>
+                  </div>
+                  <div class="rowMemo">
+                        <div class="row container-fluid">
+                           <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                           <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                           <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+   
+                        </div>
+                        <div class="row">
+                           <div class="memoBox" style="margin-top: 10px;">
+                              <p class="memoDate">07/09/2019 07:49 AM</p>
+                              <p>C: Encourage FLUIDS had previous nausea and vomiting.</p>
+                           </div>
+                        </div>
+                  </div>
+                  <div class="rowWhite" >
+                        <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+                           <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                              <span class="circle circleTeal" id="circleTeal"></span>
+                              <span>13</span>
+                              <span class="arrow-upOrange"></span>
+                              <span style="margin-left: 4px;">7</span>
+                           </div>
+                           <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+   
+                           </div>
+                           <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">GRIFFITH, JAMES</div>
+                           <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                           </div>
+                           <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                              <span class="resUnit" style="color: dimgrey">B / 119-1</span>
+                           </div>
+                           <div class="col-6">
+                                 <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                                    <div class="col-5" style="white-space: nowrap;">0 Memos | 93860000</div>
+                                    <div class="col-6" style="white-space: nowrap; text-align: right">
+                                       <span>Private</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                       <span class="dropdown dropdown-toggle" >view more</span>
+                                    </div>
+                                    <div class="col-1" style="white-space: nowrap;">
+                                    </div>
+                                 </div>
+                                 <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                                    <div class="col-11" style="white-space: nowrap;">Pneumonia | Jim Gale
+                                    </div>
+                                    <div class="col-1" style="white-space: nowrap;"></div>
+                                 </div>
+                              </div>
+                              <div class="col-1" style="text-align: right;">
+                                 <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                              </div>
+                        </div>
+                  </div>
+            </div>
+         </div>
+         <!-- Screen 4: -->
+         <div class="carousel-item" id="slide3">
+                        <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+                              <a href="#" class="navbar-brand">
+                                 <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+                              </a>
+                              <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                                 <span class="navItem">
+                                    <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                                 </span>
+                                 <span class="navItem">
+                                    <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                                 </span>
+                                 <span class="navItem">
+                                    <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                                 </span>
+                              </ul>
+                              <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                                 <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+               
+                                 <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                                 <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                                    <p style="color: white;">Chris Smith</p>
+                                    <p>Lock Screen Logout</p>
+                                 </div>
+                                 <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+                              </ul>
+                           
+            </nav>
+               
+            <div style="zoom: 1; margin: 0px 10px;">
+               <!-- Search -->
+               <div class="row" style="background-color: rgb(238, 238, 238); padding-top: 10px; padding-bottom: 10px; margin-top: 0px; width: 100%; margin-left: 0px; border-bottom: 1px solid rgba(104, 104, 104, 0.61); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)"">
+               <div class="col-2" style="margin-left: 10px;">
+                  <span><input type="text" placeholder="keyword" class="searchBox"></span> 
+                  <span class="searchIcon"><img style="margin-top: -10px; margin-left: 7px;" src="./icons/search-icon.png" alt=""></span>
+               </div>
+               <div class="col-2 dividerRes" style="margin-right: -20px;">
+                  <div class="row">
+                     <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Payer: -select-</div>
+                     <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                  </div>
+               </div>
+               <div class="col-2 dividerRes" style="margin-right: -20px;">
+                  <div class="row">
+                     <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Unit: -select-</div>
+                     <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                  </div>
+               </div>
+               <div class="col-2 dividerRes" style="margin-right: -20px;">
+                  <div class="row">
+                     <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Physician: -select-</div>
+                     <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                  </div>
+               </div>
+               <div class="col-3 dividerRes" style="margin-right: -20px;">
+                  <div class="row">
+                     <div style="white-space: nowrap; margin-left: 5px; margin-top: 4px;">Sort By: # Abnormal Findings (Desc)</div>
+                     <div style="margin-left: 7px; margin-top: 5px;" class="dropdown dropdown-toggle"></div>
+                  </div>
+               </div>
+               <div class="col-1" style="text-align: right; margin-top: 7px; margin-left: 45px;">clear</div>
+         </div>
+
+         <!-- Residents -->
+         <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
+            <span class="col-1">expand all</span>
+            <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
+         </div>
+         <div class="rowGreen" style="margin-top: 30px;">
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>23</span>
+                  <span class="arrow-upOrange"></span>
+                  <span style="margin-left: 4px;">15</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CARNEY, KEITH</div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                  <span class="resUnit" style="color: dimgrey">D / 166-2</span>
+               </div>
+               <div class="col-6">
+                  <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                     <div class="col-5" style="white-space: nowrap;">3 Memos | 93921000</div>
+                     <div class="col-6" style="white-space: nowrap; text-align: right">
+                        <span>Medicare MC</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="dropdown dropdown-toggle" >view more</span>
+                     </div>
+                     <div class="col-1 btnCenter" style="white-space: nowrap;">
+                        <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                     </div>
+                  </div>
+                  <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                     <div class="col-11" style="white-space: nowrap;">Arrhythmia - Atrial Fibrillation (A-Fib) | Aaron Miller
+                     </div>
+                     <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                  </div>
+               </div>
+               <div class="col-1" style="text-align: right;">
+                  <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+               </div>
+            </div>
+         </div>
+         <div class="rowMemo">
+            <div class="row container-fluid" >
+               <div class="memoOther">
+                  <a class="btn-pad btn-primary" style="border: 1px solid red;">Memos</a>
+               </div>
+               <div class="memoOther">
+                  <a class="btn-pad btn-primary" style="border: 1px solid red;">Vitals</a>
+               </div>
+               <div class="memoOutline">
+                  <a class="btn-pad btn-primary" style="border: 1px solid red;">Condition Alerts / Abnormalities</a>
+               </div>
+            </div>
+            <div class="memoChart">
+               <img class="screen4chart" src="./icons/chart.png" alt="">
+            </div>
+         </div>
+         <div class="rowWhite" >
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>19</span>
+                  <span class="arrow-upOrange"></span>
+                  <span style="margin-left: 4px;">13</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CASE, DON</div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                  <span class="resUnit" style="color: dimgrey">D / 165-1</span>
+               </div>
+               <div class="col-6">
+                     <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                        <div class="col-5" style="white-space: nowrap;">3 Memos | 93292000</div>
+                        <div class="col-6" style="white-space: nowrap; text-align: right">
+                           <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <span class="dropdown dropdown-toggle" >view more</span>
+                        </div>
+                        <div class="col-1" style="white-space: nowrap;">
+                              <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                        </div>
+                     </div>
+                     <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                        <div class="col-11" style="white-space: nowrap;">Infection - Other | Jim Gale
+                        </div>
+                        <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                     </div>
+                  </div>
+                  <div class="col-1" style="text-align: right;">
+                     <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                  </div>
+            </div>
+         </div>
+         <div class="rowMemo">
+            <div class="row container-fluid">
+               <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+               <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+               <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+            </div>
+            <div class="row">
+                  <div class="memoBox" style="margin-top: 10px;">
+                     <p class="memoDate">07/10/2019 07:56 AM</p>
+                     <p>C: ENCOURAGE SUN SCREEN WHEN GOING OUTSIDE</p>
+                  </div>
+                  <div class="memoBox">
+                     <p class="memoDate">07/09/2019 07:54 AM</p>
+                     <p>C: MONITOR ABDOMINAL CIRCUMFERENCE; WEIGHTS; FLUID LOSS; HAS ASCITES</p>
+                  </div>
+                  <div class="memoBox">
+                     <p class="memoDate">07/08/2019 07:39 AM</p>
+                     <p>C: MONITOR WEIGHTS; ABDOMINAL CIRCUMFERENCE. HAD C/O COUGH AND SOB; EINTERACT COMPLETED</p>
+                  </div>
+               </div>
+         </div>
+         <div class="rowGreen" >
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>15</span>
+                  <span class="arrow-upOrange"></span>
+                  <span style="margin-left: 4px;">14</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">BOYD, NANCY</div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                  <span class="resUnit" style="color: dimgrey">B / 125-2</span>
+               </div>
+               <div class="col-6">
+                  <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                     <div class="col-5" style="white-space: nowrap;">1 Memo | 93924000</div>
+                     <div class="col-6" style="white-space: nowrap; text-align: right">
+                        <span>Medicare</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="dropdown dropdown-toggle" >view more</span>
+                     </div>
+                     <div class="col-1" style="white-space: nowrap;">
+                           <a class="btn btn-xs btn-pad btn-primary">Start</a>
+                     </div>
+                  </div>
+                  <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                     <div class="col-11" style="white-space: nowrap;">Cellulitis | Aaron Miller
+                     </div>
+                     <div class="col-1" style="white-space: nowrap; margin-left: -10px;">Care Review</div>
+                  </div>
+               </div>
+               <div class="col-1" style="text-align: right;">
+                  <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+               </div>
+            </div>
+         </div>
+         <div class="rowMemo">
+            <div class="row container-fluid">
+               <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+               <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+               <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+            </div>
+            <div class="row">
+               <div class="memoBox" style="margin-top: 10px;">
+                  <p class="memoDate">07/10/2019 07:42 AM</p>
+                  <p>C: Does she have incontinence episodes? Encourage to get up to toilet, KEEP CLEAN AND DRY, TREATMENT IN PLACE</p>
+               </div>
+            </div>
+         </div>
+         <div class="rowWhite">
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>15</span>
+                  <span class="arrow-upOrange"></span>
+                  <span style="margin-left: 4px;">12</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">SMITH, STELLA</div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                  <span class="resUnit" style="color: dimgrey">D / 167-1</span>
+               </div>
+               <div class="col-6">
+                     <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                        <div class="col-5" style="white-space: nowrap;">1 Memo | 93080</div>
+                        <div class="col-6" style="white-space: nowrap; text-align: right">
+                           <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <span class="dropdown dropdown-toggle" >view more</span>
+                        </div>
+                        <div class="col-1" style="white-space: nowrap;">
+                        
+                        </div>
+                     </div>
+                     <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                        <div class="col-11" style="white-space: nowrap;">Cognitive Deficits | Aaron Miller
+                        </div>
+                        <div class="col-1" style="white-space: nowrap;"></div>
+                     </div>
+                  </div>
+                  <div class="col-1" style="text-align: right;">
+                     <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                  </div>
+            </div>
+         </div>
+         <div class="rowMemo">
+               <div class="row container-fluid">
+                  <a class="btn btn-xs btn-pad btn-primary">Memos</a>
+                  <a class="btn btn-xs btn-pad btn-primary">Vitals</a>
+                  <a class="btn btn-xs btn-pad btn-primary">Condition Alerts / Abnormalities</a>
+
+               </div>
+               <div class="row">
+                     <div class="memoBox" style="margin-top: 10px;">
+                        <p class="memoDate">07/08/2019 07:34 AM</p>
+                        <p>S: APPLY CLINICAL SUGGESTIONS</p>
+                     </div>
+                  </div>
+         </div>
+         <div class="rowGreen" >
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>13</span>
+                  <span class="arrow-upOrange"></span>
+                  <span style="margin-left: 4px;">10</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FARMER, FRED</div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+               </div>
+               <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
+                  <span class="resUnit" style="color: dimgrey">D / 156-2</span>
+               </div>
+               <div class="col-6">
+                     <div class="resDetailsLine_1 row" style="margin-top: 15px;">
+                        <div class="col-5" style="white-space: nowrap;">1 Memo | 93707000</div>
+                        <div class="col-6" style="white-space: nowrap; text-align: right">
+                           <span>Medicaid</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <span class="dropdown dropdown-toggle" >view more</span>
+                        </div>
+                        <div class="col-1" style="white-space: nowrap;">
+                           
+                        </div>
+                     </div>
+                     <div class="resDetailsLine_2 row" style="margin-top: 0px;">
+                        <div class="col-11" style="white-space: nowrap;">Intracranial Injury | Jim Gale
+                        </div>
+                        <div class="col-1" style="white-space: nowrap;"></div>
+                     </div>
+                  </div>
+                  <div class="col-1" style="text-align: right;">
+                     <img style="margin-top: 24px; margin-right: -50px;" src="./icons/resicons.png" alt=""> 
+                  </div>
+            </div>
+         </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!-- Popper.js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+   <!-- Bootstrap JS -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+   <script>
+   var slideCount = 3;
+   $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+      $('[data-toggle="popover"]').popover({
+         placement : 'left',
+         trigger : 'hover'
+      });
+
+      getPage();
+
+      //swiping (hammer.js)
+      var body = document.getElementById("body");
+      var mc = new Hammer(body);
+      //enable all directions
+      mc.get('swipe').set({
+         direction: Hammer.DIRECTION_ALL,
+         threshold: 1, 
+         velocity:0.1
+      });
+      // listen to events...
+      mc.on("swipeup swipedown swipeleft swiperight tap press", function(ev) {
+         if(ev.type == "swiperight"){
+            index--;
+            if(index < 0){window.location.href="./Alerting.html";}
+            updateInfoModal(index);
+         }
+         else if(ev.type == "swipeleft"){
+            index++;
+            if(index > slideCount){window.location.href="./CareOversight.html";}
+            updateInfoModal(index);
+         }
+      });
+   });
+   
+
+   function showModal(e){
+      $("#info").attr("data-toggle", "modal");
+      $("#info").attr("data-target", "#infoModal");
+   }
+
+   var index = 0;
+   function updateIndex(e){
+      var id = e.target.id;
+      if(id == "prevBtn"){
+         index--;
+         if(index < 0){
+            window.location.href="./Alerting.html";
+         }
+      }
+      else{
+         index++;
+         if(index > slideCount){
+            window.location.href="./CareOversight.html";
+         }
+      }
+      updateInfoModal(index);
+   }
+
+   function updateInfoModal(index){
+      var bodyText = document.getElementById("bodyText");
+      if(index != 0){
+         //scrollable screen
+         $("#html").addClass("scroll");
+         $("#body").addClass("scroll");
+      }
+      else{
+         $("#html").removeClass("scroll");
+         $("#body").removeClass("scroll");
+         document.body.scrollTop = 0; // For Safari
+         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
+      if(index == 0){
+         bodyText.innerHTML = "screen 1 text"
+      }
+      else if(index == 1){
+         bodyText.innerHTML = "screen 2 text"
+      }
+      else if(index == 2){
+         bodyText.innerHTML = "screen 3 text"
+      }
+      else if(index == 3){
+         bodyText.innerHTML = "screen 4 text"
+      }
+      else if(index == 4){
+         bodyText.innerHTML = "screen 5 text"
+      }
+      else if(index == 5){
+         bodyText.innerHTML = "screen 6 text"
+      }
+      else if(index == 6){
+         bodyText.innerHTML = "screen 7 text"
+      }
+      else if(index == 7){
+         bodyText.innerHTML = "screen 8 text"
+      }
+   }
+
+   function indicatorUpdate(e){
+      var id = e.target.id;
+      index = id[3];
+      updateInfoModal(index);
+   }
+
+   function saveIndex(e){
+      var id = e.target.id;
+      console.log(id);
+      if(id == "graphic2"){
+         window.location.href="./evaluations-screens/graphics/OldUDA.html?index=" + index;
+      }
+      else if(id == "graphic3"){
+         window.location.href="./evaluations-screens/graphics/NewUDA.html?index=" + index;
+      }
+      else{
+         window.location.href="./evaluations-screens/graphics/EvaluationsList.html?index=" + index;
+      }
+   }
+
+   function getPage(){
+      var search = document.location.search;
+      var location = search.indexOf("=");
+      if(location == -1){index = 0;}
+      else{index = search[location+1];}
+
+      for(var i = 0; i < slideCount+1; i++){
+         //update indicators and slides
+         if(i == index){
+            $("#btn"+i).attr("class", "active");
+            $("#slide"+i).attr("class", "carousel-item active");
+         }
+         else{
+            $("#btn"+i).attr("class", "");
+            $("#slide"+i).attr("class", "carousel-item");
+         }
+      }
+      updateInfoModal(index);
+   }
+
+   function toggleOutline1(){
+      var box = document.getElementById("box1");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   function toggleOutline2(){
+      var box = document.getElementById("box2");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   </script>
+
+</body>
+</html>

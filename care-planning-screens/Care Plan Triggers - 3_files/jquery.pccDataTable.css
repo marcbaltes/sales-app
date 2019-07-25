@@ -1,0 +1,177 @@
+/*
+  These CSS styles are now DEPRECATED, please use the core "pccResults" styles
+  provided in core.css
+
+  This CSS file should only contain result table based CSS
+  Since a portion of this will be merged into a core file
+  please do not add any more styles to this file!
+*/
+.tableHeader{
+  background:#b7b7b7;
+  font-weight:bold;
+}
+.lightRow{
+  background:#fff;
+}
+.darkRow{
+  background:#d5d5d5;
+}
+.noRecords{
+  color:#bf0000;
+}
+.errorRow{
+  color:#bf0000;
+}
+.warningRow{
+  color:#ff7f27;
+}
+.trHover{
+  background:#f0f0f0;
+}
+.childRow{
+  background:#f0f0f0;
+}
+.pccDataTable, .childRowTableWrapper, .childRow{
+  display:none;
+}
+.childRowTableWrapper table{
+  padding:5px;
+  width:95%;
+}
+.auditData{
+  display:none;
+}
+table.results{
+  background-color:#e0e0e0;
+  color:#222;
+}
+
+table.results th{
+  background-color:#fafafa;
+  background-image:url('/images/datatable/tableHeader.png');
+  background-position:0% 100%;
+  background-repeat:repeat-x;
+  color:#222;
+  font-weight:bold;
+  padding:1px 2px 1px 4px;
+  font-size:12px;
+}
+
+table.results tr.containerHeader th{
+  text-align:left;
+}
+
+table colgroup col{
+  text-align:left;
+}
+table.results th.sortable{
+  cursor:pointer;
+}
+
+table.results th.sortable span{
+  display:block;
+  width:100%;
+  padding-top:2px;
+}
+
+table.results th.sortable span{
+  background-position:50% 0%;
+  background-repeat:no-repeat;
+}
+
+table.results span.processedWithErrors{
+  color:#bf0000 !important;
+  font-weight:normal !important;
+}
+
+table.results span.processedSuccessfully{
+  color:#000 !important;
+  font-weight:normal !important;
+}
+
+table.results th.sortedAscending, table.results th.sortedDescending{
+  background-image:url('/images/datatable/tableHeaderSorted.png') !important;
+}
+
+table.results th.sortedAscending span, table.results th.sortedDescending span{
+  background-position:50% 0%;
+  background-repeat:no-repeat;
+}
+
+table.results th.sortedAscending span{
+  background-image:url('/images/datatable/sortedAscending.gif');
+}
+table.results th.sortedDescending span{
+  background-image:url('/images/datatable/sortedDescending.gif');
+}
+
+table.results td{
+  background-color:#fff;
+  padding:1px 2px 1px 2px;
+}
+table.results tr.even td{
+  background-color:#f0f0f0;
+}
+.even{
+  background-color:#f0f0f0;
+}
+.totalsRow{
+  font-weight:bold;
+}
+.totalsRow .batchActionButton, .auditSibling{
+  display:none;
+}
+.rowQTipData, .cellQTipData{
+  display:none;
+  font-size:12px;
+  width:300px;
+}
+.autoIconWrapper, .autoIconQTip{
+  display:none;
+}
+.totalsRow{
+  font-weight:bold;
+}
+.totalsRow .batchActionButton{
+  display:none;
+}
+
+.pccDataTablePaginate{
+  margin:0 auto;
+  text-align:center;
+}
+
+.pccDataTablePaginate table tr td{
+  text-align:center;
+}
+
+.pccDataTablePaginate a{
+  border:1px solid #dedede;
+  margin-right:2px;
+}
+.pccDataTablePaginate .previous-off, .pccDataTablePaginate .next-off{
+  color:#888;
+  display:table-cell;
+  font-weight:bold;
+  padding:3px 4px;
+}
+.pccDataTablePaginate .next a, .pccDataTablePaginate .previous a{
+  border:1px solid #fff;
+  font-weight:bold;
+}
+.pccDataTablePaginate .active{
+  display:table-cell;
+  font-weight:bold;
+  padding:4px 6px;
+}
+.pccDataTablePaginate a:link, .pccDataTablePaginate a:visited{
+  color:#03c;
+  display:block;
+  padding:3px 6px;
+  text-decoration:none;
+}
+.pccDataTablePaginate a:hover{
+  text-decoration:none;
+  background:#681898;
+  color:#fff;
+}

@@ -1,0 +1,77 @@
+﻿function ShowUnsentMemosNotification() {
+    $('#divUnsentMemos').show();
+}
+
+function HideUnsentMemosNotification() {
+    $('#divUnsentMemos').hide();
+}
+
+function ShowAlertDetail(detail) {
+    HideAllPopups();
+    $('#divAlertText').html("Loading...");
+    $('#divAlertDetail').show();
+
+    $.ajax({
+        type: "POST",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/commonfunctions/AlertBodyText",
+        data: "{'AlertIdx': '" + detail + "' }",
+        dataType: "json",
+        success: function (data) {
+            if (data) {
+                $('#divAlertText').html(data.replace(/\|APOS\|/g, "&apos;"));
+            }
+            else {
+                $('#divAlertText').html('');
+            }
+        },
+        error: function () {
+            $('#divAlertText').html("Loading error");
+        }
+    });
+}
+
+function CloseAlertDetail() {
+    $('#divAlertDetail').hide();
+}
+
+function ShowProgressDisplay(progressText, hideContent) {
+    if (progressText) {
+        $('#spanProcessingText').text(progressText);
+    }
+    else {
+        $('#spanProcessingText').text('Processing');
+    }
+    if (hideContent) {
+        $('.ProcessingMessage').hide();
+    } else {
+        $('.ProcessingMessage').show();
+    }
+    $('.Processing').parent().show();
+}
+
+function HideProgressDisplay() {
+    $('.Processing').parent().hide();
+}
+
+function getSelectedGridField(g, f) {
+    var d = g.get_masterTableView().get_selectedItems()[0];
+    var rv = d.get_cell(f).innerHTML;
+    if (!rv) rv = d.get_cell(f).textContent;
+    return rv;
+}
+
+function OpenChangeResident() {
+    var path = '../Residents/ChangeResident.aspx?ParentPage=' + window.location.href;
+    radOpenResponsive(path, 'winGeneric');
+}
+
+function HideAllPopups() {
+    $('.divPopup').hide();
+}
+
+function menuPositionResponsive() 
+{
+    var y = $('#divContactUs').offset().top + $('#divContactUs').height();
+    $('.menuContainer').height(y.toString() + 'px');
+}

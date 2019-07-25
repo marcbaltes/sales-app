@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Coordination</title>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <!-- CSS files -->
+   <link rel="stylesheet" href="../styles/hover.css">
+   <!-- <link rel="stylesheet" href="./coordination-screens/Insights - Patient Clinical Chart_files/main.css" asp-append-version="true" media="all"> -->
+   <script src="./care-planning-screens/Care Plan Triggers - 1_files/jquery-1.9.0.min.js.download"></script>
+   <link id="ctl00_cssStyle" rel="Stylesheet" type="text/css" lang="en" href="./styles/Style.css">
+   <link rel="stylesheet" href="./styles/main.css">
+
+   <!-- Icon -->
+   <link rel="icon" href="./icons/circlelogo.png">
+</head>
+<body style="height: 10px; background-color: rgb(237, 237, 237);" id="body">  
+   <!-- Static Navbar -->
+   <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(221, 93, 60);">
+      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+         <img class="img" id="homeImg" src="./icons/womansuit-icon.png" alt="Home">
+      </a>
+      <ul class="navbar-nav">
+         <li class="nav-item" style="margin-left: 5px;">
+            <a href="./Analytics.html" class="nav-link imgBtn">
+               <img class="img arrowImg overlay hvr-grow" src="./icons/angle-left.png" alt="info" height="80px" width="50px">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="carousel-control-next imgBtn carousel-control-page-prev" href="#carouselSlide" role="button" data-slide="prev">
+               <img class="img-fluid arrowImgSm overlay hvr-grow" id="prevBtn" src="./icons/angle-left.png" alt="info" onclick="updateIndex(event)">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav m-auto">
+         <li class="nav-item">
+            <a href="./Coordination.html" class="nav-link">
+               <button class="feature-btn feature">Coordination</button>
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="carousel-control-next imgBtn carousel-control-page-next" href="#carouselSlide" role="button" data-slide="next">
+               <img class="img-fluid arrowImgSm overlay hvr-grow" id="nextBtn" onclick="updateIndex(event)" src="./icons/angle-right.png" alt="info">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item" style="margin-right: 5px;">
+            <a href="" class="nav-link imgBtn">
+               <img class="img arrowImg overlay hvr-grow" src="./icons/angle-right.png" alt="info" height="80px" width="50px">
+            </a>
+         </li>
+      </ul>
+      <a href="#" class="nav-item imgBtn" id="info" style="margin-right:-10px;" onclick="showModal(event)">
+         <img class="img-fluid infoImg hvr-grow" src="./icons/infobtn2.png" alt="info">
+      </a>
+      <!-- Info Modal -->
+      <div class="modal fade" id="infoModal">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-body">
+                  <h6 class="modalText" id="bodyText">screen 1 text</h6>
+                  <hr>
+                  <h6 class="modalText"><b>Supporting Documents</b></h6>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic2" class="modalText">Existing UDA Experience</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic3" class="modalText">New Evaluation Experience</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic4" class="modalText">COMS Evaluations List</h6></a>
+               </div>
+               <button class="btn-lg closeBtn" type="button" style="border-width: 0px; border-radius: 0px; background-color: dimgrey" data-dismiss="modal"><h6 class="imgBtn modalText" style="margin-bottom: -1px; color: white;">Close</h6></button>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Carousel -->
+   <div id="carouselSlide" class="carousel slide fullPage" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators fixed-bottom">
+         <li data-target="#carouselSlide" style="background-color: rgb(221, 93, 60);" id="btn0" data-slide-to="0" class="active" onclick="indicatorUpdate(event)"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(221, 93, 60);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(221, 93, 60);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+         <!-- Screen 1: -->
+         <div class="carousel-item active" id="slide0">
+            <img src="./coordination-screens/graphics/coordScreen1.png" class="coordScreen1" alt="">
+         </div>
+         <!-- Screen 2: -->
+         <div class="carousel-item" id="slide1">
+            <!-- navbar -->
+            <nav class="coordHeader navbar">
+               <a href="#" class="navbar-brand">
+                  <img src="./icons/insightsToggle.png" style="margin-top: -28px;" alt="">
+               </a>
+               <ul class="navbar">
+                  <a href="#" class="headerInsights">Insights</a>
+               </ul>
+               <ul class="navbar">
+                  <input type="text" class="form-control" style="font-size: 13px; width: 400px; margin-top: -6px;" placeholder="Search in all directories or choose a specific one">
+               </ul>
+               <ul class="navbar" style="margin-left: 10px; margin-top: -5px;">
+                  <a href="#" style="font-weight: bold; color: rgb(0, 0, 0); font-size: 15px; font-family: 'Arial';" class="dropdown-toggle">Casey Smith<span class="caret right"></span></a>
+               </ul>
+            </nav>
+            <div style="margin: 10px; margin-bottom: 12px;">
+                  <img src="./icons/insightsArrow.png" style="margin-left: 25px; margin-right: 10px; margin-top: 10px;" alt="">
+                  <span style="font-weight: bold; font-family: Arial; font-size: 18px;">Patient Clinical Chart - Willard Dalton</span>
+                  <div style="font-family: Arial; font-size: 11px; color: rgb(161, 161, 161); margin-left: 57px;margin-top: -7px;">Patient clinical summary</div>
+            </div>
+
+            <!-- resident info -->
+            <div class="row conatiner insightsInfo">
+               <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 120px; margin-left: 10px;">
+                  <img style="height: 100%; border-radius: 50%; margin-top: -0px;" src="./coordination-screens/Insights - Patient Clinical Chart_files/mp14.jpg">
+               </div>
+               <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 150px; padding-left: 17px;">
+                  <div><b>Willard Dalton</b></div>
+                  <div style="font-size: 12px; color: rgb(148, 148, 148); line-height: 10px;">M11453</div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0);"><b>Dec-02-1963 (55)</b></div>
+                  <div style="font-size: 12px; color: rgb(148, 148, 148); line-height: 10px;">Spanish | M</div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0);"><b>Anthem Blue Cross</b></div>
+               </div>
+               <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 160px; padding-left: 17px;">
+                  <div><b>LOS: 23 days</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 10px;">Admit: <b>Mar 09 2019</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0);">Discharge: <b>Mar 20 2019</b></div>
+               </div>
+               <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 160px; padding-left: 17px;">
+                  <div style="line-height: 15px; margin-top: 3px;"><b>Buena Vista Hospital</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 20px;">Room: <b>GS0610</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 8px;">Bed: <b>DB06102</b></div>
+               </div>
+               <div style="border-right: 1px solid rgb(207, 207, 207); float: left; height: 105px; width: 250px; padding-left: 17px;">
+                  <div style="line-height: 15px; margin-top: 3px;"><b>Pneumonia Due To Streptococcus Pneumoniae</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 20px;">Code: <b>J13</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 8px;">Active Diagnosis: <b>5</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 22px;">DRG: <b>202</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 15px; margin-top: -2px;">Bronchitis and asthma with complication</div>
+               </div>
+               <div style="height: 105px; padding-left: 17px; width: 120px; overflow: hidden;">
+                  <div><b>PD2</b></div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 15px;">Reduced Physical Function</div>
+                  <div style="font-size: 12px; color: rgb(0, 0, 0);">ADL: <b>15</b></div>
+               </div>
+            </div>  
+            
+            <!-- vitals / diagnosis -->
+            <div class="row container-fluid" style="padding-left: 15px; margin-top: 30px;">
+               <div class="col-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px;">
+                  <span>VITALS LIST</span>
+                  <div class="insightsVitalBox">
+                     <span><div>65.6</div></span>
+                     <span>BPDiastolic</span>
+                     <span><img src="./coordination-screens/graphics/bpdiaGraph.png" alt=""></span> 
+                  </div>
+                  <div class="insightsVitalBox">
+                     <span><div>112.6</div></span>
+                     <span>BPSystolic</span>
+                     <span><img src="./coordination-screens/graphics/bpstoGraph.png" style="margin-left: 33px;" alt=""></span> 
+                  </div>
+               </div>
+               <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                  <span>DIAGNOSIS LIST</span>
+                  <div class="insightsVitalBox2">
+                        <div style="font-size: 12px; color: black;">PRIMARY DIAGNOSES</div>
+                     <div class="row container codeBox">
+                        <div class="col-4" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">CODE
+                        </div>
+                        <div class="col-8" style="padding: 0px; padding-left: 5px; padding-top: 9px;">NAME
+                        </div>
+                     </div>
+                     <div class="row container codeBox2">
+                        <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">J13
+                        </div>
+                        <div class="col-8" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Pneumonia - Streptococcus Pneumoniae
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                     <span>CONDITIONS - MDS ITEMS</span>
+                  <div class="insightsVitalBox2">
+                        <div style="font-size: 12px; color: black; line-height: 15px;">DIAGNOSES-RELATED CONDITION CATEGORIES</div>
+                     <div class="row container codeBox" style="margin-top: 1px;">
+                        <div class="col-4" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">CODE
+                        </div>
+                        <div class="col-8" style="padding: 0px; padding-left: 5px; padding-top: 9px;">NAME
+                        </div>
+                     </div>
+                     <div class="row container codeBox2">
+                        <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">122
+                        </div>
+                        <div class="col-8" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Pneumonia
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                  <span>ALLERGY LIST</span>
+                  <div class="insightsVitalBox2">
+                        <div style="font-size: 12px; color: black;">REPORTED ALLERGIES</div>
+                     <div class="row container codeBox">
+                        <div class="col-4" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">DATE
+                        </div>
+                        <div class="col-4 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">STATUS
+                        </div>
+                        <div class="col-4 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">STAT.
+                        </div>
+                        <div class="col-4 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px;">ALLERGY
+                        </div>
+                        <div class="col-4 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">ALG.
+                        </div>
+                     </div>
+                     <div class="row container codeBox2">
+                        <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Apr-26-2017
+                        </div>
+                        <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Active
+                        </div>
+                        <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Penicillin
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row container-fluid" style="padding-left: 15px; margin-top: 15px;">
+                  <div class="col-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px;">
+                     <div class="insightsVitalBox">
+                        <span><div>96.9</div></span>
+                        <span>Temperature</span>
+                        <span><img src="./coordination-screens/graphics/tempGraph.png" style="margin-left: 24px;" alt=""></span> 
+                     </div>
+                     <div class="insightsVitalBox">
+                        <span><div>76.2</div></span>
+                        <span>Heart Rate</span>
+                        <span><img src="./coordination-screens/graphics/hrateGraph.png" style="margin-left: 33px;" alt=""></span> 
+                     </div>
+                  </div>
+                  <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                     <div class="insightsVitalBox2">
+                           <div style="font-size: 12px; color: black;">OTHER DIAGNOSES</div>
+                        <div class="row container codeBox">
+                           <div class="col-4" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">CODE
+                           </div>
+                           <div class="col-8" style="padding: 0px; padding-left: 5px; padding-top: 9px;">NAME
+                           </div>
+                        </div>
+                        <div class="row container codeBox2">
+                           <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">A32.7
+                           </div>
+                           <div class="col-8" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black; white-space: nowrap;">Listerial Sepsis
+                           </div>
+                        </div>
+                        <div class="row container codeBox2" style="border-top: 1px solid rgb(222, 222, 222); margin-top: 2px;">
+                           <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">A40.3
+                           </div>
+                           <div class="col-8" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Sepsis - Pneumoniae
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                     <div class="insightsVitalBox2">
+                           <div style="font-size: 12px; color: black;">DIAGNOSES-RELATED MDS ITEMS
+                              </div>
+                        <div class="row container codeBox">
+                           <div class="col-4" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">CODE
+                           </div>
+                           <div class="col-8" style="padding: 0px; padding-left: 5px; padding-top: 9px;">NAME
+                           </div>
+                        </div>
+                        <div class="row container codeBox2">
+                           <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">I2000
+                           </div>
+                           <div class="col-8" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Pneumonia
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+            </div>
+            <div class="row container-fluid" style="padding-left: 15px; margin-top: 30px;">
+               <div class="col-3" style="margin-top: -35px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px;">
+                  <div class="insightsVitalBox">
+                     <span><div>87.6</div></span>
+                     <span>Oxygen</span>
+                     <span><img src="./coordination-screens/graphics/oxyGraph.png" alt="" style="margin-left: 48px;"></span> 
+                  </div>
+                  <div class="insightsVitalBox">
+                     <span><div>120.3</div></span>
+                     <span>Weight</span>
+                     <span><img src="./coordination-screens/graphics/weightGraph.png" style="margin-left: 52px;" alt=""></span> 
+                  </div>
+               </div>
+               <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                  <span>CLINICAL EVENTS</span>
+                  <div class="insightsVitalBox2">
+                        <div style="font-size: 12px; color: black;">EVENTS</div>
+                     <div class="row container codeBox">
+                        <div class="col-2" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">
+                        </div>
+                        <div class="col-4 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">DETAILS
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">DET.
+                        </div>
+                        <div class="col-3" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">CAT.
+                        </div>
+                        <div class="col-3" style="padding: 0px; padding-left: 5px; padding-top: 9px;">DATE
+                        </div>
+                     </div>
+                     <div class="row container codeBox2">
+                        <div class="col-2" style="padding: 0px;" ><p style="height: 20px; width: 20px; border-radius: 50%; background-color: orange; margin-right: auto; margin-left: auto; margin-top: 5px;"></p></div>
+                        <div class="col-4 lg-view" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Buena Vista Hospital
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">. . .
+                        </div>
+                        <div class="col-3 lg-view" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Admit
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Ad.
+                        </div>
+                        <div class="col-3" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">03-03-2019
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                     <span>ASSESSMENT SCORES</span>
+                  <div class="insightsVitalBox2">
+                        <div style="font-size: 12px; color: black; line-height: 15px;">ASSESSMENT SCORES</div>
+                     <div class="row container codeBox" style="margin-top: 1px;">
+                        <div class="col-3 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">ASMT.
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">A.
+                        </div>
+                        <div class="col-3 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">MSR.
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">M.
+                        </div>
+                        <div class="col-3 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">SCORE
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">S.
+                        </div>
+                        <div class="col-3 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px;">DATE
+                        </div>
+                        <div class="col-3 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px;">D.
+                        </div>
+                     </div>
+                     <div class="row container codeBox2">
+                        <div class="col-12" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">No data available
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-2 col-md-2 col-lg-3" style="margin-top: -20px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px; padding-left: 0px;">
+                  <span>PATIENT MEDICATIONS</span>
+                  <div class="insightsVitalBox2">
+                        <div style="font-size: 12px; color: black;">MEDICATIONS</div>
+                     <div class="row container codeBox">
+                        <div class="col-2 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">START
+                        </div>
+                        <div class="col-2 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">S.
+                        </div>
+                        <div class="col-2 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">END
+                        </div>
+                        <div class="col-2 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">E.
+                        </div>
+                        <div class="col-4" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">MED.
+                        </div>
+                        <div class="col-2 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">STR.
+                        </div>
+                        <div class="col-2 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px; border-right: 1px solid rgb(222, 222, 222);">S.
+                        </div>
+                        <div class="col-2 lg-view" style="padding: 0px; padding-left: 5px; padding-top: 9px;">DOSE
+                        </div>
+                        <div class="col-2 sm-view" style="padding: 0px; padding-left: 5px; padding-top: 9px;">D.
+                        </div>
+                     </div>
+                     <div class="row container codeBox2">
+                        <div class="col-2" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">04-26-2017
+                        </div>
+                        <div class="col-2" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">04-01-2019
+                        </div>
+                        <div class="col-4" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">Lipitor
+                        </div>
+                        <div class="col-2" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">50
+                        </div>
+                        <div class="col-2" style="padding: 0px; font-weight: 100; padding-left: 5px; padding-top: 9px; color: black;">50
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row container-fluid" style="padding-left: 15px; margin-top: 10px;">
+               <div class="col-3" style="margin-top: -35px; line-height: 10px; color: rgb(134, 134, 134); font-size: 11px; font-weight: bold; padding-right: 0px;">
+                  <div class="insightsVitalBox">
+                     <span><div>121.8</div></span>
+                     <span>Height</span>
+                     <span><img src="./coordination-screens/graphics/heightGraph.png" alt="" style="margin-left: 54px;"></span> 
+                  </div>
+                  <div class="insightsVitalBox">
+                     <span><div>34.7</div></span>
+                     <span>BMI</span>
+                     <span><img src="./coordination-screens/graphics/bmiGraph.png" style="margin-left: 66px;" alt=""></span> 
+                  </div>
+               </div>              
+            </div>
+
+         </div>
+         <!-- Screen 3: -->
+         <div class="carousel-item" id="slide2">
+            <!-- navbar -->
+            <nav class="coordHeader navbar">
+                  <a href="#" class="navbar-brand">
+                     <img src="./icons/insightsToggle.png" style="margin-top: -28px;" alt="">
+                  </a>
+                  <ul class="navbar">
+                     <a href="#" class="headerInsights">Insights</a>
+                  </ul>
+                  <ul class="navbar">
+                     <input type="text" class="form-control" style="font-size: 13px; width: 400px; margin-top: -6px;" placeholder="Search in all directories or choose a specific one">
+                  </ul>
+                  <ul class="navbar" style="margin-left: 10px; margin-top: -5px;">
+                     <a href="#" style="font-weight: bold; color: rgb(0, 0, 0); font-size: 15px; font-family: 'Arial';" class="dropdown-toggle">Casey Smith<span class="caret right"></span></a>
+                  </ul>
+            </nav>
+            <div style="margin: 10px; margin-bottom: 12px;">
+                     <img src="./icons/insightsArrow.png" style="margin-left: 25px; margin-right: 10px; margin-top: 10px;" alt="">
+                     <span style="font-weight: bold; font-family: Arial; font-size: 18px;">Patient Clinical Chart - Willard Dalton</span>
+                     <div style="font-family: Arial; font-size: 11px; color: rgb(161, 161, 161); margin-left: 57px;margin-top: -7px;">Patient clinical summary</div>
+            </div>
+   
+            <!-- resident info -->
+            <div class="row conatiner insightsInfo">
+                  <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 120px; margin-left: 10px;">
+                     <img style="height: 100%; border-radius: 50%; margin-top: -0px;" src="./coordination-screens/Insights - Patient Clinical Chart_files/mp14.jpg">
+                  </div>
+                  <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 150px; padding-left: 17px;">
+                     <div><b>Willard Dalton</b></div>
+                     <div style="font-size: 12px; color: rgb(148, 148, 148); line-height: 10px;">M11453</div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0);"><b>Dec-02-1963 (55)</b></div>
+                     <div style="font-size: 12px; color: rgb(148, 148, 148); line-height: 10px;">Spanish | M</div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0);"><b>Anthem Blue Cross</b></div>
+                  </div>
+                  <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 160px; padding-left: 17px;">
+                     <div><b>LOS: 23 days</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 10px;">Admit: <b>Mar 09 2019</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0);">Discharge: <b>Mar 20 2019</b></div>
+                  </div>
+                  <div style="border-right: 1px solid rgb(207, 207, 207); height: 105px; width: 160px; padding-left: 17px;">
+                     <div style="line-height: 15px; margin-top: 3px;"><b>Buena Vista Hospital</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 20px;">Room: <b>GS0610</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 8px;">Bed: <b>DB06102</b></div>
+                  </div>
+                  <div style="border-right: 1px solid rgb(207, 207, 207); float: left; height: 105px; width: 250px; padding-left: 17px;">
+                     <div style="line-height: 15px; margin-top: 3px;"><b>Pneumonia Due To Streptococcus Pneumoniae</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 20px;">Code: <b>J13</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 8px;">Active Diagnosis: <b>5</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 22px;">DRG: <b>202</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 15px; margin-top: -2px;">Bronchitis and asthma with complication</div>
+                  </div>
+                  <div style="height: 105px; padding-left: 17px; width: 120px; overflow: hidden;">
+                     <div><b>PD2</b></div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0); line-height: 15px;">Reduced Physical Function</div>
+                     <div style="font-size: 12px; color: rgb(0, 0, 0);">ADL: <b>15</b></div>
+                  </div>
+            </div>
+            
+            <!-- events -->
+            <div class="eventBox">
+               <div class="row" style="margin: 0px;">
+                  <div class="col-6" style="padding: 0px; font-weight: bold; font-size: 12px;">EVENTS TIMELINE</div>
+                  <div class="col-6" style="padding: 0px; text-align: right; margin-top: -5px;"><img src="./coordination-screens/graphics/insightsExpand.png" alt=""></div>
+               </div>
+               <div class="row" style="margin: 0px; margin-top: 10px; margin-bottom: 20px;">
+                  <div class="col-4" style="text-align: center; padding: 0px; font-size: 12px;">
+                     <span>Zoom</span>
+                     <input type="text" class="btn btn-light btn-sm" value="1m" style="font-size: 12px; width: 30px; height: 25px; padding: 0px; margin-right: 4px;">
+                     <input type="text" class="btn btn-light btn-sm" value="3m" style="font-size: 12px; width: 30px; height: 25px; padding: 0px; color: rgb(160, 160, 160)">
+                     <input type="text" class="btn btn-light btn-sm" value="6m" style="font-size: 12px; width: 30px; height: 25px; padding: 0px; color: rgb(160, 160, 160)">
+                     <input type="text" class="btn btn-light btn-sm" value="YTD" style="font-size: 12px; width: 30px; height: 25px; padding: 0px; margin-right: 4px;">
+                     <input type="text" class="btn btn-light btn-sm" value="1y" style="font-size: 12px; width: 30px; height: 25px; padding: 0px; color: rgb(160, 160, 160)">
+                     <input type="text" class="btn btn-light btn-sm" value="All" style="font-size: 12px; width: 30px; height: 25px; padding: 0px; margin-right: 4px;">
+                  </div>
+                  <div class="col-4" style="padding: 0px; margin-top: -5px;"></div>
+                  <div class="col-4" style="text-align: center; padding: 0px; font-size: 12px;">
+                     <span>From</span>
+                     <input type="text" value="Feb 17, 2019" style="font-size: 12px; width: 100px; height: 25px; padding: 0px; margin-right: 4px; text-align: center;">
+                     <span>To</span>
+                     <input type="text" value="Mar 31, 2019" style="font-size: 12px; width: 100px; height: 25px; padding: 0px; margin-right: 4px; text-align: center;">
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 45px;">
+                  <div class="col-1" style="font-size: 12px; font-weight: bold; text-align: right;">
+                     <span>Location</span>
+                  </div>
+                  <div class="col-4" style="padding: 0px; margin-top: 9px;">
+                     <div style="border-top: 2px dotted rgb(211, 211, 211);"></div>
+                  </div>
+                  <div class="col-6" style="padding: 0px; margin-top: 9px;">
+                     <div style="position: fixed; background-color: rgb(0, 153, 102); border-radius: 100px; width: 8px; height: 8px; margin-top: -3px;">
+                        <div style="border-right: 2px solid rgb(0, 153, 102); height: 10px; position: fixed; margin-left: 3px; margin-top: 4px;"></div>
+                        <div style="color: rgb(0, 153, 102); font-size: 12px; font-weight: bold; border: 2px solid rgb(0, 153, 102); border-radius: 100px; height: 22; width: 22px; position: fixed; margin-top: 13px; margin-left: -7px; text-align: center;">10</div>
+                        <div style="position: fixed; font-size: 12px; margin-top: 33px; margin-left: -9px;">HOS</div>
+                     </div>
+                     <div style="position: fixed; background-color: rgb(0, 153, 102); border-radius: 100px; width: 8px; height: 8px; margin-top: -3px; margin-left: 450px;">
+                        <div style="border-right: 2px solid rgb(0, 153, 102); height: 10px; position: fixed; margin-left: 3px; margin-top: 4px;"></div>
+                        <div style="color: rgb(0, 153, 102); font-size: 12px; font-weight: bold; border: 2px solid rgb(0, 153, 102); border-radius: 100px; height: 22; width: 22px; position: fixed; margin-top: 13px; margin-left: -7px; text-align: center;">11</div>
+                        <div style="position: fixed; font-size: 12px; margin-top: 33px; margin-left: -9px;">SNF</div>
+                     </div>
+                     <div style="border-top: 2px solid rgb(0, 153, 102);"></div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                     <div class="col-1" style="font-size: 12px; font-weight: bold; text-align: right;">
+                        <span>Visits</span>
+                     </div>
+                     <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                        <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                           <div class="col-3" style="position: fixed; margin-top: -14px; text-align: right;"><img src="./coordination-screens/graphics/insightsVisit.png" alt=""></div>
+                           <div class="col-6" style="position: fixed; margin-top: -14px; text-align: right;"><img src="./coordination-screens/graphics/insightsVisit.png" alt=""></div>
+                           <div class="col-8" style="position: fixed; margin-top: -14px; text-align: right;"><img src="./coordination-screens/graphics/insightsVisit.png" alt=""></div>
+                           <div class="col-9" style="position: fixed; margin-top: -14px; text-align: right;"><img src="./coordination-screens/graphics/insightsVisit.png" alt=""></div>
+                        </div>
+                     </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                     <div class="col-1" style="font-size: 12px; font-weight: bold; text-align: right;">
+                        <span>Events</span>
+                     </div>
+                     <div class="col-1" style="font-size: 12px; font-weight: bold; text-align: left;">
+                        <span style="font-weight: 100">6</span>
+                     </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right;">
+                     <span>Information</span>
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                     <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(255, 58, 156); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 600px;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right;">
+                     <span>Assesment</span>
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                     <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(136, 126, 230); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 700px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(136, 126, 230); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 550px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(136, 126, 230); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 400px;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right;">
+                     <span>Allergy</span>
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                     <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(243, 159, 34); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 100px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(243, 159, 34); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 150px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(243, 159, 34); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 300px;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 5px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right;">
+                     <span>Medication</span>
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                     <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(34, 243, 34); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 300px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(34, 243, 34); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 750px;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: -10px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right; margin: 0px;">
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px; border-top: 1px solid rgb(204, 218, 243);">
+                     <div class="row">
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; border-right: 1px solid rgb(204, 218, 243); height: 10px;"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right; margin: 0px;">
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                     <div class="row">
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">19. Feb</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">21. Feb</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">23. Feb</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">11. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">12. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">14. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">15. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">17. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">18. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">19. Mar</div>
+                        <div class="col-1" style="color: rgb(112, 112, 112); font-size: 12px; text-align: center; height: 10px; text-align: right; padding: 0px;">20. Mar</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                     <div class="col-1" style="font-size: 12px; text-align: right;">
+                        <span>Procedure</span>
+                     </div>
+                     <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                        <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                           <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(51, 51, 51); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 250px;"></div>
+                           <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(51, 51, 51); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 475px;"></div>
+                        </div>
+                     </div>
+               </div>
+               <div class="row" style="margin-bottom: 25px;">
+                  <div class="col-1" style="font-size: 12px; text-align: right;">
+                     <span>Measure</span>
+                  </div>
+                  <div class="col-10" style="padding: 0px; margin-top: 9px;">
+                     <div style="border-top: 2px dotted rgb(211, 211, 211);">
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(130, 170, 223); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 0px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(130, 170, 223); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 50px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(130, 170, 223); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 100px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(130, 170, 223); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 150px;"></div>
+                        <div style="height: 12px; width: 12px; background-color: white; border: 3px solid rgb(130, 170, 223); border-radius: 100px; position: fixed; margin-top: -7px; margin-left: 200px;"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!-- Popper.js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+   <!-- Bootstrap JS -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+   <script>
+   var slideCount = 2;  // actual slide count + 1
+   $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+      $('[data-toggle="popover"]').popover({
+         placement : 'left',
+         trigger : 'hover'
+      });
+
+      getPage();
+
+      //swiping (hammer.js)
+      var body = document.getElementById("body");
+      var mc = new Hammer(body);
+      //enable all directions
+      mc.get('swipe').set({
+         direction: Hammer.DIRECTION_ALL,
+         threshold: 1, 
+         velocity:0.1
+      });
+      // listen to events...
+      mc.on("swipeup swipedown swipeleft swiperight tap press", function(ev) {
+         if(ev.type == "swiperight"){
+            index--;
+            if(index < 0){window.location.href="./Analytics.html";}
+            updateInfoModal(index);
+         }
+         else if(ev.type == "swipeleft"){
+            index++;
+            if(index > slideCount){window.location.href="./Coordination.html?index=3";}
+            updateInfoModal(index);
+         }
+      });
+   });
+   
+
+   function showModal(e){
+      $("#info").attr("data-toggle", "modal");
+      $("#info").attr("data-target", "#infoModal");
+   }
+
+   var index = 0;
+   function updateIndex(e){
+      var id = e.target.id;
+      if(id == "prevBtn"){
+         index--;
+         if(index < 0){
+            window.location.href="./Analytics.html";
+         }
+      }
+      else{
+         index++;
+         if(index > slideCount){
+            window.location.href="./Coordination.html?index=3";
+         }
+      }
+      updateInfoModal(index);
+   }
+
+   function updateInfoModal(index){
+      var bodyText = document.getElementById("bodyText");
+      if(index == 0){
+         $("#body").attr("style", "height: 10px; background-color: white;")
+      }
+      else{
+         $("#body").attr("style", "height: 10px; background-color: rgb(237, 237, 237);")
+      }
+
+      if(index == 0){
+         bodyText.innerHTML = "screen 1 text"
+         $("#body").attr("style", "height: 10px; background-color: white;")
+      }
+      else if(index == 1){
+         bodyText.innerHTML = "screen 2 text"
+      }
+      else if(index == 2){
+         bodyText.innerHTML = "screen 3 text"
+      }
+   }
+
+   function indicatorUpdate(e){
+      var id = e.target.id;
+      index = id[3];
+      updateInfoModal(index);
+   }
+
+   function saveIndex(e){
+      var id = e.target.id;
+      console.log(id);
+      if(id == "graphic2"){
+         window.location.href="./evaluations-screens/graphics/OldUDA.html?index=" + index;
+      }
+      else if(id == "graphic3"){
+         window.location.href="./evaluations-screens/graphics/NewUDA.html?index=" + index;
+      }
+      else{
+         window.location.href="./evaluations-screens/graphics/EvaluationsList.html?index=" + index;
+      }
+   }
+
+   function getPage(){
+      var search = document.location.search;
+      var location = search.indexOf("=");
+      if(location == -1){index = 0;}
+      else{index = search[location+1];}
+
+      for(var i = 0; i < slideCount+1; i++){
+         //update indicators and slides
+         if(i == index){
+            $("#btn"+i).attr("class", "active");
+            $("#slide"+i).attr("class", "carousel-item active");
+         }
+         else{
+            $("#btn"+i).attr("class", "");
+            $("#slide"+i).attr("class", "carousel-item");
+         }
+      }
+      updateInfoModal(index);
+   }
+
+   function toggleOutline1(){
+      var box = document.getElementById("box1");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   </script>
+
+</body>
+</html>

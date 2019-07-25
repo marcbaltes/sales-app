@@ -1,0 +1,173 @@
+function expandCarePathwayDetail() {
+	var cpwStatus = $(this).attr("data-status");
+	var carePathwayId = $(this).attr("name").replace("plus_", "");
+	var canEdit = $(this).attr("data-access"); 
+	$.ajax({type : "post",
+	url : "/clinical/cpg/carepathwaydetail.xhtml",
+    data : "carePathwayId=" + carePathwayId,
+    dataType: "json",
+    error: function(XMLHttpRequest, status, error) {
+    	alert("Error when loading care pathway detail: " + carePathwayId);
+    },
+    success: function(data) {
+       	if (data.hasError == "N") {
+           	var detail = data.carePathwayDetail;
+           	var detailScript = 
+           		"<form id='expandForm_"+carePathwayId+"'><table class='pccResults' width='100%'>" +
+           			"<thead>" + 
+           				"<tr class='tableHeader containerHeader'>" +
+           					"<th width='60%' align='left'><span>Triggered Items</span></th>" +
+           					"<th width='8%' align='left'><span>Type</span></th>" +
+           					"<th width='8%' align='left'><span>Status</span></th>" +
+           				"</tr>" +
+           			"</thead>";
+
+           	var rowCSS = "";
+           	if(detail.length > 0) {
+           		$.each(detail, function(i, item) {
+           			var itemStatus = detail[i].subtaskStatusCode;
+	            	if(i % 2 == 0){
+	            		rowCSS = "odd";
+	            	} else {
+	            		rowCSS = "even";
+	            	}
+	            	detailScript += "<tr class="+rowCSS+"'>";
+	            	detailScript += "<td>";
+	            	var description = detail[i].description;
+	            	// If this is a Goal, Intervention OR Task for a Need then indent
+	            	if (detail[i].needId && detail[i].needId != "-1" && 
+	                    detail[i].triggerType.type != 'CPN') {
+	                  description = '<div style="padding-left:15px">'+description+'</div>';
+	            	}
+	            	if(cpwStatus == "Struck Out" || cpwStatus == "Closed" || canEdit=='false') {
+	            		if(cpwStatus == "Struck Out"){
+	            			detailScript += "<font class='strikeout'>" + description + "</font>";//TODO: FIXME: See the UI Team for details
+	            		} else {
+	            			detailScript += description ;
+	            		}
+	            	} else {
+	            		detailScript += description;
+	            	}
+	            	detailScript += "</td>";
+	            	detailScript += "<td>"+ detail[i].itemType +"</td>";
+	            	detailScript += "<td>" + itemStatus + "</td>";
+            		detailScript += "</tr>";
+                });
+       		} else {
+       			detailScript += "<tr height='25'><td colspan='5'>No Records found</td></tr>";
+       		}
+           	detailScript += "</table></form>";
+            $("#detail_" + carePathwayId).html(detailScript);
+            $("#detail_" + carePathwayId).closest('tr').css('display', '');
+       	} else if (data.hasError == 'Y') {
+       		alert('Some exception happened when load the care pathway detail!');//TODO: FIXME: See the UI Team for details
+       	}
+	}
+	});
+   	$(this).find("img").attr({src:"/images/newminus.gif"});
+}
+
+function collapseCarePathwayDetail(){
+	var carePathwayId = $(this).attr("name").replace("plus_", "");
+	$("#detail_" + carePathwayId).html("");
+	$("#detail_" + carePathwayId).closest('tr').css('display', 'none');
+	$(this).find("img").attr({src:"/images/newplus.gif"});
+}
+
+
+function getTablePage(pageId)
+{
+  var page = document.getElementById("pageNo");
+  if (page) {
+	  page.value = pageId;
+  }
+  
+  var form = document.getElementById("filterForm");
+  if (form) {
+	  form.submit();
+  }
+}
+
+function setTableDisplayRows(pageId, rowsPerPage, totalRows, totalPages)
+{
+  var start = end * pageId;
+  var end = parseFloat(start) + parseFloat(end); 
+  
+  var nextButton = document.getElementById("buttonNext");
+  var prevButton = document.getElementById("buttonPrev");
+  
+  if(nextButton)
+  {
+	  nextButton.setAttribute("onClick","getTablePage("+ (pageId+1) +");");
+	  if(pageId < totalPages)
+	  {
+		  nextButton.style.display = "";
+	  }
+	  else 
+	  {
+		  nextButton.style.display = "none";
+	  }
+  }
+  if(prevButton)
+  {
+	  prevButton.setAttribute("onClick","getTablePage("+ (pageId-1) +");");
+	  if(pageId > 1)
+	  {
+		  prevButton.style.display = "";
+	  }
+	  else 
+	  {
+		  prevButton.style.display = "none";
+	  }
+  }
+  
+ 
+  var pagesStart;
+  var pagesEnd; 
+  if(totalPages < 11)
+  {
+	  pagesStart = 1;
+	  pagesEnd = totalPages;
+  }
+  else 
+  {
+	  pagesStart = pageId - 4;
+	  pagesEnd = pageId + 5;
+	  if(pagesStart < 1)
+	  {
+		  pagesStart = 1;
+		  pagesEnd = pagesStart + 9;
+	  }
+	  if(pagesEnd > totalPages)
+	  {
+		  pagesEnd = totalPages;
+		  pagesStart = pagesEnd - 9;
+	  }
+  }
+  
+  if(totalPages != 1)
+  {
+	  for (var i = 1; i <= totalPages; i++) 
+	  {  
+		 if(i == pageId)
+		 {
+			document.getElementById("pagebtn" + i).className = "selected";
+		 }
+		 else
+		 {
+			document.getElementById("pagebtn" + i).removeAttribute("class");
+		 }
+		 
+	     if(i < pagesStart || i > pagesEnd)
+		 {
+			 document.getElementById("pagebtn" + i).style.display = "none";
+		 }
+		 else 
+		 {
+			 document.getElementById("pagebtn" + i).style.display = "";
+	     }
+	  }  
+  }
+  
+  
+}  

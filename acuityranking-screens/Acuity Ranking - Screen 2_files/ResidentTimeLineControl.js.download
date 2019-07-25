@@ -1,0 +1,72 @@
+var COMS = COMS || {};
+COMS.Controls =  COMS.Controls || {};
+
+// only execute this once, if  the first object defined does not exit 
+if(!COMS.Controls.ResidentTimeLineVM)
+{
+    // this is the VM that the control is going to bound to. properties in this objects are used in the view to control UI
+    COMS.Controls.ResidentTimeLineVM = function (data) {
+        var self = this;
+        self.data = data;
+        self.SpinnerVisible = ko.observable(false);
+
+        self.HasDataOfType = function (filter) {
+            var hasEntries = false;
+            var match = ko.utils.arrayFirst(self.data.Events(), function (item) {
+                return item.Filter() == filter;
+            });
+
+            if (match) { hasEntries = true; }
+            return hasEntries;
+        }
+
+        return self;
+    }
+
+    COMS.Controls.ResidentTimeLineVM.prototype.GetFilteredData = function () {
+        var self = this;
+        if (self.data.FilterType && self.data.FilterType()) {
+            return ko.utils.arrayFilter(self.data.Events(), function (item) {
+                return item.Filter() == self.data.FilterType();
+            });
+        }
+        else {
+            return self.data.Events();
+        }
+    };
+
+    COMS.Controls.ResidentTimeLineVM.prototype.isFilter = function (filter) {
+        var self = this;
+        if (self.data.FilterType) {
+            return self.data.FilterType() == filter;
+        }
+    };
+
+    COMS.Controls.ResidentTimeLineVM.prototype.SetFilter = function (filter) {
+        var self = this;
+        if (self.data.FilterType) {
+            self.data.FilterType(filter)
+        }
+    };
+
+    //  this objects controls the fluent interface to customize how the object bilds the binding.
+    COMS.Controls.ResidentTimeLine = function (data) {
+        var self = this;
+        var d = ko.observable(new COMS.Controls.ResidentTimeLineVM(data));
+
+        //    self.LoadEvents = function (residentID) {
+        //        // TODO if needed and  ajax call can be used to populate Data.... 
+        //        return self;
+        //    }
+        self.ShowSpinnerWhen = function (f) {
+            d().SpinnerVisible = f;
+            return self;
+        };
+
+        self.Bind = function () {
+            return d;
+        };
+
+    };
+}
+

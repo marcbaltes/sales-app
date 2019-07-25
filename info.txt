@@ -1,0 +1,14 @@
+adding slides to a section: 
+	-add an li element to the carousel indicators and make the id "btn(slidenumber)"
+	-add a div elemnt to carousel-inner and give it an id of "slide(slidenumber)"
+	-change slideCount to the number of slides - 1 (because I had the index start at 0)
+	-add the info for the new slide of the info modal in updateInfoModal
+
+outlining when clicked:
+	-note: so i used an inset box shadow instead of a border because the border shifts stuff around in the element while the box shadow does not so I just thought it was a cleaner way of doing it
+	-just copy the toggleOutline() function and replace the box1 id with whatever element you want to outline
+	-also each element that has a clickable outline has its own toggleOutline function which is tedious but it's the easiest way I found to do it
+
+scrolling on pages
+	-by default I have the body and html elements not able to be scrolled. to change this just add the class "scroll" to them and you can scroll them again
+

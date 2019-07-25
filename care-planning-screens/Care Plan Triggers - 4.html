@@ -1,0 +1,3485 @@
+<!DOCTYPE html>
+<!-- saved from url=(0206)https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?ESOLclientid=4671&ESOLpositionid=-1&ESOLreviewid=-1&retURL=/admin/client/cp_careplans_rev.jsp&ESOLcpid=814&showTriggTask=Y -->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Care Plan Triggers</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10;IE=9;IE=8,chrome=1">
+
+
+<meta name="format-detection" content="telephone=no">
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/core.css">
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/legacy-styles.css">
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/jquery-ui-1.9.2.custom.min.css">
+
+
+
+
+<script src="./Care Plan Triggers - 4_files/l10n.djs"></script>
+
+
+    <script src="./Care Plan Triggers - 4_files/jquery-1.9.0.min.js.download"></script>
+    <script src="./Care Plan Triggers - 4_files/jquery-migrate-1.4.1.min.js.download"></script>
+  
+
+<script src="./Care Plan Triggers - 4_files/jquery-ui-1.9.2.custom.min.js.download"></script>
+<script src="./Care Plan Triggers - 4_files/jquery.dateField-2.0.0.js.download"></script>
+
+
+
+
+
+
+
+<script src="./Care Plan Triggers - 4_files/ESOLvalidate.js.download"></script>
+
+
+
+
+
+
+<script>
+  
+  
+    function phoneformat(formObj, phoneStr, phoneNumberField){
+      formatNorthAmericanPhoneNumber(formObj, phoneStr, phoneNumberField);
+    }
+  
+</script>
+<script src="./Care Plan Triggers - 4_files/core.js.download"></script>
+<script src="./Care Plan Triggers - 4_files/wedate.js.download"></script>
+
+
+<script src="./Care Plan Triggers - 4_files/coremenufunctions.js.download"></script>
+
+
+
+
+
+        <script>
+            if(self == top){
+                var firstInterval = 300000;
+            }
+        </script>
+        <link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/sessionTimeout.css">
+        <script src="./Care Plan Triggers - 4_files/sessionTimeout.js.download"></script>
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/care-plan-department-styles.css">
+<style>
+	td.listbutton2{
+		color:#000;
+		vertical-align:top;
+	}
+	.btbbl {border-top:solid #cecece;border-left:solid #cecece;border-bottom:solid #cecece;border-width:1px;}
+	.btbbr {border-top:solid #cecece;border-right:solid #cecece;border-bottom:solid #cecece;border-width:1px;}
+</style>
+<script>
+function selectAll()
+{
+	noElement = frmData.elements.length;
+	//check check boxes
+	for (x=0;x<noElement;x++)
+	{
+		if(frmData.elements[x].name == "chkbox")
+			frmData.elements[x].checked=true;
+	}
+}
+
+function deselectAll()
+{
+	noElement = frmData.elements.length;
+	//uncheck check boxes
+	for (x=0;x<noElement;x++)
+	{
+		if(frmData.elements[x].name == "chkbox")
+			frmData.elements[x].checked=false;
+	}
+}
+
+function saveTriggerItems()
+{
+	startProcMsg('msg1,msg2','Saving');
+	frmData.ESOLsaveflag.value = 'Y';
+	frmData.action = '/care/chart/cp/addtriggereditems_rev.jsp';
+	frmData.submit();
+}
+function refresh()
+{
+  frmData.ESOLsaveflag.value = "N";
+  frmData.action = '/care/chart/cp/addtriggereditems_rev.jsp';
+  frmData.submit();
+}
+function confirmRemoveAll()
+{
+	if (confirm('Remove all triggered items displayed?'))
+	{
+		startProcMsg('msg1,msg2','Removing');
+		frmData.ESOLsaveflag.value = 'REMCPITEMS';
+		frmData.action = '/care/chart/cp/addtriggereditems_rev.jsp';
+		frmData.submit();
+	}
+}
+
+function selectNeed(val)
+{
+	noElement = frmData.elements.length;
+	//check check boxes
+	for (x=0;x<noElement;x++)
+	{
+		if(frmData.elements[x].value == val)
+			frmData.elements[x].checked=true;
+	}
+}
+
+function sKeyPressed()
+{
+	saveTriggerItems();
+}
+
+function aKeyPressed()
+{
+	selectAll();
+}
+
+function xKeyPressed()
+{
+	deselectAll();
+}
+
+function rKeyPressed()
+{
+	confirmRemoveAll();
+}
+
+function bKeyPressed()
+{
+    
+	frmData.action = '/care/chart/cp/careplandetail_rev.jsp?ESOLclientid=4671&ESOLpositionid=-1&ESOLreviewid=-1&retURL=/admin/client/cp_careplans_rev.jsp';
+    frmData.submit();
+    
+}
+</script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Tom Mohney;Marc Baltes</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">15;#Tom Mohney;#76;#Marc Baltes</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body class="clinical" onkeydown="handleQuickKeyPress();" style="zoom: 1; margin: 0px 10px;">
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="appAriaHide" id="appAriaHeaderOne" aria-hidden="false">Care Plan Triggers</h1>
+
+
+<script src="./Care Plan Triggers - 4_files/callHelp.js.download"></script>
+<script>
+var helpPage = "";
+
+
+function openhelp(){
+
+
+	if(helpPage.length == 0){
+		helpPage = "/help/online/clinical/care_plan.htm";
+	}
+	callHelp(helpPage);
+	
+}
+
+
+</script>
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/coremenu.css">
+<script src="./Care Plan Triggers - 4_files/medicare.js.download"></script>
+<script>
+	// variables required for coremenufunctions.js
+	var isInitialsSet = false;
+	//var checkInitialsFlag = false;
+	var isUsingNewForm = true;
+	var facilityListURL = "/tools/faclist.jsp?facilityList=true&allowEMCModeCheck=false";
+	var isTouchEnabledFlag = false;
+	var inEMCflag = false;
+	var isInFGCflag = false;
+
+	// required for function submitSearchNew() in coremenufunctions.js
+	var inEMCFGC = false
+	if (inEMCflag || isInFGCflag) {
+		inEMCFGC = true;
+	}
+
+	
+		var tabType = 'C';
+	
+
+	
+
+	// Update menu URLS for touch
+	if (typeof resHeaderPage != 'undefined' && resHeaderPage == true) {
+		var isResHeaderPage = true;
+	}
+		
+	document.addEventListener('DOMContentLoaded', function(e) {
+		  $(document).on('click', '.js-webapp-user-logout-btn', function(e){
+			  $(this).trigger('webapp/user/logout');
+		  });
+  });
+
+</script>
+
+
+
+
+<style>
+	html{
+		min-height:100%;
+		position:relative;
+	}
+	body{
+		
+		margin-bottom:150px !important;
+	}
+	div.footertext{
+		bottom:10px;
+		left:10px;
+		min-width:800px;
+		position:absolute;
+		right:10px;
+		width:auto;
+	}
+	@media print{
+		body{
+			margin-bottom:0 !important;
+		}
+		div.footertext{
+			position:relative !important;
+			width:100% !important;
+		}
+	}
+</style>
+
+
+
+	<script>
+		// Required for main menu
+		var currentTab = "3";
+		var touchEnabled = false;
+		var currentClientId = "4671";
+		var clientJumpTab = "cp_adminclientprofile.jsp";
+		var careJumpTab = "cp_careplans_rev.jsp";
+
+		if (typeof resHeaderPage != 'undefined' && resHeaderPage == true) {
+			var isResHeaderPage = true;
+		}
+		var tabsMenuLoaded = true;
+	</script>
+	<script src="./Care Plan Triggers - 4_files/f.txt"></script>
+
+	<table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+		<tbody><tr>
+			<td valign="top" class="slPccLogo"><img src="./Care Plan Triggers - 4_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+			<td align="right" valign="top" class="slTopNav">
+				
+
+<h3 class="appAriaHide" aria-hidden="false">Facility Selection</h3>
+<form id="facSelectForm" action="https://partnercontentus.pointclickcare.com/facilityGroup/facilitygroupconsole.xhtml" method="post">
+	<input type="hidden" name="setFacGroupId" id="setFacGroupId" value="">
+	<input type="hidden" name="setFacType" id="setFacType" value="">
+</form>
+
+
+
+	<a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="javascript:void(0)" class="innerfac navLink arrowDrop">FACILITY_1 (Shirley - COMS)</a>
+	<input type="hidden" name="current_fac_id" value="1">
+
+	<script>
+		function displayFacilityGroupConsole(facGroupID, facGroupType){
+			$('#facSelectForm').attr('action', '/facilityGroup/facilitygroupconsole.xhtml');
+			$('#setFacGroupId').val(facGroupID);
+			$('#setFacType').val(facGroupType);
+			$('#facSelectForm').submit();
+		}
+	</script>
+	<div id="pccFacMenu" class="dropDownList" style="left: 1144.34px;">
+		<div style="height:100px;padding:50px 0 0 217px"><img src="./Care Plan Triggers - 4_files/loading-circle.gif" width="16" height="16" border="0"></div>
+	</div>
+
+				
+					
+						
+							<a href="javascript:void(0);" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Nicki Fetterman</span></a>
+						
+					
+				
+				
+					<div id="pccUserMenu" class="dropDownList" style="left: 1561.7px;">
+						<ul>
+							<li><a href="javascript:editUserProfile(&#39;/home/editmyprofile.jsp?ESOLuserid=2080&amp;retURL=/home/home.jsp&#39;);">Edit Profile</a></li>
+							<li><a href="javascript:javascript:void(window.open(&#39;/admin/reports/user_access.jsp?ESOLuserid=2080&#39;, &#39;detail&#39;));">User Access</a></li>
+							
+								<li><a href="javascript:openhelp();">Help</a></li>
+							
+				
+
+				
+					<li><a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars=1&#39;));">Resource Center / Support</a></li>
+				
+
+				
+				
+				
+			</ul>
+		</div>
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+				
+				
+				
+				
+				
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/c3-0.4.10.min.css">
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/chartGenerator.css">
+<script src="./Care Plan Triggers - 4_files/d3-3.5.5.min.js.download"></script>
+<script src="./Care Plan Triggers - 4_files/c3-0.4.10.min.js.download"></script>
+<script src="./Care Plan Triggers - 4_files/chartGenerator.js.download"></script>
+
+<link rel="stylesheet" type="text/css" href="./Care Plan Triggers - 4_files/smartalertsnotifications.css">
+
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 4_files/chosen-0.9.8.css">
+<script src="./Care Plan Triggers - 4_files/chosen.jquery-0.9.8.min.js.download"></script>
+<script>
+  if(typeof AbstractChosen == 'undefined') {
+    var chosenLibPath = "/srug/v2076679807/assets/core/jquery/plugins/chosen.jquery-0.9.8.min.js";
+    document.write("<script src='"+ chosenLibPath +"'></"+"script>");
+  }
+</script>
+<script>
+  'use strict';
+  window.clinicalSmartAlerts = window.clinicalSmartAlerts || {};
+
+  window.clinicalSmartAlerts.moduleProps = {
+    canAddPN: true,
+    canAddCarePlan: true,
+    canAssessAlerts: true,
+    clientId: '4671'.trim(),
+    facId: 1,
+    isESignatureForPNEnabled: true,
+    isCICOnline: false,
+    isNewLogin: false,
+    maxVitalsInChart: 7,
+    cicOtherCICReasonId: '31',
+    months: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ],
+
+    termMap: {
+      alert: 'Alert',
+      assessment: 'Assessment',
+      careplan: 'Care Plan',
+      clinicalAlert: 'Clinical Alert',
+      facility: 'Facility',
+      highRiskAlert: 'High Risk Alert',
+      inboundClinicalAlert: 'Inbound Clinical Alert',
+      less: 'less',
+      minutesAgo: '{{minutes}}m ago',
+      more: 'more',
+      noAlerts: 'No Alerts',
+      resident: 'Resident',
+      task: 'Task',
+      vitalExceptionAlert: 'Vital Exception Alert',
+      orderAlert: 'Order Alert',
+      trend: 'Trend',
+      baseline :'Baseline',
+      diastolicBaseline : 'Diastolic Baseline',
+      systolicBaseline :  'Systolic Baseline',
+      eInteractAlert: 'eInteract Alert',
+      eInteractHeading: 'eINTERACT Alerts (Stop &amp; Watch and/or Change in Condition): '
+    },
+    
+    alertDescriptions: {
+      inboundClinicalAlertDescription: 'Inbound Clinical Data has Been Updated'
+    },
+
+    dynamicTags: {
+      eInteractHeadingTag:'<span class="c-einteract-heading">%s</span>'
+    },
+	   
+    vitalMap: {
+      weights: 'Weights',
+      respiration: 'Respiration',
+      bloodPressure: 'Blood Pressure',
+      temperature: 'Temperature',
+      pulse: 'Pulse',
+      bloodSugar: 'Blood Sugar',
+      heights: 'Heights',
+      o2Sats: 'O2 Sats',
+      painLevel: 'Pain Level'
+    },
+	   
+    complexApproaches : [
+      'Staff document one of these response(s) more than {0} time(s) within {1} {2}',
+      'Staff document one of these response(s) less than {0} time(s) within {1} {2}',
+      'Staff document one of these response(s) {0} time(s) within {1} {2}',
+      'Staff document only these response(s) within {1}',
+    ],
+       
+    complexDurations : [
+      'Hour(s)',
+      'Days(s)',
+      'Week(s)',
+    ],
+       
+    defaultChartOpts : {
+      data: {
+        columns: [],
+      },
+      color: {
+        pattern: ['#57c5bb', '#f5a623', ],
+      },
+      interaction: {
+        enabled: true,
+      },
+      y: {
+        padding: {
+          bottom: 0,
+        },
+        min: 0,
+      },
+      axis: {
+        x: {
+          tick : {
+            values : [],
+          },
+        },
+        y : {
+        },
+      },
+      size : {
+        height: 250,
+      },
+    },
+
+    // indexed by vital type
+    chartOpts : [
+      {},
+      // Weight
+      {
+        data : {
+          columns: [['Weight']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Respiration
+      {
+        data : {
+          columns: [['Respiration']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+      // Blood pressure
+      {
+        data : {
+          columns: [['Systolic'], ['Diastolic'] ],
+          columnKeys: ['value', 'diastolicValue'],
+        },
+        isInteger : true,
+      },
+      // BP Dystolic -- currently doesn't generate alerts
+      {},
+      // Temperature
+      {
+        data : {
+          columns: [['Temperature']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Pulse
+      {
+        data : {
+          columns: [['Pulse']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+      // Blood Sugar
+      {
+        data : {
+          columns: [['Blood Sugar']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Height (currently doesn't trigger alerts)
+      {},
+      // O2 Sats
+      {
+        data : {
+          columns: [['O2 Sats']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Pain Level
+      {
+        data : {
+          columns: [['Pain Level']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+    ],
+        
+    userId: '2080'.trim()
+	};
+</script>
+<script defer="" src="./Care Plan Triggers - 4_files/core.js(1).download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/state.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/rootReducer.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/StatefulComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/CardComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/DropdownComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/FilterComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/PanelComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/DrawerComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/NotificationToggleComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/App.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 4_files/SmartAlertSaveActionVOFactory.js.download"></script>
+
+<script>
+	'use strict';
+	var selectedAssignmentId=
+	selectedAssignmentId=selectedAssignmentId||''
+	document.addEventListener('DOMContentLoaded', function(e) {
+		clinicalSmartAlerts.App.init(
+			 {}
+		);
+	});
+</script>
+
+<span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+    
+      
+      
+         <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle c-notification-toggle--has-alerts"></div> 
+      
+  
+
+  <div class="js-drawer c-drawer c-drawer--is-hidden u-no-transition">
+    <div class="js-panel c-panel">
+      <ul class="js-tabs js-sticky-header c-tabs">
+        
+        <li id="qtf-csa-drawerTabAll" class="js-tab c-tabs__tab " data-tab-type="all"><span class="c-tabs__label">All</span></li>
+        
+        <li id="qtf-csa-drawerTabClient" class="js-tab c-tabs__tab" data-tab-type="client"><span class="c-tabs__label">Resident</span></li>
+        
+      </ul>
+
+      <div class="js-panel-content c-panel__content">
+        <div class="js-filters l-stack u-hidden u-mb-8">
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Unit</label>
+            <div id="qtf-csa-unitDropdown" class="js-dropdown-unit js-dropdown c-dropdown u-text-uppercase" data-type="unit">
+              <a href="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLcpid=814&amp;showTriggTask=Y#" id="qtf-csa-unitDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLcpid=814&amp;showTriggTask=Y#" id="qtf-csa-unitDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Floor</label>
+            <div id="qtf-csa-floorDropdown" class="js-dropdown-floor js-dropdown c-dropdown u-text-uppercase" data-type="floor">
+              <a href="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLcpid=814&amp;showTriggTask=Y#" id="qtf-csa-floorDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLcpid=814&amp;showTriggTask=Y#" id="qtf-csa-floorDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="new-alert-bubble" class="new-alert-bubble c-button c-button--primary" style="display:none;">
+          <img class="tail-up" src="./Care Plan Triggers - 4_files/whitearrow.png">New Alerts
+        </div>
+        <div class="js-panel-alerts c-panel-alerts c-panel-alerts--has-no-alerts">No Alerts</div>
+      </div>
+    </div>
+  </div>
+	<script id="tmpl-csa-alert-card" type="text/template">
+    <div id="js-csa-alert-card-{{type}}-{{id}}" class="js-alert-card c-card" data-alert-type="{{type}}" data-alert-id="{{id}}" data-grouped-alert-ids="{{groupedAlertIds}}" data-client-id="{{clientId}}" data-created-timestamp="{{createdTimestamp}}" data-module="{{module}}"
+      data-vital-type="{{vitalType}}" data-pn-id="{{pnId}}" data-clear-alert-permission="{{clearAlertPermission}}" data-alert-description="{{description}}" data-wv-pn-description="{{pn_description}}">
+
+	    <div class="c-card__header">
+	      <div class="l-table-row u-mb-0">
+	        <span class="c-card__type l-table-row__col l-table-row__col--70 u-text-uppercase u-text-subdued">{{formattedType}}</span>
+	        <a href="#_" class="js-alert-card-clear c-card__clear l-table-row__col l-table-row__col--30 u-text-uppercase u-text-subdued u-text-align-right"style="display:{{clearAlertPermission}}">Clear</a>
+	      </div>
+	    </div>
+	    <div class="c-card__content">
+	      <div class="l-table-row">
+	        <div class="l-table-row__col l-table-row__col--70">
+	          <h4 class="t-h4 u-mb-0">{{formattedName}} (<span class="qtf-csa-alertClientNumber">{{clientNumber}}</span>)</h4>
+            <span>Room <span class="qtf-csa-alertRoomNumber">{{room}}</span></span>
+	        </div>
+	        <div class="l-table-row__col l-table-row__col--30 u-text-align-right">
+	          <small class="u-text-subdued">{{timeSince}}</small>
+	        </div>
+	      </div>
+	      <div class="js-more-less"><p class="js-alert-description">{{eInteractHeading}}{{description}}</p></div>
+        <hr class="o-hr"/>
+
+        <div class="js-show-hide js-card-expander c-show-hide c-card-expander">
+          <div class="c-show-hide__content">
+            <div class="js-show-hide js-alert-details-expander c-show-hide c-details-expander">
+              <a href="#_" class="js-show-hide-toggle js-alert-details-expander-toggle c-show-hide__toggle">Alert Details</a>
+              <div class="c-show-hide__content">
+                <div id="js-csa-alert-card-details-{{type}}-{{id}}" class="s-clinical-smart-alert-details">
+                  <div class="l-detail-row" style="display:{{hideAlertDetailsEffectiveDate}}">
+                    <h4 class="t-h4 u-mb-0 c-alert-detail">Effective Date: </h4>
+                    <div class="c-alert-detail qtf-csa-AlertEffectiveDate">{{effectiveDate}}</div>
+                  </div>
+ 				  <div style="display:{{displayExtendedDetails}};">
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Description: </h4> 
+                      <div class="c-alert-detail c-assess-description">{{assess_description}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Created Date: </h4>
+                      <div class="c-alert-detail c-assess-date">{{assess_date}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Type: </h4>
+                      <div class="c-alert-detail c-assess-type">{{assess_type}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Question: </h4>
+                      <div class="c-alert-detail c-trigger-question">{{trigger_question}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Response: </h4>
+                      <div class="c-alert-detail c-trigger-response">{{trigger_response}}</div>
+                    </div>
+                  </div>
+                  <div style="display:{{displayComplexDetails}};">
+					<div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Task}} Description: </h4> 
+                      <div class="c-alert-detail c-task-description"><ul></ul></div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Follow Up Question: </h4> 
+                      <div class="c-alert-detail c-followup-question">{{followup_question}}</div>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+					<div class="l-detail-row">
+					  <h4 class="t-h4 u-mb-0 c-alert-detail c-approach-description">{{complex_description}} </h4>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Response Pick List: </h4> 
+                      <div class="c-alert-detail c-response-pick-list"><ul></ul></div>
+                    </div>
+                  </div>
+				  <div style="display:{{displayInboundClinicalData}};">
+                    <div class="l-detail-row">
+                      <div class="c-alert-detail c-inbound-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipcard-container c-hidden">
+                  <div class="flipcard">
+                    <div class="flipcard-wrapper">
+                        <div class="flipcard-side flipcard-side-front flipcard-is-active">
+                            <div class="trendgraph"></div>
+                        </div>
+                        <div class="flipcard-side flipcard-side-back c-hidden">
+                            <table class="c-alert-details-table js-alert-details-table">
+                              <tbody></tbody>
+                             </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flipcard-chevron-container">
+                      <div class="flipcard-chevron"></div>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="suggestions-section">
+                <p>Suggestions:</p>
+				<div style="display:{{hideSuggestionLinks}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-care-plan-link-{{id}}" href="{{carePlanAction}}">Add Care Plan Item</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-add-tasks-link-{{id}}" href="/admin/client/cp_tasks.jsp?ESOLclientid={{clientId}}">Add Task</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-add-vitals-{{id}}" href="/admin/client/cp_weightsandvitals.jsp?ESOLclientid={{clientId}}">Add Vital</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-assessment-link-{{id}}" href="/admin/client/cp_assessment.jsp?ESOLclientid={{clientId}}">Add Assessment</a>
+				</div>
+				<div style="display:{{displayInboundClinicalData}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-review-inbound-data-link-{{type}}-{{id}}" href="/clinical/inbound/inboundclinicaldata.xhtml?ESOLclientid={{clientId}}">Review Inbound Clinical Data</a>
+				</div>
+              </div>
+            </div>
+
+            
+              <div class="js-show-hide c-show-hide c-assessment-create-wrapper js-assessment-create-wrapper">
+                <label class="u-mt-8 c-custom-checkbox__disabled assessment-create">
+                  eINTERACT Change in Condition
+                    <input type="checkbox" class="js-show-hide-toggle js-checkbox-create-assessment c-show-hide__toggle" disabled />
+                    <span class="c-custom-checkbox__checkmark"></span>
+                </label>
+                <div class="c-show-hide__content c-form u-mt-16">
+                  <div class="u-mt-16 u-mb-16">
+                    <div>
+                      <label>Effective Date: </label>
+                    </div>
+                    <div class="assessment-date-picker">
+                      <input id="qtf-effective-date-{{id}}" name="effective_date" type="hidden"/><input id="qtf-effective-date-{{id}}_dummy" name="effective_date_dummy" class="pccDateField c-dropdown" type="text" value="" size="10" maxlength="10"/>
+                      <select name="hour" class="c-dropdown" id="qtf-effective-hour-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                      </select>
+                      <select name="min" class="c-dropdown" id="qtf-effective-minute-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                          <option value="24">24</option>
+                        
+                          <option value="25">25</option>
+                        
+                          <option value="26">26</option>
+                        
+                          <option value="27">27</option>
+                        
+                          <option value="28">28</option>
+                        
+                          <option value="29">29</option>
+                        
+                          <option value="30">30</option>
+                        
+                          <option value="31">31</option>
+                        
+                          <option value="32">32</option>
+                        
+                          <option value="33">33</option>
+                        
+                          <option value="34">34</option>
+                        
+                          <option value="35">35</option>
+                        
+                          <option value="36">36</option>
+                        
+                          <option value="37">37</option>
+                        
+                          <option value="38">38</option>
+                        
+                          <option value="39">39</option>
+                        
+                          <option value="40">40</option>
+                        
+                          <option value="41">41</option>
+                        
+                          <option value="42">42</option>
+                        
+                          <option value="43">43</option>
+                        
+                          <option value="44">44</option>
+                        
+                          <option value="45">45</option>
+                        
+                          <option value="46">46</option>
+                        
+                          <option value="47">47</option>
+                        
+                          <option value="48">48</option>
+                        
+                          <option value="49">49</option>
+                        
+                          <option value="50">50</option>
+                        
+                          <option value="51">51</option>
+                        
+                          <option value="52">52</option>
+                        
+                          <option value="53">53</option>
+                        
+                          <option value="54">54</option>
+                        
+                          <option value="55">55</option>
+                        
+                          <option value="56">56</option>
+                        
+                          <option value="57">57</option>
+                        
+                          <option value="58">58</option>
+                        
+                          <option value="59">59</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <p class='u-hidden has-error js-effective-date-error'>Assessment Date Cannot Be In The Future.</p>
+                  <div class="c-einteract-assessment c-einteract-assessment__hidden">
+                    <p>
+                      <span class="c-einteract-heading alert-SW-conds">Stop &amp; Watch Alerts: </span>
+                    </p>
+                    <p class="c-einteract-heading">Change in Condition(s): </p>
+                    <select name="cic_reason_{{id}}" id="cic_reason_{{id}}" data-placeholder="Choose an option..." class="chzn-select" multiple="multiple"
+                      style="width:100%;">
+                    </select>
+                    <div class="c-cic-other-symptoms u-hidden">
+                      <p class="c-einteract-heading">Other Change in Condition (describe): </p>
+                      <input type="text" class="c-cic-other-symptoms-input u-mb-16" name="other-symp-{{id}}" maxlength="50" size="50" />(50 max) <span style="color: red;">&nbsp;*</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+
+          
+           
+             
+                <div class="js-show-hide js-carousel-esignature c-carousel">
+                    <div class=" js-show-hide js-create-pn-wrapper c-show-hide js-carousel-item c-carousel__item">
+              
+              
+            
+			<div style="display:{{hideProgressNote}}">
+            <label class="u-mt-8 u-mb-8 c-custom-checkbox pn-create">
+	          	Create Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle js-checkbox-create-pn c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+			</div>
+            <label class="u-mt-8 c-custom-checkbox pn-view">
+	          	View Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle js-checkbox-create-pn c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+              <div class="c-show-hide__content c-form u-mt-16 js-pn-interactive-section"></div>
+              <button class="js-button-save-interactive-suggestions c-button c-button--primary u-mt-16">Save</button>
+              <button class="js-button-cancel-interactive-suggestions c-button c-button--primary-inverse">Cancel</button>
+              </div>
+                              
+                <div class="js-carousel-item c-carousel__item">
+                <h4 class="t-h4 u-mt-16">Attestation Statement</h4>
+                <p>By electronically signing this record, I attest that the information recorded was entered by me and that I am authorized by the facility to record and sign this record.</p>
+                <hr class="o-hr"/>
+                <div class="c-form u-mt-16 u-mb-16">
+                    <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30">
+                            <label>User:</label>
+                        </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            nfetterman
+                        </div>
+                    </div>
+                    <div class="l-table-row">
+                       <div class="l-table-row__col l-table-row__col--30">
+                            <label>Password:</label>
+                       </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            <form class="js-esignature-form" autocomplete="off">
+                              <input class="js-input-esignature-password" type="password" autocomplete="off"/>
+                              <div class="js-esignature-form-status-msg c-form__status-msg"></div>
+                            </form>
+                        </div>
+                      </div>
+                      <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30"></div>
+                            <div class="l-table-row__col l-table-row__col--70">
+                                <button class="js-button-sign-esignature c-button c-button--primary">Sign</button> 
+                                <button class="js-button-cancel-esignature c-button c-button--primary-inverse">Cancel</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      
+                   
+                </div>  
+              <div class="js-show-hide-toggle js-card-expander-toggle c-show-hide__toggle"></div>
+            </div>
+            </div>          
+          </div>
+	    </div>
+	  </div>
+	</script>
+</span>
+
+				
+				
+				<a href="https://partnercontentus.pointclickcare.com/home/logout.jsp" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+			</td>
+		</tr>
+	</tbody></table>
+	<table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+		<tbody><tr>
+			<td valign="top">
+				<div class="slMainNavTabs">
+					
+				<ul id="topTabs"><li id="QTF_HomePageTab" class=""><a href="https://partnercontentus.pointclickcare.com/home/home.jsp" class="arrowDrop">Home</a><div class="megaMenu mmHomeBox"><div class="mmBoxes"><h5>Dashboards</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/home/home.jsp">Home</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/admindashboard.jsp">Admin Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/clinicaldashboard.jsp?fromMenu=Y">Clinical Dashboard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Modules</h5><ul class="mmList"><li><a href="javascript:void((function(){closePopupIfOpen(&#39;pocWindow&#39;);window.pocWindow=window.open(&#39;/poc/loginBypass.xhtml?initcheck=YY&amp;frompage=PCC&amp;closeWindowOnLogout=Y&#39;,&#39;pocWin&#39;)})());">POC</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>External Links</h5><ul class="mmList"><li><a href="javascript:openPopupWinNR(&#39;/common/popup/extlinks.xhtml?ESOLclientid=&#39;+getClientIdIfAvailable(), &#39;extlinkspopup&#39;, 500, 600, &#39;&#39;);">View all links</a></li></ul><br><h5>Other</h5><ul class="mmList"><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_AdminTab" class=""><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=P" class="arrowDrop">Admin</a><div class="megaMenu mmAdminBox"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=P">Residents</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp">Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp">Medical Professionals</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Financial Management</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/admindashboard.jsp">Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/billing/billportal_us.jsp">Billing</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/billing/collections/collections.xhtml?sort=client&amp;dir=asc">Collections</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/trust/trustportal.jsp">Trust</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/assess/assessscheduler.jsp?ESOLtabType=P">UDA</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/reports/adminreports.jsp?ESOLtabtype=P">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/eadminsetup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_ClinicalTab" class="ClinicalTab"><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=C" class="arrowDrop">Clinical</a><div class="megaMenu mmClinicalBox"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=C">Residents</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Care Management</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/clinicaldashboard.jsp?fromMenu=Y">Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/hospitalPortal.xhtml">Hospital Tracking</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/mds/mdsportal.jsp?isMDS3=Y">MDS</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/communications.jsp">Communications</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/ordersPortal.xhtml">Orders</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/inc/incidentportal.xhtml?ESOLview=S">Risk Management</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/weightsandvitalsportal.jsp">Weights and Vitals</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/assess/assessscheduler.jsp">UDA</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/cpg/carepathwaysportal.xhtml">Care Pathways</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Quick Entry</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/phyvisitedit.jsp">Physician Visits</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/immunizbatchentry.jsp">Immunization</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/weightbyunit.jsp">Weight</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=3">Blood Pressure</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=5">Temperature</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=6">Pulse</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=2">Respiration</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=7">Blood Sugar</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=9">O2 Saturation</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=10">Pain Level</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Modules</h5><ul class="mmList"><li><a href="javascript:void((function(){closePopupIfOpen(&#39;pocWindow&#39;);window.pocWindow=window.open(&#39;/poc/loginBypass.xhtml?initcheck=YY&amp;frompage=PCC&amp;closeWindowOnLogout=Y&#39;,&#39;pocWin&#39;)})());">POC</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/reports/carereports.jsp?ESOLtabtype=C">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/setup/ecaresetup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_MarketingTab" class=""><a href="https://partnercontentus.pointclickcare.com/crm/crmportal.jsp" class="arrowDrop">IRM</a><div class="megaMenu mmIRMBox"><div class="mmBoxes"><h5>IRM</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/crm/crmportal.jsp?ESOLtabtype=M">My Worklist</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/referrallist.jsp">Center Referrals</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/inquiries.jsp?ESOLtabtype=M">Inquiry Listing</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/benefits_portal.jsp">Activities</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/contacts.jsp">Contacts</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/accountlist.jsp">Accounts</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/maps/maps.jsp">MAPs</a></li><li><a href="javascript:openSizedLookup2(&#39;/crm/crm_bed_lookup_us.jsp?&#39;,&#39;bed_lookup&#39;,650,600,&#39;scrollbars&#39;);">Bed Availability</a></li><li><a href="javascript:openSizedLookup2(&#39;/irm/episode_wizard/episode.xhtml&#39;, &#39;&#39;, 842, 660,&#39;&#39;);">Inquiry Wizard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/crm/reports/crmreports.jsp">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/setup/setup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_reportingTab" class=""><a href="https://partnercontentus.pointclickcare.com/enterprisereporting/listing.xhtml" class="noArrowDrop">Reports</a><div class="megaMenu mmReportsBox"></div></li></ul></div>
+				<div class="slResidentSearch" style="float:right;">
+					
+					
+						<form name="slsearch">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+									<td width="45">
+										
+											<div id="searchSelect">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+														<td width="34"><img class="facility" src="./Care Plan Triggers - 4_files/facilityIcon.png" title="This Facility"></td>
+														
+															<td><img class="arrow" src="./Care Plan Triggers - 4_files/down-arrow.png" aria-hidden="true"></td>
+														
+													</tr>
+												</tbody></table>
+											</div>
+										
+										
+									</td>
+									<td>
+										<input type="text" id="searchField" name="substring" autocomplete="off">
+									</td>
+									<td>
+										<input type="button" class="pccButton" value="Search" onclick="submitSearchNew();">
+									</td>
+								</tr>
+							</tbody></table>
+
+							
+								<div id="searchAll" style="border:1px solid #999;box-shadow:8px 8px 4px -6px #999;display:none;">
+									<input type="hidden" name="ESOLglobalclientsearch" value="N">
+									<table border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr onclick="switchFacImg(&#39;facilityIcon&#39;);switchToGlobalSearch(false);">
+											<td style="text-align:center;"><img class="facility" src="./Care Plan Triggers - 4_files/facilityIcon.png" title="This Facility"></td>
+											<td>This Facility</td>
+										</tr>
+										<tr onclick="switchFacImg(&#39;facilityAllIcon&#39;);switchToGlobalSearch(true);">
+											<td><img class="facility" src="./Care Plan Triggers - 4_files/facilityAllIcon.png" title="All Facilities"></td>
+											<td>All Facilities</td>
+										</tr>
+									</tbody></table>
+								</div>
+							
+							
+						</form>
+					
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	<table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td align="left">
+				<ul class="secondNavList"></ul>
+			</td>
+			<td valign="top" align="right" width="85">
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		</td>
+	</tr>
+</tbody></table>
+
+
+<form name="frmData" method="post" action="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp">
+<input type="hidden" name="ESOLminiToken" value="6603834141">
+	<input type="hidden" name="ESOLclientid" value="4671">
+	<input type="hidden" name="ESOLpositionid" value="-1">
+	<input type="hidden" name="retURL" value="/admin/client/cp_careplans_rev.jsp">
+	<input type="hidden" name="ESOLreviewid" value="-1">
+	<input type="hidden" name="ESOLsaveflag" value="N">
+    <input type="hidden" name="ESOLisMDS3" value="N">
+
+
+&nbsp;Triggered Care Plan Items<table border="0" cellpadding="1" cellspacing="0" width="100%">
+	<tbody><tr height="25&gt;" <td="" width="75%" class="pageTitle">
+	   <td width="25%">&nbsp;</td>
+	</tr>
+	<tr valign="top">
+		<td width="75%">
+			<table cellspacing="0" cellpadding="1">
+				<tbody><tr height="25" valign="middle">
+					<td>&nbsp;</td>
+					<td width="200" align="right" class="btbbl" bgcolor="#ffffff"><span style="font-size:10pt;font-weight:bold;">Resident:</span></td>
+					<td width="200" class="btbbr" bgcolor="#ffffff">
+						<span style="font-size:10pt;">&nbsp;Smith, Stella (558874)&nbsp;</span>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+		
+		<td width="25%"><table cellspacing="0" cellpadding="0" border="0">
+		      <tbody><tr>
+		        <td align="right" valign="middle">
+				  <b>Show Triggered Tasks:</b>&nbsp;&nbsp;
+		       </td>
+		        <td>
+				  <input type="checkbox" name="showTriggTask" id="idshowTriggTask" value="Y" onclick="refresh()" checked="">
+		        </td>
+		      </tr>
+		     </tbody></table>
+		</td>
+	   
+	</tr>
+
+	<tr height="5"><td></td></tr>
+	<tr>
+
+		<td width="75%">
+		    
+			<div id="review"><table border="1" cellpadding="0" cellspacing="0" bordercolor="black"><tbody><tr><td class="unsignedDepartmentSelected"><strong>&nbsp;&nbsp;<a class="unsignedDepartmentSelected" href="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;ESOLisMDS3=N&amp;ESOLpositionid=-1">All</a>&nbsp;&nbsp;</strong></td></tr></tbody></table></div></td>
+		<td></td>
+	</tr>
+	<tr height="5"><td></td></tr>
+	<tr>
+		<td colspan="2" width="100%">
+			<div style="float: right;" class="pccMessage pccInfo">Any item with the resolved or canceled icon will become active when checked and saved.</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" width="100%" align="center" id="msg1" style="font-size:12pt;font-weight:bold;">
+		<input id="idSaveBtn" type="button" class="pccButton" value="Save" title="Save: CTRL-SHIFT-S" onclick="saveTriggerItems();">
+		<input id="idSelectAllBtn" type="button" class="pccButton" value="Select All" title="Select All: CTRL-SHIFT-A" onclick="selectAll();">
+		<input id="idClearAllBtn" type="button" class="pccButton" value="Clear All" title="Clear All: CTRL-SHIFT-X" onclick="deselectAll();">
+		<input id="idRemoveAllBtn" type="button" class="pccButton" value="Remove All" title="Remove All: CTRL-SHIFT-R" onclick="confirmRemoveAll();">
+
+
+        <input id="idBackBtn" type="button" class="pccButton" value="Back" title="Back: CTRL-SHIFT-B" onclick="location.href=&#39;/care/chart/cp/careplandetail_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&#39;;">
+
+		</td>
+	</tr>
+	<tr height="5"><td></td></tr>
+</tbody></table>
+
+	<table border="0" cellspacing="0" cellpadding="3" width="100%">
+		<tbody><tr>
+			<td class="detailColHeader" width="1%">&nbsp;</td>
+			<td class="detailColHeader" width="33%">Focus</td>
+			<td class="detailColHeader" width="33%">Goals</td>
+			<td class="detailColHeader" width="33%">Interventions/Tasks</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47625_cb" value="47625" aria-labelledby="fd47625-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47625-label" aria-hidden="true">
+				Acute Pain&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47632_cb" value="47632" aria-labelledby="id47632-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47632-label" aria-hidden="true">Resident Will Be Free of Pain / Discomfort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47641_cb" value="47641" aria-labelledby="it_47641-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47641-label" aria-hidden="true">Administer medications to treat cough&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47642_cb" value="47642" aria-labelledby="it_47642-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47642-label" aria-hidden="true">Evaluate for non-verbal indicators of pain&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47643_cb" value="47643" aria-labelledby="it_47643-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47643-label" aria-hidden="true">Evaluate for pain related to coughing&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47693_cb" value="47693" aria-labelledby="it_47693-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47693-label" aria-hidden="true">Utilize humidity (humidified oxygen or humidifier)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47644_cb" value="47644" aria-labelledby="it_47644-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47644-label" aria-hidden="true">Utilize positioning and relaxation techniques for comfort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47692_cb" value="47692" aria-labelledby="it_47692-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47692-label" aria-hidden="true">Encourage participation in coughing, deep breathing and forced expiratory techniques, as ordered&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47599_cb" value="47599" aria-labelledby="fd47599-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Arrhythmia">
+				<label id="fd47599-label" aria-hidden="true">
+				Arrhythmia &nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47603_cb" value="47603" aria-labelledby="id47603-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="id47603-label" aria-hidden="true">Resident Will Maintain Optimal Tissue Perfusion&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47604_cb" value="47604" aria-labelledby="id47604-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="id47604-label" aria-hidden="true">Resident Will Remain in Normal Sinus Rhythm&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47609_cb" value="47609" aria-labelledby="it_47609-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47609-label" aria-hidden="true">Evaluate arterial leg pulses&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47610_cb" value="47610" aria-labelledby="it_47610-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47610-label" aria-hidden="true">Evaluate heart rate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47611_cb" value="47611" aria-labelledby="it_47611-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47611-label" aria-hidden="true">Evaluate pedal pulses&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47612_cb" value="47612" aria-labelledby="it_47612-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47612-label" aria-hidden="true">If cardiac device present, verify date of last device interrogation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47618_cb" value="47618" aria-labelledby="it_47618-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47618-label" aria-hidden="true">Evaluate heart rate character, rhythm&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47474_cb" value="47474" aria-labelledby="fd47474-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Cancer">
+				<label id="fd47474-label" aria-hidden="true">
+				Chemotherapy Treatment&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47480_cb" value="47480" aria-labelledby="id47480-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47480-label" aria-hidden="true">Resident / Representative Will Understand and Participate in Treatment Regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47481_cb" value="47481" aria-labelledby="id47481-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47481-label" aria-hidden="true">Resident Will Experience Minimal  Side Effects Related to Chemotherapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47489_cb" value="47489" aria-labelledby="it_47489-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47489-label" aria-hidden="true">Administer medications prior to treatment to minimize side effects, per provider order&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47490_cb" value="47490" aria-labelledby="it_47490-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47490-label" aria-hidden="true">Determine Resident / Representative's baseline understanding of chemotherapy treatments&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47491_cb" value="47491" aria-labelledby="it_47491-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47491-label" aria-hidden="true">Educate Resident / Representative on chemotherapy treatment schedule and anticipated side effects&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47492_cb" value="47492" aria-labelledby="it_47492-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47492-label" aria-hidden="true">Educate Resident / Representative on the importance of routine laboratory monitoring&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47493_cb" value="47493" aria-labelledby="it_47493-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47493-label" aria-hidden="true">Monitor Resident for potential complications related to long term nausea / vomiting&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47494_cb" value="47494" aria-labelledby="it_47494-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47494-label" aria-hidden="true">Monitor weight for loss&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47522_cb" value="47522" aria-labelledby="fd47522-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Hyperthyroid">
+				<label id="fd47522-label" aria-hidden="true">
+				Fatigue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47531_cb" value="47531" aria-labelledby="id47531-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47531-label" aria-hidden="true">Resident Will Experience Reduction in Fatigue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47540_cb" value="47540" aria-labelledby="it_47540-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47540-label" aria-hidden="true">Determine level of needed assistance based on ADLs / IADLs evaluation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47541_cb" value="47541" aria-labelledby="it_47541-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47541-label" aria-hidden="true">Educate Resident / Representative on energy conservation techniques&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47542_cb" value="47542" aria-labelledby="it_47542-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47542-label" aria-hidden="true">Evaluate Resident's ability to perform ADLs / IADLs&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47562_cb" value="47562" aria-labelledby="it_47562-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47562-label" aria-hidden="true">Encourage times of rest and relaxation between care activities&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47600_cb" value="47600" aria-labelledby="fd47600-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Arrhythmia">
+				<label id="fd47600-label" aria-hidden="true">
+				Impaired Coping&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47605_cb" value="47605" aria-labelledby="id47605-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="id47605-label" aria-hidden="true">Resident Will Demonstrate Effective Coping Mechanisms&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47570_cb" value="47570" aria-labelledby="id47570-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47570-label" aria-hidden="true">Resident Will Be Free of Fear and/or Anxiety&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47543_cb" value="47543" aria-labelledby="it_47543-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47543-label" aria-hidden="true">Encourage Resident to verbalize feelings regarding fear and / or anxiety&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47544_cb" value="47544" aria-labelledby="it_47544-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47544-label" aria-hidden="true">Encourage use of PRN medication to alleviate symptoms&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47545_cb" value="47545" aria-labelledby="it_47545-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47545-label" aria-hidden="true">Evaluate for cause of fear or anxiety&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47613_cb" value="47613" aria-labelledby="it_47613-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47613-label" aria-hidden="true">Monitor Resident's response to diagnosis of chronic medical issue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47546_cb" value="47546" aria-labelledby="it_47546-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47546-label" aria-hidden="true">Staff to provide care in a confident, assured manner&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47626_cb" value="47626" aria-labelledby="fd47626-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47626-label" aria-hidden="true">
+				Impaired Gas Exchange&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47633_cb" value="47633" aria-labelledby="id47633-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47633-label" aria-hidden="true">Resident Will Maintain an Oxygenation Saturation within Personal Goal Range&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47645_cb" value="47645" aria-labelledby="it_47645-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47645-label" aria-hidden="true">Administer oxygen as prescribed or per standing order&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47646_cb" value="47646" aria-labelledby="it_47646-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47646-label" aria-hidden="true">Educate Resident / Representative regarding energy conservation techniques&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47647_cb" value="47647" aria-labelledby="it_47647-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47647-label" aria-hidden="true">Evaluate blood pressure&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47648_cb" value="47648" aria-labelledby="it_47648-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47648-label" aria-hidden="true">Evaluate capillary refill&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47649_cb" value="47649" aria-labelledby="it_47649-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47649-label" aria-hidden="true">Evaluate heart rate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47650_cb" value="47650" aria-labelledby="it_47650-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47650-label" aria-hidden="true">Evaluate pulse oximetry&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47651_cb" value="47651" aria-labelledby="it_47651-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47651-label" aria-hidden="true">Evaluate respiratory rate and effort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47652_cb" value="47652" aria-labelledby="it_47652-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47652-label" aria-hidden="true">Monitor for use of accessory muscles&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47694_cb" value="47694" aria-labelledby="it_47694-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47694-label" aria-hidden="true">Evaluate for change in level of consciousness&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47695_cb" value="47695" aria-labelledby="it_47695-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47695-label" aria-hidden="true">Evaluate for restlessness&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47696_cb" value="47696" aria-labelledby="it_47696-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47696-label" aria-hidden="true">Evaluate skin color, temperature and characteristics&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47627_cb" value="47627" aria-labelledby="fd47627-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47627-label" aria-hidden="true">
+				Knowledge Deficit&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47634_cb" value="47634" aria-labelledby="id47634-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47634-label" aria-hidden="true">Resident / Representative Will Understand and Participate in Treatment Regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47635_cb" value="47635" aria-labelledby="id47635-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47635-label" aria-hidden="true">Resident /  Representative Will Understand Diagnosis&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47697_cb" value="47697" aria-labelledby="it_47697-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47697-label" aria-hidden="true">Educate Resident / Representative on the importance of pneumonia vaccination&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47614_cb" value="47614" aria-labelledby="it_47614-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47614-label" aria-hidden="true">Educate Resident / Representative about possible causative factors of the arrhythmia&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47653_cb" value="47653" aria-labelledby="it_47653-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47653-label" aria-hidden="true">Educate Resident / Representative on coughing and deep breathing exercises&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47578_cb" value="47578" aria-labelledby="it_47578-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47578-label" aria-hidden="true">Educate Resident / Representative on dietary restrictions related to anticoagulant therapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47547_cb" value="47547" aria-labelledby="it_47547-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47547-label" aria-hidden="true">Educate Resident / Representative on importance of routine laboratory monitoring&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47579_cb" value="47579" aria-labelledby="it_47579-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47579-label" aria-hidden="true">Educate Resident / Representative on risk of repeat thrombosis&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47580_cb" value="47580" aria-labelledby="it_47580-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47580-label" aria-hidden="true">Educate Resident / Representative on safety measures related to anticoagulant therapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47581_cb" value="47581" aria-labelledby="it_47581-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47581-label" aria-hidden="true">Educate Resident / Representative regarding the importance of medication compliance&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47654_cb" value="47654" aria-labelledby="it_47654-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47654-label" aria-hidden="true">Evaluate Resident's knowledge of cause, treatment and follow-up care related to diagnosis of pneumonia&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47615_cb" value="47615" aria-labelledby="it_47615-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47615-label" aria-hidden="true">Promote the importance of participation/compliance in treatment regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47616_cb" value="47616" aria-labelledby="it_47616-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47616-label" aria-hidden="true">Provide education regarding antithrombotic drug therapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47619_cb" value="47619" aria-labelledby="it_47619-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47619-label" aria-hidden="true">Provide education regarding goal(s) of treatment regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47591_cb" value="47591" aria-labelledby="it_47591-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47591-label" aria-hidden="true">Educate Resident / Representative on bleeding precautions&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47620_cb" value="47620" aria-labelledby="it_47620-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47620-label" aria-hidden="true">Educate Resident / Representative on lifestyle adjustments for managing arrhythmias&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47621_cb" value="47621" aria-labelledby="it_47621-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47621-label" aria-hidden="true">Educate Resident / Representative regarding symptoms &amp; management of arrhythmias&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47698_cb" value="47698" aria-labelledby="it_47698-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47698-label" aria-hidden="true">Provide smoking cessation information / assistance / resources&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47475_cb" value="47475" aria-labelledby="fd47475-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Cancer">
+				<label id="fd47475-label" aria-hidden="true">
+				Radiation Therapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47482_cb" value="47482" aria-labelledby="id47482-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47482-label" aria-hidden="true">Resident / Representative Will Understand and Participate in Treatment Regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47483_cb" value="47483" aria-labelledby="id47483-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47483-label" aria-hidden="true">Resident's Skin Will Remain Intact&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47495_cb" value="47495" aria-labelledby="it_47495-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47495-label" aria-hidden="true">Determine Resident / Representative's baseline understanding of radiation treatment&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47496_cb" value="47496" aria-labelledby="it_47496-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47496-label" aria-hidden="true">Educate Resident / Representative regarding what to expect during radiation treatment&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47497_cb" value="47497" aria-labelledby="it_47497-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47497-label" aria-hidden="true">Evaluate skin integrity&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47516_cb" value="47516" aria-labelledby="it_47516-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47516-label" aria-hidden="true">Educate Resident / Representative about proper skin care to prevent skin breakdown&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47517_cb" value="47517" aria-labelledby="it_47517-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47517-label" aria-hidden="true">Educate Resident / Representative on importance of keeping skin clean and moisturized&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47573_cb" value="47573" aria-labelledby="fd47573-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Anti-Coagulant Therapy">
+				<label id="fd47573-label" aria-hidden="true">
+				Risk for Bleeding&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47576_cb" value="47576" aria-labelledby="id47576-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="id47576-label" aria-hidden="true">Resident Will Be Free of Falls&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47577_cb" value="47577" aria-labelledby="id47577-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="id47577-label" aria-hidden="true">Resident Will Show No Signs / Symptoms of Bleeding&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47498_cb" value="47498" aria-labelledby="it_47498-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47498-label" aria-hidden="true">Avoid unneccessary invasive procedures, punctures or injections&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47582_cb" value="47582" aria-labelledby="it_47582-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47582-label" aria-hidden="true">Evaluate blood pressure&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47583_cb" value="47583" aria-labelledby="it_47583-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47583-label" aria-hidden="true">Evaluate fall risk on admission and PRN&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47584_cb" value="47584" aria-labelledby="it_47584-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47584-label" aria-hidden="true">Evaluate for change in level of consciousness&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47585_cb" value="47585" aria-labelledby="it_47585-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47585-label" aria-hidden="true">Evaluate heart rate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47595_cb" value="47595" aria-labelledby="it_47595-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47595-label" aria-hidden="true">Evaluate skin for evidence of impaired coagulation (bruising, petechia, bleeding from orafice)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47586_cb" value="47586" aria-labelledby="it_47586-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47586-label" aria-hidden="true">If fall occurs, alert provider&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47587_cb" value="47587" aria-labelledby="it_47587-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47587-label" aria-hidden="true">If fall occurs, initiate frequent neuro and bleeding evaluation per facility protocol&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47588_cb" value="47588" aria-labelledby="it_47588-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47588-label" aria-hidden="true">If orthostatic blood pressure is positive, alert provider&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47589_cb" value="47589" aria-labelledby="it_47589-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47589-label" aria-hidden="true">If Resident is a fall risk, initiate fall risk precautions&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47500_cb" value="47500" aria-labelledby="it_47500-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47500-label" aria-hidden="true">Initiate bleeding precautions as appropriate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47590_cb" value="47590" aria-labelledby="it_47590-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47590-label" aria-hidden="true">Monitor laboratory results&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47502_cb" value="47502" aria-labelledby="it_47502-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47502-label" aria-hidden="true">Review medications for drugs increase risk of bleeding&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47592_cb" value="47592" aria-labelledby="it_47592-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47592-label" aria-hidden="true">Evaluate for blood in stools&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47593_cb" value="47593" aria-labelledby="it_47593-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47593-label" aria-hidden="true">Evaluate for hematemesis&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47594_cb" value="47594" aria-labelledby="it_47594-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47594-label" aria-hidden="true">Evaluate for hematuria&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47628_cb" value="47628" aria-labelledby="fd47628-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47628-label" aria-hidden="true">
+				Risk for Dehydration&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47636_cb" value="47636" aria-labelledby="id47636-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47636-label" aria-hidden="true">Resident Will Remain Hydrated&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47655_cb" value="47655" aria-labelledby="it_47655-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47655-label" aria-hidden="true">Evaluate blood pressure&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47656_cb" value="47656" aria-labelledby="it_47656-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47656-label" aria-hidden="true">Evaluate heart rate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47657_cb" value="47657" aria-labelledby="it_47657-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47657-label" aria-hidden="true">Evaluate mucous membranes&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47658_cb" value="47658" aria-labelledby="it_47658-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47658-label" aria-hidden="true">Evaluate skin turgor&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47659_cb" value="47659" aria-labelledby="it_47659-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47659-label" aria-hidden="true">Monitor Resident's urine output&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47525_cb" value="47525" aria-labelledby="fd47525-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Hyperthyroid">
+				<label id="fd47525-label" aria-hidden="true">
+				Risk for Depression&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47571_cb" value="47571" aria-labelledby="id47571-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47571-label" aria-hidden="true">Resident Will Be Free of Signs / Symptoms of Depression&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47548_cb" value="47548" aria-labelledby="it_47548-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47548-label" aria-hidden="true">Perform Depression Screening Evaluation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47477_cb" value="47477" aria-labelledby="fd47477-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Cancer">
+				<label id="fd47477-label" aria-hidden="true">
+				Risk for Fatigue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47485_cb" value="47485" aria-labelledby="id47485-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47485-label" aria-hidden="true">Resident Will Maintain an Optimum Activity Level&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47503_cb" value="47503" aria-labelledby="it_47503-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47503-label" aria-hidden="true">Encourage Resident to limit naps to 20 - 30 minutes in length&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47504_cb" value="47504" aria-labelledby="it_47504-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47504-label" aria-hidden="true">Evaluate if symptomatic in response to activity&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47505_cb" value="47505" aria-labelledby="it_47505-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47505-label" aria-hidden="true">Instruct Resident / Representative on energy conservation techniques&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47506_cb" value="47506" aria-labelledby="it_47506-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47506-label" aria-hidden="true">Monitor for decline in ADL/IADLs&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47507_cb" value="47507" aria-labelledby="it_47507-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47507-label" aria-hidden="true">Monitor laboratory results for signs of anemia&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47518_cb" value="47518" aria-labelledby="it_47518-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47518-label" aria-hidden="true">Encourage use of prescribed assistive devices&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47526_cb" value="47526" aria-labelledby="fd47526-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Hyperthyroid">
+				<label id="fd47526-label" aria-hidden="true">
+				Risk for Fever&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47533_cb" value="47533" aria-labelledby="id47533-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47533-label" aria-hidden="true">Resident Will Be Afebrile&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47549_cb" value="47549" aria-labelledby="it_47549-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47549-label" aria-hidden="true">Evaluate temperature&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47550_cb" value="47550" aria-labelledby="it_47550-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47550-label" aria-hidden="true">Maintain cooler temperature in room&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47563_cb" value="47563" aria-labelledby="it_47563-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47563-label" aria-hidden="true">Encourage fluids, if not contraindicated&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47527_cb" value="47527" aria-labelledby="fd47527-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Hyperthyroid">
+				<label id="fd47527-label" aria-hidden="true">
+				Risk for Impaired Body Image&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47534_cb" value="47534" aria-labelledby="id47534-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47534-label" aria-hidden="true">Resident Will Maintain a Positive Body Image&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47508_cb" value="47508" aria-labelledby="it_47508-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47508-label" aria-hidden="true">Educate Resident / Representative on expected body image changes&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47509_cb" value="47509" aria-labelledby="it_47509-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47509-label" aria-hidden="true">Encourage Resident to participate in ADLs as able&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47551_cb" value="47551" aria-labelledby="it_47551-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47551-label" aria-hidden="true">Encourage Resident to verbalize feelings regarding changes in body image&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47510_cb" value="47510" aria-labelledby="it_47510-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47510-label" aria-hidden="true">Encourage to verbalize feelings regarding diagnosis / prognosis&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47511_cb" value="47511" aria-labelledby="it_47511-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47511-label" aria-hidden="true">Monitor resident's support system for effectiveness&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47519_cb" value="47519" aria-labelledby="it_47519-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47519-label" aria-hidden="true">Educate Resident / Representative on disease process and expected outcomes / prognosis&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47521_cb" value="47521" aria-labelledby="it_47521-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47521-label" aria-hidden="true">Consult pastoral care, as needed&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47528_cb" value="47528" aria-labelledby="fd47528-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Hyperthyroid">
+				<label id="fd47528-label" aria-hidden="true">
+				Risk for Impaired Skin Integrity&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47535_cb" value="47535" aria-labelledby="id47535-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47535-label" aria-hidden="true">Resident's Skin Will Remain Intact&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47552_cb" value="47552" aria-labelledby="it_47552-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47552-label" aria-hidden="true">Educate Resident / Representative on factors to maintain skin integrity&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47629_cb" value="47629" aria-labelledby="fd47629-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47629-label" aria-hidden="true">
+				Risk for Ineffective Airway Clearance&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47637_cb" value="47637" aria-labelledby="id47637-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47637-label" aria-hidden="true">Resident Will Maintain Airway Patency&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47660_cb" value="47660" aria-labelledby="it_47660-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47660-label" aria-hidden="true">Administer nebulizer treatment, per order&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47661_cb" value="47661" aria-labelledby="it_47661-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47661-label" aria-hidden="true">Educate Resident / Representative on energy conservation techniques&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47662_cb" value="47662" aria-labelledby="it_47662-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47662-label" aria-hidden="true">Encourage ambulation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47663_cb" value="47663" aria-labelledby="it_47663-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47663-label" aria-hidden="true">Encourage use of incentive spirometer&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47664_cb" value="47664" aria-labelledby="it_47664-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47664-label" aria-hidden="true">Ensure proper position for optimal breathing&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47665_cb" value="47665" aria-labelledby="it_47665-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47665-label" aria-hidden="true">Evaluate capillary refill&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47700_cb" value="47700" aria-labelledby="it_47700-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47700-label" aria-hidden="true">Evaluate for cough&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47666_cb" value="47666" aria-labelledby="it_47666-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47666-label" aria-hidden="true">Evaluate for shortness of breath&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47667_cb" value="47667" aria-labelledby="it_47667-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47667-label" aria-hidden="true">Evaluate hydration status including: skin turgor, mucous membranes and tongue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47668_cb" value="47668" aria-labelledby="it_47668-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47668-label" aria-hidden="true">Evaluate lung sounds&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47669_cb" value="47669" aria-labelledby="it_47669-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47669-label" aria-hidden="true">Evaluate respiratory rate and effort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47670_cb" value="47670" aria-labelledby="it_47670-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47670-label" aria-hidden="true">Evaluate sputum characteristics including: consistency, quantity, color and odor&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47671_cb" value="47671" aria-labelledby="it_47671-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47671-label" aria-hidden="true">Monitor for changes in respiratory rate or shallow breathing&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47672_cb" value="47672" aria-labelledby="it_47672-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47672-label" aria-hidden="true">Monitor for use of accessory muscles&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47673_cb" value="47673" aria-labelledby="it_47673-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47673-label" aria-hidden="true">Suction PRN&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47699_cb" value="47699" aria-labelledby="it_47699-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47699-label" aria-hidden="true">Encourage participation in coughing, deep breathing and forced expiratory techniques, as ordered&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47701_cb" value="47701" aria-labelledby="it_47701-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47701-label" aria-hidden="true">Evaluate pulse oximetry&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47702_cb" value="47702" aria-labelledby="it_47702-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47702-label" aria-hidden="true">Utilize humidity (humidified oxygen or humidifier)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47630_cb" value="47630" aria-labelledby="fd47630-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47630-label" aria-hidden="true">
+				Risk for Infection&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47638_cb" value="47638" aria-labelledby="id47638-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47638-label" aria-hidden="true">Resident Will Be Free of Signs / Symptoms of Aspiration&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47639_cb" value="47639" aria-labelledby="id47639-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47639-label" aria-hidden="true">Resident Will Show No Signs / Symptoms of Infection&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47674_cb" value="47674" aria-labelledby="it_47674-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47674-label" aria-hidden="true">Administer antibiotic therapy as prescribed&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47703_cb" value="47703" aria-labelledby="it_47703-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47703-label" aria-hidden="true">Educate Resident / Representative on techniques to prevent infection, such as handwashing, adequate rest, nutrition and avoidance of crowds&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47675_cb" value="47675" aria-labelledby="it_47675-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47675-label" aria-hidden="true">Evaluate for cough&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47676_cb" value="47676" aria-labelledby="it_47676-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47676-label" aria-hidden="true">Evaluate for shortness of breath&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47677_cb" value="47677" aria-labelledby="it_47677-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47677-label" aria-hidden="true">Evaluate lung sounds&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47708_cb" value="47708" aria-labelledby="it_47708-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47708-label" aria-hidden="true">Evaluate pain&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47678_cb" value="47678" aria-labelledby="it_47678-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47678-label" aria-hidden="true">Evaluate pulse oximetry&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47679_cb" value="47679" aria-labelledby="it_47679-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47679-label" aria-hidden="true">Evaluate Resident's swallowing for effectiveness&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47704_cb" value="47704" aria-labelledby="it_47704-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47704-label" aria-hidden="true">Evaluate sputum characteristics including: consistency, quantity, color and odor&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47680_cb" value="47680" aria-labelledby="it_47680-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47680-label" aria-hidden="true">Evaluate temperature&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47681_cb" value="47681" aria-labelledby="it_47681-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47681-label" aria-hidden="true">Evaluate the Resident's Flu and Pneumococcal vaccine status&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47682_cb" value="47682" aria-labelledby="it_47682-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47682-label" aria-hidden="true">If on antibiotics, monitor for diarrhea&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47683_cb" value="47683" aria-labelledby="it_47683-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47683-label" aria-hidden="true">Initiate appropriate isolation precautions&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47684_cb" value="47684" aria-labelledby="it_47684-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47684-label" aria-hidden="true">Monitor chest x-ray results&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47685_cb" value="47685" aria-labelledby="it_47685-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47685-label" aria-hidden="true">Monitor laboratory results&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47479_cb" value="47479" aria-labelledby="fd47479-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Cancer">
+				<label id="fd47479-label" aria-hidden="true">
+				Risk for Injury&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47487_cb" value="47487" aria-labelledby="id47487-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47487-label" aria-hidden="true">Resident Will Not Experiece Extravasation R/t Infusion&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47488_cb" value="47488" aria-labelledby="id47488-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="id47488-label" aria-hidden="true">Resident Will Not Experience Reaction to Medication&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47512_cb" value="47512" aria-labelledby="it_47512-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47512-label" aria-hidden="true">Educate Resident / Representative on possible,expected side effects&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47513_cb" value="47513" aria-labelledby="it_47513-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47513-label" aria-hidden="true">Monitor Resident for potential reaction to chemotherapy medication&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47514_cb" value="47514" aria-labelledby="it_47514-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47514-label" aria-hidden="true">Obtain Resident's allergy history&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47515_cb" value="47515" aria-labelledby="it_47515-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47515-label" aria-hidden="true">Review chemotherapy medications received to determine if vesicant&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47520_cb" value="47520" aria-labelledby="it_47520-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Cancer"><label id="it_47520-label" aria-hidden="true">Monitor IV insertion sites for redness, swelling and drainage&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47631_cb" value="47631" aria-labelledby="fd47631-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47631-label" aria-hidden="true">
+				Risk for Malnutrition&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47640_cb" value="47640" aria-labelledby="id47640-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47640-label" aria-hidden="true">Resident Intake of Nutrients Will Meet Metabolic Needs&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47553_cb" value="47553" aria-labelledby="it_47553-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47553-label" aria-hidden="true">Complete Mini Nutritional Evaluation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47686_cb" value="47686" aria-labelledby="it_47686-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47686-label" aria-hidden="true">Consult a dietician per order&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47687_cb" value="47687" aria-labelledby="it_47687-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47687-label" aria-hidden="true">Encourage Resident / Representative participation in meal planning&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47688_cb" value="47688" aria-labelledby="it_47688-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47688-label" aria-hidden="true">Evaluate exact height&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47689_cb" value="47689" aria-labelledby="it_47689-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47689-label" aria-hidden="true">Evaluate for paresthesia&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47555_cb" value="47555" aria-labelledby="it_47555-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47555-label" aria-hidden="true">If Mini Nutritional Evaluate results indicate risk, consult dietician&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47556_cb" value="47556" aria-labelledby="it_47556-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47556-label" aria-hidden="true">If Mini Nutritional Evaluation results are normal, monitor intake and weights&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47557_cb" value="47557" aria-labelledby="it_47557-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47557-label" aria-hidden="true">If Mini Nutritional Evaluation results indicate malnutrition, consult dietician&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47690_cb" value="47690" aria-labelledby="it_47690-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47690-label" aria-hidden="true">Provide education to Resident / Representative regarding proper nutritional intake&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47691_cb" value="47691" aria-labelledby="it_47691-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47691-label" aria-hidden="true">Review lab values to determine nutritional improvement or deterioration&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47602_cb" value="47602" aria-labelledby="fd47602-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Arrhythmia">
+				<label id="fd47602-label" aria-hidden="true">
+				Risk for Stroke&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47608_cb" value="47608" aria-labelledby="id47608-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="id47608-label" aria-hidden="true">Resident Will Remain Free of Stroke Like symptoms&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47617_cb" value="47617" aria-labelledby="it_47617-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47617-label" aria-hidden="true">If symptomatic, perform Cincinnati stroke evaluation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#EFEFEF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47530_cb" value="47530" aria-labelledby="fd47530-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Hyperthyroid">
+				<label id="fd47530-label" aria-hidden="true">
+				Risk for Decreased Cardiac Output&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47537_cb" value="47537" aria-labelledby="id47537-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47537-label" aria-hidden="true">Resident Will Have Normal Blood Pressure&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47538_cb" value="47538" aria-labelledby="id47538-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47538-label" aria-hidden="true">Resident Will Have Normal HR and Rhythm&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47539_cb" value="47539" aria-labelledby="id47539-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="id47539-label" aria-hidden="true">Resident Will Have Effective Cardiac Function&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47558_cb" value="47558" aria-labelledby="it_47558-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47558-label" aria-hidden="true">Evaluate blood pressure&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47559_cb" value="47559" aria-labelledby="it_47559-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47559-label" aria-hidden="true">Evaluate heart rate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47564_cb" value="47564" aria-labelledby="it_47564-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47564-label" aria-hidden="true">Evaluate heart rate character, rhythm&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47560_cb" value="47560" aria-labelledby="it_47560-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47560-label" aria-hidden="true">Evaluate peripheral pulses&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47561_cb" value="47561" aria-labelledby="it_47561-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47561-label" aria-hidden="true">If orthostatic blood pressure is positive, alert provider&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47565_cb" value="47565" aria-labelledby="it_47565-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Hyperthyroid"><label id="it_47565-label" aria-hidden="true">Evaluate respiratory rate and effort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+	      <tr bgcolor="#FFFFFF">
+			<td valign="top">
+			<input type="checkbox" name="chkbox" id="id_47707_cb" value="47707" aria-labelledby="fd47707-label">
+		   </td>
+			<td valign="top" class="listbutton2" title="6/19/2019
+Pneumonia">
+				<label id="fd47707-label" aria-hidden="true">
+				Disease Management at Bedside&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
+				</label>
+				
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47706_cb" value="47706" aria-labelledby="id47706-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="id47706-label" aria-hidden="true">Bedside Care Tasks Will Be Completed to Evaluate and Manage Resident's Disease&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+			<td valign="top">
+				<table border="0" cellspacing="0" cellpadding="3" width="100%">
+				<tbody><tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47705_cb" value="47705" aria-labelledby="it_47705-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Pneumonia"><label id="it_47705-label" aria-hidden="true">Evaluate exact weight&nbsp;(t)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47596_cb" value="47596" aria-labelledby="it_47596-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Anti-Coagulant Therapy"><label id="it_47596-label" aria-hidden="true">Evaluate orthostatic blood pressure, if Resident symptomatic&nbsp;(t)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+				<tr>
+						<td valign="top" width="5%">
+						<input type="checkbox" name="chkbox" id="id_47622_cb" value="47622" aria-labelledby="it_47622-label">
+					</td>
+						<td valign="middle" class="listbutton2" width="90%" title="6/19/2019
+Arrhythmia"><label id="it_47622-label" aria-hidden="true">Monitor for symptoms of arrhythmia: chest pain, dizziness, lightheaded, palpitations&nbsp;(t)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
+						
+						</td>
+					</tr>
+			</tbody></table>
+			</td>
+		</tr>
+
+	<tr><td class="detailColHeader" colspan="5" height="10"></td></tr>
+	</tbody></table>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+	<tbody><tr><td><img aria-hidden="true" src="./Care Plan Triggers - 4_files/clear.gif" border="0" height="15"></td></tr>
+	<tr>
+		<td colspan="2" width="100%" align="center" id="msg2" style="font-size:12pt;font-weight:bold;">
+		<input type="button" class="pccButton" value="Save" title="Save: CTRL-SHIFT-S" id="idSaveBtn" onclick="saveTriggerItems();">
+		<input type="button" class="pccButton" value="Select All" title="Select All: CTRL-SHIFT-A" id="idSelectAllBtn" onclick="selectAll();">
+		<input type="button" class="pccButton" value="Clear All" title="Clear All: CTRL-SHIFT-X" id="idClearAllBtn" onclick="deselectAll();">
+		<input type="button" class="pccButton" value="Remove All" title="Remove All: CTRL-SHIFT-R" id="idRemoveAllBtn" onclick="confirmRemoveAll();">
+
+
+    <input type="button" class="pccButton" value="Back" title="Back: CTRL-SHIFT-B" id="idBackBtn" onclick="location.href=&#39;/care/chart/cp/careplandetail_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&#39;;">
+
+		</td>
+	</tr>
+</tbody></table>
+
+</form>
+
+
+<script>
+
+var div = document.getElementById("review");
+div.innerHTML = "<table border=1 cellpadding=0 cellspacing=0 bordercolor=black><tr><td class=unsignedDepartmentSelected><strong>&nbsp;&nbsp;<a class=unsignedDepartmentSelected href=/care/chart/cp/addtriggereditems_rev.jsp?retURL=/admin/client/cp_careplans_rev.jsp&ESOLclientid=4671&ESOLreviewid=-1&ESOLisMDS3=N&ESOLpositionid=-1>All</a>&nbsp;&nbsp;</strong></td></tr></table>"
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="appAriaHide" aria-hidden="false">Footer Section</h2>
+
+<div class="footertext">
+	<div>
+		<b>FACILITY_1 (Shirley - COMS)</b><br>
+		247 Reese Road <br>
+		, AL <br>
+		
+		
+			<br>PCC Facility ID: 1
+		
+		
+	</div>
+	<div>
+		<b>PointClickCare</b><br>
+		5570 Explorer Drive<br>
+		Mississauga, Ontario L4W 0C4<br>
+		
+		<span class="footerWrap">Help Desk: (877) 722-2431 |</span>
+		<span class="footerWrap">(905) 817-6167</span><br>
+		<span class="footerWrap">Toll Free: (800) 277-5889 |</span>
+		<span class="footerWrap">Phone: (905) 858-8885 | </span>
+		<span class="footerWrap">Fax: (905) 858-2248</span>
+		
+	</div>
+	<div>
+		<a href="http://pointclickcare.com/us/privacy-policy/" target="_blank">Privacy Policy</a><br>
+		
+			<a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars&#39;));">Customer Support</a><br>
+		
+		Version 3.7.19.2 - PCCDEV41-A (<a href="https://jenkins.pointclickcare.com//job/pcc-all-core-trunk-scheduled" target="_blank">pcc-all-core-trunk-scheduled</a> <a href="https://jenkins.pointclickcare.com//job/pcc-all-core-trunk-scheduled/8971" target="_blank">#8971</a> <a href="https://git.pointclickcare.com/projects/WEB/repos/core/commits?until=b1818c9e8cefb2f815aa0fb5d5e7f52f50b3d347" target="_blank">b1818c9e8cefb2f815aa0fb5d5e7f52f50b3d347</a>)<br>
+		Copyright 2000-2017 PointClickCare Technologies Inc. All rights reserved.<br>
+		<span id="deviceID"></span>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,253 @@
+﻿/* 
+    CRITICAL:  Must include /Common/ChartJs/Chart-2.4.0.js to use this graph.  The ViewModels for KO are in ConditionAlerts_AbnormalitiesVM.js.
+
+*/
+
+var GenerateAbnormalChart = function (ctx, data) {
+
+    var abnormalDC = null;
+    var alertDC = null;
+    var self = this;
+
+    self.ChartData = data;
+
+    var AddRow = function (data, highlightAbnormal, highlightAlert) {
+        var row = '';
+        var css = ' style="font-size:10pt;'; // Note that it is not ended with a double-quote
+
+             row = '<tr>'
+                + '<td ' + css + 'max-width:80px;text-align:center;" >' + data.Time + '</td>'
+                + '<td ' + css + 'max-width:80px;text-align:center;'
+                    + (highlightAbnormal ? 'font-weight:bold;color:#40B1B2;text-align:center;" ' : '"') + '>' + data.AbnormalCount + ' abn</td>'
+                + '<td ' + css + 'max-width:80px;'
+                    + (highlightAlert ? 'font-weight:bold;color:#FC7200;text-align:center;" ' : '"') + '>' + data.AlertCount + ' alert(s)</td>'
+                + '<td ' + css + 'max-width:200px;" >' + data.AssessmentName + '</td>'
+            + '</tr>';
+
+        return row;
+    }
+
+    var ToolTip = function (tooltip) {
+
+        if (!tooltip)
+            return;
+
+        var tt = document.getElementById('abnchart-tooltip');
+
+        if (tooltip.opacity === 0) {
+            if (tt)
+                tt.style.display = 'none';
+
+            return;
+        }
+
+        var data = tooltip.afterBody;
+
+        var criteria = tooltip.title;
+
+        var dataSet = null;
+        var d1 = new Date(tooltip.title);
+        d1.setHours(0, 0, 0, 0);    // zero out the hours
+
+        $.each(self.ChartData, function (k, v) {
+            var d2 = new Date(v.EvalDate);
+            // zero out the hours
+            d2.setHours(0, 0, 0, 0);
+
+            if (moment(d1).isSame(d2)) {
+                dataSet = v;
+                return false;
+            }
+        });
+
+        if (dataSet == null)
+            return;
+
+        if (dataSet.Evaluations.length == 0)
+            return;
+
+        var maxAbnormals = dataSet.MaxAbnormals * 1;
+        var maxAlerts = dataSet.MaxAlerts * 1;
+         var htmlBody = '<table id="tblAbnChartTooltip" class="table table-bordered table-striped table-condensed" style="border:3px solid #ccc;border-spacing: 0;padding:0.5px;border-collapse: separate;border-radius: 7px;-moz-border-radius:7px;background-color:#ffffff;">'
+            + '<tr>'
+            + '<th colspan="4" style="max-width:80px;text-align:center;font-size:14px;" >' + tooltip.title + '</th>'
+            + '</tr>';
+
+        $.each(dataSet.Evaluations, function (k1, v1) {
+            htmlBody += AddRow(v1, (maxAbnormals == (v1.AbnormalCount * 1)), (maxAlerts == (v1.AlertCount * 1)));
+        });
+
+        htmlBody += '</table>';
+
+        // create the tool tip div element
+
+        if (!tt) {
+            tt = document.createElement('div');
+            tt.id = 'abnchart-tooltip';
+            tt.style = 'cursor:pointer;';
+            tt.style.position = 'absolute';
+            document.body.appendChild(tt);
+        };
+
+        if (tooltip.yAlign) {
+            tt.classList.add(tooltip.yAlign);
+        }
+
+        // the canvas id is hiding the the tooltip footer
+        var position = document.getElementById(tooltip.footer).getBoundingClientRect();
+
+        tt.innerHTML = htmlBody;
+        tt.style.display = 'block'
+        
+        var tblWidth = document.getElementById('tblAbnChartTooltip').offsetWidth;
+        var tblHeight = document.getElementById('tblAbnChartTooltip').offsetHeight;
+
+        tt.style.left = ((position.left + tooltip.caretX + tblWidth > window.innerWidth) ? (position.left + tooltip.caretX - tblWidth - 10) : (position.left + tooltip.caretX)) + 'px';
+        tt.style.top = ($(window).scrollTop() + position.top + tooltip.caretY -tblHeight) + 'px';
+        tt.style.padding = tooltip.yPadding + 'px ' + tooltip.xPadding + 'px';
+    }
+
+    var DataContainer = function () {
+        var self = this;
+
+        self.Labels = [];
+        self.Data = [];
+    }
+
+    abnormalDC = new DataContainer();
+    alertDC = new DataContainer();
+
+    var maxTicks = 3;
+    var tickStepScale = 1;
+    var unitStepScale = 1;
+
+    for (i = 0; i < data.length; i++) {
+        var v = data[i];
+
+        abnormalDC.Labels.push(v.EvalDate);
+        abnormalDC.Data.push(
+             {
+                 x: v.EvalDate,
+                 y: v.MaxAbnormals
+             });
+
+        alertDC.Labels.push(v.EvalDate);
+        alertDC.Data.push(
+            {
+                x: v.EvalDate,
+                y: v.MaxAlerts
+            });
+    }
+
+    switch (alertDC.Data.length) {
+        //case 3:
+        //    maxTicks = 18;
+        //    ticksStepScale = 4;
+        //    unitStepScale = 4;
+        case 7:
+            maxTicks = 7;
+            tickStepScale = 1;
+            break;
+        case 30:
+            maxTicks = 15;
+            tickStepScale = 2;
+            unitStepScale = 2;
+            break;
+    }
+
+    if (self.Graph != null)
+        self.Graph.destroy();
+
+    // Stash the canvas reference in the footer which is hidden.  The tooltip needs it for positioning.
+
+    return new Chart_240(ctx, {
+        type: 'line',
+        data: {
+            labels: alertDC.Labels,
+            datasets: [
+                {
+                    label: 'Alerts',
+                    lineTension: 0,
+                    pointRadius: 0,
+                    pointHitRadius:10,
+                    pointHoverRadius: 2,
+                    data: alertDC.Data,
+                    backgroundColor: '#fc7200'
+                },
+                {
+                    label: 'Abnormals',
+                    lineTension: 0,
+                    pointRadius: 0,
+                    pointHitRadius:10,
+                    pointHoverRadius: 2,
+                    data: abnormalDC.Data,
+                    backgroundColor: '#40B1B2'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            title: {
+                display: true,
+                text: 'Skilled / LTC / Comp Admission 2.0 Evaluations',
+                fontStyle: '',
+                fontSize: 10,
+                position: 'bottom'
+            },
+            legend: {
+                display: false
+            },
+            tooltips: {
+                enabled: false,
+                mode: 'index',
+                position: 'nearest',
+                callbacks: {
+                    footer: function(tooltipItems, data)
+                    {
+                        return ctx.id;
+                    }
+                },
+                custom: ToolTip
+            },
+            scales: {
+                xAxes: [{
+                    type: 'time',
+                    time: {
+                        unit: 'day',
+                        displayFormats: {
+                            day: 'M/D/YY'
+                        },
+                        unitStepSize: unitStepScale,
+                    },
+                    gridLines: {
+                        zeroLineWidth: 0,
+                        drawBorder: true
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: maxTicks,
+                        maxTicksLimit: maxTicks,
+                        fontSize: 12
+                    }
+
+                }],
+                yAxes: [{
+                    gridLines: {
+                        zeroLineWidth: 0,
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        suggestedMax: 50,
+                        min: 0,
+                        stepSize: 10,
+                        maxTicksLimit: 6
+
+                    }
+                }]
+            }
+        }
+    });
+
+
+}

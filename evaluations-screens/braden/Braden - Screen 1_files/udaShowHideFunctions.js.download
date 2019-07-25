@@ -1,0 +1,849 @@
+var showHideRulesForSection = '';
+var processedRules = new Map();
+var parentMap = new Map();
+var respMap = new Map();
+var qkeyRuleIds = new Map();
+var childMap = new Map();
+
+function resetRuleResult()
+{
+	processedRules.clear();
+	parentMap.clear();
+	childMap.clear();
+	respMap.clear();
+}
+
+function clearProcessedRules()
+{
+	respMap.clear();
+	processedRules.clear();
+}
+
+function setShowHideRulesForSection(rulesForSection) 
+{
+	showHideRulesForSection = rulesForSection;
+	resetRuleResult();
+}
+
+function getShowHideRulesForSection() 
+{
+	return showHideRulesForSection;
+}
+
+function applyShowHideTriggeredByClear(qKey)
+{
+	updateProcessedRule(qKey);
+	applyShowHideRules(qKey);
+}
+
+function bindShowHideRules()
+{
+	var rulesForSection = getShowHideRulesForSection().showHideRules;
+	for (var i = 0; i < rulesForSection.length; i++)
+	{
+		var children = rulesForSection[i].children;
+		if (children !== undefined)
+		{
+			showHideQuestion(children);
+		}
+	}
+}
+
+function getDecendants(qKey)
+{
+	var rulesForSection = getShowHideRulesForSection().showHideRules;
+
+	for(var i = 0; i < rulesForSection.length; i++) 
+	{
+		if (qKey == rulesForSection[i].question_key)
+		{
+			if (decendants !== undefined)
+			{
+				return rulesForSection[i].decendants;
+			}
+			else
+			{
+				return [];
+			}
+		}
+	}
+}
+
+function parseResponse(resp, type)
+{
+	var value = [];
+	if (resp.indexOf("<space>") >= 0)
+	{
+		temp = resp.substring(0, resp.indexOf("<space>"));
+		if (temp.indexOf("/") >=0)
+		{
+			var bp = temp.split("/");
+			if (type == "sys")
+			{
+				value[0] = bp[0];
+			}
+			else
+			{
+				value[0] = bp[1];
+			}
+		}
+		else
+		{
+			value[0] = temp;
+		}
+	}
+	else if (resp.indexOf("%") >= 0)
+	{
+		value = resp.replace("%%", "%").split("%");
+	}
+	else if (resp.indexOf(",") >= 0)
+	{
+		value = resp.split(",");
+	}
+	else
+	{
+		value[0] = resp;
+	}
+	
+	return value;
+}
+
+function getResponse(qKey)
+{
+	var eleType = $('#link'+qKey).attr('type');
+	if (eleType === undefined)
+	{
+		eleType = $('[name="'+qKey+'"]').attr('type');
+	}
+	
+	var value = [];
+	if (isWVControl(qKey))
+	{
+		var wvType = getInputElement(qKey).attr("data-wvtype");
+		if(wvType == 'bp')
+		{
+			value[0] = $("#link" + qKey + "-1").val();
+			value[1] = $("#link" + qKey + "-2").val();
+		}
+		else
+		{
+			val = $("#link" + qKey).val();
+			value[0] = val.substring(0, val.indexOf("<space>"));
+		}
+		
+	}
+	else if (isCPControl(qKey))
+	{
+		if (getInputElement(qKey).attr("data-cptype") == 'speIn')
+		{
+			value[0] = $("#link"+qKey+"-1").val();
+		}
+		else
+		{
+			value = String($('#link'+qKey).val()).split("%");
+		}
+		
+	}
+	else if (isPainLevelControl(qKey))
+	{
+		val = $("#link" + qKey).val();
+		value[0] = val.substring(0, val.indexOf("<space>"));
+	}
+	else if ($('#hckTable'+qKey).length)
+	{
+		// level bar
+		value[0] = $('[name="'+qKey+'"]').val();
+	}
+	else if (eleType == 'checkbox' || eleType == 'radio')
+	{
+		if ($('[name="chk'+qKey+'"]').length)
+		{
+			// Yes/No question
+			if ($('#link'+qKey).prop('checked'))
+			  value[0] = "1";
+			else
+			  value[0] = "0";
+		}
+		else
+		{
+			val = $("input[name='" + qKey + "']:checked").map(function(){
+			      return $(this).val();
+		    }).get();
+			
+			value = String(val).split(",");
+		}
+	}
+	else
+	{
+		value[0] = $('#link'+qKey).val();
+	}
+
+	return value;
+
+}
+
+function isResponseWithinRange(resp, range, qKeyInfo)
+{
+	var result = false;
+	if (resp === undefined)
+		return result;
+	
+	if (resp.length == 1 && resp[0] == "")
+		return result;
+	
+	if (range.indexOf("thru") < 0)
+	{
+		range = "," + range + ",";
+		for (var i = 0 ; i < resp.length; i++)
+		{
+			if (range.indexOf("," + resp[i] + ",") >= 0)
+			{
+				result = true;
+				break;
+			}
+		}
+	}
+	else
+	{
+		var ranges = range.split(" thru ");
+		var from = parseFloat(ranges[0]);
+		var to = parseFloat(ranges[1]);
+				
+		if (qKeyInfo == "sys")
+		{
+			result = parseFloat(resp[0]) >= from && parseFloat(resp[0]) <= to;
+		}
+		else if (qKeyInfo == "dias")
+		{
+			result =  parseFloat(resp[1]) >= from && parseFloat(resp[1]) <= to;
+		}
+		else
+		{
+			for (var i = 0 ; i < resp.length; i++)
+			{
+				if (parseFloat(resp[i]) >= from && parseFloat(resp[i]) <= to)
+				{
+					result = true;
+					break;
+				}
+			}
+		}
+	}
+	
+	return result;
+}
+
+function initShowHideForSection(qkeys)
+{
+	if (!allowHideRules)
+		return;
+
+	if (qkeys === undefined)
+		return;
+	
+	keyArray = qkeys.split(",");
+	for (var i = 0; i < keyArray.length; i++)
+	{
+		hideQuestion(keyArray[i]);
+	}
+}
+
+function applyShowHideRulesForSection(section)
+{
+	if (!allowHideRules)
+		return;
+	
+	var rulesForSection = getShowHideRulesForSection().showHideRules;
+	for(var i = 0; i < rulesForSection.length; i++) 
+	{
+		if (rulesForSection[i].question_key.indexOf(sectionCode) >= 0)
+		{
+			var decendants = [rulesForSection[i].question_key];
+			
+			if (decendants !== undefined)
+			{
+				showHideQuestion(decendants);
+			}
+		}
+	}
+	resetRuleResult();
+}
+
+// called when response of the question with triggerKey is changed
+function applyShowHideRules(triggerKey)
+{
+	if (!allowHideRules)
+		return;
+	
+	var rulesForSection = getShowHideRulesForSection().showHideRules;
+	
+	var children;
+	if (childMap.has(triggerKey))
+	{
+		children = childMap.get(triggerKey);
+	}
+	else
+	{
+		for(var i = 0; i < rulesForSection.length; i++) 
+		{
+			childMap.set(rulesForSection[i].question_key, rulesForSection[i].children);
+		}
+		
+		children = childMap.get(triggerKey);
+	}
+	
+	if (children !== undefined)
+	{
+		showHideQuestion(children);
+	}
+	
+}
+
+function showHideQuestion(decendants)
+{
+	var quesKeyNeedToBeCheck = []; 
+	
+	for (var k = 0; k < decendants.length; k++)
+	{
+		var parents = [];
+		if (parentMap.has(decendants[k]))
+		{
+			parents = parentMap.get(decendants[k]);
+		}
+		else
+		{
+			parents = findParents(decendants[k]);
+			parentMap.set(decendants[k], parents);
+		}
+		
+		var showhideArray = [];
+		var checked = false;
+
+		// check all the parents of the decendant, if any one parent shows the decendant, then show child
+		if (parents !== undefined)
+		{
+			for (var j = 0; j < parents.length; j++)
+			{
+				if (processedRules.has(parents[j].consistency_rule_id))
+				{
+					showhideArray.push(processedRules.get(parents[j].consistency_rule_id));
+					
+					if (showhideArray.indexOf(true) >= 0)
+						break;
+					else
+						continue;
+				}
+				
+				checked = true;
+				
+				// get the response of the parent, check if the response is in the range
+				if (respMap.has(parents[j].question_key))
+				{
+					resps = respMap.get(parents[j].question_key);
+				}
+				else
+				{
+					if (parents[j].section == sectionCode)
+					{
+						resps = getResponse(parents[j].question_key);
+					}
+					else
+					{
+						resps = parseResponse(parents[j].resp, parents[j].question_key_info);
+					}
+					
+					respMap.set(parents[j].question_key, resps);
+				}
+				
+				shouldShown = isResponseWithinRange(resps, parents[j].range, parents[j].question_key_info);
+				showhideArray.push(shouldShown);
+				
+				processedRules.set(parents[j].consistency_rule_id, shouldShown);
+				
+				if (showhideArray.indexOf(true) >= 0)
+				{
+					break;
+				}
+				
+			}
+			
+			if (checked)
+			{
+				if (showhideArray.indexOf(true) >= 0)
+				{
+					if ($('#' + decendants[k] + 'QuestionRow').is(":hidden"))
+					{
+						showQuestion(decendants[k]);
+					}
+				}
+				else
+				{
+					if ($('#' + decendants[k] + 'QuestionRow').is(":visible"))
+					{
+						// if the question show/hide status is not change, no need to check show/hide rules
+						updateProcessedRule(decendants[k]);
+						respMap.delete(decendants[k]);
+						hideQuestion(decendants[k]);
+						quesKeyNeedToBeCheck.push(decendants[k]);
+					}
+				}
+			}
+		}
+	}
+	
+	for (var k = 0; k < quesKeyNeedToBeCheck.length; k++)
+	{
+		applyShowHideRules(quesKeyNeedToBeCheck[k]);
+	}
+	
+}
+
+function updateProcessedRule(qKey)
+{
+	var ids = "";
+	if (qkeyRuleIds.has(qKey))
+	{
+		ids = qkeyRuleIds.get(qKey);
+	}
+	else
+	{
+		var rulesForSection = getShowHideRulesForSection().showHideRules;
+		
+		for(var i = 0; i < rulesForSection.length; i++) 
+		{
+			if (!qkeyRuleIds.has(rulesForSection[i].question_key))
+			{
+				ids = rulesForSection[i].rule_ids;
+				qkeyRuleIds.set(rulesForSection[i].question_key, ids);
+			}
+		}
+		
+		ids = qkeyRuleIds.get(qKey);
+	}
+	
+	if (ids !== undefined)
+	{
+		idArray = ids.split(",");
+		for (var k = 0; k < idArray.length; k++)
+		{
+			processedRules.delete(idArray[k]);
+		}
+	}
+}
+
+function findParents(childKey)
+{
+	var rulesForSection = getShowHideRulesForSection().showHideRules;
+	
+	for(var i = 0; i < rulesForSection.length; i++) 
+	{
+		if (rulesForSection[i].question_key == childKey)
+		{
+			return rulesForSection[i].parents;
+		}
+	}
+}
+
+function hidePPControl(qKey)
+{
+    var $input = $("#" + qKey);
+    var index = 1;
+    
+    while ($input.length) {
+		if (isPccDateField($input)) {
+			$input.data().dateField.clearValue();
+		} else if ($input.hasClass("udapp-date")) {
+			$input.val("");
+
+			var $dummyInput = $("#" + $input.attr("id") + "_dummy");
+			if ($dummyInput.length) {
+				$dummyInput.val("");
+			}
+		} else {
+			$input.val("");
+		}
+    	$input = $("#" + qKey + "-" + index);
+    	index++;
+	}
+}
+
+
+function hideQuestion(hiddenKey)
+{
+		try{
+			var questionRowId = '#' + hiddenKey + 'QuestionRow';
+			var answerRowId = '#' + hiddenKey + 'AnswerRow';
+			var questionRowList = $(questionRowId);			
+			if (questionRowList.length)
+			{
+				// hck 
+				var hckTableList = $("#hckTable"+hiddenKey);
+				var carePlanControlList = $.merge($('input[id^="'+ hiddenKey + '-"]', questionRowId), $('input[id^="'+ hiddenKey + '-"]', answerRowId));
+				var selectorList = $.merge($('input[name="' + hiddenKey + '"]', questionRowId), $('input[name="' + hiddenKey + '"]', answerRowId));
+				if (hckTableList.length)
+				{			
+					clearhckControl(hckTableList.find('tr#hckrow')[0], document.forms.mdsData[hiddenKey]);				
+				}
+				// pain controls 
+				else if ($("#painTable" + hiddenKey).length)
+				{
+					selectorList.filter(":checked").prop('checked', false);			
+				}
+				else if (typeof getInputElement(hiddenKey).attr("data-wvtype") !== "undefined" || typeof getInputElement(hiddenKey).attr("data-pnltype") !== "undefined")
+				{
+					hidePPControl('link'+hiddenKey);
+				}
+				else if (typeof getInputElement(hiddenKey).attr("data-cptype") !== "undefined")
+				{
+					$('#link'+hiddenKey).val("");
+					$('#link'+hiddenKey+"_push").val("N");
+					
+					$.merge($('input[id^="link'+ hiddenKey + '_"]', questionRowId), $('input[id^="link'+ hiddenKey + '_"]', answerRowId)).each(function() {
+						type = $(this).attr("type");
+						if (type == "checkbox" || type == "radio")
+						{
+							$(this).prop('checked', false);
+						}
+						else if (type == "text")
+						{
+							$(this).val("");
+						}
+					});
+					
+					if (getInputElement(hiddenKey).attr("data-cptype") == 'speIn')
+					{
+						$.merge($('textarea[id^="link'+ hiddenKey + '-"]', questionRowId), $('textarea[id^="link'+ hiddenKey + '-"]', answerRowId)).each(function() {
+							$(this).val("");
+						});
+					}
+					
+				}
+				// care plan controls
+				else if(carePlanControlList.length)
+				{
+					carePlanControlList.each(function() {
+					       if ($(this).attr("data-care-plan-item-status") != 'A') {
+					    	   if($(this).prop('checked'))
+					    	   {
+					    		   $(this).data('restore-value', true);   
+					    	   }	   
+					    	   $(this).prop('checked', false);
+					       }
+					   });
+				}
+				// radio add multi select 
+				else if (selectorList && selectorList[0] && 
+                        (selectorList[0].type == "radio" || selectorList[0].type == "checkbox"))
+				{				
+					selectorList.filter(":checked").prop('checked', false);
+				}
+
+				// chk controls 
+				else if (document.forms.mdsData["link" + hiddenKey] && document.forms.mdsData["link" + hiddenKey].type == "checkbox")
+				{
+					var chkControlList = $('#link' + hiddenKey);
+					chkControlList.prop('checked', false);	
+					onclickFunc = chkControlList.attr("onclick");
+					
+					if (onclickFunc != null && onclickFunc != undefined && onclickFunc.indexOf("checkboxOnClick") >= 0)
+					{
+	                    $("[name='" + hiddenKey + "']").val("");
+					}
+				}
+
+				// text controls 
+				else if (document.forms.mdsData["link" + hiddenKey] && 
+						(document.forms.mdsData["link" + hiddenKey].type.search("text") != -1 || isPccDateField(document.forms.mdsData["link" + hiddenKey])))
+				{			
+					// check to see if the popsearch text boxes need to be cleared
+					var textControlList = $('#link' + hiddenKey + 'DESC');
+					if (textControlList.length)
+					{
+						var restoredValue=textControlList.data('restore-value');
+						var fieldValue=textControlList.val();
+						
+						textControlList.data('restore-value', getRestoredValueIfExists(restoredValue,fieldValue));
+						textControlList.val('');
+					}
+					// date hour and min control
+					if (document.forms.mdsData["displaydate" + hiddenKey] && document.forms.mdsData["displayhour" + hiddenKey] && document.forms.mdsData["displaymin" + hiddenKey])
+					{
+						var displayHourList = $('[name="displayhour' + hiddenKey+'"]');
+						var restoredHourValue=displayHourList.data('restore-value');
+						var hourFieldValue=displayHourList.val();
+						
+						var displayMinList = $('[name="displaymin' + hiddenKey+'"]');
+						var restoredMinValue=displayMinList.data('restore-value');
+						var minFieldValue=displayMinList.val();
+						
+						var displayDateList = $('[name="displaydate' + hiddenKey+'"]');
+						var restoredDateValue=displayDateList.data('restore-value');
+						var dateFieldValue=displayDateList.val();
+						
+						var fieldList = $('[name="' + hiddenKey + '"]');
+						var restoredValue=fieldList.data('restore-value');
+						var fieldValue=fieldList.val();
+						
+						displayHourList.data('restore-value', getRestoredValueIfExists(restoredHourValue,hourFieldValue) );
+						displayMinList.data('restore-value', getRestoredValueIfExists(restoredMinValue,minFieldValue));
+						displayDateList.data('restore-value', getRestoredValueIfExists(restoredDateValue,dateFieldValue));
+						fieldList.data('restore-value', getRestoredValueIfExists(restoredValue,fieldValue));
+					
+						displayHourList.val('');
+						displayMinList.val('');
+						
+						if (isPccDateField(displayDateList)) {
+							displayDateList.data().dateField.clearValue();
+						} else {
+							displayDateList.val('');
+						}
+						fieldList.val('');
+						
+					}
+					//date control
+					else if (document.forms.mdsData["displaydate" + hiddenKey] )
+					{
+						var displayDateList = $('[name="displaydate' + hiddenKey+'"]');
+						var restoredDateValue=displayDateList.data('restore-value');
+						var dateFieldValue=displayDateList.val();
+						
+						var restoredValue=displayDateList.data('restore-value');
+						var fieldValue=displayDateList.val();
+						
+						displayDateList.data('restore-value',getRestoredValueIfExists(restoredDateValue,dateFieldValue));
+						var fieldList = $('[name="' + hiddenKey + '"]');
+						fieldList.data('restore-value', getRestoredValueIfExists(restoredValue,fieldValue));
+						
+						if (isPccDateField(displayDateList)) {
+							displayDateList.data().dateField.clearValue();
+						} else {
+							displayDateList.val('');
+						}
+						fieldList.val('');
+					}
+					else
+					{
+						var linkList = $('#link' + hiddenKey);
+						var restoredValue=linkList.data('restore-value');
+						var fieldValue=linkList.val();
+						
+						linkList.data('restore-value', getRestoredValueIfExists(restoredValue,fieldValue));
+						linkList.val('');
+						
+					}	
+						
+				}
+				// select controls 
+				else if (document.forms.mdsData["link" + hiddenKey] && document.forms.mdsData["link" + hiddenKey].type.search("select") != -1)
+				{
+					var linkList = $('#link' + hiddenKey);
+					var fieldValue=linkList.find('option:selected').val();
+					var fieldText=linkList.find('option:selected').text();
+					
+					var restoredfieldValue= linkList.data('restore-value');
+					var restoredfieldText= linkList.data('restore-text');
+					
+					linkList.data('restore-value',getRestoredValueIfExists(restoredfieldValue,fieldValue));
+					linkList.data('restore-text',getRestoredValueIfExists(restoredfieldText,fieldText));
+					var parentRow = linkList.parent().parent();
+					parentRow.find('option:selected').prop('selected', false);
+					parentRow.val('');
+				}
+				
+				var titleRow = $('#' + hiddenKey + 'TitleRow');
+				if (titleRow.length)
+				{
+					titleRow.hide();
+				}
+				questionRowList.hide();
+				var answerRow = $(answerRowId);
+				if (answerRow.length)
+				{
+					answerRow.hide();
+				}			
+				
+			}
+			var ackList = $('input[name="' + 'ack' + hiddenKey + '"]', questionRowId);
+			if(ackList)
+				 ackList.val("Y");
+		}
+		catch (e)
+		{
+			alert('Error in hideQuestion for question ' + hiddenKey + ': '+ e.message);
+		}	
+}
+
+function showQuestion(qKey)
+{
+	if (allowHideRules)
+	{
+		try{
+			var controlType = $("[name='" + qKey + "']").attr("data-type");
+			
+			// chk controls 
+			if ( document.forms.mdsData["link" + qKey] && document.forms.mdsData["link" + qKey].type == "checkbox" )
+			{	
+				if (loadingPage && controlType !== "undefined" && controlType == "mcs")
+				{
+					// multiple checkbox with only one option
+					if(document.forms.mdsData["link" + qKey].hasAttribute("checked")){
+						document.forms.mdsData["link" + qKey].checked = "true";
+					}
+					
+				}
+				else if (controlType != "mcs")
+				{
+					if (loadingPage)
+					{
+						if(document.forms.mdsData["link" + qKey].checked==true)
+					    {
+							document.forms.mdsData["link" + qKey].checked = "checked";
+							 $("[name='" + qKey + "']").val("1");
+						}
+					    else 
+				    	{
+					    	$("#link"+ qKey).prop('checked', false);
+					    	$("[name='" + qKey + "']").val("0"); 
+				    	} 
+					}
+					else
+					{
+				    	$("#link"+ qKey).prop('checked', false);
+				    	$("[name='" + qKey + "']").val("0"); 
+					}
+				}
+			}
+			// chk for radio button and set back to its original value 
+			if ( loadingPage && document.forms.mdsData["link" + qKey] && document.forms.mdsData["link" + qKey][0] && document.forms.mdsData["link" + qKey][0].type == "radio" )
+			{				
+				for (var i = 0; i<document.forms.mdsData["link" + qKey].length; i++){
+					if(document.forms.mdsData["link" + qKey][i].hasAttribute("checked")){
+						document.forms.mdsData["link" + qKey][i].checked = "true";
+					}
+				}
+			}
+			// care plan controls
+			else if(loadingPage && $('input[id^="'+ qKey + '-"]').length)
+			{
+				$('input[id^="'+ qKey + '-"]').each(function() {
+				       if ($(this).attr("data-care-plan-item-status") != 'A') {
+				    	   if($(this).data('restore-value')!=undefined &&  $(this).data('restore-value'))
+				    	   {
+				    		   $(this).prop('checked', true);   
+				    	   }	   
+				    	  
+				       }
+				   });
+			}
+			else if (loadingPage && document.forms.mdsData["link" + qKey] && document.forms.mdsData["link" + qKey][0] && document.forms.mdsData["link" + qKey][0].type == "checkbox")
+			{	
+				for (var i = 0; i<document.forms.mdsData["link" + qKey].length; i++){
+					if(document.forms.mdsData["link" + qKey][i].hasAttribute("checked")){
+						document.forms.mdsData["link" + qKey][i].checked = "true";
+					}
+				}
+			}
+			else if (document.forms.mdsData["link" + qKey]
+						&& ((document.forms.mdsData["link" + qKey].type && document.forms.mdsData["link" + qKey].type.search("text") != -1)
+							|| isPccDateField(document.forms.mdsData["link" + qKey])))
+			{	
+				if(loadingPage)
+				{	
+					if($('#link' + qKey).data('restoreValue')!=undefined)
+					$('#link' + qKey).val($('#link' + qKey).data('restoreValue'));
+					
+					// check to see if the popsearch text boxes need to be cleared 
+					if ($('#link' + qKey + 'DESC').length && $('#link' + qKey + 'DESC').data('restore-value')!=undefined)
+					{
+						$('#link' + qKey + 'DESC').val($('#link' + qKey + 'DESC').data('restore-value'));
+					}
+					//date control
+					if (document.forms.mdsData["displaydate" + qKey] && $('[name="displaydate' + qKey+'"]').data('restore-value')!=undefined)
+					{
+						var restoreDate = $('[name="displaydate' + qKey+'"]').data('restore-value');
+						var $dateInput = $('[name="displaydate' + qKey + '"]');
+						if (isPccDateField($dateInput)) {
+							$dateInput.data().dateField.setValue(restoreDate);
+						} else {
+							$dateInput.val(restoreDate);
+						}
+						$('[name="' + qKey + '"]').val($('[name="' + qKey+'"]').data('restore-value'));
+					}
+					// hour and min control 
+					if ((document.forms.mdsData["displayhour" + qKey] && document.forms.mdsData["displaymin" + qKey]) && 
+						($('[name="displayhour' + qKey+'"]').data('restore-value')!=undefined && $('[name="displaymin' + qKey+'"]').data('restore-value') !=undefined) )
+					{
+						$('[name="displayhour' + qKey + '"]').val($('[name="displayhour' + qKey+'"]').data('restore-value'));				
+						$('[name="displaymin' + qKey + '"]').val($('[name="displaymin' + qKey+'"]').data('restore-value'));
+					}
+				}
+				
+			}
+			else if (loadingPage && $("#hckTable"+qKey).length)
+			{			
+				restorehckControl($('#hckTable' + qKey).find('tr#hckrow')[0], document.forms.mdsData[qKey]);				
+			}
+			// select controls 
+			else if (loadingPage && document.forms.mdsData["link" + qKey] && document.forms.mdsData["link" + qKey].type.search("select") != -1 && $('#link' + qKey).data('restore-value') !=undefined )
+			{
+				$('#link' + qKey).val($('#link' + qKey).data('restore-value'));
+				
+			}
+			else if (typeof getInputElement(qKey).attr("data-cptype") !== "undefined")
+			{
+				$('#link' + qKey +"_push").val("Y");
+			}
+			
+			if ($('#' + qKey + 'TitleRow').length)
+			{
+				$('#' + qKey + 'TitleRow').show();
+			}
+			$('#' + qKey + 'QuestionRow').show();
+
+			if ($('#' + qKey + 'AnswerRow').length)
+			{
+				$('#' + qKey + 'AnswerRow').show();
+			}
+			visitedChildren[qKey] = 1;
+			
+			
+		}
+		catch (e)
+		{
+			alert('error in showChildQuestion for question: ' + qKey + '.  Error is ' + e.message);
+		}	
+	}
+	
+}
+
+function displayShowHideRules()
+{
+	var rulesForSection = getShowHideRulesForSection().showHideRules;
+	
+	for(var i = 0; i < rulesForSection.length; i++) 
+	{
+		alert("quesKey = " + rulesForSection[i].question_key);
+		var decendants = rulesForSection[i].children;
+		if (decendants !== undefined)
+		{
+			alert("children = " + decendants + ", length = " + decendants.length);
+//			for (var k = 0; k < decendants.length; k++)
+//			{
+//				alert("decendant " + k + " : " + decendants[k]);
+//			}
+		}
+		
+		var parents = rulesForSection[i].parents;
+		if (parents !== undefined)
+		{
+			for (var j = 0; j < parents.length; j++)
+			{
+				alert("parents " + j + " : quesKey = " + parents[j].question_key 
+						+ ", control_type = " + parents[j].control_type + ", range = " + parents[j].range 
+						+ ", info = " + parents[j].question_key_info + ", resp = " + parents[j].resp 
+						+ ", section = " + parents[j].section + ", current section = " + sectionCode);
+				
+			}
+		}
+	}
+}

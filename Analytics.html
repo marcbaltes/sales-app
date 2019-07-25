@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Analytics</title>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <!-- CSS files -->
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/core.css">
+   <link rel="stylesheet" href="../styles/hover.css">
+   <link rel="stylesheet" href="./styles/main.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/core.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/legacy-styles.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/sessionTimeout.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/coremenu.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/c3-0.4.10.min.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/chartGenerator.css">
+   <link rel="stylesheet" type="text/css" href="./care-planning-screens/Care Plan Triggers - 1_files/smartalertsnotifications.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/chosen-0.9.8.css">
+   <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/clientheader.css" media="screen,print">
+
+
+   <!-- Icon -->
+   <link rel="icon" href="./icons/circlelogo.png">
+</head>
+<body style="height: 10px;" id="body">  
+   <!-- Static Navbar -->
+   <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(233, 135, 110);">
+      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+         <img class="img" id="homeImg" src="./icons/mandon4-icon.png" alt="Home">
+      </a>
+      <ul class="navbar-nav">
+         <li class="nav-item" style="margin-left: 5px;">
+            <a href="./CareOversight.html" class="nav-link imgBtn">
+               <img class="img arrowImg overlay hvr-grow" src="./icons/angle-left.png" alt="info" height="80px" width="50px">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="carousel-control-next imgBtn carousel-control-page-prev" href="#carouselSlide" role="button" data-slide="prev">
+               <img class="img-fluid arrowImgSm overlay hvr-grow" id="prevBtn" src="./icons/angle-left.png" alt="info" onclick="updateIndex(event)">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav m-auto">
+         <li class="nav-item ARnotFeature">
+            <a href="./Alerting.html" class="ARnav-link">
+               <button class="feature-btn">Alerting</button>
+            </a>
+         </li>
+         <li class="nav-item ARnotFeature">
+            <a href="./AcuityRanking.html" class="ARnav-link">
+               <button class="feature-btn">Acuity Ranking</button>
+            </a>
+         </li>
+         <li class="nav-item ARnotFeature">
+            <a href="./CareOversight.html" class="ARnav-link">
+               <button class="feature-btn">Care Oversight</button>
+            </a>
+         </li>
+         <li class="nav-item">
+            <a href="./Analytics.html" class="ARnav-link">
+               <button class="feature-btn ARfeature">Analytics</button>
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="carousel-control-next imgBtn carousel-control-page-next" href="#carouselSlide" role="button" data-slide="next">
+               <img class="img-fluid arrowImgSm overlay hvr-grow" id="nextBtn" onclick="updateIndex(event)" src="./icons/angle-right.png" alt="info">
+            </a>
+         </li>
+      </ul>
+      <ul class="navbar-nav">
+         <li class="nav-item" style="margin-right: 5px;">
+            <a href="./Coordination.html" class="nav-link imgBtn">
+               <img class="img arrowImg overlay hvr-grow" src="./icons/angle-right.png" alt="info" height="80px" width="50px">
+            </a>
+         </li>
+      </ul>
+      <a href="#" class="nav-item imgBtn" id="info" style="margin-right:-10px;" onclick="showModal(event)">
+         <img class="img-fluid infoImg hvr-grow" src="./icons/infobtn2.png" alt="info">
+      </a>
+      <!-- Info Modal -->
+      <div class="modal fade" id="infoModal">
+         <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+               <div class="modal-body">
+                  <h6 class="modalText" id="bodyText">screen 1 text</h6>
+                  <hr>
+                  <h6 class="modalText"><b>Supporting Documents</b></h6>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic2" class="modalText">Existing UDA Experience</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic3" class="modalText">New Evaluation Experience</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic4" class="modalText">COMS Evaluations List</h6></a>
+               </div>
+               <button class="btn-lg closeBtn" type="button" style="border-width: 0px; border-radius: 0px; background-color: dimgrey" data-dismiss="modal"><h6 class="imgBtn modalText" style="margin-bottom: -1px; color: white;">Close</h6></button>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!-- Carousel -->
+   <div id="carouselSlide" class="carousel slide fullPage" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators fixed-bottom">
+         <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn0" data-slide-to="0" class="active" onclick="indicatorUpdate(event)"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn3" onclick="indicatorUpdate(event)" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner">
+         <!-- Screen 1 -->
+         <div class="carousel-item active" id="slide0">
+            <!-- Nav bars -->
+            <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+                     <tbody>
+                        <tr>
+                           <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+                           <td align="right" valign="top" class="slTopNav">
+                              <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
+                              <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
+                              <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+                              <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle"></div>
+                              </span>
+                              <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+                           </td>
+                        </tr>
+                     </tbody>
+            </table>
+            <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+                     <tbody>
+                        <tr>
+                           <td valign="top">
+                              <div class="slMainNavTabs">
+                                 <ul id="topTabs">
+                                    <li id="QTF_HomePageTab">
+                                       <a href="#" class="arrowDrop">Home</a>
+                                    </li>
+                                    <li id="QTF_AdminTab">
+                                       <a href="#" class="arrowDrop">Admin</a>
+                                    </li>
+                                    <li id="QTF_ClinicalTab">
+                                       <a href="#" class="arrowDrop">Clinical</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab">
+                                       <a href="#" class="arrowDrop">QIA</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab">
+                                       <a href="#" class="arrowDrop">GL AP</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab" class="ClinicalTab">
+                                       <a href="#" class="arrowDrop">Insights</a>
+                                    </li>
+                                    <li id="QTF_reportingTab">
+                                       <a href="#" class="arrowDrop">Reporting</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="slResidentSearch" style="float: right;">
+                                 <form name="slsearch">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="45">
+                                                <div id="searchSelect">
+                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+                                                            <td>
+                                                               <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+                                             </td>
+                                             <td>
+                                                <input type="text" id="searchField" name="substring" autocomplete="off">
+                                             </td>
+                                             <td>
+                                                <input type="button" class="pccButton" value="Search">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </form>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+            </table>
+            <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+                     <tbody>
+                        <tr>
+                           <td align="left">
+                              <ul class="secondNavList"></ul>
+                           </td>
+                           <td valign="top" align="right" width="85"></td>
+                        </tr>
+                     </tbody>
+            </table>
+
+            <!-- Cards -->
+            <div class="row container-fluid" style="margin: 0px; margin-top: 20px; padding: 0px;">
+               <div class="col" style="padding: 10px;">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2>Quality</h2>
+                     <p class="h2">Measures</p>
+                  </div>
+               </div>
+               <div class="col" style="padding: 10px;">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2 style="margin-top: 40px;">Clincal KPI</h2>
+                  </div>
+               </div>
+               <div class="col" style="padding: 10px;">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2 style="margin-top: 40px;">Readmissions</h2>
+                  </div>
+               </div>
+               <div class="col" style="padding: 10px;">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2 style="margin-top: 40px;">PIP</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row container-fluid" style="margin: 0px; margin-top: 20px; padding: 0px;">
+               <div class="col-3" style="padding: 10px;">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2>Financial</h2>
+                     <p class="h2">Insights</p>
+                  </div>
+               </div>
+               <div class="col-3" style="padding: 10px;" onclick="toggleOutline1()" id="box1">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2>Care</h2>
+                     <p class="h2">Insights</p>
+                  </div>
+               </div>
+               <div class="col-3" style="padding: 10px;">
+                  <div class="cardBox">
+                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
+                     <h2>Network</h2>
+                     <p class="h2">Insights</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Screen 2 -->
+         <div class="carousel-item active" id="slide1">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+               <a href="#" class="navbar-brand">
+                  <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+               </a>
+               <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+               </ul>
+               <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                  <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+
+                  <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                  <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                     <p style="color: white;">Chris Smith</p>
+                     <p>Lock Screen Logout</p>
+                  </div>
+                  <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+               </ul>
+            
+            </nav>
+
+            <!-- search -->
+            <div style="font-family: arial">
+               <div style="color: grey; font-size: 13px; padding-left: 20px;">! Please select the criteria for your report and click the Update button
+               </div>
+               <div class="row" style="padding-left: 20px;">
+                  <div class="col-3">
+                     <div style="font-size: 13px;">End Date:</div>
+                     <div>
+                        <span style="font-size: 13px;"><input type="text" value="7/19/2019" class="form-control-sm inputBox"></span>
+                        <span><img src="./analytics-screens/graphics/calicon.png" alt=""></span>
+                     </div>
+                  </div>
+                  <div class="col-3">
+                     <div style="font-size: 13px;">Nurse:</div>
+                     <div class="inputBox2">-All-</div>
+                  </div>
+                  <div class="col-3">
+                     <div style="font-size: 13px;">Assessment Type:</div>
+                     <div class="inputBox2">Assessment 2.0</div>
+                  </div>
+                  <div class="col-3" style="padding: 0px;">
+                     <div style="font-size: 13px;">Period:</div>
+                     <div style="text-align: left;">
+                        <input type="text" value="7 Days" class="form-control-sm inputBox">
+                        <input type="button" class="pccButton" value="Run Report">
+                     </div>
+                  </div>
+               </div>
+               <div class="row" style="padding-left: 20px; margin-top: 10px;">
+                  <div class="col-2">
+                     <input type="checkbox" style="margin-right: 10px;"><span style="font-size: 13px;">Include Auto-Closed</span>
+                  </div>
+                  <div class="col-2">
+                     <input type="checkbox" style="margin-right: 10px;"><span style="font-size: 13px;">Include > 30 Min</span>
+                  </div>
+               </div>
+            </div>
+
+            <!-- assessments -->
+            <table class="asmtTable" id="asmtTable">
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse</td>
+                     <td>Asmt Type</td>
+                     <td>Asmt Count</td>
+                     <td>Auto Closed</td>
+                     <td>Avg Time (Min.)</td>
+                     <td>Avg Observations</td>
+                     <td>Avg Abnormals</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 1</td>
+                     <td>Assessment 2.0</td>
+                     <td>9</td>
+                     <td>0</td>
+                     <td>15.0</td>
+                     <td>60.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 2</td>
+                     <td>Assessment 2.0</td>
+                     <td>12</td>
+                     <td>0</td>
+                     <td>13.0</td>
+                     <td>82.0</td>
+                     <td>4.0</td>
+                  </tr>
+                  <tr id="box2" onclick="toggleOutline2()">
+                     <td style="padding-left: 10px;">Nurse 3</td>
+                     <td>Assessment 2.0</td>
+                     <td>21</td>
+                     <td>0</td>
+                     <td>15.0</td>
+                     <td>73.0</td>
+                     <td>12.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 4</td>
+                     <td>Assessment 2.0</td>
+                     <td>3</td>
+                     <td>0</td>
+                     <td>30.0</td>
+                     <td>79.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 5</td>
+                     <td>Assessment 2.0</td>
+                     <td>6</td>
+                     <td>0</td>
+                     <td>20.0</td>
+                     <td>85.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 6</td>
+                     <td>Assessment 2.0</td>
+                     <td>24</td>
+                     <td>0</td>
+                     <td>8.0</td>
+                     <td>61.0</td>
+                     <td>5.0</td>
+                  </tr>
+                  <tr id="box3" onclick="toggleOutline3()">
+                     <td style="padding-left: 10px;">Nurse 7</td>
+                     <td>Assessment 2.0</td>
+                     <td>21</td>
+                     <td>0</td>
+                     <td>14.0</td>
+                     <td>58.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 8</td>
+                     <td>Assessment 2.0</td>
+                     <td>3</td>
+                     <td>0</td>
+                     <td>8.0</td>
+                     <td>61.0</td>
+                     <td>5.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 9</td>
+                     <td>Assessment 2.0</td>
+                     <td>30</td>
+                     <td>0</td>
+                     <td>11.0</td>
+                     <td>79.0</td>
+                     <td>4.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 10</td>
+                     <td>Assessment 2.0</td>
+                     <td>24</td>
+                     <td>0</td>
+                     <td>10.0</td>
+                     <td>73.0</td>
+                     <td>4.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 11</td>
+                     <td>Assessment 2.0</td>
+                     <td>33</td>
+                     <td>0</td>
+                     <td>14.0</td>
+                     <td>65.0</td>
+                     <td>5.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 12</td>
+                     <td>Assessment 2.0</td>
+                     <td>18</td>
+                     <td>0</td>
+                     <td>14.0</td>
+                     <td>90.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 13</td>
+                     <td>Assessment 2.0</td>
+                     <td>6</td>
+                     <td>0</td>
+                     <td>16.0</td>
+                     <td>72.0</td>
+                     <td>2.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 14</td>
+                     <td>Assessment 2.0</td>
+                     <td>3</td>
+                     <td>0</td>
+                     <td>16.0</td>
+                     <td>59.0</td>
+                     <td>8.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 15</td>
+                     <td>Assessment 2.0</td>
+                     <td>24</td>
+                     <td>0</td>
+                     <td>12.0</td>
+                     <td>89.0</td>
+                     <td>8.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 16</td>
+                     <td>Assessment 2.0</td>
+                     <td>24</td>
+                     <td>0</td>
+                     <td>9.0</td>
+                     <td>67.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr>
+                     <td style="padding-left: 10px;">Nurse 17</td>
+                     <td>Assessment 2.0</td>
+                     <td>9</td>
+                     <td>0</td>
+                     <td>12.0</td>
+                     <td>67.0</td>
+                     <td>3.0</td>
+                  </tr>
+                  <tr id="box4" onclick="toggleOutline4()">
+                     <td style="padding-left: 10px;">Nurse 18</td>
+                     <td>Assessment 2.0</td>
+                     <td>42</td>
+                     <td>0</td>
+                     <td>10.0</td>
+                     <td>62.0</td>
+                     <td>3.0</td>
+                  </tr>
+            </table>
+         </div>
+         <!-- Screen 3 -->
+         <div class="carousel-item active" id="slide2">
+            <h1>screen 3</h1>
+         </div>
+         <!-- Screen 4 -->
+         <div class="carousel-item active" id="slide3">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+               <a href="#" class="navbar-brand">
+                  <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+               </a>
+               <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+               </ul>
+               <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                  <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+
+                  <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                  <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                     <p style="color: white;">Chris Smith</p>
+                     <p>Lock Screen Logout</p>
+                  </div>
+                  <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+               </ul>
+                           
+            </nav>
+
+            <!-- header2 -->
+            <h5 style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; padding-left: 40px; margin-top: 10px;"><b>Clinical Care Measures</b></h5>
+            <hr style="width: 96%; margin-top: 10px; margin-bottom: 20px;">
+            <h2 style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; text-align: center;"><b>Shady Elms Skilled Nursing</b></h2>
+            <h5 style="font-weight: 300; text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Weekly Clinical Care Measures</b></h5>
+            <h5 style="font-weight: 300; text-align: center; margin-top: -5px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Week of <span id="ccmDate"></span></b></h5>
+            
+            <!-- panels -->
+            <div class="row">
+               <div class="col-6">
+                  <div class="panelBox" style="margin-right: 0px;">
+                     <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Weekly Clinical Care Measures</b></h6>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <div class="panelBox" style="margin-left: 0px;">
+                     <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>All Other Residents</b></h6>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-6">
+                  <div class="panelBox2" style="margin-right: 0px;">
+                     <div class="panelHeader">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/blackBed.png" style="margin-top: 18px;" width="40px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 10px;"><b>Care Need Index</b></h6>
+                     </div>
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/medicareIndex.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+               <div class="col-6">
+                  <div class="panelBox2" style="margin-left: 0px;">
+                     <div class="panelHeader">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/blackBed.png" style="margin-top: 18px;" width="40px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 10px;"><b>Care Need Index</b></h6>
+                     </div>
+                        <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/otherIndex.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+            </div>
+
+            <div class="row" style="margin-top: -40px;">
+               <div class="col-6">
+                  <div class="panelBox2" style="margin-right: 0px;">
+                     <div class="panelHeader">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/careNeedGraph.png" style="margin-top: 10px;" width="40px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 10px;"><b>Care Need vs. Residents Cared For</b></h6>
+                     </div>
+                        <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/medicareGraph.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+               <div class="col-6">
+                  <div class="panelBox2" style="margin-left: 0px;">
+                     <div class="panelHeader">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/careNeedGraph.png" style="margin-top: 10px;" width="40px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 10px;"><b>Care Need vs. Residents Cared For</b></h6>
+                     </div>
+                        <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/otherGraph.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+            </div>
+            <div class="row" style="margin-top: -40px;">
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-right: -25px;">
+                     <div class="panelHeader" style="height: 115px;">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/asmtFreq.png" style="margin-top: 10px;" width="68px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Assessment Frequency</b></h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-right: 15px; margin-left: 15px;">
+                     <div class="panelHeader" style="height: 115px;">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/asmtTime.png" style="margin-top: 10px;" width="68px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Assessment Timings</b></h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-left: -25px;">
+                     <div class="panelHeader" style="height: 115px;">
+                        <div class="row justify-content-center">
+                           <div class="col-6" style="padding-left: 50px;">
+                              <img src="./analytics-screens/graphics/observations.png" style="margin-top: 10px; margin-left: 16px;" width="68px" class="mx-auto d-block img-fluid" alt="">
+                              <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Observations</b></h6>
+                           </div>
+                           <div class="col-6" style="padding-right: 50px;">
+                              <img src="./analytics-screens/graphics/abnormals.png" style="margin-top: 10px; margin-left: 13px;" width="68px" class="mx-auto d-block img-fluid" alt="">
+                              <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Abnormals</b></h6>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row" style="margin-top: -46px;">
+               <div class="col-12">
+                  <div class="panelBox">
+                     <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Medicare/Medicare Managed Residents</b></h6>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-right: -25px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/medicareCircle.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-right: 15px; margin-left: 15px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/medicareTime.png" style="margin-top: 18px;" alt="">
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-left: -25px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/medicareAbn.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+            </div>
+            <div style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -30px;"><i>*Assessments greater than 30 minutes excluded*</i></div>
+            <div class="row" style="margin-top: 10px; margin-bottom: 0px;">
+               <div class="col-12">
+                  <div class="panelBox">
+                     <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>All Other Residents</b></h6>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-right: -25px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/otherCircle.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-right: 15px; margin-left: 15px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/otherTime.png" style="margin-top: 18px;" alt="">
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox2" style="margin-left: -25px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/otherAbn.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+            </div>
+            <div style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -30px; margin-bottom: 30px;"><i>*Assessments greater than 30 minutes excluded*</i></div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -10px; margin-bottom: 30px;padding-left: 50px;"><b>*This report provides information from the previous week. For example, if report label is Week of February 11, 2018, the data is from Monday February 5, 2018 through Sunday February 11, 2018*</b></div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px;">This report includes all data from the past seven “Daily Clinical Care Measures Report” to populate the weekly Assessment Frequency, Assessment Timings, Observations & Abnormals. All inclusion and exclusion criteria from the daily reports apply.</div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px;">“In Process” Assessments completed after the individual daily report is ran are not counted in the daily, weekly or monthly report.</div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px;"><b><u>The Care Needs Score</u></b></div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px;">This score is calculated based on data compiled for the last week using a variety of data points from different sources including: Admission/Discharge/Transfer messages, Resident Demographics, COMS Assessment data elements (including ADLs) and Medications (when available) and using a algorhythms based on the typical time spent providing these tasks within a day at a skilled nursing facility.</div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px; color: red;"><b>*Additional details regarding specific Residents includes in this report are available within “View Report Details*</b></div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px; text-align: center;"><input type="text" value="View Details" style="height: 30px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; font-weight: bold; width: 120px; font-size: 14px; color: rgb(152, 188, 255); border-color: rgb(152, 188, 255);" class="btn btn-outline-primary"></input></div>
+         </div>
+      </div>
+   </div>
+
+   <!-- jQuery -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <!-- Popper.js -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+   <!-- Bootstrap JS -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+
+   <script>
+   var slideCount = 3;
+   $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+      $('[data-toggle="popover"]').popover({
+         placement : 'left',
+         trigger : 'hover'
+      });
+
+      var d = new Date();
+      document.getElementById("ccmDate").innerText = d.toLocaleDateString();
+
+      getPage();
+
+      //swiping (hammer.js)
+      var body = document.getElementById("body");
+      var mc = new Hammer(body);
+      //enable all directions
+      mc.get('swipe').set({
+         direction: Hammer.DIRECTION_ALL,
+         threshold: 1, 
+         velocity:0.1
+      });
+      // listen to events...
+      mc.on("swipeup swipedown swipeleft swiperight tap press", function(ev) {
+         if(ev.type == "swiperight"){
+            index--;
+            if(index < 0){window.location.href="./CareOversight.html";}
+            updateInfoModal(index);
+         }
+         else if(ev.type == "swipeleft"){
+            index++;
+            if(index > slideCount){window.location.href="./Coordination.html";}
+            updateInfoModal(index);
+         }
+      });
+   });
+   
+
+   function showModal(e){
+      $("#info").attr("data-toggle", "modal");
+      $("#info").attr("data-target", "#infoModal");
+   }
+
+   var index = 0;
+   function updateIndex(e){
+      var id = e.target.id;
+      if(id == "prevBtn"){
+         index--;
+         if(index < 0){
+            window.location.href="./CareOversight.html";
+         }
+      }
+      else{
+         index++;
+         if(index > slideCount){
+            window.location.href="./Coordination.html";
+         }
+      }
+      updateInfoModal(index);
+   }
+
+   function updateInfoModal(index){
+      var bodyText = document.getElementById("bodyText");
+      if(index != 0){
+         //scrollable screen
+         $("#html").addClass("scroll");
+         $("#body").addClass("scroll");
+      }
+      else{
+         $("#html").removeClass("scroll");
+         $("#body").removeClass("scroll");
+         document.body.scrollTop = 0; // For Safari
+         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
+      if(index == 0){
+         bodyText.innerHTML = "screen 1 text"
+      }
+      else if(index == 1){
+         bodyText.innerHTML = "screen 2 text"
+      }
+      else if(index == 2){
+         bodyText.innerHTML = "screen 3 text"
+      }
+      else if(index == 3){
+         bodyText.innerHTML = "screen 4 text"
+      }
+      else if(index == 4){
+         bodyText.innerHTML = "screen 5 text"
+      }
+      else if(index == 5){
+         bodyText.innerHTML = "screen 6 text"
+      }
+      else if(index == 6){
+         bodyText.innerHTML = "screen 7 text"
+      }
+      else if(index == 7){
+         bodyText.innerHTML = "screen 8 text"
+      }
+   }
+
+   function indicatorUpdate(e){
+      var id = e.target.id;
+      index = id[3];
+      updateInfoModal(index);
+   }
+
+   function saveIndex(e){
+      var id = e.target.id;
+      console.log(id);
+      if(id == "graphic2"){
+         window.location.href="./evaluations-screens/graphics/OldUDA.html?index=" + index;
+      }
+      else if(id == "graphic3"){
+         window.location.href="./evaluations-screens/graphics/NewUDA.html?index=" + index;
+      }
+      else{
+         window.location.href="./evaluations-screens/graphics/EvaluationsList.html?index=" + index;
+      }
+   }
+
+   function getPage(){
+      var search = document.location.search;
+      var location = search.indexOf("=");
+      if(location == -1){index = 0;}
+      else{index = search[location+1];}
+
+      for(var i = 0; i < slideCount+1; i++){
+         //update indicators and slides
+         if(i == index){
+            $("#btn"+i).attr("class", "active");
+            $("#slide"+i).attr("class", "carousel-item active");
+         }
+         else{
+            $("#btn"+i).attr("class", "");
+            $("#slide"+i).attr("class", "carousel-item");
+         }
+      }
+      updateInfoModal(index);
+   }
+
+   function toggleOutline1(){
+      var box = document.getElementById("box1");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   function toggleOutline2(){
+      var box = document.getElementById("box2");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   function toggleOutline3(){
+      var box = document.getElementById("box3");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   function toggleOutline4(){
+      var box = document.getElementById("box4");
+      if(box.classList.contains("outlined")){
+         box.classList.remove("outlined");
+      }
+      else{
+         box.classList.add("outlined");
+      }
+   }
+
+   </script>
+
+</body>
+</html>

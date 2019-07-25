@@ -1,0 +1,85 @@
+'use strict';
+
+(function() {
+  window.clinicalSmartAlerts = window.clinicalSmartAlerts || {};
+  var _NS = clinicalSmartAlerts;
+  
+  _NS.SmartAlertSaveActionVOFactory = (function() {
+
+    var _buildSmartAlertSaveActionVO = function(action) {
+      var element = $(this.element);
+      var groupedAlertIds = element.data('groupedAlertIds');
+  
+      if(typeof groupedAlertIds == 'number') {
+        groupedAlertIds = [groupedAlertIds];
+      } else if(groupedAlertIds === '') {
+        groupedAlertIds = [element.data('alertId')];
+      } else {
+        groupedAlertIds = groupedAlertIds.split(',');
+      }
+  
+      var smartAlertSaveActionVO =  {
+        action: action,
+        clientId: element.data('clientId'),
+        alerts: {
+          type: element.data('alertType'),
+          alertIds: groupedAlertIds
+        }
+      };
+  
+      if(action == 'CREATE_PROGRESS_NOTE') {
+        smartAlertSaveActionVO.progressNote = _buildProgressNoteActionVO.call(this);
+      } else if(action == 'CREATE_EINTERACT_ASSESSMENT') {
+        smartAlertSaveActionVO.einteractAssessment = _buildEInteractAssessmentActionVO.call(this);
+      }
+  
+      return smartAlertSaveActionVO;
+    }
+  
+    var _buildProgressNoteActionVO = function() {
+      var _self = this;
+      var element = $(this.element);
+  
+      return {
+        wvType: element.data('vitalType'),
+        module: element.data('module'),
+        notes: _getProgressNotes.call(_self)
+      };
+    }
+  
+    var _buildEInteractAssessmentActionVO = function() {
+      var _self = this;
+      var element = $(_self.element);
+      var assessmentSection = element.find('.js-assessment-create-wrapper');
+      var date = _self._getEffectiveDate();
+  
+      var cicReasons = [];
+      assessmentSection.find('.chzn-select').find(':selected').each(function(i, domEl) {
+        cicReasons.push($(domEl).attr('value'));
+      });
+  
+      var SWdescs = element.data('stopAndWatchAlertDescs') || [];
+  
+      var otherCICDesc = element.find('.c-cic-other-symptoms-input').val() || '';
+  
+      return {
+        referenceDate: date,
+        cicReasons: cicReasons,
+        stopAndWatchDescriptions: SWdescs,
+        otherReason: otherCICDesc
+      };
+    }
+
+    var _getProgressNotes = function() {
+      var notes = [];
+      $(this.element).find('textarea').each(function(i,e){
+        notes.push(e.value);
+      });
+      return notes;
+    };
+
+    return {
+      buildSmartAlertSaveActionVO: _buildSmartAlertSaveActionVO
+    };
+  }());
+}());

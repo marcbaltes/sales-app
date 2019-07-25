@@ -1,0 +1,15 @@
+﻿body{ background-color:#FFFFFF; background-image:none; }
+
+#dTitleBar,
+#trAlerts,
+#dActionBarButtons,
+#sChangeRes
+{
+    display: none;
+}
+
+.ContextBar{display: none;}
+.StatusBar{display: none;}
+.TitleBarRow{display:none;}
+
+.ButtonNIQ{display:none;}

@@ -1,0 +1,41 @@
+﻿.MessageSlideOut 
+{
+    position:fixed;
+    width:0;
+    right:0;
+    bottom:40%;
+    z-index:20004;
+    background-color:#f0f0f0;
+    border: 0;
+    margin:0;
+    padding:0;    
+    border-top-left-radius:.3em;
+    border-bottom-left-radius:.3em;
+}
+
+.MessageSlideOutClose
+{
+    position:absolute;
+    left:0.15em;
+    top:0.15em;
+    display:inline-block;
+    border: none;
+    margin:0;
+    padding:0;
+} 
+
+.MessageSlideOutText
+{
+    margin-left:1.5em;
+}
+
+.MessageSlideOutVisible 
+{
+    border-bottom-width:1px;
+    border-top-width:1px;
+    border-left-width:1px;
+    border-right-width:0;
+    border-color:#4a90e2;
+    border-style:solid;
+    padding:0.5em;    
+}

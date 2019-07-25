@@ -1,0 +1,145 @@
+﻿@import url("./Style.css");
+
+/*
+Theme from Brand Community
+Green:   Hex #97cc04 | R151 G204 B4
+Blue:    Hex #1976d2 | R25  G118 B210
+Magenta: Hex #ab47bc | R171 G71  B188
+Gray:    Hex #424242 | R66  G66  B66
+Orange:  Hex #ffa000 | R255 G160 B0
+*/
+
+.headerBanner {
+    background: #97cc04 url(/App_Themes/PCC/COMSPCC-logo.png) no-repeat 20px 15px !important;
+}
+
+.nav-tabs > li.active > a > span > span:first-child, 
+.nav-tabs > li.active > a:hover > span > span:first-child, 
+.nav-tabs > li.active > a:focus > span > span:first-child {
+    text-decoration: underline;
+}
+    .navbar.navbar-inverse {
+
+}
+.navbar.navbar-inverse .navbar-nav > li > a {
+    color: #fff;
+    background-color: #97cc04 !important;
+}
+.navbar.navbar-inverse .navbar-nav > li.divider {
+    
+}
+
+.navbar-collapse.collapse, .navbar-brand, .navbar.navbar-inverse {
+
+}
+    .navbar .nav > li > a {
+
+    }
+.navbar-nav > li > a{
+
+}
+body, #SmartAssessmentPrimaryNavigation .nav a {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+.btn-primary, .btn-default {
+    margin: 1px 3px !important;
+    padding: 3px 5px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgb(112, 112, 112) !important;
+    border-image: none !important;
+    width: auto !important;
+    color: rgb(51, 51, 51) !important;
+    line-height: 10pt !important;
+    overflow: visible !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 10pt !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.25) !important;
+    background-image: linear-gradient(rgb(252, 252, 252) 0px, rgb(207, 207, 207) 100%) !important;
+}
+
+#SmartAssessment .nav-tabs li,
+#SmartAssessment .nav-tabs li a,
+#SmartAssessment .nav-tabs li a:hover,
+#SmartAssessment .nav-tabs li.active a,
+#SmartAssessment .nav-tabs li.active a:hover {
+    
+}
+a {
+    color: #333 !important;
+}
+    a.arrowDrop, td.slTopNav > a {
+        color: #fff !important;
+    }
+
+.glyphicon.glyphicon-screenshot.qrGlyphNav {
+    color: #000 !important;
+}
+td.DCRLightAccentBG {
+    background-color: #cee696 !important;
+    border-bottom: 1px solid #fff !important;
+}
+tr.bgCategory {
+    background-color: #fff !important;
+    border-bottom: 1px solid #fff !important;
+}
+
+/* dark */
+.navbar.navbar-inverse .navbar-nav .dropdown-menu .megaMenuTitle, 
+.navbar.navbar-inverse .navbar-nav .dropdown-menu .megaMenuTitle2, 
+.WidgetSummary, 
+.DashboardTitle h2, 
+.DashboardSectionSeparator, 
+.glyphicon.glyphicon-screenshot.qrGlyph {
+    color: #2c7300 !important;
+}
+
+.RadGrid_Metro .rgActiveRow td, .RadGrid_Metro .rgSelectedRow td {
+    border-color: #2c7300 !important;
+}
+/* medium */
+.modal .modal-header, #ctrTitleBar, td.subunit, td.rwTitlebar, td.rwTopLeft, td.rwTopRight, .RadPanelBar_Metro .rpSelected, .RadPanelBar_Metro .rpSelected:hover, .RadPanelBar_Metro .rpExpanded, .RadPanelBar_Metro .rpExpanded:hover, .RadGrid_Metro .rgMasterTable .rgSelectedCell, .RadGrid_Metro .rgSelectedRow {
+    background-color: #97cc04 !important;
+}
+
+/* light */
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus,
+.ButtonDBToolbarNormalLink:hover,
+#ResidentHeaderNavigation ul.nav-tabs > li.active > a,
+#ResidentHeaderNavigation ul.nav-tabs > li > a:hover,
+.nav > li.resNavTabs > a:hover,
+.nav > li.resNavTabs > a:focus, .ButtonDBToolbarNormalLink, RadGrid_Metro .rgAltRow {
+    background-color: #cee696 !important;
+}
+
+.ButtonDBToolbarNormalLink {
+    border: 1px solid #cee696 !important;
+}
+/* highlight */
+    .bg-info, .table-striped > tbody > tr:nth-of-type(odd),
+    .resRowAlt, .leftQRDiv, .resNameDiv, .primaryDXDiv, .rightQRDiv, .row.bottomRowNav {
+        background-color: #D7E6BC !important;
+    }
+
+/* customization for theme */
+img.img-responsive.QRResPic {
+    background-color: #fff !important;
+    border: solid thin #2c7300 !important;
+}
+
+.col-md-12.resNavRow {
+    border-bottom: 4px solid #cee696 !important;
+}
+
+.DashboardSectionSeparator {
+    background-color: #ddd !important;
+    padding: 2px;
+}
+.divPopup {
+    background-color: #D7E6BC;
+    border: 3px solid #97cc04;
+    -webkit-box-shadow: 0px 0px 8px 5px rgba(25, 59, 119, .85);
+    -moz-box-shadow: 0px 0px 8px 5px rgba(25, 59, 119, .85);
+}
+

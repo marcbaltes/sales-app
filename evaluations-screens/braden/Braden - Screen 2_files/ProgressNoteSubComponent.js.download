@@ -1,0 +1,93 @@
+'use strict';
+
+(function(){
+	window.clinicalSmartAlerts = window.clinicalSmartAlerts || {};
+  var _NS = clinicalSmartAlerts;
+
+  _NS.ProgressNoteSubComponent = function(store, selector, cardComponent) {
+
+    _NS.StatefulComponent.call(this, { store:store, selector:selector });
+
+    this.cardComponent = cardComponent; // reference back to parent card component
+    this.interactiveSection = $(this.cardComponent.element).find(selector.split(' ')[1]);
+  };
+  
+  _NS.ProgressNoteSubComponent.prototype = Object.create(_NS.StatefulComponent.prototype);
+  _NS.ProgressNoteSubComponent.prototype.constructor = _NS.ProgressNoteSubComponent;
+
+  _NS.ProgressNoteSubComponent.prototype.render = function() {}
+  
+  _NS.ProgressNoteSubComponent.prototype._setupProgressNote = function(data) {
+    var _self = this;
+    var element = $(_self.cardComponent.element);
+    var alertText = (element.data('alertType')=='CLINICAL')?element.data('alertDescription'):element.data('wvPnDescription');
+    var buttonsInvisible = parseInt(element.attr('data-pn-id')) > 0;
+    for (var i=0;i<data.length;i++) {
+      var elem = data[i];
+      var text = (elem.text1)?elem.text1:(i>0)?'':alertText;
+      _self.interactiveSection.append('<span><small>' + elem.description + '</small></span>');
+      if (data.length>1) {
+        _self.interactiveSection.append('<textarea class=".u-mt-16 u-mb-16 u-mw" rows="3"' + (buttonsInvisible === true ? 'readonly':'') + '>' + text + '</textarea>');
+      } else {
+        _self.interactiveSection.append('<textarea class=".u-mt-16 u-mb-16 u-mw" rows="5"' + (buttonsInvisible === true ? 'readonly':'') + '>' + text + '</textarea>');
+      }
+    }
+
+    if (buttonsInvisible === false) {
+      if (data && data.length > 0) {
+        element.find('textarea')[0].focus();
+      }
+    }
+  };
+  
+  _NS.ProgressNoteSubComponent.prototype._updatePNSection = function(pnId) {
+    var element = $(this.cardComponent.element);
+    element.attr('data-pn-id', pnId);
+
+    if (pnId == 0) {
+      element.find('.pn-view').hide();
+      element.find('.pn-create').css('display','block');
+    } else {
+      element.find('.pn-create').hide();
+      element.find('.pn-view').css('display','block');
+    }
+
+    var wrapper = element.find('div.js-create-pn-wrapper');
+    wrapper.removeClass('c-show-hide--is-active');
+    wrapper.find('input').prop('checked', false).end();
+    
+  };
+
+  _NS.ProgressNoteSubComponent.prototype._resetPN = function() {
+    this.interactiveSection.find('span').remove();
+    this.interactiveSection.find('textarea').remove();
+    $(this.cardComponent.element)
+      .find('div.js-create-pn-wrapper')
+      .removeClass('c-show-hide--is-active')
+      .find('input')
+        .prop('checked', false)
+        .end();
+  };
+
+  _NS.ProgressNoteSubComponent.prototype._createPNFailCallback = function(clickedButton) {
+		var _self = this;
+		var element = $(_self.cardComponent.element);
+
+		//clean cache and show message
+		var alertType = element.data('alertType');
+		var wvType = element.data('vitalType');
+		var pnId = element.attr('data-pn-id');
+		_self.cardComponent._removePnStructureFromCache(alertType, wvType, pnId);
+		alert('Failed to save Progress Notes. Click "OK" to refresh and try again.');
+		_self.store.dispatch({
+			type: 'CREATE_PROGRESS_NOTE_COMPLETE',
+			payload: {
+				id: element.data('alertId'),
+				type: element.data('alertType')
+			}
+		});
+		_self.cardComponent._enableInputsAndButtonsWhereAppropriate(_self.cardComponent.element, clickedButton, _self.cardComponent.element);
+		location.reload();
+	};
+
+}());

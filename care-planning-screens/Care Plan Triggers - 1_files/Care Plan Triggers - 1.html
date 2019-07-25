@@ -1,0 +1,3643 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671 -->
+<html class="_d-main" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Medical Diagnosis</title>
+	
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10;IE=9;IE=8,chrome=1">
+
+	
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+	<meta http-equiv="Cache-Control" content="post-check=0, pre-check=0">
+	<meta http-equiv="expires" content="1">
+	<meta http-equiv="expires" content="Sat, 01 Jan 2000 00:00:00 GMT">
+	<meta name="format-detection" content="telephone=no">
+	
+
+	
+	<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/core.css">
+	<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/legacy-styles.css">
+	<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/jquery-ui-1.9.2.custom.min.css">
+	
+    <style>
+        .desc:after{
+        content:url('/images/arrowdown_selected.gif');
+        }
+        .asc:after{
+         content:url('/images/arrowup_selected.gif');
+        }
+
+        .primaryDiagRank
+        {
+        font-weight:bold;
+        }
+
+        .primaryDiagRank a {
+        font-weight: normal;
+        }
+        a.togglesign:hover{
+            color:#fff;
+            text-decoration:none;
+            cursor:pointer;
+        }
+        .dropDownButtonContainer{
+            display:inline-block;
+        }
+        .dropDownButtonContainer.forceDropDownMenuRight{
+            position:relative;
+        }
+        .dropDownButtonContainer.forceDropDownMenuRight .dropDownMenu{
+            right:0;
+            white-space:nowrap;
+        }
+    </style>
+
+
+	
+	
+
+
+<script src="./Care Plan Triggers - 1_files/l10n.djs"></script>
+	
+
+    <script src="./Care Plan Triggers - 1_files/jquery-1.9.0.min.js.download"></script>
+    <script src="./Care Plan Triggers - 1_files/jquery-migrate-1.4.1.min.js.download"></script>
+  
+
+	
+	<script src="./Care Plan Triggers - 1_files/jquery-ui-1.9.2.custom.min.js.download"></script>
+	<script src="./Care Plan Triggers - 1_files/jquery.dateField-2.0.0.js.download"></script>
+	
+
+
+
+
+
+
+	<script src="./Care Plan Triggers - 1_files/ESOLvalidate.js.download"></script>
+	
+
+
+
+
+
+<script>
+  
+  
+    function phoneformat(formObj, phoneStr, phoneNumberField){
+      formatNorthAmericanPhoneNumber(formObj, phoneStr, phoneNumberField);
+    }
+  
+</script>
+	<script src="./Care Plan Triggers - 1_files/core.js.download"></script>
+	<script src="./Care Plan Triggers - 1_files/wedate.js.download"></script>
+	<script src="./Care Plan Triggers - 1_files/callHelp.js.download"></script>
+	
+	<script src="./Care Plan Triggers - 1_files/coremenufunctions.js.download"></script>
+
+	
+	
+
+
+        <script>
+            if(self == top){
+                var firstInterval = 300000;
+            }
+        </script>
+        <link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/sessionTimeout.css">
+        <script src="./Care Plan Triggers - 1_files/sessionTimeout.js.download"></script>
+
+
+	<script>var CONTEXT_PATH = '';</script>
+
+	
+
+	
+
+	
+
+	
+	
+	
+	<style>
+		a.criticalAndOrNeedsAttention{
+			color:#f00;
+		}
+	</style>
+    <style>
+  tr.lightgrey{background-color:#fafafa;}
+  tr.grey{background-color:#efefef;}
+  tr.darkgrey{background-color:#dfdfdf;}
+  tr.darkgrey td{
+    border:1px solid #BFBFBF;
+  }
+
+  .displayFiltersBar{
+    background-color:#777;
+    cursor:pointer;
+    padding:5px;
+  }
+
+  .displayFiltersBar a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+  }
+
+  .ordersListBar{
+    height:25px;
+    color:#fff;
+    font-weight:bold;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:rgb(82, 117, 181);
+    vertical-align:middle;
+  }
+
+
+  .dropDownMenu a{
+    color:#000;
+    display:block;
+    padding:5px;
+    text-decoration:none;
+    font-size:9pt;
+    font-weight:bold;
+  }
+  .dropDownMenu a:hover{
+    background-color:#fffffe;
+  }
+  /** END: CSS for drop down buttons **/
+
+  .fieldname{
+    font-weight:bold;
+  }
+
+  a.orderdesc{
+    text-decoration:none;
+    color:#000;
+    cursor:pointer;
+  }
+
+  .sortableCol{
+    text-decoration:none;
+    color:#000;
+    cursor:pointer;
+  }
+
+  .strikeout{
+  	text-decoration:line-through;
+  }
+</style>
+<script>
+  function toggleFilters()
+  {
+    var value =  $('[name=isFilterOpen]').val()
+    if( value=="true" )
+    {
+    	$('[name=isFilterOpen]').val('false');
+        $('#filterTrigger>img').attr( {src:"/images/newplus.gif"} );
+    }
+    else
+    {
+        $('[name=isFilterOpen]').val('true');
+        $('#filterTrigger>img').attr( {src:"/images/newminus.gif"} );
+    }
+    $('#displayFilters').slideToggle('fast');
+  }
+</script>
+      <script>
+        function infoPopup(event)
+	    {
+	  		event.stopPropagation();
+	        formObj.ESOLquestion.value="<b>&nbsp;Date:</b> it is the date the diagnosis was originally diagnosed or when the Home first came to know of it.";
+	        formObj.action='/tools/infopopup.jsp';
+	        formObj.target='info';
+	        openSizedLookup2('', 'info', 550, 120, '');
+	        formObj.submit();
+	    }
+
+        function showExpandCollapse(row)
+        {
+          var replaceId = "rowcollapse" + row;
+          var plusminus = "plusminus" + row;
+          var html = '<span id="' + plusminus + '"><a href="javascript:expandShrink(0,' + row + ')" tabindex="-1"><img src="/images/newplus.gif" border="0" /></a></span>';
+          document.getElementById(replaceId).innerHTML=html;
+        }
+
+        function openEdit(clientid, diagId, viewOnly)
+        {
+        	openSizedLookup2("/care/chart/cp/clientdiag.jsp?ESOLclientid=" + clientid +"&ESOLcdid="+diagId+"&viewOnly="+viewOnly, diagId, 600, 600);
+        }
+
+        function openViewTransfer(url,diagId)
+        {
+        	openSizedLookup2(url, "", 600, 600);
+        }
+
+        function openView(clientid, diagId)
+        {
+          openSizedLookup2("/care/chart/cp/clientdiag.jsp?ESOLclientid=" + clientid + "&ESOLcdid="+diagId, diagId, 600, 600);
+        }
+
+        function editDiagNote(v,isMDS3)
+        {
+          openSizedLookup2('/care/chart/mds/mdsdiagwizard.jsp?ESOLclientid=4671&ESOLnotificationid=' + v+'&ESOLisMDS3='+isMDS3, '', 700, 570, '');
+        }
+
+        function clearDiagNote(v)
+        {
+          if (confirm('Are you sure?'))
+          {
+        	  client.ESOLnotificationid.value = v;
+        	  client.action = "/clinical/meddiag/medDiagChart.xhtml?ESOLsaveflag=CN";
+              client.submit();
+          }
+        }
+
+        function editDiagSheet(v, t)
+        {
+           openSizedLookup2('/care/chart/cp/clientdiagsheet.jsp?diag_sheet_type=' + t + '&ESOLclientid=4671&ESOLdiagsheetid=' + v, '', 780, 650, '');
+        }
+
+        function copyDiagSheet(v)
+        {
+          openSizedLookup2('/care/chart/cp/clientdiagsheet.jsp?ESOLcopy=Y&ESOLclientid=4671&ESOLdiagsheetid=' + v, '', 780, 650, '');
+        }
+
+        function deleteDiagSheet(v)
+        {
+          if (confirm('Are you sure?'))
+          {
+        	  client.ESOLdiagsheetid.value = v;
+        	  client.action = "/clinical/meddiag/medDiagChart.xhtml?ESOLsaveflag=DDS";
+        	  client.submit();
+          }
+        }
+
+        function getDateOperatorDescription(datetype)
+        {
+          if(datetype == '0')
+          {
+            return 'On';
+          }
+          else if(datetype == '-1')
+          {
+            return 'Before';
+          }
+          else if(datetype == '1')
+          {
+        	  return 'After';
+          }
+          else
+          {
+            return 'On';
+          }
+        }
+
+        function openAuditReport()
+        {
+          var resolved_date_operator = getDateOperatorDescription('');
+          var onset_date_operator = getDateOperatorDescription('');
+          var created_date_operator = getDateOperatorDescription('');
+          var revision_date_operator = getDateOperatorDescription('');
+          
+          
+            
+            
+            
+            
+            
+              
+            
+            
+            
+            
+          
+
+
+          var url = '/reporting/setup/runtime/orderreportsnew.xhtml?action=runReport';
+          url = url
+              + '&ESOLaction=run'
+              + '&ESOLmoduleId=2'
+              + '&ESOLcatalogId=-5'
+              + '&ESOLreportType=orders'
+              + '&reportFormatType=pdf'
+              + '&ESOLreportId=-39'
+              + '&reportFiltersSize=13'
+              + '&ESOLclientid=4671'
+              
+              
+              
+              
+              
+              + '&ESOLfiltername_4=diag_status&ESOLfiltervalue_4=1'
+              
+              
+              
+              
+              
+              
+              
+              
+              ;
+
+          openSizedLookup2(url, 'FormularyListingReport', 650, 650,'');
+        }
+
+
+
+        function convert(diagLibId,clientId,diagnosisId,icdCode,clientDiagId)
+        {
+        	var data = {};
+        	var convertUrl = '/admin/client/convertpopup.jsp?ESOLicd9='+icdCode+'&ESOLdiagid='+clientDiagId +'&ESOLclientid='+clientId;
+        	data.ajaxAction = "startConversion";
+        	data.clientId = clientId;
+        	data.diagLibId = diagLibId;
+        	data.fromIcdCode = diagnosisId;
+       		data.convertUrl = convertUrl;
+
+        	var url = '/clinical/meddiag/medDiagnosisAjaxController.xhtml';
+
+        	var lookup =	$.ajax({
+				        type: "POST",
+				        async: false,
+				        url: url,
+				        data: data,
+				        dataType: 'json'
+				    });
+
+        	lookup.done(function(data) {
+			if(!$.isEmptyObject(data))
+        	{
+        		if(data.indexOf('exists')>0)
+        		{
+        			alert(data);
+        		}
+        		else
+        		{
+        			openSizedLookup2(data,'',700, 405, 'scrollbars');
+        		}
+        	}
+		});
+
+        }
+        $(document).ready(function() {
+            $("#infoPopupIcon").click(infoPopup);
+
+            $("th.sortable").click(function() {
+                if ($(this).attr('id') === $('#sortBy').val()) {
+                    if ($('#sortDir').val() === 'asc') {
+                        $('#sortDir').val('desc');
+                    } else {
+                        $('#sortDir').val('asc');
+                    }
+                } else {
+                    $('#sortBy').val($(this).attr('id'));
+                    $('#sortDir').val('asc');
+                }
+                if(!$(this).hasClass("clientSideSort")) {
+                    submitForm();
+                }
+        });
+            //show sorted column (if applicable)
+            var sortColumnID = $('#sortBy').val();
+            var sortColumnDirection = $('#sortDir').val();
+            if(sortColumnID && sortColumnDirection){
+              var sortDirectionClass = 'sortedAscending';
+              if(sortColumnDirection == 'desc'){
+                sortDirectionClass = 'sortedDescending';
+              }
+              $('#' + sortColumnID).addClass(sortDirectionClass);
+            }
+
+            var minusGif = "/images/newminus.gif";
+            var plusGif = "/images/newplus.gif";
+
+            $(".togglesign").click(function () {
+                var section = $(this).attr('name');
+                $(this).find('img').attr("src", $("#" + section).is(':visible') ? plusGif : minusGif);
+                $("#" + section).toggle();
+            });
+
+            // sets the minus/plus on load
+            $(".togglesign").each(function () {
+                var section = $(this).attr('name');
+                $(this).find('img').attr("src", $("#" + section).is(':visible') ? minusGif : plusGif);
+            });
+
+            $('#filterForm').on('submit', function(e){
+                e.preventDefault();
+                this.submit();
+            });
+        });
+    </script>
+
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Tom Mohney;Marc Baltes</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">15;#Tom Mohney;#76;#Marc Baltes</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+
+	
+		
+	
+	
+
+
+
+	
+	
+		<body class="clinical" onload="$(&#39;body&#39;).addClass(&#39;clinical&#39;);" onkeydown="handleQuickKeyPress()" style="zoom: 1; margin: 0px 10px;">
+	
+
+
+
+	
+		
+
+<script>resHeaderPage = true;</script>
+	
+
+
+
+
+
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="appAriaHide" id="appAriaHeaderOne" aria-hidden="false">Medical Diagnosis</h1>
+
+
+<script src="./Care Plan Triggers - 1_files/callHelp.js.download"></script>
+<script>
+var helpPage = "";
+
+
+function openhelp(){
+
+
+	if(helpPage.length == 0){
+		helpPage = "";
+	}
+	callHelp(helpPage);
+	
+}
+
+
+</script>
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/coremenu.css">
+<script src="./Care Plan Triggers - 1_files/medicare.js.download"></script>
+<script>
+	// variables required for coremenufunctions.js
+	var isInitialsSet = false;
+	//var checkInitialsFlag = false;
+	var isUsingNewForm = true;
+	var facilityListURL = "/tools/faclist.jsp?facilityList=true&allowEMCModeCheck=false";
+	var isTouchEnabledFlag = false;
+	var inEMCflag = false;
+	var isInFGCflag = false;
+
+	// required for function submitSearchNew() in coremenufunctions.js
+	var inEMCFGC = false
+	if (inEMCflag || isInFGCflag) {
+		inEMCFGC = true;
+	}
+
+	
+		var tabType = 'C';
+	
+
+	
+
+	// Update menu URLS for touch
+	if (typeof resHeaderPage != 'undefined' && resHeaderPage == true) {
+		var isResHeaderPage = true;
+	}
+		
+	document.addEventListener('DOMContentLoaded', function(e) {
+		  $(document).on('click', '.js-webapp-user-logout-btn', function(e){
+			  $(this).trigger('webapp/user/logout');
+		  });
+  });
+
+</script>
+
+
+
+
+<style>
+	html{
+		min-height:100%;
+		position:relative;
+	}
+	body{
+		
+		margin-bottom:150px !important;
+	}
+	div.footertext{
+		bottom:10px;
+		left:10px;
+		min-width:800px;
+		position:absolute;
+		right:10px;
+		width:auto;
+	}
+	@media print{
+		body{
+			margin-bottom:0 !important;
+		}
+		div.footertext{
+			position:relative !important;
+			width:100% !important;
+		}
+	}
+</style>
+
+
+
+	<script>
+		// Required for main menu
+		var currentTab = "3";
+		var touchEnabled = false;
+		var currentClientId = "4671";
+		var clientJumpTab = "cp_adminclientprofile.jsp";
+		var careJumpTab = "../../clinical/meddiag/medDiagChart.xhtml";
+
+		if (typeof resHeaderPage != 'undefined' && resHeaderPage == true) {
+			var isResHeaderPage = true;
+		}
+		var tabsMenuLoaded = true;
+	</script>
+	<script src="./Care Plan Triggers - 1_files/f.txt"></script>
+
+	<table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+		<tbody><tr>
+			<td valign="top" class="slPccLogo"><img src="./Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+			<td align="right" valign="top" class="slTopNav">
+				
+
+<h3 class="appAriaHide" aria-hidden="false">Facility Selection</h3>
+<form id="facSelectForm" action="https://partnercontentus.pointclickcare.com/facilityGroup/facilitygroupconsole.xhtml" method="post">
+	<input type="hidden" name="setFacGroupId" id="setFacGroupId" value="">
+	<input type="hidden" name="setFacType" id="setFacType" value="">
+</form>
+
+
+
+	<a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="javascript:void(0)" class="innerfac navLink arrowDrop">FACILITY_1 (Shirley - COMS)</a>
+	<input type="hidden" name="current_fac_id" value="1">
+
+	<script>
+		function displayFacilityGroupConsole(facGroupID, facGroupType){
+			$('#facSelectForm').attr('action', '/facilityGroup/facilitygroupconsole.xhtml');
+			$('#setFacGroupId').val(facGroupID);
+			$('#setFacType').val(facGroupType);
+			$('#facSelectForm').submit();
+		}
+	</script>
+	<div id="pccFacMenu" class="dropDownList" style="left: 1144.34px;">
+		<div style="height:100px;padding:50px 0 0 217px"><img src="./Care Plan Triggers - 1_files/loading-circle.gif" width="16" height="16" border="0"></div>
+	</div>
+
+				
+					
+						
+							<a href="javascript:void(0);" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Nicki Fetterman</span></a>
+						
+					
+				
+				
+					<div id="pccUserMenu" class="dropDownList" style="left: 1561.7px;">
+						<ul>
+							<li><a href="javascript:editUserProfile(&#39;/home/editmyprofile.jsp?ESOLuserid=2080&amp;retURL=/home/home.jsp&#39;);">Edit Profile</a></li>
+							<li><a href="javascript:javascript:void(window.open(&#39;/admin/reports/user_access.jsp?ESOLuserid=2080&#39;, &#39;detail&#39;));">User Access</a></li>
+							
+								<li><a href="javascript:openhelp();">Help</a></li>
+							
+				
+
+				
+					<li><a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars=1&#39;));">Resource Center / Support</a></li>
+				
+
+				
+				
+				
+			</ul>
+		</div>
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+				
+				
+				
+				
+				
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/c3-0.4.10.min.css">
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/chartGenerator.css">
+<script src="./Care Plan Triggers - 1_files/d3-3.5.5.min.js.download"></script>
+<script src="./Care Plan Triggers - 1_files/c3-0.4.10.min.js.download"></script>
+<script src="./Care Plan Triggers - 1_files/chartGenerator.js.download"></script>
+
+<link rel="stylesheet" type="text/css" href="./Care Plan Triggers - 1_files/smartalertsnotifications.css">
+
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/chosen-0.9.8.css">
+<script src="./Care Plan Triggers - 1_files/chosen.jquery-0.9.8.min.js.download"></script>
+<script>
+  if(typeof AbstractChosen == 'undefined') {
+    var chosenLibPath = "/srug/v2076679807/assets/core/jquery/plugins/chosen.jquery-0.9.8.min.js";
+    document.write("<script src='"+ chosenLibPath +"'></"+"script>");
+  }
+</script>
+<script>
+  'use strict';
+  window.clinicalSmartAlerts = window.clinicalSmartAlerts || {};
+
+  window.clinicalSmartAlerts.moduleProps = {
+    canAddPN: true,
+    canAddCarePlan: true,
+    canAssessAlerts: true,
+    clientId: '4671'.trim(),
+    facId: 1,
+    isESignatureForPNEnabled: true,
+    isCICOnline: false,
+    isNewLogin: false,
+    maxVitalsInChart: 7,
+    cicOtherCICReasonId: '31',
+    months: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ],
+
+    termMap: {
+      alert: 'Alert',
+      assessment: 'Assessment',
+      careplan: 'Care Plan',
+      clinicalAlert: 'Clinical Alert',
+      facility: 'Facility',
+      highRiskAlert: 'High Risk Alert',
+      inboundClinicalAlert: 'Inbound Clinical Alert',
+      less: 'less',
+      minutesAgo: '{{minutes}}m ago',
+      more: 'more',
+      noAlerts: 'No Alerts',
+      resident: 'Resident',
+      task: 'Task',
+      vitalExceptionAlert: 'Vital Exception Alert',
+      orderAlert: 'Order Alert',
+      trend: 'Trend',
+      baseline :'Baseline',
+      diastolicBaseline : 'Diastolic Baseline',
+      systolicBaseline :  'Systolic Baseline',
+      eInteractAlert: 'eInteract Alert',
+      eInteractHeading: 'eINTERACT Alerts (Stop &amp; Watch and/or Change in Condition): '
+    },
+    
+    alertDescriptions: {
+      inboundClinicalAlertDescription: 'Inbound Clinical Data has Been Updated'
+    },
+
+    dynamicTags: {
+      eInteractHeadingTag:'<span class="c-einteract-heading">%s</span>'
+    },
+	   
+    vitalMap: {
+      weights: 'Weights',
+      respiration: 'Respiration',
+      bloodPressure: 'Blood Pressure',
+      temperature: 'Temperature',
+      pulse: 'Pulse',
+      bloodSugar: 'Blood Sugar',
+      heights: 'Heights',
+      o2Sats: 'O2 Sats',
+      painLevel: 'Pain Level'
+    },
+	   
+    complexApproaches : [
+      'Staff document one of these response(s) more than {0} time(s) within {1} {2}',
+      'Staff document one of these response(s) less than {0} time(s) within {1} {2}',
+      'Staff document one of these response(s) {0} time(s) within {1} {2}',
+      'Staff document only these response(s) within {1}',
+    ],
+       
+    complexDurations : [
+      'Hour(s)',
+      'Days(s)',
+      'Week(s)',
+    ],
+       
+    defaultChartOpts : {
+      data: {
+        columns: [],
+      },
+      color: {
+        pattern: ['#57c5bb', '#f5a623', ],
+      },
+      interaction: {
+        enabled: true,
+      },
+      y: {
+        padding: {
+          bottom: 0,
+        },
+        min: 0,
+      },
+      axis: {
+        x: {
+          tick : {
+            values : [],
+          },
+        },
+        y : {
+        },
+      },
+      size : {
+        height: 250,
+      },
+    },
+
+    // indexed by vital type
+    chartOpts : [
+      {},
+      // Weight
+      {
+        data : {
+          columns: [['Weight']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Respiration
+      {
+        data : {
+          columns: [['Respiration']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+      // Blood pressure
+      {
+        data : {
+          columns: [['Systolic'], ['Diastolic'] ],
+          columnKeys: ['value', 'diastolicValue'],
+        },
+        isInteger : true,
+      },
+      // BP Dystolic -- currently doesn't generate alerts
+      {},
+      // Temperature
+      {
+        data : {
+          columns: [['Temperature']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Pulse
+      {
+        data : {
+          columns: [['Pulse']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+      // Blood Sugar
+      {
+        data : {
+          columns: [['Blood Sugar']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Height (currently doesn't trigger alerts)
+      {},
+      // O2 Sats
+      {
+        data : {
+          columns: [['O2 Sats']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Pain Level
+      {
+        data : {
+          columns: [['Pain Level']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+    ],
+        
+    userId: '2080'.trim()
+	};
+</script>
+<script defer="" src="./Care Plan Triggers - 1_files/core.js(1).download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/state.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/rootReducer.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/StatefulComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/CardComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/DropdownComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/FilterComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/PanelComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/DrawerComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/NotificationToggleComponent.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/App.js.download"></script>
+<script defer="" src="./Care Plan Triggers - 1_files/SmartAlertSaveActionVOFactory.js.download"></script>
+
+<script>
+	'use strict';
+	var selectedAssignmentId=
+	selectedAssignmentId=selectedAssignmentId||''
+	document.addEventListener('DOMContentLoaded', function(e) {
+		clinicalSmartAlerts.App.init(
+			 {}
+		);
+	});
+</script>
+
+<span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+    
+      
+      
+         <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle c-notification-toggle--has-alerts"></div> 
+      
+  
+
+  <div class="js-drawer c-drawer c-drawer--is-hidden u-no-transition">
+    <div class="js-panel c-panel">
+      <ul class="js-tabs js-sticky-header c-tabs">
+        
+        <li id="qtf-csa-drawerTabAll" class="js-tab c-tabs__tab " data-tab-type="all"><span class="c-tabs__label">All</span></li>
+        
+        <li id="qtf-csa-drawerTabClient" class="js-tab c-tabs__tab" data-tab-type="client"><span class="c-tabs__label">Resident</span></li>
+        
+      </ul>
+
+      <div class="js-panel-content c-panel__content">
+        <div class="js-filters l-stack u-hidden u-mb-8">
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Unit</label>
+            <div id="qtf-csa-unitDropdown" class="js-dropdown-unit js-dropdown c-dropdown u-text-uppercase" data-type="unit">
+              <a href="https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671#" id="qtf-csa-unitDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671#" id="qtf-csa-unitDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Floor</label>
+            <div id="qtf-csa-floorDropdown" class="js-dropdown-floor js-dropdown c-dropdown u-text-uppercase" data-type="floor">
+              <a href="https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671#" id="qtf-csa-floorDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671#" id="qtf-csa-floorDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="new-alert-bubble" class="new-alert-bubble c-button c-button--primary" style="display:none;">
+          <img class="tail-up" src="./Care Plan Triggers - 1_files/whitearrow.png">New Alerts
+        </div>
+        <div class="js-panel-alerts c-panel-alerts c-panel-alerts--has-no-alerts">No Alerts</div>
+      </div>
+    </div>
+  </div>
+	<script id="tmpl-csa-alert-card" type="text/template">
+    <div id="js-csa-alert-card-{{type}}-{{id}}" class="js-alert-card c-card" data-alert-type="{{type}}" data-alert-id="{{id}}" data-grouped-alert-ids="{{groupedAlertIds}}" data-client-id="{{clientId}}" data-created-timestamp="{{createdTimestamp}}" data-module="{{module}}"
+      data-vital-type="{{vitalType}}" data-pn-id="{{pnId}}" data-clear-alert-permission="{{clearAlertPermission}}" data-alert-description="{{description}}" data-wv-pn-description="{{pn_description}}">
+
+	    <div class="c-card__header">
+	      <div class="l-table-row u-mb-0">
+	        <span class="c-card__type l-table-row__col l-table-row__col--70 u-text-uppercase u-text-subdued">{{formattedType}}</span>
+	        <a href="#_" class="js-alert-card-clear c-card__clear l-table-row__col l-table-row__col--30 u-text-uppercase u-text-subdued u-text-align-right"style="display:{{clearAlertPermission}}">Clear</a>
+	      </div>
+	    </div>
+	    <div class="c-card__content">
+	      <div class="l-table-row">
+	        <div class="l-table-row__col l-table-row__col--70">
+	          <h4 class="t-h4 u-mb-0">{{formattedName}} (<span class="qtf-csa-alertClientNumber">{{clientNumber}}</span>)</h4>
+            <span>Room <span class="qtf-csa-alertRoomNumber">{{room}}</span></span>
+	        </div>
+	        <div class="l-table-row__col l-table-row__col--30 u-text-align-right">
+	          <small class="u-text-subdued">{{timeSince}}</small>
+	        </div>
+	      </div>
+	      <div class="js-more-less"><p class="js-alert-description">{{eInteractHeading}}{{description}}</p></div>
+        <hr class="o-hr"/>
+
+        <div class="js-show-hide js-card-expander c-show-hide c-card-expander">
+          <div class="c-show-hide__content">
+            <div class="js-show-hide js-alert-details-expander c-show-hide c-details-expander">
+              <a href="#_" class="js-show-hide-toggle js-alert-details-expander-toggle c-show-hide__toggle">Alert Details</a>
+              <div class="c-show-hide__content">
+                <div id="js-csa-alert-card-details-{{type}}-{{id}}" class="s-clinical-smart-alert-details">
+                  <div class="l-detail-row" style="display:{{hideAlertDetailsEffectiveDate}}">
+                    <h4 class="t-h4 u-mb-0 c-alert-detail">Effective Date: </h4>
+                    <div class="c-alert-detail qtf-csa-AlertEffectiveDate">{{effectiveDate}}</div>
+                  </div>
+ 				  <div style="display:{{displayExtendedDetails}};">
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Description: </h4> 
+                      <div class="c-alert-detail c-assess-description">{{assess_description}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Created Date: </h4>
+                      <div class="c-alert-detail c-assess-date">{{assess_date}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Type: </h4>
+                      <div class="c-alert-detail c-assess-type">{{assess_type}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Question: </h4>
+                      <div class="c-alert-detail c-trigger-question">{{trigger_question}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Response: </h4>
+                      <div class="c-alert-detail c-trigger-response">{{trigger_response}}</div>
+                    </div>
+                  </div>
+                  <div style="display:{{displayComplexDetails}};">
+					<div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Task}} Description: </h4> 
+                      <div class="c-alert-detail c-task-description"><ul></ul></div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Follow Up Question: </h4> 
+                      <div class="c-alert-detail c-followup-question">{{followup_question}}</div>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+					<div class="l-detail-row">
+					  <h4 class="t-h4 u-mb-0 c-alert-detail c-approach-description">{{complex_description}} </h4>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Response Pick List: </h4> 
+                      <div class="c-alert-detail c-response-pick-list"><ul></ul></div>
+                    </div>
+                  </div>
+				  <div style="display:{{displayInboundClinicalData}};">
+                    <div class="l-detail-row">
+                      <div class="c-alert-detail c-inbound-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipcard-container c-hidden">
+                  <div class="flipcard">
+                    <div class="flipcard-wrapper">
+                        <div class="flipcard-side flipcard-side-front flipcard-is-active">
+                            <div class="trendgraph"></div>
+                        </div>
+                        <div class="flipcard-side flipcard-side-back c-hidden">
+                            <table class="c-alert-details-table js-alert-details-table">
+                              <tbody></tbody>
+                             </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flipcard-chevron-container">
+                      <div class="flipcard-chevron"></div>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="suggestions-section">
+                <p>Suggestions:</p>
+				<div style="display:{{hideSuggestionLinks}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-care-plan-link-{{id}}" href="{{carePlanAction}}">Add Care Plan Item</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-add-tasks-link-{{id}}" href="/admin/client/cp_tasks.jsp?ESOLclientid={{clientId}}">Add Task</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-add-vitals-{{id}}" href="/admin/client/cp_weightsandvitals.jsp?ESOLclientid={{clientId}}">Add Vital</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-assessment-link-{{id}}" href="/admin/client/cp_assessment.jsp?ESOLclientid={{clientId}}">Add Assessment</a>
+				</div>
+				<div style="display:{{displayInboundClinicalData}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-review-inbound-data-link-{{type}}-{{id}}" href="/clinical/inbound/inboundclinicaldata.xhtml?ESOLclientid={{clientId}}">Review Inbound Clinical Data</a>
+				</div>
+              </div>
+            </div>
+
+            
+              <div class="js-show-hide c-show-hide c-assessment-create-wrapper js-assessment-create-wrapper">
+                <label class="u-mt-8 c-custom-checkbox__disabled assessment-create">
+                  eINTERACT Change in Condition
+                    <input type="checkbox" class="js-show-hide-toggle js-checkbox-create-assessment c-show-hide__toggle" disabled />
+                    <span class="c-custom-checkbox__checkmark"></span>
+                </label>
+                <div class="c-show-hide__content c-form u-mt-16">
+                  <div class="u-mt-16 u-mb-16">
+                    <div>
+                      <label>Effective Date: </label>
+                    </div>
+                    <div class="assessment-date-picker">
+                      <input id="qtf-effective-date-{{id}}" name="effective_date" type="hidden"/><input id="qtf-effective-date-{{id}}_dummy" name="effective_date_dummy" class="pccDateField c-dropdown" type="text" value="" size="10" maxlength="10"/>
+                      <select name="hour" class="c-dropdown" id="qtf-effective-hour-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                      </select>
+                      <select name="min" class="c-dropdown" id="qtf-effective-minute-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                          <option value="24">24</option>
+                        
+                          <option value="25">25</option>
+                        
+                          <option value="26">26</option>
+                        
+                          <option value="27">27</option>
+                        
+                          <option value="28">28</option>
+                        
+                          <option value="29">29</option>
+                        
+                          <option value="30">30</option>
+                        
+                          <option value="31">31</option>
+                        
+                          <option value="32">32</option>
+                        
+                          <option value="33">33</option>
+                        
+                          <option value="34">34</option>
+                        
+                          <option value="35">35</option>
+                        
+                          <option value="36">36</option>
+                        
+                          <option value="37">37</option>
+                        
+                          <option value="38">38</option>
+                        
+                          <option value="39">39</option>
+                        
+                          <option value="40">40</option>
+                        
+                          <option value="41">41</option>
+                        
+                          <option value="42">42</option>
+                        
+                          <option value="43">43</option>
+                        
+                          <option value="44">44</option>
+                        
+                          <option value="45">45</option>
+                        
+                          <option value="46">46</option>
+                        
+                          <option value="47">47</option>
+                        
+                          <option value="48">48</option>
+                        
+                          <option value="49">49</option>
+                        
+                          <option value="50">50</option>
+                        
+                          <option value="51">51</option>
+                        
+                          <option value="52">52</option>
+                        
+                          <option value="53">53</option>
+                        
+                          <option value="54">54</option>
+                        
+                          <option value="55">55</option>
+                        
+                          <option value="56">56</option>
+                        
+                          <option value="57">57</option>
+                        
+                          <option value="58">58</option>
+                        
+                          <option value="59">59</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <p class='u-hidden has-error js-effective-date-error'>Assessment Date Cannot Be In The Future.</p>
+                  <div class="c-einteract-assessment c-einteract-assessment__hidden">
+                    <p>
+                      <span class="c-einteract-heading alert-SW-conds">Stop &amp; Watch Alerts: </span>
+                    </p>
+                    <p class="c-einteract-heading">Change in Condition(s): </p>
+                    <select name="cic_reason_{{id}}" id="cic_reason_{{id}}" data-placeholder="Choose an option..." class="chzn-select" multiple="multiple"
+                      style="width:100%;">
+                    </select>
+                    <div class="c-cic-other-symptoms u-hidden">
+                      <p class="c-einteract-heading">Other Change in Condition (describe): </p>
+                      <input type="text" class="c-cic-other-symptoms-input u-mb-16" name="other-symp-{{id}}" maxlength="50" size="50" />(50 max) <span style="color: red;">&nbsp;*</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+
+          
+           
+             
+                <div class="js-show-hide js-carousel-esignature c-carousel">
+                    <div class=" js-show-hide js-create-pn-wrapper c-show-hide js-carousel-item c-carousel__item">
+              
+              
+            
+			<div style="display:{{hideProgressNote}}">
+            <label class="u-mt-8 u-mb-8 c-custom-checkbox pn-create">
+	          	Create Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle js-checkbox-create-pn c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+			</div>
+            <label class="u-mt-8 c-custom-checkbox pn-view">
+	          	View Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle js-checkbox-create-pn c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+              <div class="c-show-hide__content c-form u-mt-16 js-pn-interactive-section"></div>
+              <button class="js-button-save-interactive-suggestions c-button c-button--primary u-mt-16">Save</button>
+              <button class="js-button-cancel-interactive-suggestions c-button c-button--primary-inverse">Cancel</button>
+              </div>
+                              
+                <div class="js-carousel-item c-carousel__item">
+                <h4 class="t-h4 u-mt-16">Attestation Statement</h4>
+                <p>By electronically signing this record, I attest that the information recorded was entered by me and that I am authorized by the facility to record and sign this record.</p>
+                <hr class="o-hr"/>
+                <div class="c-form u-mt-16 u-mb-16">
+                    <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30">
+                            <label>User:</label>
+                        </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            nfetterman
+                        </div>
+                    </div>
+                    <div class="l-table-row">
+                       <div class="l-table-row__col l-table-row__col--30">
+                            <label>Password:</label>
+                       </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            <form class="js-esignature-form" autocomplete="off">
+                              <input class="js-input-esignature-password" type="password" autocomplete="off"/>
+                              <div class="js-esignature-form-status-msg c-form__status-msg"></div>
+                            </form>
+                        </div>
+                      </div>
+                      <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30"></div>
+                            <div class="l-table-row__col l-table-row__col--70">
+                                <button class="js-button-sign-esignature c-button c-button--primary">Sign</button> 
+                                <button class="js-button-cancel-esignature c-button c-button--primary-inverse">Cancel</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      
+                   
+                </div>  
+              <div class="js-show-hide-toggle js-card-expander-toggle c-show-hide__toggle"></div>
+            </div>
+            </div>          
+          </div>
+	    </div>
+	  </div>
+	</script>
+</span>
+
+				
+				
+				<a href="https://partnercontentus.pointclickcare.com/home/logout.jsp" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+			</td>
+		</tr>
+	</tbody></table>
+	<table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+		<tbody><tr>
+			<td valign="top">
+				<div class="slMainNavTabs">
+					
+				<ul id="topTabs"><li id="QTF_HomePageTab" class=""><a href="https://partnercontentus.pointclickcare.com/home/home.jsp" class="arrowDrop">Home</a><div class="megaMenu mmHomeBox"><div class="mmBoxes"><h5>Dashboards</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/home/home.jsp">Home</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/admindashboard.jsp">Admin Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/clinicaldashboard.jsp?fromMenu=Y">Clinical Dashboard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Modules</h5><ul class="mmList"><li><a href="javascript:void((function(){closePopupIfOpen(&#39;pocWindow&#39;);window.pocWindow=window.open(&#39;/poc/loginBypass.xhtml?initcheck=YY&amp;frompage=PCC&amp;closeWindowOnLogout=Y&#39;,&#39;pocWin&#39;)})());">POC</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>External Links</h5><ul class="mmList"><li><a href="javascript:openPopupWinNR(&#39;/common/popup/extlinks.xhtml?ESOLclientid=&#39;+getClientIdIfAvailable(), &#39;extlinkspopup&#39;, 500, 600, &#39;&#39;);">View all links</a></li></ul><br><h5>Other</h5><ul class="mmList"><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_AdminTab" class=""><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_adminclientprofile.jsp?ESOLclientid=4671" class="arrowDrop">Admin</a><div class="megaMenu mmAdminBox"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=P">Residents</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp">Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp">Medical Professionals</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Financial Management</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/admindashboard.jsp">Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/billing/billportal_us.jsp">Billing</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/billing/collections/collections.xhtml?sort=client&amp;dir=asc">Collections</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/trust/trustportal.jsp">Trust</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/assess/assessscheduler.jsp?ESOLtabType=P">UDA</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/reports/adminreports.jsp?ESOLtabtype=P">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/eadminsetup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_ClinicalTab" class="ClinicalTab"><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=C" class="arrowDrop">Clinical</a><div class="megaMenu mmClinicalBox"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=C">Residents</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Care Management</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/clinicaldashboard.jsp?fromMenu=Y">Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/hospitalPortal.xhtml">Hospital Tracking</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/mds/mdsportal.jsp?isMDS3=Y">MDS</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/communications.jsp">Communications</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/ordersPortal.xhtml">Orders</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/inc/incidentportal.xhtml?ESOLview=S">Risk Management</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/weightsandvitalsportal.jsp">Weights and Vitals</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/assess/assessscheduler.jsp">UDA</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/cpg/carepathwaysportal.xhtml">Care Pathways</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Quick Entry</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/phyvisitedit.jsp">Physician Visits</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/immunizbatchentry.jsp">Immunization</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/weightbyunit.jsp">Weight</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=3">Blood Pressure</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=5">Temperature</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=6">Pulse</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=2">Respiration</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=7">Blood Sugar</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=9">O2 Saturation</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=10">Pain Level</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Modules</h5><ul class="mmList"><li><a href="javascript:void((function(){closePopupIfOpen(&#39;pocWindow&#39;);window.pocWindow=window.open(&#39;/poc/loginBypass.xhtml?initcheck=YY&amp;frompage=PCC&amp;closeWindowOnLogout=Y&#39;,&#39;pocWin&#39;)})());">POC</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/reports/carereports.jsp?ESOLtabtype=C">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/setup/ecaresetup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_MarketingTab" class=""><a href="https://partnercontentus.pointclickcare.com/crm/crmportal.jsp" class="arrowDrop">IRM</a><div class="megaMenu mmIRMBox"><div class="mmBoxes"><h5>IRM</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/crm/crmportal.jsp?ESOLtabtype=M">My Worklist</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/referrallist.jsp">Center Referrals</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/inquiries.jsp?ESOLtabtype=M">Inquiry Listing</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/benefits_portal.jsp">Activities</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/contacts.jsp">Contacts</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/accountlist.jsp">Accounts</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/maps/maps.jsp">MAPs</a></li><li><a href="javascript:openSizedLookup2(&#39;/crm/crm_bed_lookup_us.jsp?&#39;,&#39;bed_lookup&#39;,650,600,&#39;scrollbars&#39;);">Bed Availability</a></li><li><a href="javascript:openSizedLookup2(&#39;/irm/episode_wizard/episode.xhtml&#39;, &#39;&#39;, 842, 660,&#39;&#39;);">Inquiry Wizard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/crm/reports/crmreports.jsp">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/setup/setup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_reportingTab" class=""><a href="https://partnercontentus.pointclickcare.com/enterprisereporting/listing.xhtml" class="noArrowDrop">Reports</a><div class="megaMenu mmReportsBox"></div></li></ul></div>
+				<div class="slResidentSearch" style="float:right;">
+					
+					
+						<form name="slsearch">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+									<td width="45">
+										
+											<div id="searchSelect">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+														<td width="34"><img class="facility" src="./Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+														
+															<td><img class="arrow" src="./Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true"></td>
+														
+													</tr>
+												</tbody></table>
+											</div>
+										
+										
+									</td>
+									<td>
+										<input type="text" id="searchField" name="substring" autocomplete="off">
+									</td>
+									<td>
+										<input type="button" class="pccButton" value="Search" onclick="submitSearchNew();">
+									</td>
+								</tr>
+							</tbody></table>
+
+							
+								<div id="searchAll" style="border:1px solid #999;box-shadow:8px 8px 4px -6px #999;display:none;">
+									<input type="hidden" name="ESOLglobalclientsearch" value="N">
+									<table border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr onclick="switchFacImg(&#39;facilityIcon&#39;);switchToGlobalSearch(false);">
+											<td style="text-align:center;"><img class="facility" src="./Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+											<td>This Facility</td>
+										</tr>
+										<tr onclick="switchFacImg(&#39;facilityAllIcon&#39;);switchToGlobalSearch(true);">
+											<td><img class="facility" src="./Care Plan Triggers - 1_files/facilityAllIcon.png" title="All Facilities"></td>
+											<td>All Facilities</td>
+										</tr>
+									</tbody></table>
+								</div>
+							
+							
+						</form>
+					
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	<table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td align="left">
+				<ul class="secondNavList"></ul>
+			</td>
+			<td valign="top" align="right" width="85">
+
+
+
+
+
+
+
+
+
+		
+	
+	
+    
+	
+	
+	
+	
+	   		
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		</td>
+	</tr>
+</tbody></table>
+ 
+
+
+
+
+
+	
+		<script>var currentResidentId = 4671</script>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./Care Plan Triggers - 1_files/sch.js.download"></script>
+
+<script>
+function getCurrentClientId(){
+   return "4671";
+}
+
+function getExtendDetailStatus(){
+	
+	return "N";
+}
+
+function printedReport()
+{
+    window.open("/reporting/setup/runtime/clinicalreports.xhtml?action=runReport&ESOLreportId=-1013&ESOLclientid="+getCurrentClientId()+"&ESOLtabType=C&ESOLmoduleId=2&ESOLreportType=billing&ESOLaction=run&reportFormatType=pdf");
+}
+</script>
+
+<link type="text/css" rel="stylesheet" href="./Care Plan Triggers - 1_files/clientheader.css" media="screen,print">
+
+
+
+  
+  
+    <script>var onLeave = false;</script>
+    
+      
+      
+    
+  
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="residentWrapper">
+  <tbody><tr>
+  	
+      <td valign="top" class="residentProfile">
+      
+      
+		      
+		      
+					
+						
+						
+							
+			                  
+			                  
+			                    <img src="./Care Plan Triggers - 1_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+			                  
+			                  
+			                  
+			                  
+			                
+						
+					
+			  
+       
+    
+		</td>
+	
+    <td valign="top" width="100%" class="residentNameBarWrapper">
+       <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
+          <tbody><tr>
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            <td valign="top" class="residentNameBarName"><span id="name">Smith, Stella  (558874)</span> </td>
+            <td valign="top" align="right" class="residentNameBarButtons">
+              <span id="clientCountSpan">
+                
+                  
+                  
+                  
+                    
+                      <script>
+function navNewClient(targetClientId){
+	var url = window.location.pathname + "?ESOLclientid=" + targetClientId;
+	location.href = url;
+}
+</script>
+4 of 8
+<input type="button" class="pccButton" value="Prev" onclick="navNewClient(4251)">
+<input type="button" class="pccButton" value="Next" onclick="navNewClient(4042)">
+                    
+                  
+                
+              </span>
+            </td>
+          </tr>
+       </tbody></table>
+         
+           
+           
+           
+           
+             
+           
+         
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+           <tbody><tr>
+           
+             <td valign="top" class="residentProfileDetails">
+             
+               <p>Status: <span id="res_status">New
+               </span>&nbsp;&nbsp;&nbsp;Location:
+               
+               </p><br>
+               <p>
+                
+               Gender:
+               
+                  
+                  
+                    Female
+                  
+                  
+                  
+               
+               
+               &nbsp;&nbsp;&nbsp;&nbsp;
+               DOB:
+               
+                 11/22/1933
+               
+               
+               
+                 
+                 
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 Age: 85
+               
+               </p><br>
+               <p>Physician:  </p><br>
+                 <table class="actionBar">
+                    <tbody><tr>
+                       <td class="careProfileBtn">
+                          
+                            
+                              <div style="padding-bottom: 2px;">
+                                
+                                <input type="button" id="careProfileResidentBtn" style="position: relative; height: 22px; top: -1px;" class="pccButton" onclick="javascript:displayCareProfile(4671,&#39;Smith, Stella (558874)&#39;)" value="Care Profile">
+                              </div>
+                            
+                          
+                           
+                       </td>
+                       <td valign="top">
+                         
+                           <div class="residentDropDownWrapperEdit" style="padding-bottom: 2px;">
+                             <div class="residentDropDownButtonEdit"><a href="javascript:void(0)" class="residentLinkEdit"><span>Edit</span></a></div>
+                             <div class="residentDropDownListEdit">
+                               <ul id="listcontainerEdit">
+                                 
+                                 
+                                   <li><a href="javascript:editDemographicInfo(&#39;nonAdmin&#39;,4671)">Demographics</a></li>
+                                 
+                                   <li><a href="javascript:displayPhoto(4671)">Photo</a></li>
+                               </ul>
+                             </div>
+                           </div>
+                          
+                        </td>
+                        <td valign="top">
+                          
+                            
+                              <div class="residentDropDownWrapperPrint">
+                                <div class="residentDropDownButtonPrint"><a href="javascript:void(0)" class="residentLinkPrint"><span>Print</span></a></div>
+                                <div class="residentDropDownListPrint">
+                                  <ul id="listcontainerPrint">
+                                    
+                                      
+	                                      
+	                                      
+	                                      
+                                      
+                                    
+                                    
+                                    
+                                    
+                                      <li><a href="javascript:openAuditDemographics(1401,4671)">Audit&nbsp;Demographics</a></li>
+                                    
+                                    
+                                    
+                                  </ul>
+                                </div>
+                              </div>
+                            
+                          
+                        </td>
+                         <td colspan="4" valign="top">
+                         	
+						 </td>
+						 <td valign="top">
+                          
+                            
+                          
+                         </td>
+                     </tr>
+                  </tbody></table>
+               </td>
+			      
+               
+               
+	               <td valign="top" align="right" class="residentDetailsStatusWrapper">
+	               
+	                  <table id="vitals" class="pccData residentDetailsStatus" cellpadding="2" cellspacing="1" border="0">
+	                      <tbody>
+	                         <tr>
+	                           <td valign="top" colspan="3"><b>Current Vitals</b></td>
+	                           <td align="right" colspan="1">
+	                             <div class="wvTooltip" align="right">
+	                           	   <img src="./Care Plan Triggers - 1_files/wv_info.png">
+	                               <span class="wvTooltiptext">Click on any vitals to see graph.</span>
+	                             </div>
+	                           </td>
+	                         </tr>
+	                         <tr>
+	                           
+                                 
+                                 
+                                   <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 3);">
+                                 
+                                 
+	                               <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                   <div class="vitalDetails">
+                                     <div>
+	                                   <b>BP:</b>
+	                                   
+	                                   <div>
+	                                     
+	                                   </div>
+	                                 </div>
+	                                 </div>
+	                               </td>   
+	                             
+	                             
+							       
+    							    
+    							      <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 5);">
+                                    
+							      
+                                    <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                    <div class="vitalDetails">
+                                      <div>
+                                        <b>Temp:</b>
+                                          
+                                        </div>  
+                                        <div></div>
+                                      </div>
+                                    </td>
+                                  
+							     
+                                    
+                                    
+                                         <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 6);">
+                                   
+                                 
+                                   <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                   <div class="vitalDetails">
+	                                 <div>
+	                                   <b>Pulse:
+	                                   </b>
+	                                   
+	                                 </div>
+	                                 <div></div>
+	                               </div>
+	                             </td>
+	                             
+	                            
+                                  
+                                  
+                                    <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 1);">
+                                  
+                                
+                                  <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                  <div class="vitalDetails">
+	                                <div>
+	                                  <b>Weight:
+	                                  </b>
+	                                  
+	                                </div>
+	                                <div></div>
+                                  </div>
+	                           </td>
+	                         </tr>
+	                         <tr>
+	                           
+                                 
+                                 
+                                   <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 2);">
+                                 
+                               
+                                 <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                 <div class="vitalDetails">
+                                   <div>
+	                                 <b>Resp:
+	                                  </b>
+	                                  
+	                                </div>
+	                                <div></div>
+                                  </div> 
+                                </td>
+	                         
+	                           
+	                             
+                                 
+                                   <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 7);">
+                                  
+                                
+                                  <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                  <div class="vitalDetails">
+	                                <div>
+	                                  <b>BS:
+	                                  </b>
+	                                  
+	                                </div>
+	                                <div></div>
+	                              </div>
+	                            </td>
+	                           
+	                          
+                                
+                                
+                                  <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 9);">
+                                
+                              
+                                <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                                <div class="vitalDetails">
+	                              <div>
+	                                <b>O2:
+	                                </b>
+	                                
+	                              </div>
+	                              <div></div>
+	                            </div>   
+	                          </td>
+	                         
+	                        
+                              
+                              
+                                <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 10);">
+                              
+                            
+                              <div class="exceptionWarning"><img src="./Care Plan Triggers - 1_files/wv_warning.png"></div>
+                              <div class="vitalDetails">
+                                <div>
+	                              <b>Pain:
+	                              </b>
+	                              
+	                            </div>
+	                            <div></div>
+	                          </div>
+	                        </td>
+	                       </tr>
+	                     </tbody>
+	                  </table>
+	               
+	               </td>
+	            
+            </tr>
+         </tbody></table>
+      </td>
+   </tr>
+</tbody></table>
+
+
+<div id="trendingGraph" class="wvgraph">
+  <div class="wvgraph-content-table">
+	  <div class="wvgraph-content-table-cell">
+	  	<div class="wvgraph-content">
+	  		<div class="wvgraph-clientTrendgraph"></div>
+	  	</div>
+	  </div>
+  </div>
+</div>
+
+<script src="./Care Plan Triggers - 1_files/clientinfonew.js.download"></script>
+
+
+<script>
+window.clientInfoGraph = window.clientInfoGraph || {};
+window.clientInfoGraph.moduleProps  = {
+
+	    termMap: {
+	      trend: 'Trend',
+	      baseline :'Baseline',
+	      diastolicBaseline : 'Diastolic Baseline',
+	      systolicBaseline :  'Systolic Baseline'
+	    },
+		   
+	    vitalMap: {
+	      weights: 'Weights',
+	      respiration: 'Respiration',
+	      bloodPressure: 'Blood Pressure',
+	      temperature: 'Temperature',
+	      pulse: 'Pulse',
+	      bloodSugar: 'Blood Sugar',
+	      heights: 'Heights',
+	      o2Sats: 'O2 Sats',
+	      painLevel: 'Pain Level'
+	    },
+	       
+	    defaultChartOpts : {
+	      data: {
+	        columns: [],
+	      },
+	      color: {
+	        pattern: ['#57c5bb', '#f5a623', ],
+	      },
+	      interaction: {
+	        enabled: true,
+	      },
+	      y: {
+	        padding: {
+	          bottom: 0,
+	        },
+	        min: 0,
+	      },
+	      axis: {
+	        x: {
+	            tick: {
+	            	values: [],
+	            },
+	        },
+	        y : {
+	        },
+	      },
+	      size : {
+	    	width: 400,
+	        height: 250,
+	      },
+	    },
+
+	    // indexed by vital type
+	    chartOpts : [
+	      {},
+	      // Weight
+	      {
+	        data : {
+	          columns: [['Weight']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : false,
+	      },
+	      // Respiration
+	      {
+	        data : {
+	          columns: [['Respiration']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : true,
+	      },
+	      // Blood pressure
+	      {
+	        data : {
+	          columns: [['Systolic'], ['Diastolic'] ],
+	          columnKeys: ['value', 'diastolicValue'],
+	        },
+	        isInteger : true,
+	      },
+	      // BP Dystolic -- currently doesn't generate alerts
+	      {},
+	      // Temperature
+	      {
+	        data : {
+	          columns: [['Temperature']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : false,
+	      },
+	      // Pulse
+	      {
+	        data : {
+	          columns: [['Pulse']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : true,
+	      },
+	      // Blood Sugar
+	      {
+	        data : {
+	          columns: [['Blood Sugar']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : false,
+	      },
+	      // Height (currently doesn't trigger alerts)
+	      {},
+	      // O2 Sats
+	      {
+	        data : {
+	          columns: [['O2 Sats']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : false,	        
+	      },
+	      // Pain Level
+	      {
+	        data : {
+	          columns: [['Pain Level']],
+	          columnKeys: ['value'],
+	        },
+	        isInteger : true,	        
+	      },
+	    ],
+	        
+	    userId: ''.trim()
+		};
+</script>
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="residentDetailsWrapper">
+  <tbody><tr>
+    <td valign="top">
+      <div class="residentDetailsHeader">
+        
+        <div class="residentDetailsBar">
+          <table cellpadding="4" cellspacing="0" border="0" width="100%" class="pccData residentDetailsSpecifics" style="width:100%;">
+            <colgroup>
+              
+                
+                
+                  <col style="width: 180px">
+                
+              
+              <col style="width: 185px">
+              <col style="width: 180px">
+              <col>
+            </colgroup>
+            
+            
+              
+              <tbody><tr>
+                <td valign="top" class="residentDetailsLabel ">Allergies:</td>
+                
+                
+                <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+              </tr>
+            
+            
+            
+              
+                
+              
+              <tr>
+                <td valign="top" class="residentDetailsLabel residentInfoEmpty">Code Status:</td>
+                <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">
+                  
+                    &nbsp;
+                </td>
+              </tr>
+            
+            
+              
+            
+            
+            
+              <tr>
+                
+                <td valign="top" class="residentDetailsLabel residentInfoEmpty">Special Instructions:</td>
+                <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">&nbsp;</td>
+              </tr>
+            
+            
+            
+            
+              <tr class="residentDetailsSpecificsExtended">
+                <td valign="top" class="residentDetailsLabel">Diet:</td>
+                <td valign="top" colspan="3" class="residentDetailsSummary dietDescriptions">&nbsp;</td>
+              </tr>
+            
+            
+            
+              <tr class="residentDetailsSpecificsExtended">
+                <td valign="top" class="residentDetailsLabel">Diagnosis:</td>
+                
+                <td valign="top" colspan="3" class="residentDetailsSummary medicalDiagnosis">
+                  
+                </td>
+              </tr>
+            
+            <tr class="residentDetailsSpecificsExtended">
+              <td valign="top" class="residentDetailsLabel">Admission (Re-entry):</td>
+              <td valign="top" class="residentDetailsSummary">
+                
+              </td>
+              <td valign="top" class="residentDetailsLabel hcDesc" align="right">&nbsp;</td>
+              <td valign="top" class="residentDetailsSummary hcValue" align="left">&nbsp;</td>
+            </tr>
+            <tr class="residentDetailsSpecificsExtended">
+              
+                
+                
+                
+                  <td valign="top" class="residentDetailsLabel">Initial Admission Date (MDS):</td>
+                
+              
+              <td valign="top" class="residentDetailsSummary">
+                
+              </td>
+              
+                
+                  <td valign="top" class="residentDetailsLabel">Enterprise ID:</td>
+                  <td valign="top" class="residentDetailsSummary">1401&nbsp;</td>
+                
+                
+              
+            </tr>
+            <tr class="residentDetailsSpecificsExtended">
+              <td valign="top" class="residentDetailsLabel">Discharge Date:</td>
+              <td valign="top" class="residentDetailsSummary">
+                
+              </td>
+              
+                
+                
+                  <td colspan="2">&nbsp;</td>
+                
+              
+            </tr>
+          </tbody></table>
+        </div>
+        <div id="progressbar"><div class="progress-label"></div></div>
+        <div class="slider">
+          <img id="idExtendedDetailSlider" alt="Show Extended Detail" src="./Care Plan Triggers - 1_files/schslider.png" border="0">
+        </div>
+        <input type="hidden" name="currentState" id="currentState" value="">
+        <script>
+          if(getExtendDetailStatus() == 'Y'){
+            $('td.residentInfoEmpty').addClass('residentInfoEmptyExpanded');
+            $('td.residentInfoEmptyExpanded').removeClass('residentInfoEmpty');
+            $('tr.residentDetailsSpecificsExtended').toggle();
+          }
+        </script>
+      </div>
+    </td>
+  </tr>
+</tbody></table>
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" class="clientInfoTabs">
+  <tbody><tr height="5" class="clientInfoLine"><td></td></tr>
+  <tr><td nowrap="nowrap" colspan="2">
+  <ul class="pccTabs"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_residentdashboard.jsp?ESOLclientid=4671">&nbsp;&nbsp;Dash&nbsp;&nbsp;</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_careclientprofile.jsp?ESOLclientid=4671">Profile</a></li><li><a href="https://partnercontentus.pointclickcare.com/profile/census/clinicaldisplay.xhtml?ESOLclientid=4671">Census</a></li><li class="pccActiveTab"><a href="https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671">Med Diag</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/allergyList.xhtml?ESOLclientid=4671">Allergy</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/immunedisplay.xhtml?ESOLclientid=4671">Immun</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/ordersChart.xhtml?ESOLclientid=4671">Orders</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_weightsandvitals.jsp?ESOLclientid=4671">Wts/Vitals</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_mds.jsp?ESOLclientid=4671">&nbsp;&nbsp;&nbsp;MDS&nbsp;&nbsp;&nbsp;</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_assessment.jsp?ESOLclientid=4671">Assmnts</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_progressnotes.jsp?ESOLclientid=4671">Prog Note</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_careplans_rev.jsp?ESOLclientid=4671">Care Plan</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/client/cp_tasks.jsp?ESOLclientid=4671">Tasks</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/cpg/carepathwaytab.xhtml?ESOLclientid=4671"> Care Pathways</a></li><li><a href="https://partnercontentus.pointclickcare.com/upload/filesdisplay.xhtml?ESOLclientid=4671">Misc</a></li></ul>
+    </td>
+  </tr>
+</tbody></table>
+
+<script>var jsPrevTbSel;</script>
+
+
+	
+
+
+
+
+
+  <form name="formObj" method="post">
+    <input type="hidden" name="ESOLquestion" value="">
+  </form>
+
+  
+  
+  
+  
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody><tr valign="top">
+      <td class="pccModuleHeader">
+        <table border="0" cellspacing="0" cellpadding="4">
+          <tbody><tr>
+            <td nowrap="nowrap" class="pccModuleHeader">&nbsp;Medical Diagnosis&nbsp;&nbsp;</td>
+            <td nowrap="nowrap" class="pccModuleHeader">
+              
+                <input type="button" class="pccButton" value="New Diagnosis" onclick="openSizedLookup2(&#39;/care/chart/cp/clientdiag.jsp?ESOLclientid=4671&#39;, &#39;&#39;, 600, 600, &#39;&#39;);">
+              
+            </td>
+            <td nowrap="nowrap" class="pccModuleHeader">
+              
+                <input type="button" class="pccButton" value="New Diagnosis Sheet" onclick="openSizedLookup2(&#39;/care/chart/cp/clientdiagsheet.jsp?ESOLnewDiagSheet=Y&amp;ESOLclientid=4671&#39;, &#39;&#39;, 780, 650, &#39;&#39;)">
+                </td>
+                <td nowrap="nowrap" class="pccModuleHeader">
+              
+
+        
+            <input type="button" class="pccButton" value="Rank Diagnoses" onclick="openSizedLookup2(&#39;/care/chart/mds/mdsdiagwizardrerank.jsp?ESOLrerank=Y&amp;ESOLclientid=4671&#39;, &#39;&#39;, 700, 570, &#39;&#39;);">
+          
+     </td>
+    </tr>
+  </tbody></table>
+  </td>
+  <td width="150" nowrap="nowrap" align="right" valign="middle" class="pccModuleHeader">
+      
+       <div class="dropDownButtonContainer">
+            <input type="button" class="pccButton" value="Reports &#9660;"><br>
+          <div class="dropDownMenu" style="display: none;">
+         
+                <a href="https://partnercontentus.pointclickcare.com/care/reports/rp_diagnosis.jsp?ESOLclientid=4671&amp;ESOLgroupby=1&amp;ESOLsortclient=2">Diagnosis Report</a>
+              
+              
+                <a href="javascript:openAuditReport()">Diagnosis Audit Report</a>
+              
+            </div>
+          </div>
+        
+      </td>
+      <td width="50" nowrap="nowrap" align="right" valign="middle" class="pccModuleHeader">
+        
+      </td>
+    </tr>
+  </tbody></table>
+
+  <table width="100%" height="25px">
+    
+  </table>
+
+
+
+
+  <div width="99%" class="displayFiltersBar" onclick="toggleFilters();">
+    <table width="100%">
+      <tbody><tr>
+        <td>
+          <a id="filterTrigger">&nbsp;&nbsp;&nbsp;
+          
+          
+            <img class="plussign_img" src="./Care Plan Triggers - 1_files/newplus.gif">&nbsp;
+          
+          Display Filters</a>
+        </td>
+        <td align="right">
+          <a id="infoPopupIcon" style="padding-right:5px; display:inline-block;" title="Additional Information"><img style="vertical-align: bottom;" src="./Care Plan Triggers - 1_files/icon-info-14.png"></a>
+        </td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <form name="client" id="filterForm" style="margin:0;" method="post" action="https://partnercontentus.pointclickcare.com/clinical/meddiag/medDiagChart.xhtml?ESOLclientid=4671">
+    <input type="hidden" name="ESOLsave" value="N">
+    <input type="hidden" name="ESOLclientid" value="4671">
+    <input type="hidden" name="ESOLminiToken" value="6603834141">
+    <input type="hidden" name="ESOLpnid" value="3">
+    <input type="hidden" name="ESOLsaveFlag" value="N">
+    <input type="hidden" name="ESOLpage" value="/clinical/meddiag/medDiagChart.xhtml">
+    <input type="hidden" name="ESOLshow" value="N">
+    <input type="hidden" name="ESOLdiagsheetid" value="">
+    <input type="hidden" name="ESOLnotificationid" value="">
+    <input type="hidden" name="ESOLviewTransferInfo" value="N">
+    <input type="hidden" name="careInfo" value="{NoKnownDiagnoses-at=null, NoKnownDiagnoses=null, NoKnownDiagnoses-ConfirmBy=null}">
+    <input type="hidden" name="isCollapseQueuedMedDiags" value="true">
+
+    
+    
+      
+    
+    <div id="displayFilters" style="display:none;">
+      
+
+
+
+
+
+
+
+<style>
+ .fieldname{
+    text-align:right;
+    padding-left:0;
+ }
+ .filtertable tr td{
+    white-space:nowrap;
+ }
+</style>
+<script>
+	function validateDate(input) {
+	  if ($(input).val() != "" && !ESOLValidateDateString(input)) {
+	    alert('Please enter a valid date');
+	    input.focus();
+	  }
+	}
+
+	function submitForm() {
+		$("input[name='ESOLfilterRefresh']").val('Y');
+	    $("#filterForm").submit();
+	}
+
+	function updateEducationHiddenValue() {
+		$('#education_provided_to_resident_family_checkbox').is(':checked')
+			? $("#education_provided_to_resident_family").val('true')
+		: $("#education_provided_to_resident_family").val('false');
+	}
+
+	function updateStatusHiddenValue(ths) {
+		var elementId = ths.id;
+		var regex = /_checkbox$/;
+		var updateElementId = elementId.replace(regex, "");
+		if($('#' + elementId).is(':checked')) {
+			$("#" + updateElementId).val('true')
+		}
+		else {
+			$("#" + updateElementId).val('false');
+		}
+	}
+</script>
+
+
+<input type="hidden" name="filter" value="true">
+<input type="hidden" name="ESOLfilterRefresh" value="N">
+
+<table width="98%" border="0" class="filtertable">
+  <tbody><tr>
+    
+    <td style="vertical-align: top;">
+   	 <table border="0">
+       <tbody><tr>
+        <td class="fieldname" style="vertical-align:top;padding-top:6px;">Status: </td>
+        <td style="padding-left:0;white-space:nowrap;">
+	    	 <table class="checkboxtable" id="table_status_checkboxtable">
+	      		<tbody><tr nowrap="nowrap">
+	    	<td> <input type="checkbox" id="show_status_active" name="show_status_active" checked="">
+	    	 <label for="show_status_active">Active</label>
+	    	 </td>
+	    	<td> <input type="checkbox" id="show_status_resolved" name="show_status_resolved">
+ 			<label for="show_status_resolved">Resolved</label>
+	    	 </td>
+	    	<td> <input type="checkbox" id="show_status_struckout" name="show_status_struckout">
+			 <label for="show_status_struckout">Struck Out</label>&nbsp;<span class="required">&nbsp;*&nbsp;</span>
+	    	 </td>
+	    	</tr>
+	    	</tbody></table>
+        </td>
+      </tr>
+        <tr>
+    <td class="fieldname">Code: </td>
+    <td>
+        <select name="code">
+          <option value="">All</option>
+          
+            <option value="C18.9">
+              C18.9
+            </option>
+          
+            <option value="E05">
+              E05
+            </option>
+          
+            <option value="I48.91">
+              I48.91
+            </option>
+          
+            <option value="I50.3">
+              I50.3
+            </option>
+          
+            <option value="J18.9">
+              J18.9
+            </option>
+          
+        </select>
+    </td>
+    </tr>
+    <tr><td class="fieldname">Created Date: </td>
+    <td>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<select name="created_date_operator">
+  <option value="0" selected="">On</option>
+  <option value="-1">Before</option>
+  <option value="1">After</option>
+</select>
+<input id="created_date" name="created_date" type="hidden"><input id="created_date_dummy" name="created_date_dummy" class="pccDateField hasDatepicker" type="text" value="" size="10" maxlength="10"><img class="ui-datepicker-trigger" src="./Care Plan Triggers - 1_files/icon-calendar.png" alt="" title="">
+
+    </td></tr>
+      <tr><td class="fieldname">Date: </td>
+    <td>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<select name="onset_date_operator">
+  <option value="0" selected="">On</option>
+  <option value="-1">Before</option>
+  <option value="1">After</option>
+</select>
+<input id="onset_date" name="onset_date" type="hidden"><input id="onset_date_dummy" name="onset_date_dummy" class="pccDateField hasDatepicker" type="text" value="" size="10" maxlength="10"><img class="ui-datepicker-trigger" src="./Care Plan Triggers - 1_files/icon-calendar.png" alt="" title="">
+
+    </td>
+  </tr>
+	
+    <tr>
+    <td class="fieldname">Rank: </td>
+    <td>
+        <select name="rank">
+          <option value="">All</option>
+          
+            <option value="1047">
+              Principal Diagnosis (#67)
+            </option>
+          
+            <option value="10412">
+              Diagnosis 1
+            </option>
+          
+            <option value="10403">
+              Diagnosis 2
+            </option>
+          
+            <option value="9716">
+              Other
+            </option>
+          
+        </select>
+    </td>
+    </tr>
+    
+	
+        <tr>
+    <td class="fieldname">Classification: </td>
+    <td>
+        <select name="classification_id">
+          <option value="">All</option>
+          
+            <option value="9399">
+              Admitting Dx (#69)
+            </option>
+          
+            <option value="1048">
+              Admission
+            </option>
+          
+            <option value="503">
+              During Stay
+            </option>
+          
+            <option value="502">
+              History
+            </option>
+          
+            <option value="500">
+              Discharge
+            </option>
+          
+        </select>
+    </td>
+    </tr>
+    
+	
+    <tr>
+    <td class="fieldname">Confidential Only: </td>
+    <td>
+         <table class="checkboxtable">
+            <tbody><tr nowrap="nowrap">
+    	      <td style="padding-left:0;">
+    		    <input type="checkbox" id="confidential" name="confidential">
+    	      </td>
+            </tr>
+            <tr>
+  	          <td style="padding-left:0;">
+              </td>
+ 	        <td>
+            </td>
+  	        <td></td>
+            </tr>
+          </tbody></table>
+    </td>
+	<td></td>
+    </tr>
+    
+    </tbody></table></td>
+
+<td><table>
+      <tbody><tr>
+    <td class="fieldname">Description: </td>
+    <td>
+        <select name="description" style="width:300px">
+          <option value="">All</option>
+          
+            <option value="I50.3" title="DIASTOLIC (CONGESTIVE) HEART FAILURE">
+              DIASTOLIC (CONGESTIVE) HEART FAILURE
+            </option>
+          
+            <option value="C18.9" title="MALIGNANT NEOPLASM OF COLON, UNSPECIFIED">
+              MALIGNANT NEOPLASM OF COLON, UNSPECIFIED
+            </option>
+          
+            <option value="J18.9" title="PNEUMONIA, UNSPECIFIED ORGANISM">
+              PNEUMONIA, UNSPECIFIED ORGANISM
+            </option>
+          
+            <option value="E05" title="THYROTOXICOSIS [HYPERTHYROIDISM]">
+              THYROTOXICOSIS [HYPERTHYROIDISM]
+            </option>
+          
+            <option value="I48.91" title="UNSPECIFIED ATRIAL FIBRILLATION">
+              UNSPECIFIED ATRIAL FIBRILLATION
+            </option>
+          
+        </select>
+    </td>
+    </tr>
+ <tr>
+            <td class="fieldname">Resolved Date: </td>
+    <td>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<select name="resolved_date_operator">
+  <option value="0" selected="">On</option>
+  <option value="-1">Before</option>
+  <option value="1">After</option>
+</select>
+<input id="resolved_date" name="resolved_date" type="hidden"><input id="resolved_date_dummy" name="resolved_date_dummy" class="pccDateField hasDatepicker" type="text" value="" size="10" maxlength="10"><img class="ui-datepicker-trigger" src="./Care Plan Triggers - 1_files/icon-calendar.png" alt="" title="">
+
+    </td>
+    </tr>
+<tr>
+   </tr><tr>
+    <td class="fieldname">Revision Date: </td>
+    <td>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+<select name="revision_date_operator">
+  <option value="0" selected="">On</option>
+  <option value="-1">Before</option>
+  <option value="1">After</option>
+</select>
+<input id="revision_date" name="revision_date" type="hidden"><input id="revision_date_dummy" name="revision_date_dummy" class="pccDateField hasDatepicker" type="text" value="" size="10" maxlength="10"><img class="ui-datepicker-trigger" src="./Care Plan Triggers - 1_files/icon-calendar.png" alt="" title="">
+
+    </td>
+    </tr>
+    <tr>
+ <td class="fieldname">Created By: </td>
+    <td>
+        <select name="created_by">
+          <option value="">All</option>
+          
+            <option value="nfetterman">
+              Nicki Fetterman
+            </option>
+          
+        </select>
+    </td>
+</tr>
+<tr>
+     <td class="fieldname">Revised By: </td>
+    <td>
+        <select name="revision_by">
+          <option value="">All</option>
+          
+            <option value="nfetterman">
+              Nicki Fetterman
+            </option>
+          
+        </select>
+    </td>
+    </tr>
+
+     <tr>
+    <td class="fieldname">Therapy Only: </td>
+    <td>
+         <table class="checkboxtable" id="therapy">
+            <tbody><tr nowrap="nowrap">
+    	      <td style="padding-left:0;">
+    		    <input type="checkbox" id="therapy" name="therapy">
+    	      </td>
+            </tr>
+          </tbody></table>
+    </td>
+	<td></td>
+    </tr>
+
+
+	<tr>
+		<td class="fieldname">ICD 9 Code: </td>
+		<td>
+		<table class="checkboxtable">
+            <tbody><tr nowrap="nowrap">
+    	      <td style="padding-left:0;">
+    		    <input type="checkbox" id="icd9Codes" name="icd9Codes">
+    	      </td>
+            </tr>
+            <tr>
+  	          <td style="padding-left:0;">
+              </td>
+ 	        <td>
+            </td>
+  	        <td></td>
+            </tr>
+          </tbody></table>
+       </td>
+       </tr>
+       <tr>
+       <td class="fieldname">ICD 10 Code: </td>
+       <td>
+		<table class="checkboxtable">
+            <tbody><tr nowrap="nowrap">
+    	      <td style="padding-left:0;">
+    		    <input type="checkbox" id="icd10Codes" name="icd10Codes" checked="">
+    	      </td>
+            </tr>
+            <tr>
+  	          <td style="padding-left:0;">
+              </td>
+ 	        <td>
+            </td>
+  	        <td></td>
+            </tr>
+          </tbody></table>
+       </td>
+	</tr>
+	
+
+    </tbody></table></td>
+  </tr>
+</tbody></table>
+
+<div align="center" style="margin-bottom:8px;">
+   <input type="button" class="pccButton" value="Search" id="refreshButtonId" onclick="submitForm();">
+</div>
+      <input type="hidden" name="isFilterOpen" id="isFilterOpen" value="false">
+      <input type="hidden" name="sortBy" id="sortBy" value="">
+      <input type="hidden" name="sortDir" id="sortDir" value="">
+      <script>
+        function submitForm(currentClientId, indicator) {
+
+        	  var noneStatusSelected = (!$("input[name='show_status_active']").is(':checked') )
+        	  				&& ( !$("input[name='show_status_resolved']").is(':checked'))
+        	 				&& ( !$("input[name='show_status_struckout']").is(':checked')) ;
+
+        	  if( (indicator!='VIEW_ALL_NOTIF' && indicator!='SHOW_CLEARED_NOTIF' && indicator!='VIEW_ALL_SHEETS') && noneStatusSelected)
+   			  {
+          			alert("Missing required filter parameter(s): At least one Status must be selected.");
+          			return;
+        		}
+        	  else if ('true'==='true' && !$("input[name='icd9Codes']").is(':checked') && !$("input[name='icd10Codes']").is(':checked'))
+        	  {
+        		  alert("Missing required filter parameter(s): At least one ICD code filter must be selected.");
+        			return;
+        	  }
+
+
+
+        	  if(indicator=='VIEW_ALL_NOTIF' )
+          	 {
+          		  if(true)
+          		 		 $("input[name='ESOLviewalldiagnotes']").val('Y');
+          		  else
+          			 $("input[name='ESOLviewalldiagnotes']").val('N');
+
+          	 }
+        	  if(indicator=='VIEW_ALL_SHEETS' )
+           	 {
+           		  if(true)
+           		 		 $("input[name='ESOLviewalldiagsheets']").val('Y');
+           		  else
+           			 $("input[name='ESOLviewalldiagsheets']").val('N');
+
+           	 }
+        	  if(indicator=='SHOW_CLEARED_NOTIF' )
+           	 {
+           		  if(true)
+           		 		 $("input[name='ESOLshowcleareddiagnotes']").val('Y');
+           		  else
+           			 $("input[name='ESOLshowcleareddiagnotes']").val('N');
+
+           	 }
+
+
+            $("#ESOLfilterRefresh").val('Y');
+            if (typeof currentClientId != 'undefined' )
+            	$("#ESOLcurrentClientId").val(currentClientId);
+            $("#filterForm").submit();
+          }
+      </script>
+      <input type="hidden" name="ESOLviewalldiagnotes" value="N">
+      <input type="hidden" name="ESOLviewalldiagsheets" value="N">
+      <input type="hidden" name="ESOLshowcleareddiagnotes" value="N">
+      <input type="hidden" name="ESOLfilterRefresh" id="ESOLfilterRefresh" value="N">
+      <input type="hidden" name="ESOLcurrentClientId" id="ESOLcurrentClientId" value="0">
+      <input type="hidden" name="ESOLclientid" id="ESOLclientid" value="4671">
+    </div>
+  </form>
+
+  
+
+  
+  <table class="pccResults" id="meddiaglisting" width="100%">
+    <thead>
+      <tr>
+        <th width="3%" align="center"><span style="display: none" id="expandAllSpan"></span></th>
+        <th width="1%">
+        
+          </th><th width="5%"><span>Specificity</span></th>
+        
+        <th width="3%"></th>
+        <th width="1%" align="right"></th>
+        
+          
+          
+            <th width="5%"><span>ICD-10</span></th>
+          
+        
+        
+        <th width="2%"></th>
+        <th width="30%" class="sortable" id="ColDescription">
+          <span>Description</span>
+        </th>
+
+        
+
+        <th width="6%" class="sortable" id="ColOnsetDate">
+          <span>Date</span>
+        </th>
+        
+          <th width="9%" class="sortable" id="ColRank">
+            <span>Rank</span>
+          </th>
+        
+        
+          <th width="9%"><span>Classification</span></th>
+        
+        
+        <th width="7%" class="sortable" id="ColCreatedDate">
+          <span>Created Date</span>
+        </th>
+        <th width="7%" class="sortable" id="ColCreatedBy">
+          <span>Created By</span>
+        </th>
+      </tr>
+    </thead>
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+        
+        
+			
+			
+			
+	          
+			
+		
+
+        <tbody><tr valign="top" class="primaryDiagRank">
+          <td>
+            
+              
+                
+                
+                  <a href="javascript:openEdit(4671,1181, &#39;N&#39;)">update</a>
+                
+              
+            
+            
+          </td>
+          <td>
+          </td>
+          
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C </td>
+          
+        <td>
+          
+          
+        </td>
+        <td>
+          
+        </td>
+        
+        
+          <td>
+            
+              I48.91
+              
+            
+          </td>
+        
+        <td>
+          
+            
+          
+        </td>
+        <td>
+          
+            
+            
+              
+                
+                
+                  UNSPECIFIED ATRIAL FIBRILLATION
+                
+              
+            
+          
+
+          
+          
+        </td>
+
+        
+
+        <td>
+          
+            
+            
+              6/19/2019
+            
+          
+        </td>
+        
+          <td>
+            
+              
+              
+                Principal Diagnosis (#67)
+              
+            
+          </td>
+        
+        
+          <td>
+            
+              
+              
+                Admitting Dx (#69)
+              
+            
+          </td>
+        
+        
+        <td>
+          6/19/2019
+        </td>
+        <td>
+          nfetterman
+        </td>
+      </tr>
+    
+        
+        
+			
+			
+				
+			
+			
+		
+
+        <tr valign="top" class="even">
+          <td>
+            
+              
+                
+                
+                  <a href="javascript:openEdit(4671,1182, &#39;N&#39;)">update</a>
+                
+              
+            
+            
+          </td>
+          <td>
+          </td>
+          
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C </td>
+          
+        <td>
+          
+          
+        </td>
+        <td>
+          
+        </td>
+        
+        
+          <td>
+            
+              C18.9
+              
+            
+          </td>
+        
+        <td>
+          
+            
+          
+        </td>
+        <td>
+          
+            
+            
+              
+                
+                
+                  MALIGNANT NEOPLASM OF COLON, UNSPECIFIED
+                
+              
+            
+          
+
+          
+          
+        </td>
+
+        
+
+        <td>
+          
+            
+            
+              6/19/2019
+            
+          
+        </td>
+        
+          <td>
+            
+              
+              
+                Diagnosis 1
+              
+            
+          </td>
+        
+        
+          <td>
+            
+              
+              
+                Admission
+              
+            
+          </td>
+        
+        
+        <td>
+          6/19/2019
+        </td>
+        <td>
+          nfetterman
+        </td>
+      </tr>
+    
+        
+        
+			
+			
+			
+		
+
+        <tr valign="top" class="">
+          <td>
+            
+              
+                
+                
+                  <a href="javascript:openEdit(4671,1183, &#39;N&#39;)">update</a>
+                
+              
+            
+            
+          </td>
+          <td>
+          </td>
+          
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I </td>
+          
+        <td>
+          
+          
+        </td>
+        <td>
+          
+        </td>
+        
+        
+          <td>
+            
+              I50.3
+              
+            
+          </td>
+        
+        <td>
+          
+            
+          
+        </td>
+        <td>
+          
+            
+            
+              
+                
+                
+                  DIASTOLIC (CONGESTIVE) HEART FAILURE
+                
+              
+            
+          
+
+          
+          
+        </td>
+
+        
+
+        <td>
+          
+            
+            
+              6/19/2019
+            
+          
+        </td>
+        
+          <td>
+            
+              
+              
+                Diagnosis 2
+              
+            
+          </td>
+        
+        
+          <td>
+            
+              
+              
+                Admission
+              
+            
+          </td>
+        
+        
+        <td>
+          6/19/2019
+        </td>
+        <td>
+          nfetterman
+        </td>
+      </tr>
+    
+        
+        
+			
+			
+				
+			
+			
+		
+
+        <tr valign="top" class="even">
+          <td>
+            
+              
+                
+                
+                  <a href="javascript:openEdit(4671,1185, &#39;N&#39;)">update</a>
+                
+              
+            
+            
+          </td>
+          <td>
+          </td>
+          
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C </td>
+          
+        <td>
+          
+          
+        </td>
+        <td>
+          
+        </td>
+        
+        
+          <td>
+            
+              J18.9
+              
+            
+          </td>
+        
+        <td>
+          
+            
+          
+        </td>
+        <td>
+          
+            
+            
+              
+                
+                
+                  PNEUMONIA, UNSPECIFIED ORGANISM
+                
+              
+            
+          
+
+          
+          
+        </td>
+
+        
+
+        <td>
+          
+            
+            
+              6/19/2019
+            
+          
+        </td>
+        
+          <td>
+            
+              
+              
+                Other
+              
+            
+          </td>
+        
+        
+          <td>
+            
+              
+              
+                During Stay
+              
+            
+          </td>
+        
+        
+        <td>
+          6/19/2019
+        </td>
+        <td>
+          nfetterman
+        </td>
+      </tr>
+    
+        
+        
+			
+			
+			
+		
+
+        <tr valign="top" class="">
+          <td>
+            
+              
+                
+                
+                  <a href="javascript:openEdit(4671,1184, &#39;N&#39;)">update</a>
+                
+              
+            
+            
+          </td>
+          <td>
+          </td>
+          
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I </td>
+          
+        <td>
+          
+          
+        </td>
+        <td>
+          
+        </td>
+        
+        
+          <td>
+            
+              E05
+              
+            
+          </td>
+        
+        <td>
+          
+            
+          
+        </td>
+        <td>
+          
+            
+            
+              
+                
+                
+                  THYROTOXICOSIS [HYPERTHYROIDISM]
+                
+              
+            
+          
+
+          
+          
+        </td>
+
+        
+
+        <td>
+          
+            
+            
+              6/19/2019
+            
+          
+        </td>
+        
+          <td>
+            
+              
+              
+                Other
+              
+            
+          </td>
+        
+        
+          <td>
+            
+              
+              
+                During Stay
+              
+            
+          </td>
+        
+        
+        <td>
+          6/19/2019
+        </td>
+        <td>
+          nfetterman
+        </td>
+      </tr>
+    
+  
+</tbody></table>
+
+  
+
+
+
+
+
+
+
+ 
+ <table cellpadding="0" cellspacing="0" width="100%">
+            <tbody><tr>
+              <td width="1%"></td>
+              <td width="98%"></td>
+              <td width="1%"></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                  <tbody><tr>
+                    <td style="text-align:center;border-bottom:solid #ffffff;border-width:1px;" width="2%">
+                      &nbsp;
+                    </td>
+                    <td width="15%" class="detailColHeader" style="text-align:center;border-left:solid #fff;border-right:solid #fff;border-top:solid #fff;border-width:1px;" nowrap="nowrap">
+                      &nbsp;&nbsp;Notifications&nbsp;&nbsp;
+                    </td>
+                    <td width="83%" style="text-align:right;">
+                      <label><input type="checkbox" name="ESOLshowcleareddiagnotes_checkbox" value="Y" onclick="submitForm(&#39;4671&#39;,&#39;SHOW_CLEARED_NOTIF&#39;) ">
+                      <b>Show Cleared Notifications</b></label>&nbsp;&nbsp;
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:center;border-left:solid #fff;border-width:1px;" class="detailColHeader">
+                &nbsp;
+              </td>
+              <td>
+
+
+<div>
+<table class="pccTableShowDivider" border="0" cellspacing="0" cellpadding="3" width="100%"><tbody><tr><th class="detailColHeader" nowrap="nowrap"><label><input type="checkbox" name="ESOLviewalldiagnotes_checkbox" value="Y" onclick="submitForm(&#39;${client.clientId}&#39;,&#39;VIEW_ALL_NOTIF&#39;);">View All</label></th><th class="detailColHeader" nowrap="nowrap">Notification Date</th><th class="detailColHeader" nowrap="nowrap">Effective Date</th><th class="detailColHeader" nowrap="nowrap">Description</th><th class="detailColHeader" nowrap="nowrap">Created By</th></tr><tr bgcolor="#efefef"><td class="data" align="center" colspan="5" nowrap="nowrap">No records found.</td></tr></tbody></table>
+</div>
+
+</td></tr>
+<tr>
+ <td class="detailColHeader" style="border-right:solid #fff;border-width:1px;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr height="3">
+              <td colspan="3" style="font-size:3px;text-align:center;border-left:solid #fff;border-right:solid #fff;border-width:1px;background-color:#dfdfdf">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align:center;border-top:solid #fff;border-width:1px;">
+                &nbsp;
+              </td>
+            </tr>
+          </tbody></table>
+       
+
+
+      
+ 	 <table cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+        <td>
+          <table cellpadding="0" cellspacing="0" width="100%">
+            <tbody><tr>
+              <td width="1%"></td>
+              <td width="98%"></td>
+              <td width="1%"></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                  <tbody><tr>
+                    <td style="text-align:center;border-bottom:solid #fff;border-width:1px;" width="2%">
+                      &nbsp;
+                    </td>
+                    <td width="15%" class="detailColHeader" style="text-align:center;border-left:solid #fff;border-right:solid #fff;border-top:solid #fff;border-width:1px;" nowrap="nowrap">
+                      &nbsp;&nbsp;Diagnosis Sheets&nbsp;&nbsp;
+                    </td>
+                    <td width="83%" style="text-align:center;border-bottom:solid #fff;border-width:1px;">
+                      &nbsp;
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align:center;border-left:solid #fff;border-width:1px;" class="detailColHeader">
+                &nbsp;
+              </td>
+              <td>
+                
+<div>
+<table class="pccTableShowDivider" border="0" cellspacing="0" cellpadding="3" width="100%"><tbody><tr><th class="detailColHeader" nowrap="nowrap"><label><input type="checkbox" name="ESOLviewalldiagsheets_checkbox" value="Y" onclick="submitForm(&#39;${client.clientId}&#39;, &#39;VIEW_ALL_SHEETS&#39;);">View All</label></th><th class="detailColHeader" nowrap="nowrap" align="left">Effective Date</th><th class="detailColHeader" nowrap="nowrap">Principal</th><th class="detailColHeader" nowrap="nowrap">Admission </th><th class="detailColHeader" nowrap="nowrap">Other </th><th class="detailColHeader" nowrap="nowrap">Type</th><th class="detailColHeader" nowrap="nowrap">Created By</th></tr><tr bgcolor="#efefef"><td class="data" align="center" colspan="7" nowrap="nowrap">No records found.</td></tr></tbody></table>
+</div>
+
+              </td>
+              <td class="detailColHeader" style="border-right:solid #fff;border-width:1px;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr height="3">
+              <td colspan="3" style="font-size:3px;text-align:center;border-left:solid #fff;border-right:solid #fff;border-width:1px;background-color:#dfdfdf;">
+                &nbsp;
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" style="text-align:center;border-top:solid #fff;border-width:1px;">
+                &nbsp;
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="appAriaHide" aria-hidden="false">Footer Section</h2>
+
+<div class="footertext">
+	<div>
+		<b>FACILITY_1 (Shirley - COMS)</b><br>
+		247 Reese Road <br>
+		, AL <br>
+		
+		
+			<br>PCC Facility ID: 1
+		
+		
+	</div>
+	<div>
+		<b>PointClickCare</b><br>
+		5570 Explorer Drive<br>
+		Mississauga, Ontario L4W 0C4<br>
+		
+		<span class="footerWrap">Help Desk: (877) 722-2431 |</span>
+		<span class="footerWrap">(905) 817-6167</span><br>
+		<span class="footerWrap">Toll Free: (800) 277-5889 |</span>
+		<span class="footerWrap">Phone: (905) 858-8885 | </span>
+		<span class="footerWrap">Fax: (905) 858-2248</span>
+		
+	</div>
+	<div>
+		<a href="http://pointclickcare.com/us/privacy-policy/" target="_blank">Privacy Policy</a><br>
+		
+			<a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars&#39;));">Customer Support</a><br>
+		
+		Version 3.7.19.2 - PCCDEV41-A (<a href="https://jenkins.pointclickcare.com//job/pcc-all-core-trunk-scheduled" target="_blank">pcc-all-core-trunk-scheduled</a> <a href="https://jenkins.pointclickcare.com//job/pcc-all-core-trunk-scheduled/8971" target="_blank">#8971</a> <a href="https://git.pointclickcare.com/projects/WEB/repos/core/commits?until=b1818c9e8cefb2f815aa0fb5d5e7f52f50b3d347" target="_blank">b1818c9e8cefb2f815aa0fb5d5e7f52f50b3d347</a>)<br>
+		Copyright 2000-2017 PointClickCare Technologies Inc. All rights reserved.<br>
+		<span id="deviceID"></span>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

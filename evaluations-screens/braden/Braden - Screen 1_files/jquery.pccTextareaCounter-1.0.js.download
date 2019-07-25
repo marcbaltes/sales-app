@@ -1,0 +1,116 @@
+/*
+	pccTextareaCounter adds a span after the textarea that this is attached to
+	indicating the number of remaining characters allowed.
+
+	$(textarea).pccTextareaCounter(options);
+
+	Options:
+
+	count:                 Int - (required) - The max number of characters (The counter counts down from this value)
+	forceMaxCount:         Boolean (optional, default=false) - If true it physically stops the insertion of more characters
+	addBreakBeforeCounter: Boolean (optional, default=false) - If true a line break is added before the counter span
+
+	TODO: Support binding to an existing span (to enable custom layout)
+*/
+;(function($, window, undefined){
+	$.fn.pccTextareaCounter = function(options){
+		return this.each(function(){
+			var $this = $(this);
+			var defaults = {
+				count:250,
+				forceMaxCount:false,
+				addBreakBeforeCounter:false
+			};
+			//extend defaults with any presets from the elements data()
+			var settings = $.extend({}, defaults, $this.data('pccTextareaCounter_settings') || {});
+			//extend default settings with options, if specified)
+			settings = $.extend(settings, options);
+			//save settings to data()
+			$this.data('pccTextareaCounter_settings', settings);
+
+			//only configure this if it is a textarea
+			if($this.is('textarea')){
+				function init(){
+					var settings = $this.data('pccTextareaCounter_settings');
+					var maxCount = Number(settings.count || 0);
+					var textarea = $this.get(0);
+					textarea._length = textarea.value.length;
+					textarea._maxCount = maxCount;
+					//add counter
+					var counterSpan = $('<span class="pccTextareaCounter">' + maxCount + '</span>');
+					$this.after(counterSpan);
+					var addBreakBeforeCounter = settings.addBreakBeforeCounter || false;
+					if(addBreakBeforeCounter){
+						var counterBreak = $('<br/>');
+						$this.after(counterBreak);
+					}
+				};
+
+				var updateCounter = function(){
+					var settings = $this.data('pccTextareaCounter_settings');
+					var maxCount = Number(settings.count || 0);
+					var forceMaxCount = settings.forceMaxCount || false;
+					var textarea = $this;
+					var counter = $this.siblings('span.pccTextareaCounter:first');
+					counter.attr('class', 'pccTextareaCounter');//removes any warning/error classes
+					var valLen = $this.val().length;
+					$this.get(0)._length = valLen;//update the internal counter
+					counter.html(maxCount - valLen);
+					if(valLen >= maxCount){
+						counter.addClass('pccTextLimitAtOrReached');
+						if(forceMaxCount && (valLen > maxCount)){
+							$this.val($this.val().substr(0, maxCount));
+							counter.html('0');
+						}
+					} else if(valLen > 0 && valLen >= (maxCount -10)){
+						counter.addClass('pccTextLimitAtOrReached');
+					} else if(valLen > 0 && valLen >= (maxCount -20)){
+						counter.addClass('pccTextLimitNear');
+					}
+					counter.attr('title', counter.html() + ' of ' + maxCount + ' characters remaining');
+				};
+
+				if($(this).data('configured')){
+					//do not re-bind event handlers, but do an update in case the setup changed
+					updateCounter();
+					return false;
+				} else {
+					init();
+
+					//hook up key events
+					$this.bind('keydown keyup', function(){
+						updateCounter();//TODO: throttle this so that only changes fire updates
+					});
+					$this.bind('paste', function(){
+						/*
+							This event fires *just* before the paste and security won't give us
+							access to the clipboard contents.  Wait 50ms then trigger a "keyup"
+							event that we can react to.
+						*/
+						setTimeout(function(){$this.keyup();}, 50);
+					});
+					//we also want to update the counter if the value is set or cleared programmatically
+					var checkForProgrammaticUpdate = function(textarea){
+						//only update if there was a change
+						if(textarea._length != textarea.value.length){
+							updateCounter();
+						}
+					};
+					//update if the value is set programmatically... yes this is ugly, but sadly there is no better option (currently)
+					var textarea = $(this).get(0);
+					textarea._length = textarea.value.length;
+					textarea._maxCount = settings.count;
+					setInterval(function(){
+						//only if the document is not hidden
+						if(typeof(document.hidden) == 'undefined' || document.hidden == false){
+							checkForProgrammaticUpdate(textarea);
+						}
+					}, 1000);
+					$(this).data('configured', true);
+					//call immediately to initialize the counter
+					updateCounter();
+				}
+			}
+		});
+	};
+}(jQuery, window));

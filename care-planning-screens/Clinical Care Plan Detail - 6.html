@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp#justedited -->
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Clinical Care Plan Detail</title>
+    
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10;IE=9;IE=8,chrome=1">
+
+
+<meta name="format-detection" content="telephone=no">
+
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/core.css">
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/legacy-styles.css">
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/jquery-ui-1.9.2.custom.min.css">
+
+
+
+
+<script src="./Clinical Care Plan Detail - 6_files/l10n.djs"></script>
+
+
+    <script src="./Clinical Care Plan Detail - 6_files/jquery-1.9.0.min.js.download"></script>
+    <script src="./Clinical Care Plan Detail - 6_files/jquery-migrate-1.4.1.min.js.download"></script>
+  
+
+<script src="./Clinical Care Plan Detail - 6_files/jquery-ui-1.9.2.custom.min.js.download"></script>
+<script src="./Clinical Care Plan Detail - 6_files/jquery.dateField-2.0.0.js.download"></script>
+
+
+
+
+
+
+
+<script src="./Clinical Care Plan Detail - 6_files/ESOLvalidate.js.download"></script>
+
+
+
+
+
+
+<script>
+  
+  
+    function phoneformat(formObj, phoneStr, phoneNumberField){
+      formatNorthAmericanPhoneNumber(formObj, phoneStr, phoneNumberField);
+    }
+  
+</script>
+<script src="./Clinical Care Plan Detail - 6_files/core.js.download"></script>
+<script src="./Clinical Care Plan Detail - 6_files/wedate.js.download"></script>
+
+
+<script src="./Clinical Care Plan Detail - 6_files/coremenufunctions.js.download"></script>
+
+
+
+
+
+        <script>
+            if(self == top){
+                var firstInterval = 300000;
+            }
+        </script>
+        <link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/sessionTimeout.css">
+        <script src="./Clinical Care Plan Detail - 6_files/sessionTimeout.js.download"></script>
+
+    <link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/care-plan-department-styles.css">
+    <link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/legacy-care-plan-styles.css">
+<style>
+.btbl{
+    border:1px solid #cecece;
+}
+.btr{
+    border-right:solid #cecece;
+    border-top:solid #cecece;
+    border-width:1px;
+}
+.btl{
+    border-left:solid #cecece;
+    border-top:solid #cecece;
+    border-width:1px;
+}
+.br{
+    border-right:solid #cecece;
+    border-width:1px;
+}
+.bt{
+    border-top:solid #cecece;
+    border-width:1px;
+}
+.bb{
+    border-bottom:solid #cecece;
+    border-width:1px;
+}
+.bbr{
+    border-right:solid #cecece;
+    border-bottom:solid #cecece;
+    border-width:1px;
+}
+.bbl{
+    border-left:solid #cecece;
+    border-bottom:solid #cecece;
+    border-width:1px;
+}
+.btbbl{
+    border-top:solid #cecece;
+    border-left:solid #cecece;
+    border-bottom:solid #cecece;
+    border-width:1px;
+}
+.btbbr{
+    border-top:solid #cecece;
+    border-right:solid #cecece;
+    border-bottom:solid #cecece;
+    border-width:1px;
+}
+.bl{
+    border-left:solid #cecece;
+    border-width:1px;
+}
+.borderbottom{
+    border-bottom:1px solid #efefef;
+}
+.searchHighlight {
+    background-color: yellow
+}
+.searchText {
+    font-size: 150%; 
+    text-align: center; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+}
+.searchText span {
+    font-style: italic;
+}
+
+.input-criteria{
+	width:165px;
+	padding:0;
+	border-width:1px;
+}
+
+.input-criteria-checkbox{
+	margin-left:-1px;
+}
+</style>
+
+<!--[if IE]>
+<style>
+select.input-criteria{
+	width:167px;
+}
+</style>
+<![endif]-->
+
+<script>
+function changeCarePlanType(value, formObj) {
+	formObj.carePlanTypeId.value = value;
+	formObj.ESOLpositionid.value = -1;
+	formObj.ESOLreviewid.value = -1;
+	formObj.ESOLshowresolved.value = 'N';
+	formObj.ESOLclientid.value = 4671;
+	formObj.ESOLretURL = '/admin/client/cp_careplans_rev.jsp';
+	formObj.submit();
+}
+
+
+function newNeed()
+{
+    openSizedLookup2('/care/chart/cp/needwizard_rev.jsp?ESOLclientid=4671&ESOLreviewid=-1&ESOLpositionid=-1&ESOLcareplanid=814', '', 620, 550, 'scrollbars');
+}
+
+function newCustNeed()
+{
+    openSizedLookup2('/care/chart/cp/neededitcust_rev.jsp?ESOLclientid=4671&ESOLreviewid=-1&ESOLcareplanid=814', '', 600, 450, 'scrollbars');
+}
+
+function editNeed(genneedid,needid)
+{
+	
+  openSizedLookup2("/care/chart/cp/neededit_rev.jsp?ESOLreviewid=-1&ESOLpositionid=-1&ESOLclientid=4671&ESOLgenneedid=" + genneedid+'&ESOLpnneedid='+needid, '', 600, 510 , '');
+}
+
+function editGoal(goalid, stdneedid, genneedid, pngoalid, stdgoalid)
+{
+    openSizedLookup2("/care/chart/cp/goaledit_rev.jsp?ESOLgenneedid="+genneedid+"&ESOLpngoalid="+pngoalid+"&ESOLclientid=4671&ESOLstdneedid=" + stdneedid + "&ESOLgoalid=" + goalid + "&ESOLstdgoalid=" + stdgoalid, '', 600, 400, '');
+}
+
+function newGoal(needid, stdneedid, genneedid)
+{
+    openSizedLookup2("/care/chart/cp/goalwizard_rev.jsp?ESOLgenneedid="+genneedid+"&ESOLclientid=4671&ESOLneedid=" + needid + "&ESOLstdneedid=" + stdneedid, '', 600, 450, 'scrollbars');
+}
+
+function customGoal(needid, genneedid)
+{
+    openSizedLookup2("/care/chart/cp/goaledit_rev.jsp?ESOLgenneedid="+genneedid+"&ESOLclientid=4671&ESOLneedid=" + needid + "&ESOLstdgoalid=-1&ESOLcustomgoal=Y", '', 600, 450, 'scrollbars');
+}
+
+function editIntervention(interid,stdinterid,stdneedid, genneedid,pnintid)
+{
+
+    openSizedLookup2("/care/chart/cp/interedit_rev.jsp?ESOLgenneedid="+genneedid+"&ESOLpnintid="+pnintid+"&ESOLstdinterid="+stdinterid+"&ESOLclientid=4671&ESOLstdneedid=" + stdneedid + "&ESOLinterid=" + interid + "&ESOLnewedit=Y", '', 750, 580, '');
+
+}
+
+function newIntervention(needid, stdneedid, genneedid)
+{
+    openSizedLookup2("/care/chart/cp/interwizard_rev.jsp?ESOLgenneedid="+genneedid+"&ESOLclientid=4671&ESOLneedid=" + needid + "&ESOLstdneedid=" + stdneedid + "&ESOLinterid=-1", '', 620, 450, 'scrollbars');
+}
+
+function customIntervention(needid, stdneedid, genneedid)
+{
+   openSizedLookup2("/care/chart/cp/intereditcust_rev.jsp?ESOLgenneedid=" + genneedid + "&ESOLclientid=4671&ESOLneedid=" + needid + "&ESOLstdneedid=" + stdneedid, '', 750, 580, '');
+   
+}
+
+function editTask(interid,stdinterid,stdneedid, genneedid)
+{
+  openSizedLookup2("/care/chart/cp/interedit_rev.jsp?ESOLpnintid="+interid+"&ESOLparentPage=CP&ESOListask=Y&ESOLgenneedid="+genneedid+"&ESOLstdinterid="+stdinterid+"&ESOLclientid=4671&ESOLstdneedid=" + stdneedid + "&ESOLinterid=" + interid + "&ESOLnewedit=Y", '', 750,580, '');
+}
+function newTask(needid, stdneedid, genneedid)
+{
+
+  openSizedLookup2("/care/chart/cp/interwizard_rev.jsp?ESOLgenneedid="+genneedid+"&ESOLclientid=4671&ESOLneedid=" + needid + "&ESOLstdneedid=" + stdneedid + "&ESOLinterid=-1"+"&ESOLisstdTask=Y&ESOLfromPage=careplandetail_rev", '', 620, 450, 'scrollbars');
+}
+function customTask(needid, stdneedid, genneedid)
+{
+    openSizedLookup2("/care/chart/cp/intereditcust_rev.jsp?ESOLgenneedid=" + genneedid + "&ESOLclientid=4671&ESOLneedid=" + needid+ "&ESOLstdneedid=" + stdneedid +"&ESOListask=Y", '', 650, 410, '');
+}
+
+function refreshthis(formObj)
+{
+    formObj.action="/care/chart/cp/careplandetail_rev.jsp";
+    formObj.ESOLrefresh.value="Y";
+    if (formObj.showresolved.checked)
+        formObj.showresolved.value ="Y";
+    else
+        formObj.showresolved.value ="N";
+    formObj.submit();
+    emptyIt=false;
+    showPromptPN=false;
+}
+
+function refreshPage(formObj)
+{
+    formObj.action="/care/chart/cp/careplandetail_rev.jsp";
+    formObj.ESOLrefresh.value="Y";
+    formObj.submit();
+    emptyIt=false;
+    showPromptPN=false;
+}
+
+function nKeyPressed()
+{
+    newNeed();
+}
+
+function pKeyPressed()
+{
+    openSizedLookup2('/care/reports/cpprintpopup.jsp?ESOLcpid=null&ESOLfromrescp=Y&ESOLfromchart=Y&ESOLreviewid=-1&ESOLclientid=4671&ESOLshowresolved=N&ESOLpositionid=-1','',500,500,'');                               
+}
+
+function bKeyPressed()
+{
+	var actionURL = "/admin/client/cp_careplans_rev.jsp?ESOLclientid=4671&ESOLreviewid=-1&ESOLviewTransferInfo=Y";
+	onUnload(actionURL);
+}
+
+function setObjectFocus()
+{
+    document.getElementById('setfocus').click();
+}
+
+function showHistory(itemId,itemType,ro,stdItemId)
+{
+    if(itemType == 'T')
+      openSizedLookup2("/care/chart/cp/show_history.jsp?ESOLcurrentreview=" + ro + "&ESOLreviewid=-1&ESOLclientid=4671&ESOLitemid="+itemId+"&ESOLitemtype="+itemType+""+"&ESOLstditemid="+stdItemId,"history",650,300,""); 
+    else
+      openSizedLookup2("/care/chart/cp/show_history.jsp?ESOLcurrentreview=" + ro + "&ESOLreviewid=-1&ESOLclientid=4671&ESOLitemid="+itemId+"&ESOLitemtype="+itemType+""+"&ESOLstditemid="+stdItemId,"history",650,600,"");
+}
+var emptyIt;
+
+function onUnload(actionURL) {
+	var correctFocusURL = correctFocus();
+	var showPNWarningURL = showPNWarning();
+	var action;
+	if(correctFocusURL) {
+		action = correctFocusURL;
+	}
+	else if(showPNWarningURL) {
+		action = showPNWarningURL;
+	}
+	else if(actionURL) {
+		action = actionURL;
+	}
+	if(action) {
+  		$('#needs').attr('action', action);
+  		$('#needs').submit();
+	}
+	return action;
+}
+
+function back(actionURL) {
+	onUnload(actionURL);
+}
+
+function correctFocus(actionURL)
+{
+
+    if(emptyIt==true)
+    {
+            if(!confirm("This Care Plan contains an incomplete Care Plan item.\n\nEvery focus must have at least one Goal and at least one intervention selected before it is considered complete.\n\nClick 'Cancel' to return to the Care Plan now otherwise click 'OK'"))
+            {
+                 return "/care/chart/cp/careplandetail_rev.jsp";
+            }
+    }
+
+}
+
+function unResolvedNeed(genneedid, stdneedid)
+{
+    openSizedLookup2("/care/chart/cp/unresolveneed_rev.jsp?ESOLreviewid=-1&ESOLpositionid=-1&ESOLclientid=4671&ESOLgenneedid=" + genneedid+"&ESOLstdneedid="+stdneedid, '', 800, 450, 'scrollbars');
+}
+
+var showPromptPN;
+
+function showPNWarning()
+{
+
+}
+
+function refreshFromGoalOverDueDash(formObj)
+{
+    formObj.action="/care/chart/cp/careplandetail_rev.jsp";
+    formObj.ESOLlastneed.value = '';
+    formObj.ESOLfocusneed.value = '';
+    formObj.submit();
+}
+
+function taskPN()
+{
+  openSizedLookup2('/care/chart/ipn/newipn.jsp?ESOLgenpn=Y&ESOLclientid=4671&ESOLpnid=-1', '', 705, 505, 'scrollbars');
+}
+function pnNeed(genneedId,needId,stdneed)
+{
+  openSizedLookup2('/care/chart/ipn/newipn.jsp?ESOLclientid=4671&ESOLpnid=-1&ESOLitemid='+needId+'&ESOLgenitemId='+genneedId+'&ESOLstditemid='+stdneed+'&ESOLitemtype=N&ESOLfromcp=Y', '', 705, 505, 'scrollbars');
+}
+
+function pnGoal(goalId,gengoalId,stdgoal,genneed)
+{
+  openSizedLookup2('/care/chart/ipn/newipn.jsp?ESOLclientid=4671&ESOLpnid=-1&ESOLitemid='+goalId+'&ESOLgenitemId='+gengoalId+'&ESOLstditemid='+stdgoal+'&ESOLitemtype=G&ESOLfromcp=Y', '', 705, 505, 'scrollbars');
+}
+function pnIntervention(intId,genintId,stdint,stdneed,genneed)
+{
+  openSizedLookup2('/care/chart/ipn/newipn.jsp?ESOLclientid=4671&ESOLpnid=-1&ESOLitemid='+intId+'&ESOLgenitemId='+genintId+'&ESOLstditemid='+stdint+'&ESOLitemtype=I&ESOLfromcp=Y', '', 705, 505, 'scrollbars');
+}
+function pnTask(intId,genintId,stdint,stdneed,genneed)
+{
+  openSizedLookup2('/care/chart/ipn/newipn.jsp?ESOLclientid=4671&ESOLpnid=-1&ESOLitemid='+intId+'&ESOLgenitemId='+genintId+'&ESOLstditemid='+stdint+'&ESOLitemtype=T&ESOLfromcp=Y', '', 705, 505, 'scrollbars');
+}
+
+function newAlert()
+{
+  var width=500;
+  var height=600;
+  openSizedLookup2("/clinical/cp_popup/createclientalert.xhtml?client_id=4671&ESOLfromCarePlanDetail=Y","",width,height,"");
+}
+
+
+function jumpToMDS(isCCRS)
+{
+		var action = onUnload();
+		if(action) {
+			return;
+		}
+    var ajaxParams = {};
+    ajaxParams.ESOLclientid  = '4671';
+    ajaxParams.ESOLisccrs  = isCCRS;
+    var url = '/clinical/mds/jumpToMDSAJAXController.xhtml';
+    $.getJSON(url, ajaxParams, jumpToMDSCallback);  
+}
+
+function jumpToMDSCallback(data, textStatus, jqXHR)
+{
+    if(!data.errorMsg)
+    {
+        if (data.assessId)
+        {
+            var href = '';
+            if (data.isCCRS)
+            {
+                href = '/care/chart/mds/mdssection.jsp?ESOLcareplanid=null'
+                        +'&ESOLassessid=' + data.assessId
+                        +'&ESOLtabType=C'
+                        +'&ESOLsectioncode=V'
+                        +'&ESOLexp=N'
+                        +'&ESOLbatchid=-1'
+                        +'&fromMDS3SectionV=N'
+                        +'&ESOLmdsAssessId=null';
+            }
+            else
+            {
+                href = '/clinical/mds3/sectionv.xhtml?ESOLcareplanid=null&ESOLassessid=' + data.assessId;
+            }
+        }
+        else
+        {
+            alert('There is no eligible assessment.')
+        }
+    }
+    else
+    {
+        alert(data.errorMsg);
+    }
+}
+    function highlightSearchResults(node, pat) {
+        function innerHighlight(node, pat) {
+            var skip = 0;
+            if (node.tagName == 'TH' || node.tagName == 'A') {
+                return skip;
+            }
+            if (node.nodeType == 3) {
+                var pos = node.data.toUpperCase().indexOf(pat);
+                if (pos >= 0) {
+                    var spannode = document.createElement('span');
+                    spannode.className = 'searchHighlight';
+                    var middlebit = node.splitText(pos);
+                    var endbit = middlebit.splitText(pat.length);
+                    var middleclone = middlebit.cloneNode(true);
+                    spannode.appendChild(middleclone);
+                    middlebit.parentNode.replaceChild(spannode, middlebit);
+                    skip = 1;
+                }
+            }
+            else if (node.nodeType == 1 && node.childNodes && !/(script|style)/i.test(node.tagName)) {
+                for (var i = 0; i < node.childNodes.length; ++i) {
+                    i += innerHighlight(node.childNodes[i], pat);
+                }
+            }
+            return skip;
+        }
+        return pat && pat.length ? $(node).each(function() {
+            innerHighlight(this, pat.toUpperCase());
+        }) : this;
+    }
+
+    function searchKeyDown(event){
+        var code = event.keyCode || event.which;
+        if(code == 13) { //Enter keycode
+            event.preventDefault(); //prevent page from submitting
+        }
+    }
+
+    function searchKeyUp(event){
+        var code = event.keyCode || event.which;
+        if(code == 13) { //Enter keycode
+            refreshPage(document.needs);
+        }
+    }
+    
+	   
+       highlightSearchResults(".text1","");
+       $(".carePlanTypes").hover(
+    		   function() {
+    		   $(this).nextAll(".carePlanTypesHover").first().toggle("slow");
+    		   });
+    });
+</script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Tom Mohney;Marc Baltes</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">15;#Tom Mohney;#76;#Marc Baltes</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body class="clinical" onkeydown="handleQuickKeyPress();" style="zoom: 1; margin: 0px 10px;">
+    
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="appAriaHide" id="appAriaHeaderOne" aria-hidden="false">Clinical Care Plan Detail</h1>
+
+
+<script src="./Clinical Care Plan Detail - 6_files/callHelp.js.download"></script>
+<script>
+var helpPage = "";
+
+
+function openhelp(){
+
+
+	if(helpPage.length == 0){
+		helpPage = "/help/online/clinical/care_plan.htm";
+	}
+	callHelp(helpPage);
+	
+}
+
+
+</script>
+
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/coremenu.css">
+<script src="./Clinical Care Plan Detail - 6_files/medicare.js.download"></script>
+<script>
+	// variables required for coremenufunctions.js
+	var isInitialsSet = false;
+	//var checkInitialsFlag = false;
+	var isUsingNewForm = true;
+	var facilityListURL = "/tools/faclist.jsp?facilityList=true&allowEMCModeCheck=false";
+	var isTouchEnabledFlag = false;
+	var inEMCflag = false;
+	var isInFGCflag = false;
+
+	// required for function submitSearchNew() in coremenufunctions.js
+	var inEMCFGC = false
+	if (inEMCflag || isInFGCflag) {
+		inEMCFGC = true;
+	}
+
+	
+		var tabType = 'C';
+	
+
+	
+
+	// Update menu URLS for touch
+	if (typeof resHeaderPage != 'undefined' && resHeaderPage == true) {
+		var isResHeaderPage = true;
+	}
+		
+	document.addEventListener('DOMContentLoaded', function(e) {
+		  $(document).on('click', '.js-webapp-user-logout-btn', function(e){
+			  $(this).trigger('webapp/user/logout');
+		  });
+  });
+
+</script>
+
+
+
+
+<style>
+	html{
+		min-height:100%;
+		position:relative;
+	}
+	body{
+		
+		margin-bottom:150px !important;
+	}
+	div.footertext{
+		bottom:10px;
+		left:10px;
+		min-width:800px;
+		position:absolute;
+		right:10px;
+		width:auto;
+	}
+	@media print{
+		body{
+			margin-bottom:0 !important;
+		}
+		div.footertext{
+			position:relative !important;
+			width:100% !important;
+		}
+	}
+</style>
+
+
+
+	<script>
+		// Required for main menu
+		var currentTab = "3";
+		var touchEnabled = false;
+		var currentClientId = "4671";
+		var clientJumpTab = "cp_adminclientprofile.jsp";
+		var careJumpTab = "cp_careplans_rev.jsp";
+
+		if (typeof resHeaderPage != 'undefined' && resHeaderPage == true) {
+			var isResHeaderPage = true;
+		}
+		var tabsMenuLoaded = true;
+	</script>
+	<script src="./Clinical Care Plan Detail - 6_files/f.txt"></script>
+
+	<table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+		<tbody><tr>
+			<td valign="top" class="slPccLogo"><img src="./Clinical Care Plan Detail - 6_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+			<td align="right" valign="top" class="slTopNav">
+				
+
+<h3 class="appAriaHide" aria-hidden="false">Facility Selection</h3>
+<form id="facSelectForm" action="https://partnercontentus.pointclickcare.com/facilityGroup/facilitygroupconsole.xhtml" method="post">
+	<input type="hidden" name="setFacGroupId" id="setFacGroupId" value="">
+	<input type="hidden" name="setFacType" id="setFacType" value="">
+</form>
+
+
+
+	<a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="javascript:void(0)" class="innerfac navLink arrowDrop">FACILITY_1 (Shirley - COMS)</a>
+	<input type="hidden" name="current_fac_id" value="1">
+
+	<script>
+		function displayFacilityGroupConsole(facGroupID, facGroupType){
+			$('#facSelectForm').attr('action', '/facilityGroup/facilitygroupconsole.xhtml');
+			$('#setFacGroupId').val(facGroupID);
+			$('#setFacType').val(facGroupType);
+			$('#facSelectForm').submit();
+		}
+	</script>
+	<div id="pccFacMenu" class="dropDownList" style="left: 1144.34px;">
+		<div style="height:100px;padding:50px 0 0 217px"><img src="./Clinical Care Plan Detail - 6_files/loading-circle.gif" width="16" height="16" border="0"></div>
+	</div>
+
+				
+					
+						
+							<a href="javascript:void(0);" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Nicki Fetterman</span></a>
+						
+					
+				
+				
+					<div id="pccUserMenu" class="dropDownList" style="left: 1561.7px;">
+						<ul>
+							<li><a href="javascript:editUserProfile(&#39;/home/editmyprofile.jsp?ESOLuserid=2080&amp;retURL=/home/home.jsp&#39;);">Edit Profile</a></li>
+							<li><a href="javascript:javascript:void(window.open(&#39;/admin/reports/user_access.jsp?ESOLuserid=2080&#39;, &#39;detail&#39;));">User Access</a></li>
+							
+								<li><a href="javascript:openhelp();">Help</a></li>
+							
+				
+
+				
+					<li><a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars=1&#39;));">Resource Center / Support</a></li>
+				
+
+				
+				
+				
+			</ul>
+		</div>
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+		
+
+				
+				
+				
+				
+				
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/c3-0.4.10.min.css">
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/chartGenerator.css">
+<script src="./Clinical Care Plan Detail - 6_files/d3-3.5.5.min.js.download"></script>
+<script src="./Clinical Care Plan Detail - 6_files/c3-0.4.10.min.js.download"></script>
+<script src="./Clinical Care Plan Detail - 6_files/chartGenerator.js.download"></script>
+
+<link rel="stylesheet" type="text/css" href="./Clinical Care Plan Detail - 6_files/smartalertsnotifications.css">
+
+
+<link type="text/css" rel="stylesheet" href="./Clinical Care Plan Detail - 6_files/chosen-0.9.8.css">
+<script src="./Clinical Care Plan Detail - 6_files/chosen.jquery-0.9.8.min.js.download"></script>
+<script>
+  if(typeof AbstractChosen == 'undefined') {
+    var chosenLibPath = "/srug/v2076679807/assets/core/jquery/plugins/chosen.jquery-0.9.8.min.js";
+    document.write("<script src='"+ chosenLibPath +"'></"+"script>");
+  }
+</script>
+<script>
+  'use strict';
+  window.clinicalSmartAlerts = window.clinicalSmartAlerts || {};
+
+  window.clinicalSmartAlerts.moduleProps = {
+    canAddPN: true,
+    canAddCarePlan: true,
+    canAssessAlerts: true,
+    clientId: '4671'.trim(),
+    facId: 1,
+    isESignatureForPNEnabled: true,
+    isCICOnline: false,
+    maxVitalsInChart: 7,
+    cicOtherCICReasonId: '31',
+    months: [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
+    ],
+
+    termMap: {
+      alert: 'Alert',
+      assessment: 'Assessment',
+      careplan: 'Care Plan',
+      clinicalAlert: 'Clinical Alert',
+      facility: 'Facility',
+      highRiskAlert: 'High Risk Alert',
+      inboundClinicalAlert: 'Inbound Clinical Alert',
+      less: 'less',
+      minutesAgo: '{{minutes}}m ago',
+      more: 'more',
+      noAlerts: 'No Alerts',
+      resident: 'Resident',
+      task: 'Task',
+      vitalExceptionAlert: 'Vital Exception Alert',
+      orderAlert: 'Order Alert',
+      trend: 'Trend',
+      baseline :'Baseline',
+      diastolicBaseline : 'Diastolic Baseline',
+      systolicBaseline :  'Systolic Baseline',
+      eInteractAlert: 'eInteract Alert',
+      eInteractHeading: 'eINTERACT Alerts (Stop &amp; Watch and/or Change in Condition): '
+    },
+    
+    alertDescriptions: {
+      inboundClinicalAlertDescription: 'Inbound Clinical Data has Been Updated'
+    },
+
+    dynamicTags: {
+      eInteractHeadingTag:'<span class="c-einteract-heading">%s</span>'
+    },
+	   
+    vitalMap: {
+      weights: 'Weights',
+      respiration: 'Respiration',
+      bloodPressure: 'Blood Pressure',
+      temperature: 'Temperature',
+      pulse: 'Pulse',
+      bloodSugar: 'Blood Sugar',
+      heights: 'Heights',
+      o2Sats: 'O2 Sats',
+      painLevel: 'Pain Level'
+    },
+	   
+    complexApproaches : [
+      'Staff document one of these response(s) more than {0} time(s) within {1} {2}',
+      'Staff document one of these response(s) less than {0} time(s) within {1} {2}',
+      'Staff document one of these response(s) {0} time(s) within {1} {2}',
+      'Staff document only these response(s) within {1}',
+    ],
+       
+    complexDurations : [
+      'Hour(s)',
+      'Days(s)',
+      'Week(s)',
+    ],
+       
+    defaultChartOpts : {
+      data: {
+        columns: [],
+      },
+      color: {
+        pattern: ['#57c5bb', '#f5a623', ],
+      },
+      interaction: {
+        enabled: true,
+      },
+      y: {
+        padding: {
+          bottom: 0,
+        },
+        min: 0,
+      },
+      axis: {
+        x: {
+          tick : {
+            values : [],
+          },
+        },
+        y : {
+        },
+      },
+      size : {
+        height: 250,
+      },
+    },
+
+    // indexed by vital type
+    chartOpts : [
+      {},
+      // Weight
+      {
+        data : {
+          columns: [['Weight']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Respiration
+      {
+        data : {
+          columns: [['Respiration']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+      // Blood pressure
+      {
+        data : {
+          columns: [['Systolic'], ['Diastolic'] ],
+          columnKeys: ['value', 'diastolicValue'],
+        },
+        isInteger : true,
+      },
+      // BP Dystolic -- currently doesn't generate alerts
+      {},
+      // Temperature
+      {
+        data : {
+          columns: [['Temperature']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Pulse
+      {
+        data : {
+          columns: [['Pulse']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+      // Blood Sugar
+      {
+        data : {
+          columns: [['Blood Sugar']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Height (currently doesn't trigger alerts)
+      {},
+      // O2 Sats
+      {
+        data : {
+          columns: [['O2 Sats']],
+          columnKeys: ['value'],
+        },
+        isInteger : false,
+      },
+      // Pain Level
+      {
+        data : {
+          columns: [['Pain Level']],
+          columnKeys: ['value'],
+        },
+        isInteger : true,
+      },
+    ],
+        
+    userId: '2080'.trim()
+	};
+</script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/core.js(1).download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/state.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/rootReducer.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/StatefulComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/CardComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/DropdownComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/FilterComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/PanelComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/DrawerComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/NotificationToggleComponent.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/App.js.download"></script>
+<script defer="" src="./Clinical Care Plan Detail - 6_files/SmartAlertSaveActionVOFactory.js.download"></script>
+
+<script>
+	'use strict';
+	var selectedAssignmentId=
+	selectedAssignmentId=selectedAssignmentId||''
+	document.addEventListener('DOMContentLoaded', function(e) {
+		clinicalSmartAlerts.App.init(
+			 {}
+		);
+	});
+</script>
+
+<span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+    
+      
+      
+         <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle c-notification-toggle--has-alerts"></div> 
+      
+  
+
+  <div class="js-drawer c-drawer c-drawer--is-hidden u-no-transition">
+    <div class="js-panel c-panel">
+      <ul class="js-tabs js-sticky-header c-tabs">
+        
+        <li id="qtf-csa-drawerTabAll" class="js-tab c-tabs__tab " data-tab-type="all"><span class="c-tabs__label">All</span></li>
+        
+        <li id="qtf-csa-drawerTabClient" class="js-tab c-tabs__tab" data-tab-type="client"><span class="c-tabs__label">Resident</span></li>
+        
+      </ul>
+
+      <div class="js-panel-content c-panel__content">
+        <div class="js-filters l-stack u-hidden u-mb-8">
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Unit</label>
+            <div id="qtf-csa-unitDropdown" class="js-dropdown-unit js-dropdown c-dropdown u-text-uppercase" data-type="unit">
+              <a href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp#" id="qtf-csa-unitDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp#" id="qtf-csa-unitDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Floor</label>
+            <div id="qtf-csa-floorDropdown" class="js-dropdown-floor js-dropdown c-dropdown u-text-uppercase" data-type="floor">
+              <a href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp#" id="qtf-csa-floorDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp#" id="qtf-csa-floorDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="new-alert-bubble" class="new-alert-bubble c-button c-button--primary" style="display:none;">
+          <img class="tail-up" src="./Clinical Care Plan Detail - 6_files/whitearrow.png">New Alerts
+        </div>
+        <div class="js-panel-alerts c-panel-alerts c-panel-alerts--has-no-alerts">No Alerts</div>
+      </div>
+    </div>
+  </div>
+	<script id="tmpl-csa-alert-card" type="text/template">
+    <div id="js-csa-alert-card-{{type}}-{{id}}" class="js-alert-card c-card" data-alert-type="{{type}}" data-alert-id="{{id}}" data-grouped-alert-ids="{{groupedAlertIds}}" data-client-id="{{clientId}}" data-created-timestamp="{{createdTimestamp}}" data-module="{{module}}"
+      data-vital-type="{{vitalType}}" data-pn-id="{{pnId}}" data-clear-alert-permission="{{clearAlertPermission}}" data-alert-description="{{description}}" data-wv-pn-description="{{pn_description}}">
+
+	    <div class="c-card__header">
+	      <div class="l-table-row u-mb-0">
+	        <span class="c-card__type l-table-row__col l-table-row__col--70 u-text-uppercase u-text-subdued">{{formattedType}}</span>
+	        <a href="#_" class="js-alert-card-clear c-card__clear l-table-row__col l-table-row__col--30 u-text-uppercase u-text-subdued u-text-align-right"style="display:{{clearAlertPermission}}">Clear</a>
+	      </div>
+	    </div>
+	    <div class="c-card__content">
+	      <div class="l-table-row">
+	        <div class="l-table-row__col l-table-row__col--70">
+	          <h4 class="t-h4 u-mb-0">{{formattedName}} (<span class="qtf-csa-alertClientNumber">{{clientNumber}}</span>)</h4>
+            <span>Room <span class="qtf-csa-alertRoomNumber">{{room}}</span></span>
+	        </div>
+	        <div class="l-table-row__col l-table-row__col--30 u-text-align-right">
+	          <small class="u-text-subdued">{{timeSince}}</small>
+	        </div>
+	      </div>
+	      <div class="js-more-less"><p class="js-alert-description">{{eInteractHeading}}{{description}}</p></div>
+        <hr class="o-hr"/>
+
+        <div class="js-show-hide js-card-expander c-show-hide c-card-expander">
+          <div class="c-show-hide__content">
+            <div class="js-show-hide js-alert-details-expander c-show-hide c-details-expander">
+              <a href="#_" class="js-show-hide-toggle js-alert-details-expander-toggle c-show-hide__toggle">Alert Details</a>
+              <div class="c-show-hide__content">
+                <div id="js-csa-alert-card-details-{{type}}-{{id}}" class="s-clinical-smart-alert-details">
+                  <div class="l-detail-row" style="display:{{hideAlertDetailsEffectiveDate}}">
+                    <h4 class="t-h4 u-mb-0 c-alert-detail">Effective Date: </h4>
+                    <div class="c-alert-detail qtf-csa-AlertEffectiveDate">{{effectiveDate}}</div>
+                  </div>
+ 				  <div style="display:{{displayExtendedDetails}};">
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Description: </h4> 
+                      <div class="c-alert-detail c-assess-description">{{assess_description}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Created Date: </h4>
+                      <div class="c-alert-detail c-assess-date">{{assess_date}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Type: </h4>
+                      <div class="c-alert-detail c-assess-type">{{assess_type}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Question: </h4>
+                      <div class="c-alert-detail c-trigger-question">{{trigger_question}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Response: </h4>
+                      <div class="c-alert-detail c-trigger-response">{{trigger_response}}</div>
+                    </div>
+                  </div>
+                  <div style="display:{{displayComplexDetails}};">
+					<div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Task}} Description: </h4> 
+                      <div class="c-alert-detail c-task-description"><ul></ul></div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Follow Up Question: </h4> 
+                      <div class="c-alert-detail c-followup-question">{{followup_question}}</div>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+					<div class="l-detail-row">
+					  <h4 class="t-h4 u-mb-0 c-alert-detail c-approach-description">{{complex_description}} </h4>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Response Pick List: </h4> 
+                      <div class="c-alert-detail c-response-pick-list"><ul></ul></div>
+                    </div>
+                  </div>
+				  <div style="display:{{displayInboundClinicalData}};">
+                    <div class="l-detail-row">
+                      <div class="c-alert-detail c-inbound-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipcard-container c-hidden">
+                  <div class="flipcard">
+                    <div class="flipcard-wrapper">
+                        <div class="flipcard-side flipcard-side-front flipcard-is-active">
+                            <div class="trendgraph"></div>
+                        </div>
+                        <div class="flipcard-side flipcard-side-back c-hidden">
+                            <table class="c-alert-details-table js-alert-details-table">
+                              <tbody></tbody>
+                             </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flipcard-chevron-container">
+                      <div class="flipcard-chevron"></div>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="suggestions-section">
+                <p>Suggestions:</p>
+				<div style="display:{{hideSuggestionLinks}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-care-plan-link-{{id}}" href="{{carePlanAction}}">Add Care Plan Item</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-add-tasks-link-{{id}}" href="/admin/client/cp_tasks.jsp?ESOLclientid={{clientId}}">Add Task</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-add-vitals-{{id}}" href="/admin/client/cp_weightsandvitals.jsp?ESOLclientid={{clientId}}">Add Vital</a>
+                  <a class="smart-alert-card-link" id="qtf-csa-assessment-link-{{id}}" href="/admin/client/cp_assessment.jsp?ESOLclientid={{clientId}}">Add Assessment</a>
+				</div>
+				<div style="display:{{displayInboundClinicalData}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-review-inbound-data-link-{{type}}-{{id}}" href="/clinical/inbound/inboundclinicaldata.xhtml?ESOLclientid={{clientId}}">Review Inbound Clinical Data</a>
+				</div>
+              </div>
+            </div>
+
+            
+              <div class="js-show-hide c-show-hide c-assessment-create-wrapper js-assessment-create-wrapper">
+                <label class="u-mt-8 c-custom-checkbox__disabled assessment-create">
+                  eINTERACT Change in Condition
+                    <input type="checkbox" class="js-show-hide-toggle js-checkbox-create-assessment c-show-hide__toggle" disabled />
+                    <span class="c-custom-checkbox__checkmark"></span>
+                </label>
+                <div class="c-show-hide__content c-form u-mt-16">
+                  <div class="u-mt-16 u-mb-16">
+                    <div>
+                      <label>Effective Date: </label>
+                    </div>
+                    <div class="assessment-date-picker">
+                      <input id="qtf-effective-date-{{id}}" name="effective_date" type="hidden"/><input id="qtf-effective-date-{{id}}_dummy" name="effective_date_dummy" class="pccDateField c-dropdown" type="text" value="" size="10" maxlength="10"/>
+                      <select name="hour" class="c-dropdown" id="qtf-effective-hour-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                      </select>
+                      <select name="min" class="c-dropdown" id="qtf-effective-minute-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                          <option value="24">24</option>
+                        
+                          <option value="25">25</option>
+                        
+                          <option value="26">26</option>
+                        
+                          <option value="27">27</option>
+                        
+                          <option value="28">28</option>
+                        
+                          <option value="29">29</option>
+                        
+                          <option value="30">30</option>
+                        
+                          <option value="31">31</option>
+                        
+                          <option value="32">32</option>
+                        
+                          <option value="33">33</option>
+                        
+                          <option value="34">34</option>
+                        
+                          <option value="35">35</option>
+                        
+                          <option value="36">36</option>
+                        
+                          <option value="37">37</option>
+                        
+                          <option value="38">38</option>
+                        
+                          <option value="39">39</option>
+                        
+                          <option value="40">40</option>
+                        
+                          <option value="41">41</option>
+                        
+                          <option value="42">42</option>
+                        
+                          <option value="43">43</option>
+                        
+                          <option value="44">44</option>
+                        
+                          <option value="45">45</option>
+                        
+                          <option value="46">46</option>
+                        
+                          <option value="47">47</option>
+                        
+                          <option value="48">48</option>
+                        
+                          <option value="49">49</option>
+                        
+                          <option value="50">50</option>
+                        
+                          <option value="51">51</option>
+                        
+                          <option value="52">52</option>
+                        
+                          <option value="53">53</option>
+                        
+                          <option value="54">54</option>
+                        
+                          <option value="55">55</option>
+                        
+                          <option value="56">56</option>
+                        
+                          <option value="57">57</option>
+                        
+                          <option value="58">58</option>
+                        
+                          <option value="59">59</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <p class='u-hidden has-error js-effective-date-error'>Assessment Date Cannot Be In The Future.</p>
+                  <div class="c-einteract-assessment c-einteract-assessment__hidden">
+                    <p>
+                      <span class="c-einteract-heading alert-SW-conds">Stop &amp; Watch Alerts: </span>
+                    </p>
+                    <p class="c-einteract-heading">Change in Condition(s): </p>
+                    <select name="cic_reason_{{id}}" id="cic_reason_{{id}}" data-placeholder="Choose an option..." class="chzn-select" multiple="multiple"
+                      style="width:100%;">
+                    </select>
+                    <div class="c-cic-other-symptoms u-hidden">
+                      <p class="c-einteract-heading">Other Change in Condition (describe): </p>
+                      <input type="text" class="c-cic-other-symptoms-input u-mb-16" name="other-symp-{{id}}" maxlength="50" size="50" />(50 max) <span style="color: red;">&nbsp;*</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+
+          
+           
+             
+                <div class="js-show-hide js-carousel-esignature c-carousel">
+                    <div class=" js-show-hide js-create-pn-wrapper c-show-hide js-carousel-item c-carousel__item">
+              
+              
+            
+			<div style="display:{{hideProgressNote}}">
+            <label class="u-mt-8 u-mb-8 c-custom-checkbox pn-create">
+	          	Create Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle js-checkbox-create-pn c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+			</div>
+            <label class="u-mt-8 c-custom-checkbox pn-view">
+	          	View Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle js-checkbox-create-pn c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+              <div class="c-show-hide__content c-form u-mt-16 js-pn-interactive-section"></div>
+              <button class="js-button-save-interactive-suggestions c-button c-button--primary u-mt-16">Save</button>
+              <button class="js-button-cancel-interactive-suggestions c-button c-button--primary-inverse">Cancel</button>
+              </div>
+                              
+                <div class="js-carousel-item c-carousel__item">
+                <h4 class="t-h4 u-mt-16">Attestation Statement</h4>
+                <p>By electronically signing this record, I attest that the information recorded was entered by me and that I am authorized by the facility to record and sign this record.</p>
+                <hr class="o-hr"/>
+                <div class="c-form u-mt-16 u-mb-16">
+                    <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30">
+                            <label>User:</label>
+                        </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            nfetterman
+                        </div>
+                    </div>
+                    <div class="l-table-row">
+                       <div class="l-table-row__col l-table-row__col--30">
+                            <label>Password:</label>
+                       </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            <form class="js-esignature-form" autocomplete="off">
+                              <input class="js-input-esignature-password" type="password" autocomplete="off"/>
+                              <div class="js-esignature-form-status-msg c-form__status-msg"></div>
+                            </form>
+                        </div>
+                      </div>
+                      <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30"></div>
+                            <div class="l-table-row__col l-table-row__col--70">
+                                <button class="js-button-sign-esignature c-button c-button--primary">Sign</button> 
+                                <button class="js-button-cancel-esignature c-button c-button--primary-inverse">Cancel</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      
+                   
+                </div>  
+              <div class="js-show-hide-toggle js-card-expander-toggle c-show-hide__toggle"></div>
+            </div>
+            </div>          
+          </div>
+	    </div>
+	  </div>
+	</script>
+</span>
+
+				
+				
+				<a href="https://partnercontentus.pointclickcare.com/home/logout.jsp" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+			</td>
+		</tr>
+	</tbody></table>
+	<table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+		<tbody><tr>
+			<td valign="top">
+				<div class="slMainNavTabs">
+					
+				<ul id="topTabs"><li id="QTF_HomePageTab" class=""><a href="https://partnercontentus.pointclickcare.com/home/home.jsp" class="arrowDrop">Home</a><div class="megaMenu mmHomeBox" style="display: none; left: 9px;"><div class="mmBoxes" style="height: 116px;"><h5>Dashboards</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/home/home.jsp">Home</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/admindashboard.jsp">Admin Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/clinicaldashboard.jsp?fromMenu=Y">Clinical Dashboard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 116px;"></div><div class="mmBoxes" style="height: 116px;"><h5>Modules</h5><ul class="mmList"><li><a>POC</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 116px;"></div><div class="mmBoxes" style="height: 116px;"><h5>External Links</h5><ul class="mmList"><li><a href="javascript:openPopupWinNR(&#39;/common/popup/extlinks.xhtml?ESOLclientid=&#39;+getClientIdIfAvailable(), &#39;extlinkspopup&#39;, 500, 600, &#39;&#39;);">View all links</a></li></ul><br><h5>Other</h5><ul class="mmList"><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_AdminTab" class=""><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=P" class="arrowDrop">Admin</a><div class="megaMenu mmAdminBox" style="display: none;"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=P">Residents</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp">Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp">Medical Professionals</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Financial Management</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/admindashboard.jsp">Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/billing/billportal_us.jsp">Billing</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/billing/collections/collections.xhtml?sort=client&amp;dir=asc">Collections</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/trust/trustportal.jsp">Trust</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/assess/assessscheduler.jsp?ESOLtabType=P">UDA</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/reports/adminreports.jsp?ESOLtabtype=P">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/eadminsetup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_ClinicalTab" class="ClinicalTab"><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=C" class="arrowDrop">Clinical</a><div class="megaMenu mmClinicalBox" style="display: none; left: 123.047px;"><div class="mmBoxes" style="height: 222px;"><h5>People</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/admin/client/clientlist.jsp?ESOLtabtype=C">Residents</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="https://partnercontentus.pointclickcare.com/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 222px;"></div><div class="mmBoxes" style="height: 222px;"><h5>Care Management</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/clinicaldashboard.jsp?fromMenu=Y">Dashboard</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/hospitalPortal.xhtml">Hospital Tracking</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/mds/mdsportal.jsp?isMDS3=Y">MDS</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/communications.jsp">Communications</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/ordersPortal.xhtml">Orders</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/inc/incidentportal.xhtml?ESOLview=S">Risk Management</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/weightsandvitalsportal.jsp">Weights and Vitals</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/assess/assessscheduler.jsp">UDA</a></li><li><a href="https://partnercontentus.pointclickcare.com/clinical/cpg/carepathwaysportal.xhtml">Care Pathways</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 222px;"></div><div class="mmBoxes" style="height: 222px;"><h5>Quick Entry</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/phyvisitedit.jsp">Physician Visits</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/immunizbatchentry.jsp">Immunization</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/weightbyunit.jsp">Weight</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=3">Blood Pressure</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=5">Temperature</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=6">Pulse</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=2">Respiration</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=7">Blood Sugar</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=9">O2 Saturation</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=10">Pain Level</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 222px;"></div><div class="mmBoxes" style="height: 222px;"><h5>Modules</h5><ul class="mmList"><li><a>POC</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 222px;"></div><div class="mmBoxes" style="height: 222px;"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/care/reports/carereports.jsp?ESOLtabtype=C">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/care/setup/ecaresetup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_MarketingTab" class=""><a href="https://partnercontentus.pointclickcare.com/crm/crmportal.jsp" class="arrowDrop">IRM</a><div class="megaMenu mmIRMBox" style="display: none; left: 196.172px;"><div class="mmBoxes" style="height: 203px;"><h5>IRM</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/crm/crmportal.jsp?ESOLtabtype=M">My Worklist</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/referrallist.jsp">Center Referrals</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/inquiries.jsp?ESOLtabtype=M">Inquiry Listing</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/benefits_portal.jsp">Activities</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/contacts.jsp">Contacts</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/accountlist.jsp">Accounts</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/maps/maps.jsp">MAPs</a></li><li><a href="javascript:openSizedLookup2(&#39;/crm/crm_bed_lookup_us.jsp?&#39;,&#39;bed_lookup&#39;,650,600,&#39;scrollbars&#39;);">Bed Availability</a></li><li><a href="javascript:openSizedLookup2(&#39;/irm/episode_wizard/episode.xhtml&#39;, &#39;&#39;, 842, 660,&#39;&#39;);">Inquiry Wizard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 203px;"></div><div class="mmBoxes" style="height: 203px;"><h5>Other</h5><ul class="mmList"><li><a href="https://partnercontentus.pointclickcare.com/crm/reports/crmreports.jsp">Reports</a></li><li><a href="https://partnercontentus.pointclickcare.com/crm/setup/setup.jsp">Setup</a></li><li><a href="javascript:openhelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_reportingTab" class=""><a href="https://partnercontentus.pointclickcare.com/enterprisereporting/listing.xhtml" class="noArrowDrop">Reports</a><div class="megaMenu mmReportsBox" style="display: none;"></div></li></ul></div>
+				<div class="slResidentSearch" style="float:right;">
+					
+					
+						<form name="slsearch">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+									<td width="45">
+										
+											<div id="searchSelect">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+														<td width="34"><img class="facility" src="./Clinical Care Plan Detail - 6_files/facilityIcon.png" title="This Facility"></td>
+														
+															<td><img class="arrow" src="./Clinical Care Plan Detail - 6_files/down-arrow.png" aria-hidden="true"></td>
+														
+													</tr>
+												</tbody></table>
+											</div>
+										
+										
+									</td>
+									<td>
+										<input type="text" id="searchField" name="substring" autocomplete="off">
+									</td>
+									<td>
+										<input type="button" class="pccButton" value="Search" onclick="submitSearchNew();">
+									</td>
+								</tr>
+							</tbody></table>
+
+							
+								<div id="searchAll" style="border:1px solid #999;box-shadow:8px 8px 4px -6px #999;display:none;">
+									<input type="hidden" name="ESOLglobalclientsearch" value="N">
+									<table border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr onclick="switchFacImg(&#39;facilityIcon&#39;);switchToGlobalSearch(false);">
+											<td style="text-align:center;"><img class="facility" src="./Clinical Care Plan Detail - 6_files/facilityIcon.png" title="This Facility"></td>
+											<td>This Facility</td>
+										</tr>
+										<tr onclick="switchFacImg(&#39;facilityAllIcon&#39;);switchToGlobalSearch(true);">
+											<td><img class="facility" src="./Clinical Care Plan Detail - 6_files/facilityAllIcon.png" title="All Facilities"></td>
+											<td>All Facilities</td>
+										</tr>
+									</tbody></table>
+								</div>
+							
+							
+						</form>
+					
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	<table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td align="left">
+				<ul class="secondNavList"></ul>
+			</td>
+			<td valign="top" align="right" width="85">
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		</td>
+	</tr>
+</tbody></table>
+
+
+    <form name="needs" id="needs" action="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp" method="post">
+        <input type="hidden" name="ESOLminiToken" value="6603834141">
+        <input type="hidden" name="ESOLrefresh" value="">
+        <input type="hidden" name="ESOLviewTransferInfo" value="N">
+        <input type="hidden" name="ESOLtransferClientId" value="">
+        <input type="hidden" name="ESOLcareplanid" value="null">
+        <input type="hidden" name="ESOLFilteredNeedIds" id="ESOLFilteredNeedIds" value="">
+        <input type="hidden" name="isRefreshedByChildWindow" id="isRefreshedByChildWindow" value="">
+        <input type="hidden" name="carePlanTypeId" id="carePlanTypeId" value="-1">
+    
+        <table border="0" width="100%" cellspacing="0" cellpadding="0">
+            <tbody><tr height="5">
+                <td></td>
+            </tr>
+            <tr>
+                <td width="59%" align="left" valign="top" colspan="2">
+                    <span style="font-size:12pt;font-weight:bold;">&nbsp;Care Plan Detail</span>
+                </td>
+                <td align="right" valign="top">
+                    <b><label for="ESOLsearchString" id="searchlabel">Search:</label></b>&nbsp;&nbsp;
+                </td>
+                <td style="padding-bottom:3px;">
+                    <input type="search" name="ESOLsearchString" id="ESOLsearchString" class="input-criteria" onkeydown="searchKeyDown(event)" onkeyup="searchKeyUp(event)" value="" title="To search, enter search term and then press enter. To clear, delete the search term and press enter">
+                </td>
+            </tr>
+                
+                <tr valign="top">
+                    
+                    <td rowspan="9" colspan="2">
+                        
+                        <table cellspacing="0" cellpadding="1">
+                            <tbody><tr height="25" valign="middle">
+                                <td>
+                                    &nbsp;
+                                </td>
+                                <td width="200" align="right" class="btl" bgcolor="#ffffff">
+                                    <span style="font-size:10pt;font-weight:bold;">Resident:</span>
+                                </td>
+                                <td width="200" class="btr" bgcolor="#ffffff">
+                                    <span style="font-size:10pt;">&nbsp;Smith, Stella (558874)&nbsp;</span>
+                                </td>
+                            </tr>
+                            
+                                        <tr>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td valign="top" align="right" class="bbl" bgcolor="#ffffff">
+                                                <span style="font-size:10pt;font-weight:bold;">Triggered
+                                                    Care Plan Items:</span>
+                                            </td>
+                                            
+                                            <td valign="top" class="bbr" bgcolor="#ffffff">
+                                                
+                                                &nbsp;
+                                                <a onclick="emptyIt=false;showPromptPN=false;" href="https://partnercontentus.pointclickcare.com/care/chart/cp/addtriggereditems_rev.jsp?ESOLclientid=4671&amp;ESOLpositionid=-1&amp;ESOLreviewid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLcpid=814&amp;showTriggTask=Y">View
+                                                    Triggered Items Now</a> &nbsp;
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                			</tr>
+                			<tr>
+                                <td align="right" width="20%">
+                                    &nbsp;
+                                    <b><label for="idESOLsortby" id="sortBy-label" aria-hidden="true">Sort By:</label></b>&nbsp;&nbsp;
+                                </td>
+                                <td width="20%">
+                                    <select onchange="refreshPage(document.needs);" name="ESOLsortby" id="idESOLsortby" aria-labelledby="sortBy-label" class="input-criteria">
+                                        <option value="C">Library Order</option>
+                                        <option value="R">Revision Date</option>
+                                        <option value="I">Intervention Date Initiated</option>
+                                    </select>
+                                    &nbsp;
+                                </td>
+							</tr>
+                            <tr>
+                                <td align="right" valign="top">
+                                    <b><label for="idpersonalizedTask" id="personalizedTask-label" aria-hidden="true">Show only <span class="cpItemToBeModified" title="Personalization required">&#916;</span>:</label></b>&nbsp;&nbsp;
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="ESOLshowPersonalizationTask" id="idpersonalizedTask" value="Y" aria-labelledby="personalizedTask-label" onclick="refreshthis(document.needs);" class="input-criteria-checkbox">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top">
+                                    <b><label for="idshowresolved" id="showResolvedCancelled-label" aria-hidden="true">Show Resolved/Cancelled:</label></b>&nbsp;&nbsp;
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="showresolved" id="idshowresolved" value="Y" aria-labelledby="showResolvedCancelled-label" onclick="refreshthis(document.needs);" class="input-criteria-checkbox">
+                                </td>
+                                <script>needs.ESOLsortby.value="C";</script>
+                            </tr>
+                            
+                            <tr>
+                                <td align="right" valign="top">
+                                    <b><label for="idshowTask">Show Tasks:</label></b>&nbsp;&nbsp;
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="showTask" id="idshowTask" value="Y" onclick="refreshthis(document.needs);" class="input-criteria-checkbox" checked="">
+                                </td>
+                            </tr>
+                            
+
+                            <tr>
+                                <td align="right">
+                                    <a href="javascript:void(window.open(&#39;/care/chart/cp/symbol_legend.jsp&#39;,&#39;_blank&#39;,&#39;height=220,width=430,resizable=no&#39;))">Show Symbol Legend</a>&nbsp;&nbsp;
+                                </td>
+                            </tr>
+                            <tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+<tr></tr>
+
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>
+                                	<b><label>Care Plan Type:</label></b>
+                                    <table border="1" cellpadding="1" cellspacing="0" bordercolor="black">
+                                        <tbody><tr>
+                                        	<td class="unsignedDepartmentSelected"><strong><a onclick="emptyIt=false;showPromptPN=false;" class="unsignedDepartmentSelected" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLcareplanid=814&amp;showresolved=N&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLclientid=4671&amp;ESOLreviewid=&amp;ESOLreadonly=N&amp;ESOLcpchanged=Y&amp;carePlanTypeId=-1&amp;ESOLpositionid=-1">All</a></strong></td>
+                                        </tr>
+                                    </tbody></table><br>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>
+                                	<b><label>Department:</label></b>
+                                    <table border="1" cellpadding="1" cellspacing="0" bordercolor="black">
+                                        <tbody><tr>
+                                        	<td class="unsignedDepartmentSelected"><strong>&nbsp;&nbsp;<a onclick="emptyIt=false;showPromptPN=false;" class="unsignedDepartmentSelected" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLcareplanid=814&amp;showresolved=N&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLclientid=4671&amp;ESOLreviewid=&amp;ESOLreadonly=N&amp;ESOLcpchanged=Y&amp;carePlanTypeId=-1&amp;ESOLpositionid=-1">All</a>&nbsp;&nbsp;</strong></td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                            
+                            <tr height="10">
+                                <td></td>
+                            </tr>
+                            <tr height="10">
+                                <td></td>
+                            </tr>
+                            
+                          </tbody></table>
+                          <input type="hidden" name="ESOLcareplanid" value="41">
+                          <input type="hidden" name="ESOLclientid" value="4671">
+                          <input type="hidden" name="ESOLreviewid" value="-1">
+                          <input type="hidden" name="ESOLrow" value="1">
+                          <input type="hidden" name="ESOLneedid">
+                          <input type="hidden" name="ESOLstdneedid">
+                          <input type="hidden" name="ESOLgoalid">
+                          <input type="hidden" name="ESOLinterid">
+                          <input type="hidden" name="ESOLlastneed" value="null">
+                          <input type="hidden" name="ESOLlastgoal" value="null">
+                          <input type="hidden" name="ESOLlastinter" value="null">
+                          <input type="hidden" name="ESOLfocusneed" value="neednull">
+                          <input type="hidden" name="ESOLshowresolved" value="N">
+                          <input type="hidden" name="ESOLsortby" value="C">
+                          <input type="hidden" name="ESOLwizard" value="N">
+                          <input type="hidden" name="ESOLfromcheck" value="N">
+                          <input type="hidden" name="ESOLpage" value="careplandetail_rev">
+                          <input type="hidden" name="ESOLpositionid" value="-1">
+                          <input type="hidden" name="retURL" value="/admin/client/cp_careplans_rev.jsp">
+                          <input type="hidden" name="ESOLreadonly" value="N">
+                          <input type="hidden" name="ESOLsn" value="N">
+                          <input type="hidden" name="ESOLisstdTask" value="">
+                          <input type="hidden" name="ESOListask" value="">
+                          <input type="hidden" name="ESOLviewTransferInfo" value="N">
+                          <input type="hidden" name="ESOLgoToNeed" value="">
+                          <input type="hidden" name="cpInitDate" value="null">
+                        </form>
+
+                        
+
+                        <table border="0" cellspacing="0" cellpadding="0" width="100%" id="mainTable">
+                            <tbody><tr height="20">
+                                <td align="center">
+                                    <input type="button" class="pccButton" value="New Focus" id="idNewFocusBtn" title="New Need: CTRL-SHIFT-N" onclick="newNeed();"><input type="button" class="pccButton" value="New Custom Focus" id="idNewCustomFocusBtn" title="New Need: CTRL-SHIFT-N" onclick="newCustNeed();"><input type="button" class="pccButton" value="Printable View" id="idPrintableViewBtn" title="Print: CTRL-SHIFT-P" data-popup-options="/care/reports/cpprintpopup.jsp?ESOLcareplanid=null&amp;ESOLfromrescp=Y&amp;ESOLreviewid=-1&amp;ESOLfromchart=Y&amp;ESOLclientid=4671&amp;ESOLshowresolved=N&amp;ESOLpositionid=-1&amp;cpInitDate=null&amp;ESOLhasFilteredNeedIds=N&amp;ESOLshowPersonalizationTask=null&amp;ESOLsortby=C"><input type="button" class="pccButton" value="Back" id="idBackBtn" title="Back: CTRL-SHIFT-B" onclick="back(&quot;/admin/client/cp_careplans_rev.jsp?ESOLreviewid=-1&amp;ESOLclientid=4671&quot;)"><input type="button" class="pccButton" value="Care Plan PN" id="idCarePlanPnBtn" title="Care Plan PN" onclick="taskPN();">&nbsp;&nbsp;&nbsp;<input type="button" class="pccButton" value="New Alert" id="idNewAlertBtn" onclick="newAlert();"><input type="button" class="pccButton" value="Jump to MDS" id="idJump2MDSBtn" onclick="jumpToMDS(&#39;false&#39;);">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <a id="setfocus" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp#justedited"></a>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody><tr><td align="center"><span class="pccResultsJumpBarPagination"><a onclick="emptyIt=false;showPromptPN=false;" class="selected" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=1&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">1</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=6&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">2</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=11&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">3</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=16&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">4</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=21&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">5</a><a onclick="emptyIt=false;showPromptPN=false;" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=6&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">Next �</a></span></td></tr></tbody></table>
+<div>
+<table class="" border="0" cellspacing="0" cellpadding="3" width="100%"><tbody><tr><th class="detailColHeader" nowrap="nowrap">Focus</th><th class="detailColHeader" nowrap="nowrap">Goals</th><th class="detailColHeader" nowrap="nowrap">Interventions/Tasks</th></tr><tr bgcolor="#efefef"><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr valign="top"><td width="6%"><a name="need1185"></a><a href="javascript:editNeed(1694,1673)"><b>edit</b></a>&nbsp;<a href="javascript:pnNeed(&#39;1694&#39;,&#39;1673&#39;,&#39;1185&#39;)"><b>pn</b></a></td><td width="94%"><span class="text1">Acute Pain related to colon cancer.</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1673,&#39;N&#39;,&#39;Y&#39;,1185)">H</a>&nbsp;<br><br><span class="carePlanTypesHover" style="display:none;"> Care Plan Type </span></td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2"><a href="javascript:newGoal(1673,1185,1694)">New Goal</a>&nbsp;&nbsp;<a href="javascript:customGoal(1673,1694)">New Custom Goal</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(1979,1185,1694,1979,3032)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(1979,1979,3032,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Resident Will Be Free of Pain / Discomfort</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1979,&#39;G&#39;,&#39;Y&#39;,3032)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a id="justedited" href="javascript:editGoal(2009,1185,1694,2009,-1)"><b>edit</b></a>&nbsp;<a id="justedited" href="javascript:pnGoal(2009,2009,-1,1694)"><b>pn</b></a></td><td width="94%"><b><span class="text1">Ms. Smith's pain will be managed and within her personalized acceptable pain range.</span></b><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(2009,&#39;G&#39;,&#39;Y&#39;,-1)">H</a>&nbsp;</td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newIntervention(1673,1185,1694)">New Intervention</a>&nbsp;&nbsp;<a href="javascript:customIntervention(1673,1185,1694)">New Custom Intervention</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17797,14284,1185,1694,17797)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17797,17797,14284,1185,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Administer medications to treat cough</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17797,&#39;I&#39;,&#39;Y&#39;,14284)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17802,15474,1185,1694,17802)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17802,17802,15474,1185,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Encourage participation in coughing, deep breathing and forced expiratory techniques, as ordered</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17802,&#39;I&#39;,&#39;Y&#39;,15474)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17798,14296,1185,1694,17798)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17798,17798,14296,1185,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate for non-verbal indicators of pain</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17798,&#39;I&#39;,&#39;Y&#39;,14296)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17799,14299,1185,1694,17799)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17799,17799,14299,1185,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate for pain related to coughing</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17799,&#39;I&#39;,&#39;Y&#39;,14299)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17800,14313,1185,1694,17800)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17800,17800,14313,1185,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Utilize humidity (humidified oxygen or humidifier)</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17800,&#39;I&#39;,&#39;Y&#39;,14313)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17801,14315,1185,1694,17801)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17801,17801,14315,1185,1694)"><b>pn</b></a></td><td width="94%"><span class="text1">Utilize positioning and relaxation techniques for comfort</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17801,&#39;I&#39;,&#39;Y&#39;,14315)">H</a>&nbsp;</td></tr><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newTask(-1,1185,1694)">New Task</a>&nbsp;&nbsp;<a href="javascript:customTask(-1,1185,1694)">New Custom Task</a></td></tr><tr valign="top"><td colspan="2"><b>NO ASSIGNED TASKS</b></td></tr></tbody></table></td></tr>
+<tr bgcolor="#ffffff"><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr valign="top"><td width="6%"><a name="need1192"></a><a href="javascript:editNeed(1674,1674)"><b>edit</b></a>&nbsp;<a href="javascript:pnNeed(&#39;1674&#39;,&#39;1674&#39;,&#39;1192&#39;)"><b>pn</b></a></td><td width="94%"><span class="text1">Arrhythmia </span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1674,&#39;N&#39;,&#39;Y&#39;,1192)">H</a>&nbsp;<br><br><span class="carePlanTypesHover" style="display:none;"> Care Plan Type </span></td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2"><a href="javascript:newGoal(1674,1192,1674)">New Goal</a>&nbsp;&nbsp;<a href="javascript:customGoal(1674,1674)">New Custom Goal</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(1980,1192,1674,1980,3044)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(1980,1980,3044,1674)"><b>pn</b></a></td><td width="94%"><span class="text1">Resident Will Maintain Optimal Tissue Perfusion</span>&nbsp;<span class="cpItemToBeModified">&#916;</span>&nbsp;<a href="javascript:showHistory(1980,&#39;G&#39;,&#39;Y&#39;,3044)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(1981,1192,1674,1981,3045)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(1981,1981,3045,1674)"><b>pn</b></a></td><td width="94%"><span class="text1">Resident Will Remain in Normal Sinus Rhythm</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1981,&#39;G&#39;,&#39;Y&#39;,3045)">H</a>&nbsp;</td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newIntervention(1674,1192,1674)">New Intervention</a>&nbsp;&nbsp;<a href="javascript:customIntervention(1674,1192,1674)">New Custom Intervention</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17803,14369,1192,1674,17803)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17803,17803,14369,1192,1674)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate arterial leg pulses</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17803,&#39;I&#39;,&#39;Y&#39;,14369)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17804,14370,1192,1674,17804)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17804,17804,14370,1192,1674)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate heart rate</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17804,&#39;I&#39;,&#39;Y&#39;,14370)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17806,15481,1192,1674,17806)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17806,17806,15481,1192,1674)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate heart rate character, rhythm</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17806,&#39;I&#39;,&#39;Y&#39;,15481)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17805,14372,1192,1674,17805)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17805,17805,14372,1192,1674)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate pedal pulses</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17805,&#39;I&#39;,&#39;Y&#39;,14372)">H</a>&nbsp;</td></tr><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newTask(-1,1192,1674)">New Task</a>&nbsp;&nbsp;<a href="javascript:customTask(-1,1192,1674)">New Custom Task</a></td></tr><tr valign="top"><td colspan="2"><b>NO ASSIGNED TASKS</b></td></tr></tbody></table></td></tr>
+<tr bgcolor="#efefef"><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr valign="top"><td width="6%"><a name="need1276"></a><a href="javascript:editNeed(1693,1693)"><b>edit</b></a>&nbsp;<a href="javascript:pnNeed(&#39;1693&#39;,&#39;1693&#39;,&#39;1276&#39;)"><b>pn</b></a></td><td width="94%"><span class="text1">Disease Management at Bedside</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1693,&#39;N&#39;,&#39;Y&#39;,1276)">H</a>&nbsp;<br><br><span class="carePlanTypesHover" style="display:none;"> Care Plan Type </span></td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2"><a href="javascript:newGoal(1693,1276,1693)">New Goal</a>&nbsp;&nbsp;<a href="javascript:customGoal(1693,1693)">New Custom Goal</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(2008,1276,1693,2008,3204)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(2008,2008,3204,1693)"><b>pn</b></a></td><td width="94%"><span class="text1">Bedside Care Tasks Will Be Completed to Evaluate and Manage Resident's Disease</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(2008,&#39;G&#39;,&#39;Y&#39;,3204)">H</a>&nbsp;</td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newIntervention(1693,1276,1693)">New Intervention</a>&nbsp;&nbsp;<a href="javascript:customIntervention(1693,1276,1693)">New Custom Intervention</a>&nbsp;</td></tr><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newTask(-1,1276,1693)">New Task</a>&nbsp;&nbsp;<a href="javascript:customTask(-1,1276,1693)">New Custom Task</a></td></tr><tr valign="top"><td width="6%"><a href="javascript:editTask(17942,15755,1276,1693,17942)"><b>edit</b></a>&nbsp;<a href="javascript:pnTask(17942,17942,15755,1276,1693)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate exact weight</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17942,&#39;T&#39;,&#39;Y&#39;,15755)">H</a>&nbsp;&nbsp;&nbsp;<a title="By clicking this icon, you will view follow up question responses documented via POC ." style="color:#3399CC;border:4px;text-decoration:none;" href="javascript: openSizedLookup2(&#39;/care/chart/cp/pocresponsehistory.jsp?ESOLinterventionId=17942&amp;ESOLclientId=4671&amp;ESOLisTask=Y&#39;,&#39;&#39;,700,650,&#39;scrollbars&#39;)"><span style="border:2px solid #3399CC;font-weight:bold;font-size:11;">&nbsp;?&nbsp;</span></a>&nbsp;<img src="./Clinical Care Plan Detail - 6_files/requireddocumentation.gif" title="Requires documentation.">&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editTask(17943,15758,1276,1693,17943)"><b>edit</b></a>&nbsp;<a href="javascript:pnTask(17943,17943,15758,1276,1693)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate orthostatic blood pressure, if Resident symptomatic</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17943,&#39;T&#39;,&#39;Y&#39;,15758)">H</a>&nbsp;&nbsp;&nbsp;<a title="By clicking this icon, you will view follow up question responses documented via POC ." style="color:#3399CC;border:4px;text-decoration:none;" href="javascript: openSizedLookup2(&#39;/care/chart/cp/pocresponsehistory.jsp?ESOLinterventionId=17943&amp;ESOLclientId=4671&amp;ESOLisTask=Y&#39;,&#39;&#39;,700,650,&#39;scrollbars&#39;)"><span style="border:2px solid #3399CC;font-weight:bold;font-size:11;">&nbsp;?&nbsp;</span></a>&nbsp;<img src="./Clinical Care Plan Detail - 6_files/requireddocumentation.gif" title="Requires documentation.">&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editTask(17944,15775,1276,1693,17944)"><b>edit</b></a>&nbsp;<a href="javascript:pnTask(17944,17944,15775,1276,1693)"><b>pn</b></a></td><td width="94%"><span class="text1">Monitor for symptoms of arrhythmia: chest pain, dizziness, lightheaded, palpitations</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17944,&#39;T&#39;,&#39;Y&#39;,15775)">H</a>&nbsp;&nbsp;&nbsp;<a title="By clicking this icon, you will view follow up question responses documented via POC ." style="color:#3399CC;border:4px;text-decoration:none;" href="javascript: openSizedLookup2(&#39;/care/chart/cp/pocresponsehistory.jsp?ESOLinterventionId=17944&amp;ESOLclientId=4671&amp;ESOLisTask=Y&#39;,&#39;&#39;,700,650,&#39;scrollbars&#39;)"><span style="border:2px solid #3399CC;font-weight:bold;font-size:11;">&nbsp;?&nbsp;</span></a>&nbsp;<img src="./Clinical Care Plan Detail - 6_files/requireddocumentation.gif" title="Requires documentation.">&nbsp;</td></tr></tbody></table></td></tr>
+<tr bgcolor="#ffffff"><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr valign="top"><td width="6%"><a name="need1203"></a><a href="javascript:editNeed(1675,1675)"><b>edit</b></a>&nbsp;<a href="javascript:pnNeed(&#39;1675&#39;,&#39;1675&#39;,&#39;1203&#39;)"><b>pn</b></a></td><td width="94%"><span class="text1">Fatigue</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1675,&#39;N&#39;,&#39;Y&#39;,1203)">H</a>&nbsp;<br><br><span class="carePlanTypesHover" style="display:none;"> Care Plan Type </span></td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2"><a href="javascript:newGoal(1675,1203,1675)">New Goal</a>&nbsp;&nbsp;<a href="javascript:customGoal(1675,1675)">New Custom Goal</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(1982,1203,1675,1982,3060)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(1982,1982,3060,1675)"><b>pn</b></a></td><td width="94%"><span class="text1">Resident Will Experience Reduction in Fatigue</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1982,&#39;G&#39;,&#39;Y&#39;,3060)">H</a>&nbsp;</td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newIntervention(1675,1203,1675)">New Intervention</a>&nbsp;&nbsp;<a href="javascript:customIntervention(1675,1203,1675)">New Custom Intervention</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17807,14449,1203,1675,17807)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17807,17807,14449,1203,1675)"><b>pn</b></a></td><td width="94%"><span class="text1">Determine level of needed assistance based on ADLs / IADLs evaluation</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17807,&#39;I&#39;,&#39;Y&#39;,14449)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17808,14450,1203,1675,17808)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17808,17808,14450,1203,1675)"><b>pn</b></a></td><td width="94%"><span class="text1">Educate Resident / Representative on energy conservation techniques</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17808,&#39;I&#39;,&#39;Y&#39;,14450)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17810,15491,1203,1675,17810)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17810,17810,15491,1203,1675)"><b>pn</b></a></td><td width="94%"><span class="text1">Encourage times of rest and relaxation between care activities</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17810,&#39;I&#39;,&#39;Y&#39;,15491)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17809,14452,1203,1675,17809)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17809,17809,14452,1203,1675)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate Resident's ability to perform ADLs / IADLs</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17809,&#39;I&#39;,&#39;Y&#39;,14452)">H</a>&nbsp;</td></tr><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newTask(-1,1203,1675)">New Task</a>&nbsp;&nbsp;<a href="javascript:customTask(-1,1203,1675)">New Custom Task</a></td></tr><tr valign="top"><td colspan="2"><b>NO ASSIGNED TASKS</b></td></tr></tbody></table></td></tr>
+<tr bgcolor="#efefef"><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td></tr><tr valign="top"><td width="6%"><a name="need1206"></a><a href="javascript:editNeed(1676,1676)"><b>edit</b></a>&nbsp;<a href="javascript:pnNeed(&#39;1676&#39;,&#39;1676&#39;,&#39;1206&#39;)"><b>pn</b></a></td><td width="94%"><span class="text1">Impaired Coping</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1676,&#39;N&#39;,&#39;Y&#39;,1206)">H</a>&nbsp;<br><br><span class="carePlanTypesHover" style="display:none;"> Care Plan Type </span></td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2"><a href="javascript:newGoal(1676,1206,1676)">New Goal</a>&nbsp;&nbsp;<a href="javascript:customGoal(1676,1676)">New Custom Goal</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(1983,1206,1676,1983,3063)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(1983,1983,3063,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Resident Will Demonstrate Effective Coping Mechanisms</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1983,&#39;G&#39;,&#39;Y&#39;,3063)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editGoal(1984,1206,1676,1984,3065)"><b>edit</b></a>&nbsp;<a href="javascript:pnGoal(1984,1984,3065,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Resident Will Be Free of Fear and/or Anxiety</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(1984,&#39;G&#39;,&#39;Y&#39;,3065)">H</a>&nbsp;</td></tr></tbody></table></td><td valign="top"><table border="0" cellspacing="0" cellpadding="2" width="100%"><tbody><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newIntervention(1676,1206,1676)">New Intervention</a>&nbsp;&nbsp;<a href="javascript:customIntervention(1676,1206,1676)">New Custom Intervention</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17811,14467,1206,1676,17811)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17811,17811,14467,1206,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Encourage Resident to verbalize feelings regarding fear and / or anxiety</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17811,&#39;I&#39;,&#39;Y&#39;,14467)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17812,14471,1206,1676,17812)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17812,17812,14471,1206,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Encourage use of PRN medication to alleviate symptoms</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17812,&#39;I&#39;,&#39;Y&#39;,14471)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17813,14473,1206,1676,17813)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17813,17813,14473,1206,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Evaluate for cause of fear or anxiety</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17813,&#39;I&#39;,&#39;Y&#39;,14473)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17814,14484,1206,1676,17814)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17814,17814,14484,1206,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Monitor Resident's response to diagnosis of chronic medical issue</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17814,&#39;I&#39;,&#39;Y&#39;,14484)">H</a>&nbsp;</td></tr><tr valign="top"><td width="6%"><a href="javascript:editIntervention(17815,14491,1206,1676,17815)"><b>edit</b></a>&nbsp;<a href="javascript:pnIntervention(17815,17815,14491,1206,1676)"><b>pn</b></a></td><td width="94%"><span class="text1">Staff to provide care in a confident, assured manner</span><b>&nbsp;+</b>&nbsp;<a href="javascript:showHistory(17815,&#39;I&#39;,&#39;Y&#39;,14491)">H</a>&nbsp;</td></tr><tr><td colspan="2" nowrap="nowrap"><a href="javascript:newTask(-1,1206,1676)">New Task</a>&nbsp;&nbsp;<a href="javascript:customTask(-1,1206,1676)">New Custom Task</a></td></tr><tr valign="top"><td colspan="2"><b>NO ASSIGNED TASKS</b></td></tr></tbody></table></td></tr>
+</tbody></table>
+</div>
+<table width="100%" border="0" cellspacing="0" cellpadding="3"><tbody><tr><td align="center"><span class="pccResultsJumpBarPagination"><a onclick="emptyIt=false;showPromptPN=false;" class="selected" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=1&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">1</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=6&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">2</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=11&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">3</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=16&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">4</a><a onclick="emptyIt=false;showPromptPN=false;" class="" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=21&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">5</a><a onclick="emptyIt=false;showPromptPN=false;" href="https://partnercontentus.pointclickcare.com/care/chart/cp/careplandetail_rev.jsp?ESOLrow=6&amp;ESOLview=Care%20Plan%20Detail%20-%20Revisi&amp;ESOLcareplanid=814&amp;ESOLclientid=4671&amp;ESOLreviewid=-1&amp;showresolved=N&amp;ESOLsortby=C&amp;ESOLshowPersonalizationTask=null&amp;ESOLpositionid=-1&amp;retURL=/admin/client/cp_careplans_rev.jsp&amp;ESOLreadonly=N&amp;ESOLviewTransferInfo=N&amp;ESOLtransferClientId=&amp;cpInitDate=null&amp;ESOLsearchString=">Next �</a></span></td></tr></tbody></table>
+
+                                </td>
+                            </tr>
+                            <tr height="20">
+                                <td align="center">
+                                    <input type="button" class="pccButton" value="New Focus" id="idNewFocusBtn" title="New Need: CTRL-SHIFT-N" onclick="newNeed();"><input type="button" class="pccButton" value="New Custom Focus" id="idNewCustomFocusBtn" title="New Need: CTRL-SHIFT-N" onclick="newCustNeed();"><input type="button" class="pccButton" value="Printable View" id="idPrintableViewBtn" title="Print: CTRL-SHIFT-P" data-popup-options="/care/reports/cpprintpopup.jsp?ESOLcareplanid=null&amp;ESOLfromrescp=Y&amp;ESOLreviewid=-1&amp;ESOLfromchart=Y&amp;ESOLclientid=4671&amp;ESOLshowresolved=N&amp;ESOLpositionid=-1&amp;cpInitDate=null&amp;ESOLhasFilteredNeedIds=N&amp;ESOLshowPersonalizationTask=null&amp;ESOLsortby=C"><input type="button" class="pccButton" value="Back" id="idBackBtn" title="Back: CTRL-SHIFT-B" onclick="back(&quot;/admin/client/cp_careplans_rev.jsp?ESOLreviewid=-1&amp;ESOLclientid=4671&quot;)"><input type="button" class="pccButton" value="Care Plan PN" id="idCarePlanPnBtn" title="Care Plan PN" onclick="taskPN();">&nbsp;&nbsp;&nbsp;<input type="button" class="pccButton" value="New Alert" id="idNewAlertBtn" onclick="newAlert();"><input type="button" class="pccButton" value="Jump to MDS" id="idJump2MDSBtn" onclick="jumpToMDS(&#39;false&#39;);">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="15"></td>
+                            </tr>
+                        </tbody></table>
+                        <script>
+    needs.showresolved.checked=false;
+    
+    emptyIt=false;
+    showPromptPN=false;
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="appAriaHide" aria-hidden="false">Footer Section</h2>
+
+<div class="footertext">
+	<div>
+		<b>FACILITY_1 (Shirley - COMS)</b><br>
+		247 Reese Road <br>
+		, AL <br>
+		
+		
+			<br>PCC Facility ID: 1
+		
+		
+	</div>
+	<div>
+		<b>PointClickCare</b><br>
+		5570 Explorer Drive<br>
+		Mississauga, Ontario L4W 0C4<br>
+		
+		<span class="footerWrap">Help Desk: (877) 722-2431 |</span>
+		<span class="footerWrap">(905) 817-6167</span><br>
+		<span class="footerWrap">Toll Free: (800) 277-5889 |</span>
+		<span class="footerWrap">Phone: (905) 858-8885 | </span>
+		<span class="footerWrap">Fax: (905) 858-2248</span>
+		
+	</div>
+	<div>
+		<a href="http://pointclickcare.com/us/privacy-policy/" target="_blank">Privacy Policy</a><br>
+		
+			<a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars&#39;));">Customer Support</a><br>
+		
+		Version 3.7.19.2 - PCCDEV41-A (<a href="https://jenkins.pointclickcare.com//job/pcc-all-core-trunk-scheduled" target="_blank">pcc-all-core-trunk-scheduled</a> <a href="https://jenkins.pointclickcare.com//job/pcc-all-core-trunk-scheduled/8971" target="_blank">#8971</a> <a href="https://git.pointclickcare.com/projects/WEB/repos/core/commits?until=b1818c9e8cefb2f815aa0fb5d5e7f52f50b3d347" target="_blank">b1818c9e8cefb2f815aa0fb5d5e7f52f50b3d347</a>)<br>
+		Copyright 2000-2017 PointClickCare Technologies Inc. All rights reserved.<br>
+		<span id="deviceID"></span>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>
