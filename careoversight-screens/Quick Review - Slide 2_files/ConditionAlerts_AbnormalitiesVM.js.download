@@ -1,0 +1,27 @@
+﻿var EvalVM = function (data) {
+    var self = this;
+
+    self.AbnormalCount = data.AbnormalCount;
+    self.ObservationCount = data.ObservationCount;
+    self.AlertCount = data.AlertCount;
+    self.AssessmentIdx = data.AssessmentIdx;
+    self.AssessmentName = data.AssessmentName;
+    self.IsQuickAssessment = data.IsQuickAssessment;
+    self.IsNighttimeAssessment = data.IsNighttimeAssessment;
+    self.Time = data.Time;
+}
+
+var EvalsVM = function (data) {
+    var self = this;
+    self.MaxAbnormals = data.MaxAbnormals;
+    self.MaxAlerts = data.MaxAlerts;
+    self.Month = data.Month;
+    self.Day = data.Day;
+    self.Year = data.Year;
+    self.EvalDate = data.Month + '/' + data.Day + '/' + data.Year;
+    self.Evaluations = [];
+
+    $.each(data.Evaluations, function (k, d) {
+        self.Evaluations.push(new EvalVM(d));
+    });
+}

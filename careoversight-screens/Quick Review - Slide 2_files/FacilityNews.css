@@ -1,0 +1,23 @@
+﻿.closeFacNews {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-weight: bold;
+    color: #888;
+    font-size: 10px;
+}
+
+.facNewsMessage {
+    max-width: 100%;
+    position: relative;
+    border: solid #cacaca 1px;
+    color: #666;
+    background-color: #eee;
+    padding: 10px 20px 10px 10px;
+    overflow: hidden;
+    border-radius: .45rem;
+    font-size: 12px;
+    margin: 10px 0 0;
+}

@@ -1,0 +1,215 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.gutter-0.row {
+        margin-right: -0px;
+        margin-left: -0px;
+      }
+      .gutter-0 > [class^="col-"], .gutter-0 > [class^=" col-"] {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+  .gutter-16.row {
+        margin-right: -8px;
+        margin-left: -8px;
+      }
+      .gutter-16 > [class^="col-"], .gutter-16 > [class^=" col-"] {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+/* content container within iFrame ///////////// */  
+.crContainer { display:block; }
+
+.qrCheckBox{ margin-top:0; margin-bottom:0; }
+.quickReviewTurnOn { font-size:13px; padding-top:3px; display:inline-block; }
+.row.qrTurnOn { display:block; margin-top:6px; }
+
+/* TOP ROW /////////// Res Info and Prime DX */      
+
+img.img-responsive.QRResPic {
+    display: block;
+    max-width: 77px;
+    max-height: 85px;
+   } 
+
+.row.topRowResDX { display:block; margin-top:10px; }
+
+    .resNameDiv { display:block; padding:15px; margin-bottom:25px; min-height:120px; max-width:515px; background-color:#f4f4f4; border: 1px solid #ccc; }       
+                     
+          /* ////////////// we will be including the three below styles into the second release of the Quick Review  /////
+ 
+            .resNameDiv.alertStatusRed { border:2px solid #ff0000; }
+            .resNameDiv.alertStatusYellow { border:2px solid #faec06; }
+            .resNameDiv.alertStatusGreen { border:2px solid #3efe03; }
+          */
+          
+        .col-sm-3.resPicDiv { width:100px;  }
+        .col-sm-9.resDataDiv {  }
+                .resPicDiv { display:block;  }
+                .resImage { padding-right:15px; }
+                .resDataDiv { display:block; }
+                    .resNameQR { font-size: 18px; padding-bottom:8px; }
+                    .losQR { font-size: 14px; padding-bottom:8px; }
+                    .primePhysicialQR { font-size: 14px; }
+    
+    .primaryDXDiv { display:block; padding:10px 15px 15px 15px; margin-bottom:25px; min-height:120px; max-width:515px; border:1px solid #ccc; background-color:#f4f4f4; }
+        .primeDXQR { font-size: 16px; padding-bottom:8px; }
+        .currentAssignedQR { font-size: 14px; padding-bottom:7px; }
+        .protocolsQR { font-size: 12px; }
+
+/* MIDDLE ROW //////////  Date - Graphs - Vitals */     
+  
+.row.middleRowData  { display:block; }
+.col-md-12.noCenterPad { padding-left:0; padding-right:0; padding-top:5px; }
+.center-block { display: block; margin-right: auto; margin-left: auto; }
+.noMargin { margin-left:-15px; margin-right:-15px; }
+
+/* LEFT BOX  */   
+    .leftQRDiv { display:block; padding:15px; min-height:270px; border:1px solid #ccc; background-color:#f4f4f4; }
+         hr.styleQR { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+        .col-sm-12.dataPadding { padding-bottom:10px; }
+        .noDataFont { font-size:13px; text-align:left; }
+        .dataFont { font-size:16px; }
+                           
+            span.circle { border-radius: 50%; display: inline-block; }
+		        #circleRed { width: 14px; height: 14px; border:1px solid #a61919; background-color:#ff0000; margin-right:5px;  }
+		    span.circle { border-radius: 50%; display: inline-block; }
+		        #circleYellow { width: 14px; height: 14px; border:1px solid #fd8606; background-color:#faec06; margin-right:5px;  }
+		    span.circle { border-radius: 50%; display: inline-block; }
+		        #circleGreen { width: 14px; height: 14px; border:1px solid #389b1a; background-color:#3efe03; margin-right:5px;  }
+		    .glyphicon.glyphicon-flash { font-size: 18px; color:#ff0000; padding-right:3px; }   
+
+/* CENTER BOX  */     	
+.col-md-4.col-md-push-4 { display:block; height:280px; }
+.col-sm-12.backToGraphLink { display:block; height:25px; padding-top:3px; }
+
+.titleDivFloat { display:block; position:absolute; top:0px; margin-top:1px; width:91.5%;  font-weight:bold;  z-index:100000; }
+    .titleDivSm { padding:6px 0 3px 0; background-color:#fff; max-width:97%; text-align:center; }
+	   .backToGraphLinkWidth { float:right; display:block; width:100px; }
+	                         
+    .centerQRDiv { display:block; padding:10px 10px 4px 10px; height:270px; border:1px solid #ccc;  overflow-x: hidden; overflow-y: auto; }
+        .graphPic { padding-top:0; }
+        
+    .centerBoxTitle { font-size:15px; font-weight:bold; }
+        .QRWaiting { display: block; width:96px; height:96px; }
+        
+.DivProcessingContainer.center-block { position:absolute; top:15px; left:10px;  }
+      
+/* RIGHT BOX  */  
+    .rightQRDiv { display:block; padding:15px 12px; min-height:270px; border:1px solid #ccc; background-color:#f4f4f4; }
+        .dataTemp { display:block; padding-top:10px; padding-bottom:24px; min-height:112px; border-right:1px solid #999; border-bottom:1px solid #999; }
+        .tempFont { font-size:12px; color:#5a5a5a; padding-bottom:10px; }
+        .tempNumber { font-size:24px; padding-bottom:12px; }
+        .tempDateTime { font-size:12px; color:#5a5a5a; white-space: nowrap; }
+            .dataBP { display:block; padding-top:10px; padding-bottom:24px; min-height:112px; padding-left:12px; border-left:1px solid #999; border-bottom:1px solid #999; }
+            .bpFont { font-size:12px; color:#5a5a5a; padding-bottom:10px; }
+            .bpNumber { font-size:24px; padding-bottom:12px; }
+            .bpDateTime { font-size:12px; color:#5a5a5a; white-space: nowrap; }
+                .dataPulse { display:block; padding-top:20px; padding-bottom:15px; border-top:1px solid #999; border-right:1px solid #999; }
+                .pulseFont { font-size:12px; color:#5a5a5a; padding-bottom:10px; }
+                .pulseNumber { font-size:24px; padding-bottom:12px; }
+                .pulseDateTime { font-size:12px; color:#5a5a5a; white-space: nowrap; }
+                    .dataResp { display:block; padding-top:20px; padding-bottom:15px; padding-left:12px; border-top:1px solid #999; border-left:1px solid #999;}
+                    .respFont { font-size:12px; color:#5a5a5a; padding-bottom:10px; }
+                    .respNumber { font-size:24px; padding-bottom:12px; }
+                    .respDateTime { font-size:12px; color:#5a5a5a; white-space: nowrap; }
+
+/* BOTTOM ROW ///////// Buttons and Links */      
+.row.bottomRowNav  { display:block; padding:0 10px 10px 10px; background-color:#f4f4f4; margin-left:0px; margin-right:0px; border-bottom:1px solid #ccc; border-top:1px solid #ccc; }
+    .naviDiv {display:block; padding:15px; font-weight:bold; }
+    .btn.btn-primary.quickReview { background-color:#61a7b3; border:#61a7b3; margin-top:10px; }
+    .btn.btn-primary.quickReview:hover { background-color:#3e828e; border:#3e828e; }
+        .btn.btn-primary.performNow { margin-top:10px; }
+            .btn.btn-primary.asScheduled {  margin-top:10px; }
+
+
+    .row.bottomRowRanking { display:block; padding:10px; }
+    .qrCompleted { padding-top:8px; }
+    .qrFullReviews { padding-top:8px; }
+    .nextLink { float:right; font-size: 15px; }
+    .previousLink { float:left; font-size: 15px; }
+
+
+/*////////// MEDIA QUERIES ////////// */   
+/*////////// MEDIA QUERIES ////////// */  
+/*////////// MEDIA QUERIES ////////// */  
+
+@media (max-width: 992px) {
+    
+    .resNameQR, .primeDXQR { font-size:14px;  }
+    .row.middleRowData  { display:block; margin-top:0; }
+    .resNameDiv { display:block;  min-height:120px; }
+    .primaryDXDiv { display:block; min-height:120px; }
+    .leftQRDiv { display:block;  }
+    .centerQRDiv { display:block;  height:270px; }
+    .rightQRDiv { display:block;  }
+    .nextLink, .previousLink { display:block;  padding-bottom:10px; }
+    .btnColScheduled  { display:block; } 
+        
+    .dataFont {  font-size:14px; }
+    
+    span.circle { border-radius: 50%; display: inline-block; }
+		        #circleRed { width: 12px; height: 12px; border:1px solid #a61919; background-color:#ff0000; margin-right:5px;  }
+		    span.circle { border-radius: 50%; display: inline-block; }
+		        #circleYellow { width: 12px; height: 12px; border:1px solid #fd8606; background-color:#faec06; margin-right:5px;  }
+		    span.circle { border-radius: 50%; display: inline-block; }
+		        #circleGreen { width: 12px; height: 12px; border:1px solid #389b1a; background-color:#3efe03; margin-right:5px;  }
+		    .glyphicon.glyphicon-flash { font-size: 15px; color:#ff0000; padding-right:3px; } 
+		    
+    .glyphicon.glyphicon-record.Red { font-size: 16px; color:#ff0000; padding-right:3px; }
+    .glyphicon.glyphicon-record.Yellow { font-size: 16px; color:#faec06; padding-right:3px; }
+    .glyphicon.glyphicon-record.Green { font-size: 16px; color:#3efe03; padding-right:3px; }
+    .glyphicon.glyphicon-flash { font-size: 16px; color:#ff0000; padding-right:3px; }           
+    
+        .dataTemp { display:block; padding-top:0; padding-left:15px; padding-bottom:0px; border-right:none; border-bottom:1px solid #999; }
+        .tempNumber { font-size:14px; padding-bottom:0px; }
+        .tempFont { font-size:12px; color:#5a5a5a; padding-bottom:0px; }
+            .dataBP { display:block; padding-top:10px; padding-bottom:0px; border-left:none; border-bottom:1px solid #999; }
+                .dataNumber { font-size:14px; padding-bottom:0px; }
+                .bpFont { font-size:12px; color:#5a5a5a; padding-bottom:0px; }
+                .bpNumber { font-size:14px; padding-bottom:0px; }
+                    .dataPulse { display:block; padding-top:10px; padding-left:15px; padding-bottom:0px; border-top:none; border-right:none; }
+                    .pulseNumber { font-size:14px; padding-bottom:0px; }                    
+                        .dataResp { display:block; padding-top:10px; padding-bottom:0px; border-top:1px solid #999; border-left:none;}
+                        .respNumber { font-size:14px; padding-bottom:0px; }
+                        .respNumber { font-size:14px; padding-bottom:0px; }
+ 
+.DivProcessingContainer.center-block { display:block; position: relative; top:0px; left:0; margin-top:8px; }
+ .titleDivFloat { display:block; position:absolute; top:0px; margin-top:1px; width:97%; text-align:center; font-weight:bold; }
+ 
+ .DivProcessingContainer.center-block { width:370px;height:260px; }
+                        
+  .lity-content { border-radius: 0px; }
+  .img-responsive.canvas-graph { display:block; height:270px; width:310px; }
+
+.dataTemp { display:block; padding-top:0px; padding-bottom:10px; min-height:55px; border-right:none; border-bottom:1px solid #999; }
+.dataBP { display:block; padding-top:10px; padding-bottom:10px; min-height:55px; padding-left:12px; border-left:none; border-bottom:1px solid #999; }
+.dataPulse { display:block; padding-top:10px; padding-left:15px; padding-bottom:10px; min-height:55px; border-top:none; border-right:none; }
+.pulseFont { font-size:12px; color:#5a5a5a; padding-bottom:0px; }
+
+.leftQRDiv { display:block; margin-bottom:25px; }
+.rightQRDiv { display:block; margin-bottom:25px; }
+
+}
+
+@media (max-width: 900px) {
+.row.bottomRowNav  { display:block; padding:0 10px 10px 10px; background-color:#f4f4f4; margin-top:0; margin-left:-15px; margin-right:-15px; }
+
+.col-xs-3.resPicDiv { padding-left:0; padding-right:0; } 
+.resImage { padding-right:0; }    
+
+ .titleDivSm { padding:6px 0 3px 0; background-color:#fff; width:65%; text-align:center; }
+ 
+}
+
+@media (max-width: 766px) {
+    
+    .btnColCompleted { display:block; border-bottom:1px solid #ccc; padding-bottom:4px; }
+    .btnColPerform { display:block; border-bottom:1px solid #ccc; padding-bottom:4px; }    
+    
+}
+
+@media (max-width: 750px) {
+    
+  .col-xs-9.resDataDiv { display:block; width:100% }
+    
+}

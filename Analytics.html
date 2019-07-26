@@ -498,11 +498,105 @@
                   </tr>
             </table>
          </div>
-         <!-- Screen 3 -->
+         <!-- Screen 3 daily ccm -->
          <div class="carousel-item active" id="slide2">
-            <h1>screen 3</h1>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+               <a href="#" class="navbar-brand">
+                  <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+               </a>
+               <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px; color: black;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+               </ul>
+               <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                  <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+
+                  <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                  <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                     <p style="color: white;">Chris Smith</p>
+                     <p>Lock Screen Logout</p>
+                  </div>
+                  <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+               </ul>
+                           
+            </nav>
+
+            <!-- header2 -->
+            <h5 style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; padding-left: 40px; margin-top: 10px;"><b>Clinical Care Measures</b></h5>
+            <hr style="width: 96%; margin-top: 10px; margin-bottom: 20px;">
+            <h2 style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; text-align: center;"><b>Shady Elms Skilled Nursing</b></h2>
+            <h5 style="font-weight: 300; text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Daily Clinical Care Measures</b></h5>
+            <h5 style="font-weight: 300; text-align: center; margin-top: -5px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b><span id="ccmDate2"></span>&nbsp;<span id="ccmDate"></span></b></h5>
+
+            <!-- panels -->
+            <div class="row" style="margin-top: 320x;">
+               <div class="col-4">
+                  <div class="panelBox3" style="margin-right: -25px;">
+                     <div class="panelHeader2" style="height: 115px;">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/asmtFreq.png" style="margin-top: 10px;" width="68px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Assessment Frequency</b></h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox3" style="margin-right: 15px; margin-left: 15px;">
+                     <div class="panelHeader2" style="height: 115px;">
+                        <div class="row justify-content-center">
+                           <img src="./analytics-screens/graphics/asmtTime.png" style="margin-top: 10px;" width="68px" class="bedImg img-fluid" alt="">
+                        </div>
+                        <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Assessment Timings</b></h6>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox3" style="margin-left: -25px;">
+                     <div class="panelHeader2" style="height: 115px;">
+                        <div class="row justify-content-center">
+                           <div class="col-6" style="padding-left: 50px;">
+                              <img src="./analytics-screens/graphics/observations.png" style="margin-top: 10px; margin-left: 16px;" width="68px" class="mx-auto d-block img-fluid" alt="">
+                              <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Observations</b></h6>
+                           </div>
+                           <div class="col-6" style="padding-right: 50px;">
+                              <img src="./analytics-screens/graphics/abnormals.png" style="margin-top: 10px; margin-left: 13px;" width="68px" class="mx-auto d-block img-fluid" alt="">
+                              <h6 style="text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: 7px;"><b>Abnormals</b></h6>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row" style="margin-top: -65px;">
+               <div class="col-4">
+                  <div class="panelBox4" style="margin-right: -25px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/dailyCircle.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox4" style="margin-right: 15px; margin-left: 15px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/dailyTime.png" style="margin-top: 18px;" alt="">
+                  </div>
+               </div>
+               <div class="col-4">
+                  <div class="panelBox4" style="margin-left: -25px;">
+                     <img class="img-fluid mx-auto d-block" src="./analytics-screens/graphics/dailyAbn.png" style="margin-top: 15px;" alt="">
+                  </div>
+               </div>
+            </div>
+
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px;">† This report includes Medicare and Managed Medicare payer types.</div>
+            <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px; text-align: center;"><input type="text" value="View Details" style="height: 30px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; font-weight: bold; width: 120px; font-size: 14px; color: rgb(152, 188, 255); border-color: rgb(152, 188, 255);" class="btn btn-outline-primary"></input></div>
          </div>
-         <!-- Screen 4 -->
+         <!-- Screen 4 weekly ccm -->
          <div class="carousel-item active" id="slide3">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
@@ -719,6 +813,15 @@
       });
 
       var d = new Date();
+      var weekday = new Array(7);
+      weekday[0] =  "Sunday";
+      weekday[1] = "Monday";
+      weekday[2] = "Tuesday";
+      weekday[3] = "Wednesday";
+      weekday[4] = "Thursday";
+      weekday[5] = "Friday";
+      weekday[6] = "Saturday";
+      document.getElementById("ccmDate2").innerText = weekday[d.getDay()];
       document.getElementById("ccmDate").innerText = d.toLocaleDateString();
 
       getPage();
@@ -834,7 +937,7 @@
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 0;}
+      if(location == -1){index = 2;}   //(change)
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){
