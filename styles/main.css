@@ -878,6 +878,90 @@ body::-webkit-scrollbar{
    margin-right: auto;
    margin-top: -80px;
 }
+.orangeTriangle {
+   width: 0; 
+   height: 0; 
+   border-left: 7px solid transparent;
+   border-right: 7px solid transparent;
+   margin-top: 5px;
+   border-bottom: 11px solid rgb(248, 183, 42);
+ }
+
+ .caretTriangle {
+   width: 0; 
+   height: 0; 
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   margin-top: 20px;
+   border-top: 6px solid rgb(87, 87, 87);
+ }
+ .blueCircle {
+   height: 12px;
+   width: 12px;
+   border-radius: 100px;
+   background-color: rgb(0, 127, 107);
+   margin-top: 4px;
+ }
+
+.softBox{
+   padding: 5px;
+   box-shadow:0px 0px 5px 1px #afafaf59 ;
+}
+.inputCircle{
+   height: 20px;
+   width: 20px;
+   border-radius: 100px;
+   border: 2px solid grey;
+}
+.closeCircle{
+   height: 10px;
+   width: 10px;
+   border-radius: 100px;
+   font-size: 11px;
+   border: 2px solid grey;
+   color: white;
+   margin-left: 10px;
+   background-color: grey;
+}
+#okbtn.okButton{
+   background-color: rgb(230, 230, 230);
+   font-weight: bold;
+   text-align: center;
+   border-radius: 5px;
+   border: none;
+   height: 35px;
+   width: 50px;
+   font-size: 14px;
+   color: rgb(56, 56, 56);
+   box-shadow: 0 3px 2px -2px rgba(29, 29, 29, 0.308);
+}
+#cnclbtn.cnclButton{
+   background-color: rgb(151, 204, 4);
+   font-weight: bold;
+   text-align: center;
+   border-radius: 5px;
+   border: none;
+   height: 35px;
+   width: 90px;
+   font-size: 14px;
+   color: rgb(56, 56, 56);
+   margin-left: 10px;
+   box-shadow: 0 3px 2px -2px rgba(29, 29, 29, 0.308);
+}
+.ackBox{
+   box-shadow:0px 0px 10px 4px #00000059 ;
+   height: 230px;
+   width: 400px;
+   background-color: white;
+   margin-top: 300px;
+   border-radius: 6px;
+}
+.inputSquare{
+   height: 20px;
+   width: 20px;
+   border-radius: 2px;
+   border: 2px solid grey;
+}
 
 /* ---------- Analytics Styles ---------- */
 .cardBox{

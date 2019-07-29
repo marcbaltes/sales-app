@@ -323,7 +323,544 @@
          </div>
          <!-- Screen 4: Soft Required -->
          <div class="carousel-item" id="slide3">
-            <div class="row justify-content-center"><img src="./mds-pdpm-screens/graphics/New-Evaluation-Experience-Image-02 .png" class="mdsGraphics" alt=""></div> 
+            <div class="row justify-content-center">
+               <img src="./mds-pdpm-screens/graphics/New-Evaluation-Experience-Image-02 .png" class="mdsGraphics" alt="">
+            </div> 
+            <div class="row justify-content-center" style="margin: 0px; position: absolute; background-color: rgba(0, 0, 0, 0.432); width: 100%; height: 1000px; z-index: 10;">
+               <div class="ackBox">
+                  <div style="font-size: 20px; font-weight: bold; padding: 20px;">Acknowledge</div>
+                  <div style="font-size: 16px; font-weight: bold; padding-left: 20px; padding-top: 0px;">
+                     Care Pathway: Heart Failure<span style="font-weight: 100"> (08/30/2017)</span>
+                  </div>
+                  <div style="font-size: 14px; padding-left: 40px; padding-top: 0px; margin-bottom: 6px; margin-top: 3px;">Lung Sounds is a mandatory element for this evaluation</div>
+                  <div>
+                     <span class="inputSquare" style="font-size: 16px; margin-left: 40px;"> &nbsp; &nbsp;&nbsp;</span>
+                     &nbsp; &nbsp;
+                     <span style="font-weight: bold; font-size: 14px;">I didn't evalutate this item</span>
+                  </div>
+                  <div class="row container-fluid" style="margin: 0px; padding: 0px; margin-top: 35px;">
+                     <div class="col-12" style="text-align: right;">
+                        <button id="okbtn" class="okButton">OK</button>
+                        <button id="cnclbtn" class="cnclButton">CANCEL</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div style="background-color: white; zoom: 1; margin: 0px 10px;">
+               <!-- Nav bars -->
+               <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+                     <tbody>
+                        <tr>
+                           <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+                           <td align="right" valign="top" class="slTopNav">
+                              <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
+                              <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
+                              <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+                              <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle"></div>
+                              </span>
+                              <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+                     <tbody>
+                        <tr>
+                           <td valign="top">
+                              <div class="slMainNavTabs">
+                                 <ul id="topTabs">
+                                    <li id="QTF_HomePageTab">
+                                       <a href="#" class="arrowDrop">Home</a>
+                                    </li>
+                                    <li id="QTF_AdminTab">
+                                       <a href="#" class="arrowDrop">Admin</a>
+                                    </li>
+                                    <li id="QTF_ClinicalTab" class="ClinicalTab">
+                                       <a href="#" class="arrowDrop">Clinical</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab">
+                                       <a href="#" class="arrowDrop">IRM</a>
+                                    </li>
+                                    <li id="QTF_reportingTab">
+                                       <a href="#" class="arrowDrop">Reporting</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="slResidentSearch" style="float: right;">
+                                 <form name="slsearch">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="45">
+                                                <div id="searchSelect">
+                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+                                                            <td>
+                                                               <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+                                             </td>
+                                             <td>
+                                                <input type="text" id="searchField" name="substring" autocomplete="off">
+                                             </td>
+                                             <td>
+                                                <input type="button" class="pccButton" value="Search">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </form>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+                     <tbody>
+                        <tr>
+                           <td align="left">
+                              <ul class="secondNavList"></ul>
+                           </td>
+                           <td valign="top" align="right" width="85"></td>
+                        </tr>
+                     </tbody>
+               </table>
+
+               <!-- Resident Info -->
+               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="residentWrapper">
+                  <tbody>
+                     <tr>
+                        <td valign="top" class="residentProfile">
+                           <img src="./care-planning-screens/Care Plan Triggers - 1_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+                        </td>
+                        <td valign="top" width="100%" class="residentNameBarWrapper">
+                           <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
+                              <tbody><tr>
+                                 <td valign="top" class="residentNameBarName"><span id="name">Smith, Stella  (558874)</span> </td>
+                                    <td valign="top" align="right" class="residentNameBarButtons">
+                                    <span id="clientCountSpan"> 4 of 8
+                                    <input type="button" class="pccButton" value="Prev" >
+                                    <input type="button" class="pccButton" value="Next" > 
+                                          </span>
+                                       </td>
+                                    </tr>
+                           </tbody></table>
+                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                 <tr style="margin-left: -10px;">
+                                    <td valign="top" class="residentProfileDetails" width="35%"" >
+                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location:
+                                       </p>
+                                       <p><br>       
+                                          Gender: Female
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          DOB: 11/22/1933
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          Age: 85
+                                       </p><br>
+                                       <p>Physician:  </p><br>
+                                          <table class="actionBar">
+                                             <tbody><tr>
+                                                <td class="careProfileBtn">
+                                                   <div style="padding-bottom: 2px;">
+                                                      <input type="button" id="careProfileResidentBtn" style="position: relative; height: 22px; top: -1px;" class="pccButton" value="Care�Profile">
+                                                   </div>  
+                                                </td>
+                                                <td valign="top">
+                                                   <div class="residentDropDownWrapperEdit" style="padding-bottom: 2px;">
+                                                   <div class="residentDropDownButtonEdit"><a href="#" class="residentLinkEdit"><span>Edit</span></a></div>
+                                                   <div class="residentDropDownListEdit">
+                                                   <ul id="listcontainerEdit">
+                                                   <li><a href="#">Demographics</a></li>
+                                                   <li><a href="#">Photo</a></li>
+                                                   </ul>
+                                                            </div>
+                                                         </div>
+                                                      </td>
+                                                      <td valign="top">
+                                                            <div class="residentDropDownWrapperPrint">
+                                                               <div class="residentDropDownButtonPrint"><a href="#" class="residentLinkPrint"><span>Print</span></a></div>
+                                                               <div class="residentDropDownListPrint">
+                                                                  <ul id="listcontainerPrint">
+                                                                     <li><a href="#">Audit&nbsp;Demographics</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                            </div>
+                                                      </td>
+                                                         <td colspan="4" valign="top">
+                                                </td>
+                                                   <td valign="top">      
+                                                         </td>
+                                                   </tr>
+                                                </tbody></table>
+                                    </td>
+                                    <td valign="top" align="right" class="residentDetailsStatusWrapper">
+                  
+                                          <table id="vitals" class="pccData residentDetailsStatus" cellpadding="2" width="85%" cellspacing="1" border="0">
+                                                <tbody>
+                                                   <tr>
+                                                         <td valign="top" colspan="3"><b>Current Vitals</b></td>
+                                                         <td align="right" style="padding-top: 0px; padding-right: 0px;padding-bottom: 0px; margin-top: 1px;" colspan="1">
+                                                            <div class="wvTooltip tableFix" align="right">
+                                                               <img src="./care-planning-screens/Care Plan Triggers - 1_files/wv_info.png" style="margin-right: 2px; margin-bottom: 3px;">
+                                                               <span class="wvTooltiptext">Click on any vitals to see graph.</span>
+                                                            </div>
+                                                         </td>
+                                                         </tr>
+                                                   <tr >
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox">
+                                                      
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                            <div>
+                                                            <b>BP: </b>
+                                                            
+                                                            <div>
+                                                               
+                                                            </div>
+                                                         </div>
+                                                         </div>
+                                                         </td>   
+                                                      
+                                                      
+                                                   
+                                                   
+                                                      <td valign="top" class="vital vitalBox" >
+                                                         
+                                                
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                            <div>
+                                                               <b>Temp:</b>
+                                                               
+                                                               </div>  
+                                                               <div></div>
+                                                            </div>
+                                                         </td>
+                                                         
+                                                
+                                                         
+                                                         
+                                                               <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Pulse:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                         </div>
+                                                      </td>
+                                                      
+                                                      
+                                                         
+                                                         
+                                                         <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Weight:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                         </div>
+                                                   </td>
+                                                   </tr>
+                                                   <tr>
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                      
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                         <div>
+                                                         <b>Resp:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                         </div> 
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>BS:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                      </div>
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                   
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                      <div>
+                                                         <b>O2:
+                                                         </b>
+                                                         
+                                                      </div>
+                                                      <div></div>
+                                                      </div>   
+                                                   </td>
+                                                   
+                                                
+                                                   
+                                                   
+                                                      <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                   
+                                                   
+                                                   <div class="exceptionWarning"><img></div>
+                                                   <div class="vitalDetails">
+                                                      <div>
+                                                      <b>Pain:
+                                                      </b>
+                                                      
+                                                      </div>
+                                                      <div></div>
+                                                   </div>
+                                                </td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>  
+                        </td>              
+                     </tr>
+                  </tbody>
+               </table>
+
+               <!-- Allergies -->
+               <table cellpadding="0" cellspacing="0" border="0" width="100.1%" class="residentDetailsWrapper" style="margin-left: -1px;">
+                     <tbody><tr>
+                        <td valign="top">
+                           <div class="residentDetailsHeader">
+                           
+                           <div class="residentDetailsBar">
+                              <table cellpadding="4" cellspacing="0" border="0" width="100%" class="pccData residentDetailsSpecifics" style="width:100%;">
+                                 <colgroup>
+                                 
+                                    
+                                    
+                                       <col style="width: 180px">
+                                    
+                                 
+                                 <col style="width: 185px">
+                                 <col style="width: 180px">
+                                 <col>
+                                 </colgroup>
+                                 
+                                 
+                                 
+                                 <tbody><tr>
+                                    <td valign="top" class="residentDetailsLabel ">Allergies:</td>
+                                    
+                                    
+                                    <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    
+                                    <td valign="top" class="residentDetailsLabel residentInfoEmpty">Special Instructions:</td>
+                                    <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">&nbsp;</td>
+                                 </tr>
+                                 
+                              </tbody></table>
+                           </div>
+                           <div id="progressbar"><div class="progress-label"></div></div>
+                           <div class="slider">
+                              <img id="idExtendedDetailSlider" alt="Show Extended Detail" src="./care-planning-screens/Care Plan Triggers - 1_files/schslider.png" border="0">
+                           </div>
+                           <input type="hidden" name="currentState" id="currentState" value="">
+                           </div>
+                        </td>
+                     </tr>
+               </tbody></table>
+
+               <!-- assessment -->
+               <div class="row container-fluid" style="margin: 0px; padding: 0px;">
+                  <div class="col-3" style="padding-left: 0px; padding-right: 5px;">
+                     <div class="softBox">
+                        <div class="row justify-content-center" style="margin: 0px; margin-top: 4px;">
+                           <div class="col-6">
+                              <img src="./mds-pdpm-screens/graphics/diaImg.png" class="mx-auto d-block img-fluid" alt="">
+                           </div>
+                           <div class="col-6">
+                              <img src="./mds-pdpm-screens/graphics/memoImg.png" class="mx-auto d-block img-fluid" alt="">
+                           </div>
+                        </div>
+                        <div class="row justify-content-center" style="margin: 0px; border-bottom: 1px solid grey; padding-bottom: 10px; margin-bottom: 20px;">
+                           <div class="col-6" style="text-align: center;">
+                              Diagnosis
+                           </div>
+                           <div class="col-6" style="text-align: center;">
+                              Memos
+                           </div>
+                        </div>
+                        <div style="padding-left: 10px; font-size: 18px; margin-bottom: 20px;">Profile</div>
+                        <div style="padding-left: 10px; font-size: 18px; margin-bottom: 20px;">Vitals</div>
+                        <div style="padding-left: 10px; font-size: 18px; margin-bottom: 20px;">Baselines</div>
+                        <div style="padding-left: 10px; font-size: 18px; margin-bottom: 20px; color: rgb(44, 115, 49);">Body Systems</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Neurologic</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Mental Status / Mood</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 12px;">Cardiovascular</div>
+                        <div style="padding-left: 30px; padding-top: 11px; font-size: 16px; background-color: rgb(206, 230, 150); height: 45px;">Respiratory</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px; margin-top: 12px;">Gastrointestinal</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Nutrition</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Genitourinary</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Skin</div>
+                     </div>
+                  </div>
+                  <div class="col-6" style="padding-left: 5px; padding-right: 5px;">
+                     <div class="softBox">
+                        <div style="font-size: 16px; padding-left: 30px; padding-top: 25px;">Difficulty Breathing</div>
+                        <div class="row container-fluid" style="font-size: 16px; padding-left: 30px; padding-top: 10px; margin: 0px;">
+                           <div class="inputCircle"></div>
+                           &nbsp;&nbsp;&nbsp;
+                           <div style="font-size: 14px;">Yes</div>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <div class="inputCircle"></div>
+                           &nbsp;&nbsp;&nbsp;
+                           <div style="font-size: 14px;">No</div>
+                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           <div style="font-size: 12px; font-weight: bold; color: rgb(44, 115, 0); padding-top: 2px;">CLEAR</div>
+                        </div>
+                        <div style="font-size: 16px; padding-left: 30px; padding-top: 25px;">Lungs</div>
+                        <div class="row container-fluid" style="font-size: 16px; padding-left: 30px; padding-top: 10px; margin: 0px;">
+                           <div class="col-6 row" style="padding: 0px; padding-left: 15px; margin-right: 35px;">
+                              <div class="inputSquare"></div>
+                              &nbsp;&nbsp;&nbsp;
+                              <div>Right Clear</div>
+                           </div>
+                           <div class="col-6 row" style="padding: 0px;">
+                              <div class="inputSquare"></div>
+                              &nbsp;&nbsp;&nbsp;
+                              <div>Left Clear</div>
+                           </div>
+                        </div>
+                        <div class="row container-fluid" style="font-size: 16px; padding-left: 30px; padding-top: 10px; margin: 0px;">
+                           <div class="col-6" style="padding-left: 15px; padding-right: 45px;">
+                              <div style="margin-top: -14px; position: absolute; font-size: 13px; background-color: white; padding: 5px; margin-left: -5px;">Location</div>
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
+                                 <div class="col-11" style="padding-top: 13px; padding-left: 10px;">
+                                    <div style="font-size: 14px; background-color: rgb(226, 226, 226); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; padding-left: 10px; width: 115px;">
+                                       Upper lobe
+                                       <span class="closeCircle">&nbsp;X&nbsp;</span>
+                                    </div>
+                                 </div>
+                                 <div class="caretTriangle"></div>
+                              </div>
+                           </div>
+                           <div class="col-6" style="padding-left: 20px; padding-right: 30px;">
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
+                                 <div class="col-11" style="padding-top: 12px; padding-left: 10px;">Location</div>
+                                 <div class="caretTriangle"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row container-fluid" style="font-size: 16px; padding-left: 30px; padding-top: 10px; margin: 0px; margin-top: 15px;">
+                           <div class="col-6" style="padding-left: 15px; padding-right: 45px;">
+                              <div style="margin-top: -14px; position: absolute; font-size: 13px; background-color: white; padding: 5px; margin-left: -5px;">Lung Sounds</div>
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
+                                 <div class="col-11" style="padding-top: 13px; padding-left: 10px;">
+                                    <div style="font-size: 14px; background-color: rgb(226, 226, 226); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; padding-left: 10px; width: 115px;">
+                                       Wheezes
+                                       <span class="closeCircle">&nbsp;X&nbsp;</span>
+                                    </div>
+                                 </div>
+                                 <div class="caretTriangle"></div>
+                              </div>
+                           </div>
+                           <div class="col-6" style="padding-left: 20px; padding-right: 30px;">
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
+                                 <div class="col-11" style="padding-top: 12px; padding-left: 10px;">Lung Sounds</div>
+                                 <div class="caretTriangle"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row container-fluid" style="font-size: 16px; padding-left: 30px; padding-top: 10px; margin: 0px; margin-top: 15px;">
+                           <div class="col-6" style="padding-left: 15px; padding-right: 45px;">
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
+                                 <div class="col-11" style="padding-top: 12px; padding-left: 10px;">Sounds On</div>
+                                 <div class="caretTriangle"></div>
+                              </div>
+                           </div>
+                           <div class="col-6" style="padding-left: 20px; padding-right: 30px;">
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
+                                 <div class="col-11" style="padding-top: 12px; padding-left: 10px;">Sounds On</div>
+                                 <div class="caretTriangle"></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row container-fluid" style="font-size: 16px; padding-left: 30px; padding-top: 10px; margin: 0px; margin-top: 15px;">
+                           <div class="col-12" style="padding-left: 15px; padding-right: 30px;">
+                              <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px;">
+                                 <div class="col-11" style="padding-top: 12px; padding-left: 10px;">Oxygen Volume (Liters/Minute)</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-3" style="padding-right: 0px; padding-left: 5px;">
+                     <div class="softBox" style="height: 250px;">
+                        <div style="font-weight: bold; font-size: 15px; text-align: center;">
+                           <div class="row container-fluid" style="padding: 0px; padding-left: 10px; margin: 0px; margin-top: 10px;">
+                              <div class="blueCircle"></div>
+                              &nbsp;&nbsp;
+                              <div>Abnormalities &nbsp;/</div>
+                              &nbsp;&nbsp;
+                              <div class="orangeTriangle"></div>
+                              &nbsp;&nbsp;
+                              <div>Condition Alerts</div>
+                           </div>
+                           <div class="row container-fluid" style="padding: 0px; padding-left: 10px; margin: 0px; margin-top: 10px;">
+                              <div class="blueCircle"></div>
+                              &nbsp;&nbsp;
+                              <div style="font-weight: 100; font-size: 14px;">Lung Sounds: Wheezes</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="softBox" style="margin-top: 8px;">
+                        <div class="" style="padding: 0px; margin: 0px; margin-top: 10px; height: 250px;">
+                           <div style="font-size: 17px; padding-left: 15px; margin-bottom: 5px;">Clinical Suggestions</div>
+                           <div style="font-size: 14px; padding-left: 15px;">No Clinical Suggestions</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
          </div>
          <!-- Screen 5: Summary Page Graphic -->
          <div class="carousel-item" id="slide4">
@@ -411,6 +948,18 @@
          $("#body").attr("style", "height: 10px; background-color: white")
       }
 
+      if(index == 3){
+         //scrollable screen
+         $("#html").addClass("scroll");
+         $("#body").addClass("scroll");
+      }
+      else{
+         $("#html").removeClass("scroll");
+         $("#body").removeClass("scroll");
+         document.body.scrollTop = 0; // For Safari
+         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+
       if(index == 0){
          bodyText.innerHTML = "screen 1 text"
       }
@@ -454,7 +1003,7 @@
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 0;}
+      if(location == -1){index = 3;} //(change)
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){
