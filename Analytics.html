@@ -937,7 +937,7 @@
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 2;}   //(change)
+      if(location == -1){index = 0;}
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){
