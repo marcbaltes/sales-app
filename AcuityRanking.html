@@ -9,9 +9,7 @@
    <!-- CSS files -->
    <link rel="stylesheet" href="./styles/hover.css">
    <link type="text/css" rel="stylesheet" href="./care-planning-screens/Care Plan Triggers - 1_files/core.css">
-
-   <script src="./care-planning-screens/Care Plan Triggers - 1_files/jquery-1.9.0.min.js.download"></script>
-   <link id="ctl00_cssStyle" rel="Stylesheet" type="text/css" lang="en" href="./styles/Style.css">
+   <link id="ctl00_cssStyle" rel="Stylesheet" type="text/css" lang="en" href="./styles/Style.css"><link rel="Stylesheet" type="text/css" href="./styles/ResidentProfile.css"><link rel="Stylesheet" media="(min-width: 0) and (max-width: 50em)" href="./styles/responsive_search.css" type="text/css"><link rel="SHORTCUT ICON" href="https://www.comsllc.net/favicon.ico">
 
    <link rel="stylesheet" href="./styles/main.css">
    <!-- Icon -->
@@ -169,16 +167,16 @@
                </div>
       
                <!-- Residents -->
-               <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px1rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204); height: 35px; padding-top: 7px;">
+               <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
                   <span class="col-1">expand all</span>
                   <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
                </div>
-               <div class="rowGreen" style="margin-top: 0px;">
+               <div class="rowGreen" style="margin-top: 30px;">
                   <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                     <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                        <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-                        <span>23</span>&nbsp;&nbsp;&nbsp;
-                        <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                     <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                        <span class="circle circleTeal" id="circleTeal"></span>
+                        <span>23</span>
+                        <span class="arrow-upOrange"></span>
                         <span style="margin-left: 4px;">15</span>
                      </div>
                      <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -214,10 +212,10 @@
                </div>
                <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>19</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>19</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">13</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -252,10 +250,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>15</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">14</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -291,10 +289,10 @@
                </div>
                <div class="rowWhite" id="box1" onclick="toggleOutline1();">
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>15</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">12</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -330,10 +328,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>13</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">10</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -369,10 +367,10 @@
                </div>
                <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>13</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">7</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -407,10 +405,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>13</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">8</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -445,10 +443,10 @@
                </div>
                <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>12</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>12</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">11</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -484,10 +482,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>11</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>11</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">4</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -523,10 +521,10 @@
                </div>
                <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>10</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>10</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">4</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -561,10 +559,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        &nbsp;   <span>9</span>
-       &nbsp;&nbsp;&nbsp;                    <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>9</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">7</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -599,10 +597,10 @@
                </div>
                <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        &nbsp;   <span>9</span>
-       &nbsp;&nbsp;&nbsp;                    <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>9</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">7</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -637,10 +635,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        &nbsp;   <span>8</span>
-       &nbsp;&nbsp;&nbsp;                    <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>8</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">3</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -675,10 +673,10 @@
                </div>
                <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        &nbsp;   <span>8</span>
-       &nbsp;&nbsp;&nbsp;                    <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>8</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">5</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -713,10 +711,10 @@
                </div>
                <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                        &nbsp;   <span>8</span>
-       &nbsp;&nbsp;&nbsp;                    <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>8</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">7</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -819,16 +817,16 @@
                   </div>
          
                   <!-- Residents -->
-                  <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 1px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204); height: 35px; padding-top: 7px;">
+                  <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
                      <span class="col-1">expand all</span>
                      <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
                   </div>
-                  <div class="rowGreen" style="margin-top: 0px;">
+                  <div class="rowGreen" style="margin-top: 30px;">
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>23</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>23</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">15</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -891,10 +889,10 @@
                   </div>
                   <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>19</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>19</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">13</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -950,10 +948,10 @@
                   </div>
                   <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>15</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">14</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1002,10 +1000,10 @@
                   </div>
                   <div class="rowWhite">
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>15</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">12</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1055,10 +1053,10 @@
                   </div>
                   <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>13</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">10</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1174,16 +1172,16 @@
                   </div>
          
                   <!-- Residents -->
-                  <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 1px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204); height: 35px; padding-top: 7px;">
+                  <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
                      <span class="col-1">expand all</span>
                      <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
                   </div>
-                  <div class="rowGreen" style="margin-top: 0px;">
+                  <div class="rowGreen" style="margin-top: 30px;">
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>23</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>23</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">15</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1298,10 +1296,10 @@
                   </div>
                   <div class="rowWhite" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>19</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>19</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">13</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1357,10 +1355,10 @@
                   </div>
                   <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>15</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">14</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1409,10 +1407,10 @@
                   </div>
                   <div class="rowWhite">
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>15</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>15</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">12</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1462,10 +1460,10 @@
                   </div>
                   <div class="rowGreen" >
                      <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                        <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                           <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;    <span>13</span>
-      &nbsp;&nbsp;&nbsp;                     <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                        <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                           <span class="circle circleTeal" id="circleTeal"></span>
+                           <span>13</span>
+                           <span class="arrow-upOrange"></span>
                            <span style="margin-left: 4px;">10</span>
                         </div>
                         <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1515,10 +1513,10 @@
                   </div>
                   <div class="rowWhite" >
                         <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
-                           <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 20px; padding-right: 0px; padding-left: 0px;">
-                              <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                       &nbsp;       <span>13</span>
-      &nbsp;&nbsp;&nbsp;                        <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+                           <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                              <span class="circle circleTeal" id="circleTeal"></span>
+                              <span>13</span>
+                              <span class="arrow-upOrange"></span>
                               <span style="margin-left: 4px;">7</span>
                            </div>
                            <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
@@ -1619,17 +1617,20 @@
          </div>
 
          <!-- Residents -->
-         <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 1px rgb(214, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204); height: 35px; padding-top: 7px;">
+         <div class="col-md-12 expandCollapsePrint" style="text-align: right; border-bottom: solid 2px rgb(204, 204, 204); border-right: 1px solid rgb(204, 204, 204); border-left: 1px solid rgb(204, 204, 204)">
             <span class="col-1">expand all</span>
             <span class="col-1"><img src="./icons/print-icon.png" alt=""> print</span>
          </div>
-         <div class="rowGreen" style="margin-top: 0px;">
-            <div class="row" sty rowle="height: 70px; width: 100%; margin-left: 0px margin-left: 20px;; margin-right: 0px;">
-               <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 35px; padding-right: 0px; padding-left: 0px; margin-right: -10px;">
-                  <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-                  <span>23</span>&nbsp;&nbsp;&nbsp;
-                  <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+         <div class="rowGreen" style="margin-top: 30px;">
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>23</span>
+                  <span class="arrow-upOrange"></span>
                   <span style="margin-left: 4px;">15</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
                </div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CARNEY, KEITH</div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
@@ -1676,12 +1677,14 @@
             </div>
          </div>
          <div class="rowWhite" >
-            <div class="row" sty rowle="height: 70px; width: 100%; margin-left: 0px margin-left: 20px;; margin-right: 0px;">
-               <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 35px; padding-right: 0px; padding-left: 0px; margin-right: -10px;">
-                  <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-                  <span>19</span>&nbsp;&nbsp;&nbsp;
-                  <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>19</span>
+                  <span class="arrow-upOrange"></span>
                   <span style="margin-left: 4px;">13</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
                </div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">CASE, DON</div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
@@ -1733,12 +1736,15 @@
                </div>
          </div>
          <div class="rowGreen" >
-            <div class="row" sty rowle="height: 70px; width: 100%; margin-left: 0px margin-left: 20px;; margin-right: 0px;">
-               <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 35px; padding-right: 0px; padding-left: 0px; margin-right: -10px;">
-                  <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-                  <span>15</span>&nbsp;&nbsp;&nbsp;
-                  <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>15</span>
+                  <span class="arrow-upOrange"></span>
                   <span style="margin-left: 4px;">14</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
                </div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">BOYD, NANCY</div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
@@ -1782,12 +1788,15 @@
             </div>
          </div>
          <div class="rowWhite">
-            <div class="row" sty rowle="height: 70px; width: 100%; margin-left: 0px margin-left: 20px;; margin-right: 0px;">
-               <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 35px; padding-right: 0px; padding-left: 0px; margin-right: -10px;">
-                  <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-                  <span>15</span>&nbsp;&nbsp;&nbsp;
-                  <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
-                  <span style="margin-left: 4px;">21</span>
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>15</span>
+                  <span class="arrow-upOrange"></span>
+                  <span style="margin-left: 4px;">12</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
                </div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">SMITH, STELLA</div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
@@ -1832,12 +1841,15 @@
                   </div>
          </div>
          <div class="rowGreen" >
-            <div class="row" sty rowle="height: 70px; width: 100%; margin-left: 0px margin-left: 20px;; margin-right: 0px;">
-               <div class="col-1 row" style="margin-top: 24px; white-space: nowrap; margin-left: 35px; padding-right: 0px; padding-left: 0px; margin-right: -10px;">
-                  <span class="blueCircle" id="circleTeal" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-                  <span>13</span>&nbsp;&nbsp;&nbsp;
-                  <span class="orangeTriangle" style="padding-bottom: -20px;"></span>
+            <div class="row" style="height: 70px; width: 100%; margin-left: 0px; margin-right: 0px;">
+               <div class="col-1" style="margin-top: 24px; white-space: nowrap;">
+                  <span class="circle circleTeal" id="circleTeal"></span>
+                  <span>13</span>
+                  <span class="arrow-upOrange"></span>
                   <span style="margin-left: 4px;">10</span>
+               </div>
+               <div class="col-1" style="margin-top: 23px; margin-left: -40px; margin-right: -25px;">
+
                </div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">FARMER, FRED</div>
                <div class="col-1 resName" style="margin-top: 22px; white-space: nowrap;">
