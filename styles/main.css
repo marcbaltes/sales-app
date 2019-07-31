@@ -162,6 +162,10 @@ br {
       margin-top: 3px;
    }
 }
+.col-1.resName{
+   font-weight: bold;
+   font-size: 14px;
+}
 
 
 /* ---------- Navbar Images ---------- */
