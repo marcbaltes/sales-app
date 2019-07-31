@@ -1,7 +1,0 @@
-const env = {
-    REACT_ENVIRONMENT: "development",
-    NODE_ENV: "development",
-    REACT_APP_UTIL_URI: "https://comsinteractive.pcc-labs.com/coms-dev/smart-nursing/utility/v1/",
-    baseURL: "https://comsinteractive.pcc-labs.com/coms-dev" 
-}
-window.env_Vars = env
