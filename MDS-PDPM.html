@@ -795,7 +795,7 @@
                               <div class="row" style="border: 1px solid black; border-radius: 5px; height: 50px; padding-left:">
                                  <div class="col-11" style="padding-top: 13px; padding-left: 10px;">
                                     <div style="font-size: 14px; background-color: rgb(226, 226, 226); border-top-left-radius: 50px; border-top-right-radius: 50px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; padding-left: 10px; width: 115px;">
-                                       Wheezes
+                                       Wheezes&nbsp; &nbsp;
                                        <span class="closeCircle">&nbsp;X&nbsp;</span>
                                     </div>
                                  </div>
@@ -988,7 +988,8 @@
 
    function indicatorUpdate(e){
       var id = e.target.id;
-      index = id[3];
+      index = id.substring(3, id.length);
+      index = parseInt(index, 10);
       updateInfoModal(index);
    }
 
@@ -1003,7 +1004,7 @@
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 3;} //(change)
+      if(location == -1){index = 0;}
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){

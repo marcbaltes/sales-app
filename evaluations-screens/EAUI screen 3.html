@@ -1,0 +1,4666 @@
+<!DOCTYPE html>
+<!-- saved from url=(0165)http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&ESOLclientid=2631&retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/bodysystems/pain -->
+<html class="_d-main" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>PointClickCare - Enhanced Assessment</title>
+	
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge;IE=10;IE=9;IE=8,chrome=1">
+
+	
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+	<meta http-equiv="Cache-Control" content="post-check=0, pre-check=0">
+	<meta http-equiv="expires" content="1">
+	<meta http-equiv="expires" content="Sat, 01 Jan 2000 00:00:00 GMT">
+	<meta name="format-detection" content="telephone=no">
+	
+
+	
+	<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/core.css">
+	<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/legacy-styles.css">
+	<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/jquery-ui-1.9.2.custom.min.css">
+	
+
+	
+	
+
+
+<script async="" src="./EAUI screen 3_files/analytics.js.download"></script><script src="./EAUI screen 3_files/l10n.djs"></script>
+	
+
+    <script src="./EAUI screen 3_files/jquery-1.9.0.min.js.download"></script>
+    <script src="./EAUI screen 3_files/jquery-migrate-1.4.1.min.js.download"></script>
+  
+
+	
+	<script src="./EAUI screen 3_files/jquery-ui-1.9.2.custom.min.js.download"></script>
+	<script src="./EAUI screen 3_files/jquery.dateField-2.0.0.js.download"></script>
+	
+
+
+
+
+
+
+	<script src="./EAUI screen 3_files/ESOLvalidate.js.download"></script>
+	
+
+
+
+
+
+	<script src="./EAUI screen 3_files/core.js.download"></script>
+	<script src="./EAUI screen 3_files/system-info.js.download"></script>
+	<script src="./EAUI screen 3_files/wedate.js.download"></script>
+	
+	<script src="./EAUI screen 3_files/coremenufunctions.js.download"></script>
+	
+	
+
+
+	
+	
+
+
+
+
+	
+
+	
+
+	
+
+	
+	
+	
+  <style>
+    #comsContainer{text-align: left;}
+    .residentProfileDetails .actionBar td, .residentNameBarButtons{display:none}
+    .residentProfileDetails .actionBar td.careProfileBtn{display:block}
+  </style>
+
+<link rel="shortcut icon" href="https://comsinteractive.pcc-labs.com/coms-dev/smart-nursing/client/v1/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="https://comsinteractive.pcc-labs.com/coms-dev/smart-nursing/client/v1/manifest.json"><link rel="stylesheet" href="./EAUI screen 3_files/css"><title>React App</title><script src="./EAUI screen 3_files/env-config.js.download"></script><style data-jss="" data-meta="MuiSvgIcon">
+.prodcomsEUI20 {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 24px;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  user-select: none;
+  flex-shrink: 0;
+}
+.prodcomsEUI21 {
+  color: #2c7300;
+}
+.prodcomsEUI22 {
+  color: #cee696;
+}
+.prodcomsEUI23 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.prodcomsEUI24 {
+  color: #b00020;
+}
+.prodcomsEUI25 {
+  color: rgba(0, 0, 0, 0.26);
+}
+.prodcomsEUI26 {
+  font-size: inherit;
+}
+.prodcomsEUI27 {
+  font-size: 20px;
+}
+.prodcomsEUI28 {
+  font-size: 35px;
+}
+</style><style data-jss="">
+.prodcomsEUI506 {
+  padding: 10px 5px;
+  flexgrow: 1;
+  text-align: left;
+}
+.prodcomsEUI506 svg {
+  font-size: 36px;
+  vertical-align: middle;
+}
+.prodcomsEUI506 svg:nth-child(2) {
+  font-size: 36px;
+  vertical-align: middle;
+}
+.prodcomsEUI507 {
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  text-align: left;
+  list-style-type: none;
+}
+.prodcomsEUI508 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.prodcomsEUI509 {
+  vertical-align: middle;
+}
+.prodcomsEUI510 {
+  font-size: 14px;
+}
+.prodcomsEUI511 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  padding-left: 7px;
+}
+.prodcomsEUI512 {
+  margin-right: 10px;
+}
+.prodcomsEUI512 svg {
+  font-size: 36px;
+  vertical-align: middle;
+}
+.prodcomsEUI513 {
+  margin-right: 10px;
+}
+.prodcomsEUI513 svg {
+  font-size: 36px;
+  vertical-align: middle;
+}
+.prodcomsEUI514 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-weight: bold;
+}
+</style><style data-jss="" data-meta="MuiTouchRipple">
+.prodcomsEUI234 {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  position: absolute;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.prodcomsEUI235 {
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  position: absolute;
+}
+.prodcomsEUI236 {
+  opacity: 0.3;
+  transform: scale(1);
+  animation: mui-ripple-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation-name: $mui-ripple-enter;
+}
+.prodcomsEUI237 {
+  animation-duration: 200ms;
+}
+.prodcomsEUI238 {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  display: block;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.prodcomsEUI239 {
+  opacity: 0;
+  animation: mui-ripple-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation-name: $mui-ripple-exit;
+}
+.prodcomsEUI240 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: mui-ripple-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+  animation-name: $mui-ripple-pulsate;
+}
+@-webkit-keyframes mui-ripple-enter {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes mui-ripple-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes mui-ripple-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.prodcomsEUI17 {
+  color: inherit;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  outline: none;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  justify-content: center;
+  -moz-appearance: none;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.prodcomsEUI17::-moz-focus-inner {
+  border-style: none;
+}
+.prodcomsEUI17.prodcomsEUI18 {
+  cursor: default;
+  pointer-events: none;
+}
+</style><style data-jss="" data-meta="MuiIconButton">
+.prodcomsEUI11 {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 0px 12px 0px 0px;
+  overflow: visible;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.prodcomsEUI11:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.prodcomsEUI11.prodcomsEUI15 {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .prodcomsEUI11:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI11:hover.prodcomsEUI15 {
+  background-color: transparent;
+}
+.prodcomsEUI12 {
+  color: inherit;
+}
+.prodcomsEUI13 {
+  color: #2c7300;
+}
+.prodcomsEUI13:hover {
+  background-color: rgba(44, 115, 0, 0.08);
+}
+@media (hover: none) {
+  .prodcomsEUI13:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI14 {
+  color: #cee696;
+}
+.prodcomsEUI14:hover {
+  background-color: rgba(206, 230, 150, 0.08);
+}
+@media (hover: none) {
+  .prodcomsEUI14:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI16 {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+</style><style data-jss="">
+.prodcomsEUI515 {
+  padding: 10px 6px;
+  flex-grow: 1;
+  text-align: left;
+}
+.prodcomsEUI516 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  margin-top: 10px;
+}
+.prodcomsEUI517 {
+  color: rgba(0, 0, 0, 0.87);
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  text-align: left;
+  list-style-type: none;
+}
+.prodcomsEUI518 {
+  display: flex;
+}
+.prodcomsEUI519 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: row;
+}
+.prodcomsEUI520 {
+  padding: 0px 20px 0px 0px;
+}
+.prodcomsEUI521 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.prodcomsEUI522 {
+  font-size: 14px;
+}
+.prodcomsEUI523 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.125rem;
+}
+.prodcomsEUI524 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+}
+</style><style data-jss="">
+.prodcomsEUI496 {
+  display: flex;
+  background-color: #fafafa;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI496 {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+@media (min-width:960px) {
+  .prodcomsEUI496 {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI496 {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+.prodcomsEUI497 {
+  flex-grow: 1;
+  min-width: 250px;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  background-color: #ffffff;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI497 {
+    display: none;
+  }
+}
+@media (min-width:960px) {
+  .prodcomsEUI497 {
+    max-width: 300px;
+    margin-right: 10px;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI497 {
+    margin-right: 10px;
+  }
+}
+.prodcomsEUI498 {
+  margin: 0px 10px 0px 10px;
+  display: none;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI498 {
+    display: block;
+  }
+}
+.prodcomsEUI499 {
+  padding: 36px;
+  flex-grow: 3;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  background-color: #ffffff;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI499 {
+    flex-grow: 1;
+    padding-top: 36px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 36px;
+  }
+}
+.prodcomsEUI500 {
+  flex-grow: 1;
+  padding-left: 5px;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI500 {
+    margin-top: 10px;
+    flex-basis: auto;
+  }
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI500 {
+    margin-top: 10px;
+    flex-basis: auto;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+@media (min-width:960px) {
+  .prodcomsEUI500 {
+    flex-basis: 1024;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI500 {
+    min-width: 360px;
+    max-width: 360px;
+    flex-basis: auto;
+    margin-left: 10px;
+  }
+}
+.prodcomsEUI501 {
+  height: 315px;
+  display: flex;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.prodcomsEUI502 {
+  height: 315px;
+  display: flex;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  overflow-y: auto;
+  padding-top: 20px;
+  padding-left: 11px;
+  margin-bottom: 10px;
+  padding-right: 16px;
+  flex-direction: column;
+}
+.prodcomsEUI503 {
+  padding: 10px;
+  flex-grow: 1;
+  margin-top: 0px;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  margin-bottom: 0px;
+}
+.prodcomsEUI504 {
+  padding: 10px;
+  flex-grow: 1;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+}
+.prodcomsEUI505 {
+  height: 100%;
+  display: flex;
+  font-size: 15px;
+  font-family: Roboto;
+  flex-direction: column;
+}
+</style><style data-jss="" data-meta="MuiList">
+.prodcomsEUI62 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+.prodcomsEUI63 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.prodcomsEUI64 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.prodcomsEUI65 {
+  padding-top: 0;
+}
+</style><style data-jss="" data-meta="MuiListItem">
+.prodcomsEUI66 {
+  width: 100%;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.prodcomsEUI66.prodcomsEUI77, .prodcomsEUI66.prodcomsEUI77:hover, .prodcomsEUI66.prodcomsEUI77:focus {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+.prodcomsEUI67 {
+  position: relative;
+}
+.prodcomsEUI70 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.prodcomsEUI71 {
+  align-items: flex-start;
+}
+.prodcomsEUI72 {
+  opacity: 0.5;
+}
+.prodcomsEUI73 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-clip: padding-box;
+}
+.prodcomsEUI74 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.prodcomsEUI75 {
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI75:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.prodcomsEUI75:focus {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+@media (hover: none) {
+  .prodcomsEUI75:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI76 {
+  padding-right: 32px;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.prodcomsEUI84 {
+  margin: 0;
+  display: block;
+}
+.prodcomsEUI85 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 7rem;
+  font-weight: 300;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.14286em;
+  margin-left: -.04em;
+  letter-spacing: -.04em;
+}
+.prodcomsEUI86 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.30357em;
+  margin-left: -.02em;
+  letter-spacing: -.02em;
+}
+.prodcomsEUI87 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.8125rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.13333em;
+  margin-left: -.02em;
+}
+.prodcomsEUI88 {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 2.125rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.20588em;
+}
+.prodcomsEUI89 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.35417em;
+}
+.prodcomsEUI90 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3125rem;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.16667em;
+}
+.prodcomsEUI91 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5em;
+}
+.prodcomsEUI92 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01071em;
+}
+.prodcomsEUI93 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+.prodcomsEUI94 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+}
+.prodcomsEUI95 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+.prodcomsEUI96 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 6rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01562em;
+}
+.prodcomsEUI97 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.00833em;
+}
+.prodcomsEUI98 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 3rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: 0em;
+}
+.prodcomsEUI99 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 2.125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.00735em;
+}
+.prodcomsEUI100 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0em;
+}
+.prodcomsEUI101 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.prodcomsEUI102 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1em;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+}
+.prodcomsEUI103 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+}
+.prodcomsEUI104 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  letter-spacing: 0.08333em;
+  text-transform: uppercase;
+}
+.prodcomsEUI105 {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+}
+.prodcomsEUI106 {
+  text-align: left;
+}
+.prodcomsEUI107 {
+  text-align: center;
+}
+.prodcomsEUI108 {
+  text-align: right;
+}
+.prodcomsEUI109 {
+  text-align: justify;
+}
+.prodcomsEUI110 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.prodcomsEUI111 {
+  margin-bottom: 0.35em;
+}
+.prodcomsEUI112 {
+  margin-bottom: 16px;
+}
+.prodcomsEUI113 {
+  color: inherit;
+}
+.prodcomsEUI114 {
+  color: #2c7300;
+}
+.prodcomsEUI115 {
+  color: #cee696;
+}
+.prodcomsEUI116 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI117 {
+  color: rgba(0, 0, 0, 0.54);
+}
+.prodcomsEUI118 {
+  color: #b00020;
+}
+.prodcomsEUI119 {
+  display: inline;
+}
+</style><style data-jss="" data-meta="MuiListItemText">
+.prodcomsEUI78 {
+  flex: 1 1 auto;
+  padding: 0 16px;
+  min-width: 0;
+}
+.prodcomsEUI78:first-child {
+  padding-left: 0;
+}
+.prodcomsEUI79:first-child {
+  padding-left: 56px;
+}
+.prodcomsEUI80 {
+  font-size: 0.8125rem;
+}
+.prodcomsEUI81.prodcomsEUI83 {
+  font-size: inherit;
+}
+.prodcomsEUI82.prodcomsEUI83 {
+  font-size: inherit;
+}
+</style><style data-jss="" data-meta="MuiButton">
+.prodcomsEUI159 {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  line-height: 1.75;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+.prodcomsEUI159:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.prodcomsEUI159.prodcomsEUI179 {
+  color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .prodcomsEUI159:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI159:hover.prodcomsEUI179 {
+  background-color: transparent;
+}
+.prodcomsEUI160 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+}
+.prodcomsEUI161 {
+  padding: 6px 8px;
+}
+.prodcomsEUI162 {
+  color: #2c7300;
+}
+.prodcomsEUI162:hover {
+  background-color: rgba(44, 115, 0, 0.08);
+}
+@media (hover: none) {
+  .prodcomsEUI162:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI163 {
+  color: #cee696;
+}
+.prodcomsEUI163:hover {
+  background-color: rgba(206, 230, 150, 0.08);
+}
+@media (hover: none) {
+  .prodcomsEUI163:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI167 {
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  padding: 5px 16px;
+}
+.prodcomsEUI167.prodcomsEUI179 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+.prodcomsEUI168 {
+  color: #2c7300;
+  border: 1px solid rgba(44, 115, 0, 0.5);
+}
+.prodcomsEUI168:hover {
+  border: 1px solid #2c7300;
+  background-color: rgba(44, 115, 0, 0.08);
+}
+@media (hover: none) {
+  .prodcomsEUI168:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI169 {
+  color: #cee696;
+  border: 1px solid rgba(206, 230, 150, 0.5);
+}
+.prodcomsEUI169:hover {
+  border: 1px solid #cee696;
+  background-color: rgba(206, 230, 150, 0.08);
+}
+.prodcomsEUI169.prodcomsEUI179 {
+  border: 1px solid rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .prodcomsEUI169:hover {
+    background-color: transparent;
+  }
+}
+.prodcomsEUI170 {
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+  background-color: #e0e0e0;
+}
+.prodcomsEUI170.prodcomsEUI178 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.prodcomsEUI170:active {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.prodcomsEUI170.prodcomsEUI179 {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.prodcomsEUI170:hover {
+  background-color: #d5d5d5;
+}
+@media (hover: none) {
+  .prodcomsEUI170:hover {
+    background-color: #e0e0e0;
+  }
+}
+.prodcomsEUI170:hover.prodcomsEUI179 {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.prodcomsEUI171 {
+  color: #fff;
+  background-color: #2c7300;
+}
+.prodcomsEUI171:hover {
+  background-color: rgb(30, 80, 0);
+}
+@media (hover: none) {
+  .prodcomsEUI171:hover {
+    background-color: #2c7300;
+  }
+}
+.prodcomsEUI172 {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #cee696;
+}
+.prodcomsEUI172:hover {
+  background-color: rgb(144, 161, 105);
+}
+@media (hover: none) {
+  .prodcomsEUI172:hover {
+    background-color: #cee696;
+  }
+}
+.prodcomsEUI176 {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  min-width: 0;
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+  border-radius: 50%;
+}
+.prodcomsEUI176:active {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.prodcomsEUI177 {
+  width: auto;
+  height: 48px;
+  padding: 0 16px;
+  min-width: 48px;
+  border-radius: 24px;
+}
+.prodcomsEUI180 {
+  color: inherit;
+  border-color: currentColor;
+}
+.prodcomsEUI181 {
+  width: 40px;
+  height: 40px;
+}
+.prodcomsEUI182 {
+  padding: 4px 8px;
+  min-width: 64px;
+  font-size: 0.8125rem;
+}
+.prodcomsEUI183 {
+  padding: 8px 24px;
+  font-size: 0.9375rem;
+}
+.prodcomsEUI184 {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiCollapse">
+.prodcomsEUI120 {
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI121 {
+  height: auto;
+  overflow: visible;
+}
+.prodcomsEUI122 {
+  display: flex;
+}
+.prodcomsEUI123 {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiModal">
+.prodcomsEUI41 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1300;
+  position: fixed;
+}
+.prodcomsEUI42 {
+  visibility: hidden;
+}
+</style><style data-jss="" data-meta="MuiDialog">
+.prodcomsEUI192 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI193 {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.prodcomsEUI194 {
+  height: 100%;
+  outline: none;
+}
+.prodcomsEUI195 {
+  margin: 48px;
+  display: flex;
+  position: relative;
+  overflow-y: auto;
+  flex-direction: column;
+}
+.prodcomsEUI196 {
+  flex: 0 1 auto;
+  max-height: calc(100% - 96px);
+}
+.prodcomsEUI197 {
+  margin: 48px auto;
+}
+.prodcomsEUI198 {
+  max-width: 360px;
+}
+@media (max-width:455.95px) {
+  .prodcomsEUI198.prodcomsEUI197 {
+    margin: 48px;
+  }
+}
+.prodcomsEUI199 {
+  max-width: 600px;
+}
+@media (max-width:695.95px) {
+  .prodcomsEUI199.prodcomsEUI197 {
+    margin: 48px;
+  }
+}
+.prodcomsEUI200 {
+  max-width: 960px;
+}
+@media (max-width:1055.95px) {
+  .prodcomsEUI200.prodcomsEUI197 {
+    margin: 48px;
+  }
+}
+.prodcomsEUI201 {
+  max-width: 1280px;
+}
+@media (max-width:1375.95px) {
+  .prodcomsEUI201.prodcomsEUI197 {
+    margin: 48px;
+  }
+}
+.prodcomsEUI202 {
+  max-width: 1920px;
+}
+@media (max-width:2015.95px) {
+  .prodcomsEUI202.prodcomsEUI197 {
+    margin: 48px;
+  }
+}
+.prodcomsEUI203 {
+  width: 100%;
+}
+.prodcomsEUI204 {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  max-width: 100%;
+  max-height: none;
+  border-radius: 0;
+}
+.prodcomsEUI204.prodcomsEUI197 {
+  margin: 0;
+}
+</style><style data-jss="" data-meta="MuiDrawer">
+.prodcomsEUI30 {
+  flex: 0 0 auto;
+}
+.prodcomsEUI31 {
+  top: 0;
+  flex: 1 0 auto;
+  height: 100%;
+  display: flex;
+  z-index: 1200;
+  outline: none;
+  position: fixed;
+  overflow-y: auto;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+.prodcomsEUI32 {
+  left: 0;
+  right: auto;
+}
+.prodcomsEUI33 {
+  left: auto;
+  right: 0;
+}
+.prodcomsEUI34 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  height: auto;
+  max-height: 100%;
+}
+.prodcomsEUI35 {
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  max-height: 100%;
+}
+.prodcomsEUI36 {
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.prodcomsEUI37 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+.prodcomsEUI38 {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+.prodcomsEUI39 {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+</style><style data-jss="" data-meta="MuiFormControl">
+.prodcomsEUI1223 {
+  margin: 0;
+  border: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+}
+.prodcomsEUI1224 {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+.prodcomsEUI1225 {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+.prodcomsEUI1226 {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiFormLabel">
+.prodcomsEUI1238 {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 0;
+  font-size: 1rem;
+  font-family: Roboto;
+  line-height: 1;
+}
+.prodcomsEUI1238.prodcomsEUI1239 {
+  color: rgb(30, 80, 0);
+}
+.prodcomsEUI1238.prodcomsEUI1240 {
+  color: rgba(0,0,0,0.37);
+}
+.prodcomsEUI1238.prodcomsEUI1241 {
+  color: #b00020;
+}
+.prodcomsEUI1244.prodcomsEUI1241 {
+  color: #b00020;
+}
+</style><style data-jss="" data-meta="MuiInputLabel">
+.prodcomsEUI1227 {
+  transform-origin: top left;
+}
+.prodcomsEUI1232 {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(0, 24px) scale(1);
+}
+.prodcomsEUI1233 {
+  transform: translate(0, 21px) scale(1);
+}
+.prodcomsEUI1234 {
+  transform: translate(0, 1.5px) scale(0.75);
+  font-size: 1rem;
+  transform-origin: top left;
+}
+.prodcomsEUI1235 {
+  transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI1236 {
+  z-index: 1;
+  transform: translate(12px, 20px) scale(1);
+  pointer-events: none;
+}
+.prodcomsEUI1236.prodcomsEUI1233 {
+  transform: translate(12px, 17px) scale(1);
+}
+.prodcomsEUI1236.prodcomsEUI1234 {
+  transform: translate(12px, 10px) scale(0.75);
+}
+.prodcomsEUI1236.prodcomsEUI1234.prodcomsEUI1233 {
+  transform: translate(12px, 7px) scale(0.75);
+}
+.prodcomsEUI1237 {
+  z-index: 1;
+  transform: translate(14px, 20px) scale(1);
+  pointer-events: none;
+}
+.prodcomsEUI1237.prodcomsEUI1233 {
+  transform: translate(14px, 17px) scale(1);
+}
+.prodcomsEUI1237.prodcomsEUI1234 {
+  transform: translate(14px, -6px) scale(0.75);
+}
+</style><style data-jss="" data-meta="MuiInputBase">
+.prodcomsEUI1265 {
+  color: rgba(0, 0, 0, 0.87);
+  cursor: text;
+  display: inline-flex;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.1875em;
+  align-items: center;
+}
+.prodcomsEUI1265.prodcomsEUI1268 {
+  color: rgba(0, 0, 0, 0.38);
+  cursor: default;
+}
+.prodcomsEUI1273 {
+  padding: 6px 0 7px;
+}
+.prodcomsEUI1274 {
+  width: 100%;
+}
+.prodcomsEUI1275 {
+  font: inherit;
+  color: rgba(0, 0, 0, 0.87);
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 6px 0 7px;
+  display: block;
+  min-width: 0;
+  font-size: 0.875rem;
+  box-sizing: content-box;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.prodcomsEUI1275::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI1275::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI1275:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI1275::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.42;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.prodcomsEUI1275:focus {
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+.prodcomsEUI1275:invalid {
+  box-shadow: none;
+}
+.prodcomsEUI1275::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.prodcomsEUI1275.prodcomsEUI1268 {
+  opacity: 1;
+}
+.prodcomsEUI1275:hover {
+  border: 0;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275::-webkit-input-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275::-moz-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275:-ms-input-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275::-ms-input-placeholder {
+  opacity: 0;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275:focus::-webkit-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275:focus::-moz-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275:focus:-ms-input-placeholder {
+  opacity: 0.42;
+}
+label[data-shrink=false] + .prodcomsEUI1266 .prodcomsEUI1275:focus::-ms-input-placeholder {
+  opacity: 0.42;
+}
+.prodcomsEUI1276 {
+  padding-top: 3px;
+}
+.prodcomsEUI1277 {
+  resize: none;
+  padding: 0;
+}
+.prodcomsEUI1278 {
+  height: 1.1875em;
+}
+.prodcomsEUI1279 {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+}
+</style><style data-jss="" data-meta="MuiPrivateNotchedOutline">
+.prodcomsEUI1282 {
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transition: padding-left 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,border-color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms,border-width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.prodcomsEUI1283 {
+  padding: 0;
+  text-align: left;
+  transition: width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  line-height: 11px;
+}
+</style><style data-jss="" data-meta="MuiOutlinedInput">
+.prodcomsEUI1252 {
+  position: relative;
+}
+.prodcomsEUI1252 .prodcomsEUI1259 {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1252:hover:not(.prodcomsEUI1254):not(.prodcomsEUI1253):not(.prodcomsEUI1257) .prodcomsEUI1259 {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1252.prodcomsEUI1253 .prodcomsEUI1259 {
+  border-color: #2c7300;
+  border-width: 2px;
+}
+.prodcomsEUI1252.prodcomsEUI1257 .prodcomsEUI1259 {
+  border-color: #b00020;
+}
+.prodcomsEUI1252.prodcomsEUI1254 .prodcomsEUI1259 {
+  border-color: rgba(0, 0, 0, 0.26);
+}
+@media (hover: none) {
+  .prodcomsEUI1252:hover:not(.prodcomsEUI1254):not(.prodcomsEUI1253):not(.prodcomsEUI1257) .prodcomsEUI1259 {
+    border-color: rgba(0, 0, 0, 0.23);
+  }
+}
+.prodcomsEUI1255 {
+  padding-left: 14px;
+}
+.prodcomsEUI1256 {
+  padding-right: 14px;
+}
+.prodcomsEUI1258 {
+  padding: 18.5px 14px;
+  box-sizing: border-box;
+}
+.prodcomsEUI1260 {
+  padding: 18.5px 14px;
+}
+.prodcomsEUI1261 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.prodcomsEUI1262 {
+  padding: 0;
+}
+.prodcomsEUI1263 {
+  padding-left: 0;
+}
+.prodcomsEUI1264 {
+  padding-right: 0;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.prodcomsEUI155 {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.prodcomsEUI156 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .prodcomsEUI156 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.prodcomsEUI157 {
+  min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+  .prodcomsEUI157 {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .prodcomsEUI157 {
+    min-height: 64px;
+  }
+}
+.prodcomsEUI158 {
+  min-height: 48px;
+}
+</style><style data-jss="">
+.prodcomsEUI61 {
+  width: 48px;
+  height: 50px;
+  font-size: 12px;
+  font-family: Roboto;
+}
+.prodcomsEUI61 g {
+  fill: #97cc04;
+}
+</style><style data-jss="">
+.prodcomsEUI60 {
+  width: 61px;
+  height: 50px;
+  font-size: 12px;
+  font-family: Roboto;
+}
+.prodcomsEUI60 g {
+  fill: #97cc04;
+}
+</style><style data-jss="">
+.prodcomsEUI58 {
+  display: flex;
+  margin-top: 12px;
+  justify-content: center;
+}
+.prodcomsEUI59 {
+  color: #97cc04;
+  margin-left: -12px;
+  font-family: Roboto;
+  margin-right: 20px;
+}
+</style><style data-jss="">
+.prodcomsEUI43 {
+  padding-left: 32px;
+}
+.prodcomsEUI44 {
+  font-size: 16px;
+  text-decoration: none;
+}
+.prodcomsEUI44:hover {
+  text-decoration: none;
+}
+.prodcomsEUI45 {
+  pointer-events: none;
+}
+.prodcomsEUI46 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.prodcomsEUI46.prodcomsEUI49 {
+  color: #2c7300;
+  background-color: inherit;
+}
+.prodcomsEUI46.prodcomsEUI49:hover {
+  background-color: inherit;
+}
+.prodcomsEUI46.prodcomsEUI49:focus {
+  color: #2c7300;
+  background-color: inherit;
+}
+.prodcomsEUI46:hover {
+  background-color: inherit;
+}
+.prodcomsEUI47 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.prodcomsEUI48 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.prodcomsEUI48.prodcomsEUI49 {
+  background-color: #cee696;
+}
+.prodcomsEUI48.prodcomsEUI49:hover {
+  background-color: #cee696;
+}
+.prodcomsEUI48.prodcomsEUI49:focus {
+  background-color: #cee696;
+}
+.prodcomsEUI48:hover {
+  background-color: inherit;
+}
+.prodcomsEUI50 {
+  font-size: 1.125rem;
+}
+.prodcomsEUI51 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.125rem;
+}
+.prodcomsEUI52 {
+  color: #2c7300;
+  font-size: 1.125rem;
+}
+.prodcomsEUI53 {
+  font-size: 1rem;
+}
+.prodcomsEUI54 {
+  color: #2c7300;
+  font-size: 1rem;
+}
+.prodcomsEUI55 {
+  padding-left: 0px;
+}
+.prodcomsEUI56 {
+  margin-right: 0px;
+}
+.prodcomsEUI57 {
+  color: #ff0000;
+  font-size: 30px;
+}
+</style><style data-jss="">
+.prodcomsEUI185 {
+  width: 400px;
+  margin: 100 100 100 100;
+  flex-shrink: 0;
+}
+.prodcomsEUI186 {
+  width: 400px;
+}
+.prodcomsEUI187 {
+  padding: 24px;
+  flex-grow: 1;
+}
+.prodcomsEUI188 {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  max-height: 850px;
+  flex-direction: row;
+}
+.prodcomsEUI189 {
+  text-align: right;
+}
+.prodcomsEUI190 {
+  min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+  .prodcomsEUI190 {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .prodcomsEUI190 {
+    min-height: 64px;
+  }
+}
+</style><style data-jss="">
+.prodcomsEUI127 {
+  flex-direction: row;
+}
+.prodcomsEUI128 {
+  display: flex;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI128 {
+    display: block;
+  }
+}
+.prodcomsEUI128 > div {
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI129 {
+  margin-bottom: 24px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI129 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI130 {
+  margin-bottom: 32px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI130 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI131 {
+  margin-bottom: 16px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI131 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI132 {
+  margin: 26px 0px 35px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI132 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI133 {
+  margin-bottom: 24px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI133 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI134 {
+  padding-bottom: 16px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI134 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.prodcomsEUI135 {
+  padding-bottom: 32px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI135 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.prodcomsEUI136 {
+  border-color: #97cc04;
+}
+.prodcomsEUI137 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI138 {
+  border-color: #97cc04;
+}
+.prodcomsEUI139 .prodcomsEUI136 {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI139.prodcomsEUI138 {
+  color: #97cc04;
+}
+.prodcomsEUI139.prodcomsEUI138 .prodcomsEUI136 {
+  border-color: #97cc04;
+}
+.prodcomsEUI140 {
+  padding: 16px 0px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI140 {
+    padding: 16px;
+  }
+}
+.prodcomsEUI141 {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI141 {
+    display: block;
+  }
+}
+.prodcomsEUI141 > div {
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI142 {
+  width: 50%;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI142 {
+    width: 100%;
+  }
+}
+.prodcomsEUI142 > div:first-of-type {
+  padding: 10px;
+}
+.prodcomsEUI142.double {
+  width: 50%;
+}
+.prodcomsEUI142.col-2 {
+  display: inline-block;
+  vertical-align: top;
+}
+.prodcomsEUI142.single {
+  width: 100%;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI142.double {
+    width: 100%;
+  }
+}
+.prodcomsEUI143 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  background-color: #97cc04;
+}
+.prodcomsEUI143:hover {
+  color: [object Object];
+  background-color: #639b00;
+}
+.prodcomsEUI143:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI143:link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI144 {
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+.prodcomsEUI145 {
+  display: flex;
+  align-items: center;
+}
+.prodcomsEUI146 {
+  pointer-events: none;
+}
+.prodcomsEUI148 {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI148 {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI148 {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
+.prodcomsEUI149 {
+  color: #2c7300;
+  background-color: white;
+}
+.prodcomsEUI149:hover {
+  background-color: #639b00;
+}
+.prodcomsEUI150 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  background-color: #97cc04;
+}
+.prodcomsEUI150:hover {
+  color: [object Object];
+  background-color: #639b00;
+}
+.prodcomsEUI150:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI150:link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI151 {
+  display: flex;
+  padding: 0;
+}
+@media (min-width:1280px) {
+  .prodcomsEUI151 {
+    flex-direction: row;
+  }
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI151 {
+    flex-direction: column;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI152 {
+    flex-grow: 1;
+  }
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI152 {
+    flex-grow: 1;
+    margin-left: 5px;
+    margin-right: auto;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI153 {
+    right: 5%;
+    position: absolute;
+    flex-grow: 1;
+  }
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI153 {
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: auto;
+  }
+}
+.prodcomsEUI154 {
+  background-color: grey;
+}
+</style><style data-jss="">
+.prodcomsEUI125 {
+  margin: 0px 0px 50px 0px;
+}
+</style><style data-jss="" data-meta="MuiPopover">
+.prodcomsEUI1285 {
+  outline: none;
+  position: absolute;
+  min-width: 16px;
+  max-width: calc(100% - 32px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 16px;
+  max-height: calc(100% - 32px);
+}
+</style><style data-jss="" data-meta="MuiMenu">
+.prodcomsEUI1284 {
+  max-height: calc(100% - 96px);
+  -webkit-overflow-scrolling: touch;
+}
+</style><style data-jss="" data-meta="MuiSelect">
+.prodcomsEUI1245 {
+  width: 100%;
+  position: relative;
+}
+.prodcomsEUI1246 {
+  width: calc(100% - 32px);
+  height: 1.1875em;
+  cursor: pointer;
+  min-width: 16px;
+  user-select: none;
+  padding-right: 32px;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.prodcomsEUI1246:focus {
+  border-radius: 0;
+  background-color: rgb(0,0,0,0);
+}
+.prodcomsEUI1246::-ms-expand {
+  display: none;
+}
+.prodcomsEUI1246.prodcomsEUI1250 {
+  cursor: default;
+}
+.prodcomsEUI1246[multiple] {
+  height: auto;
+}
+.prodcomsEUI1246:not([multiple]) option, .prodcomsEUI1246:not([multiple]) optgroup {
+  background-color: #fff;
+}
+.prodcomsEUI1247 {
+  width: calc(100% - 44px);
+}
+.prodcomsEUI1248 {
+  width: calc(100% - 46px);
+  border-radius: 4px;
+}
+.prodcomsEUI1249 {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  min-height: 1.1875em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.prodcomsEUI1251 {
+  top: calc(50% - 12px);
+  right: 0;
+  color: rgba(0, 0, 0, 0.54);
+  position: absolute;
+  pointer-events: none;
+}
+</style><style data-jss="">
+.prodcomsEUI1 {
+  display: flex;
+  background-color: #fafafa;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1 {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
+@media (min-width:960px) {
+  .prodcomsEUI1 {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI1 {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+}
+.prodcomsEUI2 {
+  flex-grow: 1;
+  min-width: 250px;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  background-color: #ffffff;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI2 {
+    display: none;
+  }
+}
+@media (min-width:960px) {
+  .prodcomsEUI2 {
+    max-width: 300px;
+    margin-right: 10px;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI2 {
+    margin-right: 10px;
+  }
+}
+.prodcomsEUI3 {
+  margin: 0px 10px 0px 10px;
+  display: none;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI3 {
+    display: block;
+  }
+}
+.prodcomsEUI4 {
+  padding: 36px;
+  flex-grow: 3;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  background-color: #ffffff;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI4 {
+    flex-grow: 1;
+    padding-top: 36px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 36px;
+  }
+}
+.prodcomsEUI5 {
+  flex-grow: 1;
+  padding-left: 5px;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI5 {
+    margin-top: 10px;
+    flex-basis: auto;
+  }
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI5 {
+    margin-top: 10px;
+    flex-basis: auto;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+@media (min-width:960px) {
+  .prodcomsEUI5 {
+    flex-basis: 1024;
+  }
+}
+@media (min-width:1280px) {
+  .prodcomsEUI5 {
+    min-width: 360px;
+    max-width: 360px;
+    flex-basis: auto;
+    margin-left: 10px;
+  }
+}
+.prodcomsEUI6 {
+  height: 315px;
+  display: flex;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.prodcomsEUI7 {
+  height: 315px;
+  display: flex;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  overflow-y: auto;
+  padding-top: 20px;
+  padding-left: 11px;
+  margin-bottom: 10px;
+  padding-right: 16px;
+  flex-direction: column;
+}
+.prodcomsEUI8 {
+  padding: 10px;
+  flex-grow: 1;
+  margin-top: 0px;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+  margin-bottom: 0px;
+}
+.prodcomsEUI9 {
+  padding: 10px;
+  flex-grow: 1;
+  box-shadow: 0px 1px 4px 1px #e3e1df;
+}
+.prodcomsEUI10 {
+  height: 100%;
+  display: flex;
+  font-size: 15px;
+  font-family: Roboto;
+  flex-direction: column;
+}
+</style><style data-jss="">
+.prodcomsEUI1202 {
+  width: 100%;
+  padding: 8px 16px;
+}
+.prodcomsEUI1203 {
+  width: 20%;
+  z-index: 10001;
+  display: inline-flex;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.prodcomsEUI1204 {
+  display: flex;
+  z-index: 10001;
+  font-size: 14px;
+  align-items: flex-end;
+  vertical-align: middle;
+  justify-content: flex-end;
+}
+.prodcomsEUI1205 {
+  color: #2c7300;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0 16px 0px 0px;
+  font-size: 1rem;
+  font-style: normal;
+  font-family: Roboto;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+}
+.prodcomsEUI1206 {
+  color: #2c7300;
+  border: none;
+  margin: auto 0px 0px auto;
+  cursor: pointer;
+  outline: none;
+  padding: 0px;
+  font-size: 1rem;
+  font-style: normal;
+  font-family: Roboto;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+}
+.prodcomsEUI1207 {
+  width: 80%;
+  margin: 0;
+}
+.prodcomsEUI1208 {
+  height: auto;
+  margin: 2px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1208 {
+    height: auto;
+  }
+}
+.prodcomsEUI1209 {
+  white-space: pre-wrap;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1209 {
+    padding: 12px;
+    white-space: normal;
+  }
+}
+.prodcomsEUI1210 {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width:960px) {
+  .prodcomsEUI1210 {
+    max-width: 500px;
+  }
+}
+.prodcomsEUI1211 {
+  width: 100%;
+}
+.prodcomsEUI1212 {
+  height: auto;
+  padding: 8px 16px;
+  display: flex;
+  white-space: normal;
+  align-items: flex-start;
+}
+.prodcomsEUI1213 {
+  width: 90%;
+  margin: 0;
+  padding: 8px 16px;
+}
+.prodcomsEUI1214 {
+  font-size: 0;
+  flex-direction: initial;
+}
+.prodcomsEUI1214:focus {
+  outline: 0 none;
+}
+.prodcomsEUI1215 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.prodcomsEUI1216 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1216.prodcomsEUI1217 {
+  color: #97cc04;
+}
+.prodcomsEUI1216.prodcomsEUI1218 {
+  color: #b00020;
+}
+.prodcomsEUI1217 {
+  color: #97cc04;
+}
+.prodcomsEUI1218 {
+  color: #b00020;
+}
+.prodcomsEUI1219 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1220 {
+  border-color: #b00020;
+}
+.prodcomsEUI1221 {
+  border-color: #b00020;
+}
+.prodcomsEUI1222.prodcomsEUI1219 .prodcomsEUI1221 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1222.prodcomsEUI1220 .prodcomsEUI1221 {
+  border-color: #b00020;
+}
+</style><style data-jss="">
+.prodcomsEUI1106 {
+  padding: 5px;
+  z-index: 10;
+  position: absolute;
+  padding-left: 15px;
+  pointer-events: none;
+  background-color: #97cc04;
+}
+.prodcomsEUI1107 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 14px;
+}
+</style><style data-jss="">
+.prodcomsEUI1108 {
+  display: flex;
+  padding-top: 5px;
+  flex-direction: row;
+  padding-bottom: 0px;
+}
+.prodcomsEUI1109 {
+  flex: 1 1 auto;
+  padding: 0px;
+  display: flex;
+}
+.prodcomsEUI1110 {
+  font-size: 12px;
+  padding-left: 10px;
+}
+.prodcomsEUI1111 {
+  font-size: 12px;
+  padding-left: 10px;
+}
+.prodcomsEUI1112 {
+  font-size: 12px;
+  padding-left: 10px;
+}
+.prodcomsEUI1113 {
+  flex: 0 0 auto;
+  padding: 0px 10px 0px 0px;
+}
+.prodcomsEUI1114 {
+  font-size: 10px;
+  font-weight: bold;
+  background-color: #97cc04;
+}
+.prodcomsEUI1115 {
+  padding: 5px;
+}
+.prodcomsEUI1116 {
+  color: #639b00;
+  font-size: 15px;
+}
+.prodcomsEUI1117 {
+  color: #639b00;
+  font-size: 15px;
+}
+</style><style data-jss="">
+.prodcomsEUI1118 {
+  flex-direction: row;
+}
+.prodcomsEUI1119 {
+  display: flex;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1119 {
+    display: block;
+  }
+}
+.prodcomsEUI1119 > div {
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI1120 {
+  margin-bottom: 24px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1120 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1121 {
+  margin-bottom: 32px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1121 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1122 {
+  margin-bottom: 16px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1122 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1123 {
+  margin: 26px 0px 35px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1123 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1124 {
+  margin-bottom: 24px;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1124 {
+    margin-left: 0;
+  }
+}
+.prodcomsEUI1125 {
+  padding-bottom: 16px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1125 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.prodcomsEUI1126 {
+  padding-bottom: 32px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1126 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.prodcomsEUI1127 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1128 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1129 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1130 .prodcomsEUI1127 {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1130.prodcomsEUI1129 {
+  color: #97cc04;
+}
+.prodcomsEUI1130.prodcomsEUI1129 .prodcomsEUI1127 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1131 {
+  padding: 16px 0px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1131 {
+    padding: 16px;
+  }
+}
+.prodcomsEUI1132 {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1132 {
+    display: block;
+  }
+}
+.prodcomsEUI1132 > div {
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI1133 {
+  width: 50%;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1133 {
+    width: 100%;
+  }
+}
+.prodcomsEUI1133 > div:first-of-type {
+  padding: 10px;
+}
+.prodcomsEUI1133.double {
+  width: 50%;
+}
+.prodcomsEUI1133.col-2 {
+  display: inline-block;
+  vertical-align: top;
+}
+.prodcomsEUI1133.single {
+  width: 100%;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1133.double {
+    width: 100%;
+  }
+}
+.prodcomsEUI1134 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  background-color: #97cc04;
+}
+.prodcomsEUI1134:hover {
+  color: [object Object];
+  background-color: #639b00;
+}
+.prodcomsEUI1134:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI1134:link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI1135 {
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+.prodcomsEUI1136 {
+  display: flex;
+  align-items: center;
+}
+.prodcomsEUI1137 {
+  width: 770px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1137 {
+    width: 600px;
+  }
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1137 {
+    width: auto;
+  }
+}
+.prodcomsEUI1138 {
+  width: 400px;
+}
+.prodcomsEUI1139 {
+  color: #FFFFFF;
+  display: flex;
+  padding: 15px;
+  font-size: 18px;
+  background: #97cc04;
+  font-family: roboto;
+  margin-bottom: 25px;
+  flex-direction: row;
+}
+.prodcomsEUI1140 {
+  width: 99%;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+}
+.prodcomsEUI1141 {
+  right: 0;
+  color: rgba(0, 0, 0, 0.87);
+  position: absolute;
+  text-align: right;
+  padding-right: 10px;
+}
+.prodcomsEUI1142 {
+  margin: 0px 25px 0px 25px;
+  display: flex;
+  font-size: 14px;
+  font-family: roboto;
+  flex-direction: row;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1142 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+.prodcomsEUI1143 {
+  width: 50%;
+  padding-top: 10px;
+  margin-right: 50px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1143 {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+.prodcomsEUI1144 {
+  width: 50%;
+  padding-top: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1144 {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+.prodcomsEUI1145 {
+  margin: 25px 25px 0px 25px;
+  display: flex;
+  font-size: 14px;
+  font-family: roboto;
+  padding-top: 10px;
+  flex-direction: row;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1145 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+.prodcomsEUI1146 {
+  flex-grow: 1;
+  margin-left: 5px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1146 {
+    width: 100%;
+  }
+}
+.prodcomsEUI1147 {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1147 {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+}
+.prodcomsEUI1148 {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1148 {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+}
+.prodcomsEUI1149 {
+  padding: 25px;
+  text-align: right;
+}
+.prodcomsEUI1150 {
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1150 {
+    margin-top: 25px;
+    flex-direction: column;
+  }
+}
+.prodcomsEUI1151 {
+  width: 100%;
+  margin: 0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.prodcomsEUI1152 {
+  width: 100%;
+  margin: 0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.prodcomsEUI1153 {
+  width: 100%;
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.prodcomsEUI1154 {
+  margin-bottom: 10px;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1154 {
+    margin-left: 0;
+  }
+}
+.prodcomsEUI1155 {
+  padding: 0;
+}
+.prodcomsEUI1156 {
+  color: #2c7300;
+  width: 90px;
+  font-size: 14px;
+  background: #97cc04;
+  font-family: roboto;
+}
+.prodcomsEUI1156:hover {
+  background-color: #97cc04;
+}
+.prodcomsEUI1157 {
+  width: 30%;
+}
+.prodcomsEUI1158 {
+  color: #2c7300;
+  width: 90px;
+  font-size: 14px;
+  background: #97cc04;
+  font-family: roboto;
+}
+.prodcomsEUI1158:hover {
+  background-color: #97cc04;
+}
+.prodcomsEUI1159 {
+  color: rgba(0, 0, 0, 0.87);
+  float: left;
+  font-size: 0.875rem;
+  background-color: #97cc04;
+}
+.prodcomsEUI1159:hover {
+  color: [object Object];
+  background-color: #639b00;
+}
+.prodcomsEUI1159:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI1159:link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+</style><style data-jss="">
+.prodcomsEUI1160 {
+  flex-direction: row;
+}
+.prodcomsEUI1161 {
+  display: flex;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1161 {
+    display: block;
+  }
+}
+.prodcomsEUI1161 > div {
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI1162 {
+  margin-bottom: 24px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1162 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1163 {
+  margin-bottom: 32px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1163 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1164 {
+  margin-bottom: 16px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1164 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1165 {
+  margin: 26px 0px 35px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1165 {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.prodcomsEUI1166 {
+  margin-bottom: 24px;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1166 {
+    margin-left: 0;
+  }
+}
+.prodcomsEUI1167 {
+  padding-bottom: 16px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1167 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.prodcomsEUI1168 {
+  padding-bottom: 32px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1168 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.prodcomsEUI1169 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1170 {
+  color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1171 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1172 .prodcomsEUI1169 {
+  border-color: rgba(0, 0, 0, 0.87);
+}
+.prodcomsEUI1172.prodcomsEUI1171 {
+  color: #97cc04;
+}
+.prodcomsEUI1172.prodcomsEUI1171 .prodcomsEUI1169 {
+  border-color: #97cc04;
+}
+.prodcomsEUI1173 {
+  padding: 16px 0px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1173 {
+    padding: 16px;
+  }
+}
+.prodcomsEUI1174 {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1174 {
+    display: block;
+  }
+}
+.prodcomsEUI1174 > div {
+  align-items: center;
+  justify-content: center;
+}
+.prodcomsEUI1175 {
+  width: 50%;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1175 {
+    width: 100%;
+  }
+}
+.prodcomsEUI1175 > div:first-of-type {
+  padding: 10px;
+}
+.prodcomsEUI1175.double {
+  width: 50%;
+}
+.prodcomsEUI1175.col-2 {
+  display: inline-block;
+  vertical-align: top;
+}
+.prodcomsEUI1175.single {
+  width: 100%;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1175.double {
+    width: 100%;
+  }
+}
+.prodcomsEUI1176 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 0.875rem;
+  background-color: #97cc04;
+}
+.prodcomsEUI1176:hover {
+  color: [object Object];
+  background-color: #639b00;
+}
+.prodcomsEUI1176:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI1176:link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI1177 {
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+.prodcomsEUI1178 {
+  display: flex;
+  align-items: center;
+}
+.prodcomsEUI1179 {
+  width: 770px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1179 {
+    width: 600px;
+  }
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1179 {
+    width: auto;
+  }
+}
+.prodcomsEUI1180 {
+  width: 400px;
+}
+.prodcomsEUI1181 {
+  color: #FFFFFF;
+  display: flex;
+  padding: 15px;
+  font-size: 18px;
+  background: #97cc04;
+  font-family: roboto;
+  margin-bottom: 25px;
+  flex-direction: row;
+}
+.prodcomsEUI1182 {
+  width: 99%;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+}
+.prodcomsEUI1183 {
+  right: 0;
+  color: rgba(0, 0, 0, 0.87);
+  position: absolute;
+  text-align: right;
+  padding-right: 10px;
+}
+.prodcomsEUI1184 {
+  margin: 0px 25px 0px 25px;
+  display: flex;
+  font-size: 14px;
+  font-family: roboto;
+  flex-direction: row;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1184 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+.prodcomsEUI1185 {
+  width: 50%;
+  padding-top: 10px;
+  margin-right: 50px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1185 {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+.prodcomsEUI1186 {
+  width: 50%;
+  padding-top: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1186 {
+    width: 100%;
+    padding-top: 0;
+  }
+}
+.prodcomsEUI1187 {
+  margin: 25px 25px 0px 25px;
+  display: flex;
+  font-size: 14px;
+  font-family: roboto;
+  padding-top: 10px;
+  flex-direction: row;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1187 {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+.prodcomsEUI1188 {
+  flex-grow: 1;
+  margin-left: 5px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1188 {
+    width: 100%;
+  }
+}
+.prodcomsEUI1189 {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1189 {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+}
+.prodcomsEUI1190 {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1190 {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+}
+.prodcomsEUI1191 {
+  padding: 25px;
+  text-align: right;
+}
+.prodcomsEUI1192 {
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1192 {
+    margin-top: 25px;
+    flex-direction: column;
+  }
+}
+.prodcomsEUI1193 {
+  width: 100%;
+  margin: 0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.prodcomsEUI1194 {
+  width: 100%;
+  margin: 0px 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.prodcomsEUI1195 {
+  width: 100%;
+  margin: 0px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.prodcomsEUI1196 {
+  margin-bottom: 10px;
+}
+@media (max-width:599.95px) {
+  .prodcomsEUI1196 {
+    margin-left: 0;
+  }
+}
+.prodcomsEUI1197 {
+  padding: 0;
+}
+.prodcomsEUI1198 {
+  color: #2c7300;
+  width: 90px;
+  font-size: 14px;
+  background: #97cc04;
+  font-family: roboto;
+}
+.prodcomsEUI1198:hover {
+  background-color: #97cc04;
+}
+.prodcomsEUI1199 {
+  width: 30%;
+}
+.prodcomsEUI1200 {
+  color: #2c7300;
+  width: 90px;
+  font-size: 14px;
+  background: #97cc04;
+  font-family: roboto;
+}
+.prodcomsEUI1200:hover {
+  background-color: #97cc04;
+}
+.prodcomsEUI1201 {
+  color: rgba(0, 0, 0, 0.87);
+  float: left;
+  font-size: 0.875rem;
+  background-color: #97cc04;
+}
+.prodcomsEUI1201:hover {
+  color: [object Object];
+  background-color: #639b00;
+}
+.prodcomsEUI1201:visited {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+.prodcomsEUI1201:link {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+}
+</style><style data-jss="">
+.prodcomsEUI1094 {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width:1279.95px) {
+  .prodcomsEUI1094 {
+    flex-direction: column;
+  }
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1094 {
+    margin-left: 16px;
+  }
+}
+.prodcomsEUI1095 {
+  display: flex;
+  flex-direction: row;
+}
+.prodcomsEUI1096 {
+  width: 50%;
+  margin-right: 25px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1096 {
+    width: 100%;
+    margin-right: 25px;
+  }
+}
+.prodcomsEUI1097 {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1097 {
+    width: 100%;
+  }
+}
+.prodcomsEUI1098 {
+  margin-top: 30px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1098 {
+    min-width: 340px;
+  }
+}
+.prodcomsEUI1099 {
+  margin-bottom: 24px;
+}
+@media (max-width:959.95px) {
+  .prodcomsEUI1099 {
+    margin-left: 0;
+    margin-right: 25px;
+  }
+}
+.prodcomsEUI1100 {
+  color: #FFFFFF;
+  display: flex;
+  padding: 15px;
+  min-width: 300px;
+  font-size: 18px;
+  background: #4a90e2;
+  font-family: roboto;
+  flex-direction: row;
+}
+.prodcomsEUI1101 {
+  width: 99%;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+}
+.prodcomsEUI1102 {
+  text-align: right;
+}
+.prodcomsEUI1103 {
+  display: flex;
+  padding: 15px;
+  overflow: auto;
+  font-size: 14px;
+  max-height: 850px;
+  font-family: roboto;
+  flex-direction: row;
+}
+.prodcomsEUI1104 {
+  width: 100%;
+  min-width: 300px;
+  margin-left: 25px;
+}
+.prodcomsEUI1105 {
+  padding: 0;
+}
+</style><script charset="utf-8" src="./EAUI screen 3_files/22.05ce9efd.chunk.js.download"></script><script charset="utf-8" src="./EAUI screen 3_files/0.32a5bd43.chunk.js.download"></script><script charset="utf-8" src="./EAUI screen 3_files/19.6a800742.chunk.js.download"></script><script charset="utf-8" src="./EAUI screen 3_files/1.dade81fe.chunk.js.download"></script><script charset="utf-8" src="./EAUI screen 3_files/2.885a772f.chunk.js.download"></script><script charset="utf-8" src="./EAUI screen 3_files/24.a775745d.chunk.js.download"></script>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Marc Baltes</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">76;#Marc Baltes</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+
+	
+		
+	
+	
+
+
+
+	
+	
+		<body class="clinical" onload="" style="zoom: 1; margin: 0px 10px;">
+	
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="appAriaHide" id="appAriaHeaderOne">PointClickCare - Enhanced Assessment</h1>
+
+<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/coremenu.css">
+<script src="./EAUI screen 3_files/medicare.js.download"></script>
+
+
+
+
+
+<style>
+	html{
+		min-height:100%;
+		position:relative;
+	}
+	body{
+		
+		margin-bottom:150px !important;
+	}
+	div.footertext{
+		bottom:10px;
+		left:10px;
+		min-width:800px;
+		position:absolute;
+		right:10px;
+		width:auto;
+	}
+	@media print{
+		body{
+			margin-bottom:0 !important;
+		}
+		div.footertext{
+			position:relative !important;
+			width:100% !important;
+		}
+	}
+</style>
+
+
+
+
+
+	<script src="./EAUI screen 3_files/f.txt"></script>
+
+	<table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+		<tbody><tr>
+			<td valign="top" class="slPccLogo"><img src="./EAUI screen 3_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+			<td align="right" valign="top" class="slTopNav">
+				
+
+<h3 class="appAriaHide" aria-hidden="false">Facility Selection</h3>
+<form id="facSelectForm" action="http://172.16.10.38/facilityGroup/facilitygroupconsole.xhtml" method="post">
+	<input type="hidden" name="setFacGroupId" id="setFacGroupId" value="">
+	<input type="hidden" name="setFacType" id="setFacType" value="">
+</form>
+
+
+
+	<a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="javascript:void(0)" class="innerfac navLink arrowDrop">FACILITY_1 (Shirley - COMS)</a>
+	<input type="hidden" name="current_fac_id" value="1">
+
+
+	<div id="pccFacMenu" class="dropDownList" style="left: 940.653px;">
+		<div style="height:100px;padding:50px 0 0 217px"><img src="./EAUI screen 3_files/loading-circle.gif" width="16" height="16" border="0"></div>
+	</div>
+
+				
+					
+						
+							<a href="javascript:void(0);" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Nichole Fetterman</span></a>
+						
+					
+				
+				
+					<div id="pccUserMenu" class="dropDownList" style="left: 1371.35px;">
+						<ul>
+							<li><a href="javascript:editUserProfile(&#39;/home/editmyprofile.jsp?ESOLuserid=2589&amp;retURL=/home/home.jsp&#39;);">Edit Profile</a></li>
+							<li><a href="javascript:javascript:void(window.open(&#39;/admin/reports/user_access.jsp?ESOLuserid=2589&#39;, &#39;detail&#39;));">User Access</a></li>
+							
+								<li><a href="javascript:openContextSensitiveHelp();">Help</a></li>
+							
+				
+
+				
+					<li><a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars=1&#39;));">Resource Center / Support</a></li>
+				
+
+				
+				
+				
+					<li><a href="javascript:openSizedLookup2(&#39;/tools/i18n.jsp&#39;, &#39;&#39;, 750, 600, &#39;scrollbars&#39;);">I18N (Superuser Only)</a></li>
+				
+			</ul>
+		</div>
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+  
+    
+  
+
+
+
+		
+
+		
+
+				
+				
+				
+				
+				
+                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      <script src="./EAUI screen 3_files/userAnalytics.js.download"></script>
+      <script src="./EAUI screen 3_files/categoryAnalytics.js.download"></script>
+    
+  
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/c3-0.4.10.min.css">
+<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/chartGenerator.css">
+<script src="./EAUI screen 3_files/d3-3.5.5.min.js.download"></script>
+<script src="./EAUI screen 3_files/c3-0.4.10.min.js.download"></script>
+<script src="./EAUI screen 3_files/chartGenerator.js.download"></script>
+
+<link rel="stylesheet" type="text/css" href="./EAUI screen 3_files/smartalertsnotifications.css">
+
+
+<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/chosen-0.9.8.css">
+<script src="./EAUI screen 3_files/chosen.jquery-0.9.8.min.js.download"></script>
+
+
+<script defer="" src="./EAUI screen 3_files/core.js(1).download"></script>
+<script defer="" src="./EAUI screen 3_files/state.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/rootReducer.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/StatefulComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/CardComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/DropdownComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/FilterComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/PanelComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/DrawerComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/NotificationToggleComponent.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/App.js.download"></script>
+<script defer="" src="./EAUI screen 3_files/SuggestionsSubComponent.js.download"></script>
+
+
+<span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+    
+      
+      
+         <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle"></div> 
+      
+  
+
+  <div class="js-drawer c-drawer c-drawer--is-hidden">
+    <div class="js-panel c-panel">
+      <ul class="js-tabs js-sticky-header c-tabs">
+        
+        <li id="qtf-csa-drawerTabAll" class="js-tab c-tabs__tab" data-tab-type="all"><span class="c-tabs__label">All</span></li>
+        
+        <li id="qtf-csa-drawerTabClient" class="js-tab c-tabs__tab c-tabs__tab--is-active" data-tab-type="client"><span class="c-tabs__label">Resident</span></li>
+        
+      </ul>
+
+      <div class="js-panel-content c-panel__content">
+        <div class="js-filters l-stack u-hidden u-mb-8">
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Unit</label>
+            <div id="qtf-csa-unitDropdown" class="js-dropdown-unit js-dropdown c-dropdown u-text-uppercase" data-type="unit">
+              <a href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#" id="qtf-csa-unitDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#" id="qtf-csa-unitDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="l-stack__item">
+            <label class="c-label u-text-uppercase u-mb-0">Floor</label>
+            <div id="qtf-csa-floorDropdown" class="js-dropdown-floor js-dropdown c-dropdown u-text-uppercase" data-type="floor">
+              <a href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#" id="qtf-csa-floorDropdown__trigger" class="js-dropdown-trigger c-dropdown__trigger" data-option="">All</a>
+              <ul class="js-dropdown-content c-dropdown__content">
+                <li><a href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#" id="qtf-csa-floorDropdown__optionAll" data-option="">All</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="new-alert-bubble" class="new-alert-bubble c-button c-button--primary" style="display:none;">
+          <img class="tail-up" src="./EAUI screen 3_files/whitearrow.png">New Alerts
+        </div>
+        <div class="js-panel-alerts c-panel-alerts c-panel-alerts--has-no-alerts">No Alerts</div>
+      </div>
+    </div>
+  </div>
+	<script id="tmpl-csa-alert-card" type="text/template">
+    <div id="js-csa-alert-card-{{type}}-{{id}}" class="js-alert-card c-card" data-alert-type="{{type}}" data-alert-id="{{id}}" data-grouped-alert-ids="{{groupedAlertIds}}" data-client-id="{{clientId}}" data-created-timestamp="{{createdTimestamp}}" data-module="{{module}}"
+      data-vital-type="{{vitalType}}" data-pn-id="{{pnId}}" data-clear-alert-permission="{{clearAlertPermission}}" data-alert-description="{{description}}" data-wv-pn-description="{{pn_description}}" data-assessment-linked="{{assessment_linked}}" data-pending-patient-id="{{pendingPatientId}}">
+	    <div class="c-card__header">
+	      <div class="l-table-row u-mb-0">
+	        <span class="c-card__type l-table-row__col l-table-row__col--70 u-text-uppercase u-text-subdued">{{formattedType}}</span>
+	        <a href="#_" class="js-alert-card-clear c-card__clear l-table-row__col l-table-row__col--30 u-text-uppercase u-text-subdued u-text-align-right" style="display:{{clearAlertPermission}}">Clear</a>
+	      </div>
+	    </div>
+	    <div class="c-card__content">
+	      <div class="l-table-row">
+	        <div class="l-table-row__col l-table-row__col--70">
+	          <h4 class="t-h4 u-mb-0">{{formattedName}} <span style="display:{{hideClientNumber}}">(<div style="display: inline;" class="qtf-csa-alertClientNumber">{{clientNumber}}</div>)</span></h4>
+            <span style="display:{{hideRoomNumber}}">Room <span class="qtf-csa-alertRoomNumber">{{room}}</span></span>
+	        </div>
+	        <div class="l-table-row__col l-table-row__col--30 u-text-align-right">
+	          <small class="u-text-subdued">{{timeSince}}</small>
+	        </div>
+	      </div>
+	      <div class="js-more-less"><p class="js-alert-description">{{eInteractHeading}}{{description}}</p></div>
+        <hr class="o-hr"/>
+
+        <div class="js-show-hide js-card-expander c-show-hide c-card-expander">
+          <div class="c-show-hide__content">
+            <div class="js-show-hide js-alert-details-expander c-show-hide c-details-expander">
+              <a href="#_" class="js-show-hide-toggle js-alert-details-expander-toggle c-show-hide__toggle">Alert Details</a>
+              <div class="c-show-hide__content">
+                <div id="js-csa-alert-card-details-{{type}}-{{id}}" class="s-clinical-smart-alert-details">
+				  <div style="display:{{displayPendingPatientData}};">
+					<table width="100%">
+		        	  <tbody>
+						<tr><td>First Name:</td><td id="{{type}}-{{id}}-first-name"></td></tr>
+		        		<tr><td>Middle Name:</td><td id="{{type}}-{{id}}-middle-name"></td></tr>
+		        		<tr><td>Surname:</td><td id="{{type}}-{{id}}-surname"></td></tr>
+		        		<tr><td>Gender:</td><td id="{{type}}-{{id}}-gender"></td></tr>
+		        		<tr><td>Date of Birth:</td><td id="{{type}}-{{id}}-dob"></td></tr>
+		        		<tr><td>Social Security Number:</td><td id="{{type}}-{{id}}-ssn"></td></tr>
+		        		<tr><td>Medicare (HIC) Number:</td><td id="{{type}}-{{id}}-medicare"></td></tr>
+		        	    <tr><td>Medicaid Number:</td><td id="{{type}}-{{id}}-medicaid"></td></tr>
+		        	  </tbody>
+					</table>
+				  </div>
+                  <div class="l-detail-row" style="display:{{hideAlertDetailsEffectiveDate}}">
+                    <h4 class="t-h4 u-mb-0 c-alert-detail">Effective Date: </h4>
+                    <div class="c-alert-detail qtf-csa-AlertEffectiveDate">{{effectiveDate}}</div>
+                  </div>
+ 				  <div style="display:{{displayExtendedDetails}};">
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Description: </h4> 
+                      <div class="c-alert-detail c-assess-description">{{assess_description}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Created Date: </h4>
+                      <div class="c-alert-detail c-assess-date">{{assess_date}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Assessment}} Type: </h4>
+                      <div class="c-alert-detail c-assess-type">{{assess_type}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Question: </h4>
+                      <div class="c-alert-detail c-trigger-question">{{trigger_question}}</div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Triggering Response: </h4>
+                      <div class="c-alert-detail c-trigger-response">{{trigger_response}}</div>
+                    </div>
+                  </div>
+                  <div style="display:{{displayComplexDetails}};">
+					<div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">{{Task}} Description: </h4> 
+                      <div class="c-alert-detail c-task-description"><ul></ul></div>
+                    </div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Follow Up Question: </h4> 
+                      <div class="c-alert-detail c-followup-question">{{followup_question}}</div>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+					<div class="l-detail-row">
+					  <h4 class="t-h4 u-mb-0 c-alert-detail c-approach-description">{{complex_description}} </h4>
+                    </div>
+					<div class="l-detail-row">&nbsp;</div>
+                    <div class="l-detail-row">
+                      <h4 class="t-h4 u-mb-0 c-alert-detail">Response Pick List: </h4> 
+                      <div class="c-alert-detail c-response-pick-list"><ul></ul></div>
+                    </div>
+                  </div>
+				  <div style="display:{{displayInboundClinicalData}};">
+                    <div class="l-detail-row">
+                      <div class="c-alert-detail c-inbound-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flipcard-container c-hidden">
+                  <div class="flipcard">
+                    <div class="flipcard-wrapper">
+                        <div class="flipcard-side flipcard-side-front flipcard-is-active">
+                            <div class="trendgraph"></div>
+                        </div>
+                        <div class="flipcard-side flipcard-side-back c-hidden">
+                            <table class="c-alert-details-table js-alert-details-table">
+                              <tbody></tbody>
+                             </table>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="flipcard-chevron-container">
+                      <div class="flipcard-chevron"></div>
+                    </div>
+                </div>
+                
+              </div>
+              <div class="suggestions-section">
+                <p>Suggestions:</p>
+				<div style="display:{{hideSuggestionLinks}};">
+					<ul class="other-suggestions"></ul>
+          <div class="js-suggested-care-plan-section">
+            <a class="smart-alert-card-link" id="qtf-csa-care-plan-link-{{type}}-{{id}}" href="{{carePlanAction}}">Add Care Plan Item</a>
+          </div>
+          <div class="js-suggested-task-section">
+            <a class="smart-alert-card-link" id="qtf-csa-add-tasks-link-{{type}}-{{id}}" href="/admin/client/cp_tasks.jsp?ESOLclientid={{clientId}}">Add Task</a>
+          </div>
+          <div class="js-suggested-vitals-section">
+            <a class="smart-alert-card-link" id="qtf-csa-add-vitals-{{type}}-{{id}}" href="/admin/client/cp_weightsandvitals.jsp?ESOLclientid={{clientId}}">Add Vital</a>
+          </div>
+          <div class="js-suggested-assessment-section">
+            <a class="smart-alert-card-link" id="qtf-csa-assessment-link-{{type}}-{{id}}" href="/admin/client/cp_assessment.jsp?ESOLclientid={{clientId}}">Add Assessment</a>
+          </div>
+        </div>
+				<div style="display:{{displayInboundClinicalData}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-review-inbound-data-link-{{type}}-{{id}}" href="/clinical/inbound/inboundclinicaldata.xhtml?ESOLclientid={{clientId}}&ESOLcareperiod=-1">Review Inbound Clinical Data</a>
+				</div>
+				<div style="display:{{displayPendingPatientData}};">
+				  <a class="smart-alert-card-link" id="qtf-csa-review-pending-patient-link-{{type}}-{{id}}" href="/admin/client/pendingpatient.xhtml">Review Pending Patient</a>
+				  <br>
+				  <div style="display: none" class="pending-patient-buttons">
+				    <input type="button" class="pccButton" value="Accept"/>
+					<input type="button" class="pccButton" value="Delete"/>
+				  </div>
+				</div>
+              </div>
+            </div>
+
+            
+              <div class="js-show-hide c-show-hide c-assessment-create-wrapper js-assessment-create-wrapper js-show-hide-checkbox">
+                <label class="u-mt-8 c-custom-checkbox__disabled">
+                  eINTERACT Change in Condition
+                    <input type="checkbox" class="js-show-hide-toggle c-show-hide__toggle" disabled />
+                    <span class="c-custom-checkbox__checkmark"></span>
+                </label>
+                <div class="c-show-hide__content c-form u-mt-16">
+                  <div class="u-mt-16 u-mb-16">
+                    <div>
+                      <label>Effective Date: </label>
+                    </div>
+                    <div class="assessment-date-picker">
+                      <input id="qtf-effective-date-{{type}}-{{id}}" name="effective_date" type="hidden"/><input id="qtf-effective-date-{{type}}-{{id}}_dummy" name="effective_date_dummy" class="pccDateField c-dropdown" type="text" value="" size="10" maxlength="10"/>
+                      <select name="hour" class="c-dropdown" id="qtf-effective-hour-{{type}}-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                      </select>
+                      <select name="min" class="c-dropdown" id="qtf-effective-minute-{{type}}-{{id}}">
+                        
+                          <option value="0">00</option>
+                        
+                          <option value="1">01</option>
+                        
+                          <option value="2">02</option>
+                        
+                          <option value="3">03</option>
+                        
+                          <option value="4">04</option>
+                        
+                          <option value="5">05</option>
+                        
+                          <option value="6">06</option>
+                        
+                          <option value="7">07</option>
+                        
+                          <option value="8">08</option>
+                        
+                          <option value="9">09</option>
+                        
+                          <option value="10">10</option>
+                        
+                          <option value="11">11</option>
+                        
+                          <option value="12">12</option>
+                        
+                          <option value="13">13</option>
+                        
+                          <option value="14">14</option>
+                        
+                          <option value="15">15</option>
+                        
+                          <option value="16">16</option>
+                        
+                          <option value="17">17</option>
+                        
+                          <option value="18">18</option>
+                        
+                          <option value="19">19</option>
+                        
+                          <option value="20">20</option>
+                        
+                          <option value="21">21</option>
+                        
+                          <option value="22">22</option>
+                        
+                          <option value="23">23</option>
+                        
+                          <option value="24">24</option>
+                        
+                          <option value="25">25</option>
+                        
+                          <option value="26">26</option>
+                        
+                          <option value="27">27</option>
+                        
+                          <option value="28">28</option>
+                        
+                          <option value="29">29</option>
+                        
+                          <option value="30">30</option>
+                        
+                          <option value="31">31</option>
+                        
+                          <option value="32">32</option>
+                        
+                          <option value="33">33</option>
+                        
+                          <option value="34">34</option>
+                        
+                          <option value="35">35</option>
+                        
+                          <option value="36">36</option>
+                        
+                          <option value="37">37</option>
+                        
+                          <option value="38">38</option>
+                        
+                          <option value="39">39</option>
+                        
+                          <option value="40">40</option>
+                        
+                          <option value="41">41</option>
+                        
+                          <option value="42">42</option>
+                        
+                          <option value="43">43</option>
+                        
+                          <option value="44">44</option>
+                        
+                          <option value="45">45</option>
+                        
+                          <option value="46">46</option>
+                        
+                          <option value="47">47</option>
+                        
+                          <option value="48">48</option>
+                        
+                          <option value="49">49</option>
+                        
+                          <option value="50">50</option>
+                        
+                          <option value="51">51</option>
+                        
+                          <option value="52">52</option>
+                        
+                          <option value="53">53</option>
+                        
+                          <option value="54">54</option>
+                        
+                          <option value="55">55</option>
+                        
+                          <option value="56">56</option>
+                        
+                          <option value="57">57</option>
+                        
+                          <option value="58">58</option>
+                        
+                          <option value="59">59</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <p class='u-hidden has-error js-effective-date-error'>Assessment Date Cannot Be In The Future.</p>
+                  <div class="c-einteract-assessment c-einteract-assessment__hidden">
+                    <p>
+                      <span class="c-einteract-heading alert-SW-conds">Stop &amp; Watch Alerts: </span>
+                    </p>
+                    <p class="c-einteract-heading">Change in Condition(s): </p>
+                    <select name="cic_reason_{{id}}" id="cic_reason_{{id}}" data-placeholder="Choose an option..." class="chzn-select" multiple="multiple"
+                      style="width:100%;">
+                    </select>
+                    <div class="c-cic-other-symptoms u-hidden">
+                      <p class="c-einteract-heading">Other Change in Condition (describe): </p>
+                      <input type="text" class="c-cic-other-symptoms-input u-mb-16" id="other-symp-{{type}}-{{id}}" maxlength="50" size="50" />(50 max) <span style="color: red;">&nbsp;*</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+
+          
+           
+             
+                <div class="js-show-hide js-carousel-esignature c-carousel" style="display:{{hideProgressNote}}">
+                    <div class=" js-show-hide js-create-pn-wrapper js-show-hide-checkbox c-show-hide js-carousel-item c-carousel__item">
+              
+              
+            
+            <label class="u-mt-8 u-mb-8 c-custom-checkbox pn-create">
+	          	Create Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+            <label class="u-mt-8 c-custom-checkbox pn-view">
+	          	View Progress Note
+               	<input type="checkbox" class="js-show-hide-toggle c-show-hide__toggle" />
+               	<span class="c-custom-checkbox__checkmark"></span>
+           	</label>
+              <div class="c-show-hide__content c-form u-mt-16 js-pn-interactive-section"></div>
+              <button class="js-button-save-interactive-suggestions c-button c-button--primary u-mt-16">Save</button>
+              <button class="js-button-cancel-interactive-suggestions c-button c-button--primary-inverse">Cancel</button>
+              </div>
+                              
+                <div class="js-carousel-item c-carousel__item js-pn-esignature-wrapper">
+                <h4 class="t-h4 u-mt-16">Attestation Statement</h4>
+                <p>By electronically signing this record, I attest that the information recorded was entered by me and that I am authorized by the facility to record and sign this record.</p>
+                <hr class="o-hr"/>
+                <div class="c-form u-mt-16 u-mb-16">
+                    <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30">
+                            <label>User:</label>
+                        </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            PCC-fetten
+                        </div>
+                    </div>
+                    <div class="l-table-row">
+                       <div class="l-table-row__col l-table-row__col--30">
+                            <label>Password:</label>
+                       </div>
+                        <div class="l-table-row__col l-table-row__col--70">
+                            <form class="js-esignature-form" autocomplete="off">
+                              <input class="js-input-esignature-password" type="password" autocomplete="off"/>
+                              <div class="js-esignature-form-status-msg c-form__status-msg"></div>
+                            </form>
+                        </div>
+                      </div>
+                      <div class="l-table-row">
+                        <div class="l-table-row__col l-table-row__col--30"></div>
+                            <div class="l-table-row__col l-table-row__col--70">
+                                <button class="js-button-sign-esignature c-button c-button--primary">Sign</button> 
+                                <button class="js-button-cancel-esignature c-button c-button--primary-inverse">Cancel</button>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      
+                
+				
+                </div>  
+              <div class="js-show-hide-toggle js-card-expander-toggle c-show-hide__toggle"></div>
+            </div>
+            </div>          
+          </div>
+	    </div>
+	  </div>
+	</script>
+	<script id="tmpl-csa-alert-card-checkbox" type="text/template">
+        <label class="u-mt-8 u-mb-8 c-custom-checkbox" style="display: block;" data-item-id="{{item_id}}" data-suggestion-type="{{suggestion_type}}" data-suggestion-id="{{suggestion_id}}">
+            {{checkbox_label}}
+            <input type="checkbox">
+            <span class="c-custom-checkbox__checkmark"></span>
+        </label>
+	</script>
+</span>
+
+				
+				
+				<a href="http://172.16.10.38/home/logout.jsp" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+			</td>
+		</tr>
+	</tbody></table>
+	<table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+		<tbody><tr>
+			<td valign="top">
+				<div class="slMainNavTabs">
+					
+				<ul id="topTabs"><li id="QTF_HomePageTab" class=""><a href="http://172.16.10.38/home/home.jsp" class="arrowDrop">Home</a><div class="megaMenu mmHomeBox" style="display: none;"><div class="mmBoxes"><h5>Dashboards</h5><ul class="mmList"><li><a href="http://172.16.10.38/home/home.jsp">Home</a></li><li><a href="http://172.16.10.38/admin/admindashboard.jsp">Admin Dashboard</a></li><li><a href="http://172.16.10.38/care/clinicaldashboard.jsp?fromMenu=Y">Clinical Dashboard</a></li><li><a href="http://172.16.10.38/ehr/setup/ehrreporting.jsp">EHR Scorecard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Modules</h5><ul class="mmList"><li><a href="javascript:void((function(){closePopupIfOpen(&#39;pocWindow&#39;);window.pocWindow=window.open(&#39;/poc/loginBypass.xhtml?initcheck=YY&amp;frompage=PCC&amp;closeWindowOnLogout=Y&#39;,&#39;pocWin&#39;)})());">POC</a></li><li><a href="javascript:goToEMAR();">eMAR</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>External Links</h5><ul class="mmList"><li><a href="javascript:openPopupWinNR(&#39;/common/popup/extlinks.xhtml?ESOLclientid=&#39;+getClientIdIfAvailable(), &#39;extlinkspopup&#39;, 500, 600, &#39;&#39;);">View all links</a></li></ul><br><h5>Other</h5><ul class="mmList"><li><a href="javascript:openContextSensitiveHelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_AdminTab" class=""><a href="http://172.16.10.38/admin/client/clientlist.jsp?ESOLtabtype=P" class="arrowDrop">Admin</a><div class="megaMenu mmAdminBox" style="display: none;"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="http://172.16.10.38/admin/client/clientlist.jsp?ESOLtabtype=P">Residents</a></li><li><a href="http://172.16.10.38/admin/staff/stafflist.jsp">Staff</a></li><li><a href="http://172.16.10.38/admin/provider/providerlist.jsp">Medical Professionals</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:showQuickADT(&#39;/admin/client/clientlist.jsp&#39;,&#39;-1&#39;,&#39;USAR&#39;,&#39;P&#39;)">Quick ADT</a></li><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="http://172.16.10.38/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="http://172.16.10.38/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="http://172.16.10.38/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Financial Management</h5><ul class="mmList"><li><a href="http://172.16.10.38/admin/admindashboard.jsp">Dashboard</a></li><li><a href="http://172.16.10.38/admin/billing/billportal_us.jsp">Billing</a></li><li><a href="http://172.16.10.38/admin/billing/collections/collections.xhtml?sort=client&amp;dir=asc">Collections</a></li><li><a href="http://172.16.10.38/comm/contactsearch.jsp">Mail Merge</a></li><li><a href="http://172.16.10.38/admin/trust/trustportal.jsp">Trust</a></li><li><a href="http://172.16.10.38/care/chart/assess/assessscheduler.jsp?ESOLtabType=P">UDA</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="http://172.16.10.38/admin/reports/adminreports.jsp?ESOLtabtype=P">Reports</a></li><li><a href="http://172.16.10.38/admin/setup/eadminsetup.jsp">Setup</a></li><li><a href="javascript:openContextSensitiveHelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_ClinicalTab" class="ClinicalTab"><a href="http://172.16.10.38/admin/client/clientlist.jsp?ESOLtabtype=C" class="arrowDrop">Clinical</a><div class="megaMenu mmClinicalBox" style="display: none;"><div class="mmBoxes"><h5>People</h5><ul class="mmList"><li><a href="http://172.16.10.38/admin/client/clientlist.jsp?ESOLtabtype=C">Residents</a></li></ul><br><h5>Actions</h5><ul class="mmList"><li><a href="javascript:showQuickADT(&#39;/admin/client/clientlist.jsp&#39;,&#39;-1&#39;,&#39;USAR&#39;,&#39;C&#39;)">Quick ADT</a></li><li><a href="javascript:openSizedLookup2(&#39;/admin/client/residentpopup.jsp?ESOLclientid=-1&#39;, &#39;&#39;, 550, 250, &#39;scrollbars&#39;)">New Resident</a></li><li><a href="http://172.16.10.38/admin/staff/stafflist.jsp?ESOLstaffid=-1">New Staff</a></li><li><a href="http://172.16.10.38/admin/provider/providerlist.jsp?ESOLproviderid=-1">New Medical Professional</a></li><li><a href="http://172.16.10.38/admin/setup/security.jsp">Manage Users</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Care Management</h5><ul class="mmList"><li><a href="http://172.16.10.38/care/clinicaldashboard.jsp?fromMenu=Y">Dashboard</a></li><li><a href="http://172.16.10.38/clinical/hospitalPortal.xhtml">Hospital Tracking</a></li><li><a href="http://172.16.10.38/care/chart/mds/mdsportal.jsp?isMDS3=Y">MDS</a></li><li><a href="http://172.16.10.38/care/communications.jsp">Communications</a></li><li><a href="http://172.16.10.38/clinical/ordersPortal.xhtml">Orders</a></li><li><a href="http://172.16.10.38/clinical/results/resultsportal.xhtml">Lab/Rx Results</a></li><li><a href="http://172.16.10.38/clinical/inc/incidentportal.xhtml?ESOLview=S">Risk Management</a></li><li><a href="http://172.16.10.38/care/weightsandvitalsportal.jsp">Weights and Vitals</a></li><li><a href="http://172.16.10.38/care/chart/assess/assessscheduler.jsp">UDA</a></li><li><a href="http://172.16.10.38/clinical/cpg/carepathwaysportal.xhtml">Care Pathways</a></li><li><a href="http://172.16.10.38/care/ehr/ehrchartdashboard.xhtml?tabView=generated">Clinical Chart Dashboard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Quick Entry</h5><ul class="mmList"><li><a href="http://172.16.10.38/clinical/therapy/therapyquickentry.xhtml">Therapy Minutes</a></li><li><a href="http://172.16.10.38/care/phyvisitedit.jsp">Physician Visits</a></li><li><a href="http://172.16.10.38/care/chart/immunizbatchentry.jsp">Immunization</a></li><li><a href="http://172.16.10.38/care/chart/wandv/weightbyunit.jsp">Weight</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=3">Blood Pressure</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=5">Temperature</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=6">Pulse</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=2">Respiration</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=7">Blood Sugar</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=9">O2 Saturation</a></li><li><a href="http://172.16.10.38/care/chart/wandv/bpbyunit.jsp?ESOLentryVitals=10">Pain Level</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Modules</h5><ul class="mmList"><li><a href="javascript:void((function(){closePopupIfOpen(&#39;pocWindow&#39;);window.pocWindow=window.open(&#39;/poc/loginBypass.xhtml?initcheck=YY&amp;frompage=PCC&amp;closeWindowOnLogout=Y&#39;,&#39;pocWin&#39;)})());">POC</a></li><li><a href="javascript:goToEMAR();">eMAR</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="http://172.16.10.38/care/reports/carereports.jsp?ESOLtabtype=C">Reports</a></li><li><a href="http://172.16.10.38/care/setup/ecaresetup.jsp">Setup</a></li><li><a href="javascript:openContextSensitiveHelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_QIATab" class=""><a href="http://172.16.10.38/eprise/quality/inds/pidata.jsp" class="arrowDrop">QIA</a><div class="megaMenu mmQIABox" style="display: none;"><div class="mmBoxes"><h5>QIA</h5><ul class="mmList"><li><a href="http://172.16.10.38/eprise/quality/qiaportal.jsp">Home</a></li><li><a href="http://172.16.10.38/eprise/quality/inds/facilityindicator.jsp">Indicators</a></li><li><a href="http://172.16.10.38/eprise/quality/inds/pidata.jsp">Data Entry</a></li><li><a href="http://172.16.10.38/eprise/quality/excepts/exceptions.jsp">Exceptions</a></li><li><a href="http://172.16.10.38/eprise/quality/improvs/improvlist.jsp">Improvements</a></li></ul></div><div class="mmBoxes mmBoxesSeperator"></div><div class="mmBoxes"><h5>Other</h5><ul class="mmList"><li><a href="http://172.16.10.38/eprise/quality/reports/qiareports.jsp">Reports</a></li><li><a href="http://172.16.10.38/eprise/quality/setup/eqiasetup.jsp">Setup</a></li><li><a href="javascript:openContextSensitiveHelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_GLTab" class=""><a href="http://172.16.10.38/glap/glapportal.jsp" class="arrowDrop">GL  AP</a><div class="megaMenu mmGL  APBox" style="display: none; left: 248.292px;"><div class="mmBoxes" style="height: 144px;"><h5>GL/AP</h5><ul class="mmList"><li><a href="http://172.16.10.38/glap/glapportal.jsp">Home</a></li><li><a href="http://172.16.10.38/glap/gl/processing/batchlist.jsp">General Ledger</a></li><li><a href="http://172.16.10.38/glap/ap/processing/batchlist.jsp">Accounts Payable</a></li><li><a href="http://172.16.10.38/glap/ap/processing/ap1099invoicerevision.xhtml">1099 Processing</a></li><li><a href="javascript:openSizedLookup(&#39;/glap/gl/setup/budgetssetup.xhtml&#39;,900,500);">Budgeting</a></li><li><a href="http://172.16.10.38/glap/gl/processing/bankrecbatchlist.jsp?ESOLview=BankRec">Bank Reconciliation</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 144px;"></div><div class="mmBoxes" style="height: 144px;"><h5>Other</h5><ul class="mmList"><li><a href="http://172.16.10.38/glap/reports/glapreports.jsp">Reports</a></li><li><a href="http://172.16.10.38/glap/setup/glapsetup.jsp">Setup</a></li><li><a href="javascript:openContextSensitiveHelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_MarketingTab" class=""><a href="http://172.16.10.38/crm/crmportal.jsp" class="arrowDrop">IRM</a><div class="megaMenu mmIRMBox" style="display: none; left: 317.542px;"><div class="mmBoxes" style="height: 200px;"><h5>IRM</h5><ul class="mmList"><li><a href="http://172.16.10.38/crm/crmportal.jsp?ESOLtabtype=M">My Worklist</a></li><li><a href="http://172.16.10.38/crm/referrallist.jsp">Center Referrals</a></li><li><a href="http://172.16.10.38/crm/inquiries.jsp?ESOLtabtype=M">Inquiry Listing</a></li><li><a href="http://172.16.10.38/crm/benefits_portal.jsp">Activities</a></li><li><a href="http://172.16.10.38/crm/contacts.jsp">Contacts</a></li><li><a href="http://172.16.10.38/crm/accountlist.jsp">Accounts</a></li><li><a href="http://172.16.10.38/crm/maps/maps.jsp">MAPs</a></li><li><a href="javascript:openSizedLookup2(&#39;/crm/crm_bed_lookup_us.jsp?&#39;,&#39;bed_lookup&#39;,650,600,&#39;scrollbars&#39;);">Bed Availability</a></li><li><a href="javascript:openSizedLookup2(&#39;/irm/episode_wizard/episode.xhtml&#39;, &#39;&#39;, 842, 660,&#39;&#39;);">Inquiry Wizard</a></li></ul></div><div class="mmBoxes mmBoxesSeperator" style="height: 200px;"></div><div class="mmBoxes" style="height: 200px;"><h5>Other</h5><ul class="mmList"><li><a href="http://172.16.10.38/crm/reports/crmreports.jsp">Reports</a></li><li><a href="http://172.16.10.38/crm/setup/setup.jsp">Setup</a></li><li><a href="javascript:openContextSensitiveHelp();">Help</a></li></ul></div><p></p></div></li><li id="QTF_reportingTab" class=""><a href="http://172.16.10.38/enterprisereporting/listing.xhtml" class="noArrowDrop">Reports</a><div class="megaMenu mmReportsBox" style="display: none;"></div></li></ul></div>
+				<div class="slResidentSearch" style="float:right;">
+					
+					
+						<form name="slsearch">
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tbody><tr>
+									<td width="45">
+										
+											<div id="searchSelect">
+												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+													<tbody><tr>
+														<td width="34"><img class="facility" src="./EAUI screen 3_files/facilityIcon.png" title="This Facility"></td>
+														
+															<td><img class="arrow" src="./EAUI screen 3_files/down-arrow.png" aria-hidden="true"></td>
+														
+													</tr>
+												</tbody></table>
+											</div>
+										
+										
+									</td>
+									<td>
+										<input type="text" id="searchField" name="substring" autocomplete="off">
+									</td>
+									<td>
+										<input type="button" class="pccButton" value="Search" onclick="submitSearchNew();">
+									</td>
+								</tr>
+							</tbody></table>
+
+							
+								<div id="searchAll" style="border:1px solid #999;box-shadow:8px 8px 4px -6px #999;display:none;">
+									<input type="hidden" name="ESOLglobalclientsearch" value="N">
+									<table border="0" cellspacing="0" cellpadding="0">
+										<tbody><tr onclick="switchFacImg(&#39;facilityIcon&#39;);switchToGlobalSearch(false);">
+											<td style="text-align:center;"><img class="facility" src="./EAUI screen 3_files/facilityIcon.png" title="This Facility"></td>
+											<td>This Facility</td>
+										</tr>
+										<tr onclick="switchFacImg(&#39;facilityAllIcon&#39;);switchToGlobalSearch(true);">
+											<td><img class="facility" src="./EAUI screen 3_files/facilityAllIcon.png" title="All Facilities"></td>
+											<td>All Facilities</td>
+										</tr>
+									</tbody></table>
+								</div>
+							
+							
+						</form>
+					
+				</div>
+			</td>
+		</tr>
+	</tbody></table>
+	<table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td align="left">
+				<ul class="secondNavList"></ul>
+			</td>
+			<td valign="top" align="right" width="85">
+
+
+
+
+
+
+
+
+
+		
+	
+	
+    
+	
+	
+	
+	
+	   		
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		</td>
+	</tr>
+</tbody></table>
+ 
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./EAUI screen 3_files/sch.js.download"></script>
+
+
+
+<link type="text/css" rel="stylesheet" href="./EAUI screen 3_files/clientheader.css" media="screen,print">
+
+
+
+      
+      
+    
+  
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="residentWrapper">
+  <tbody><tr>
+  	
+      <td valign="top" class="residentProfile">
+      
+      
+		      
+		      
+					
+						
+						
+							
+			                  
+			                  
+			                  
+			                  
+			                  
+			                  	<img src="./EAUI screen 3_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+			                  
+			                
+						
+					
+			  
+       
+    
+		</td>
+	
+    <td valign="top" width="100%" class="residentNameBarWrapper">
+       <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
+          <tbody><tr>
+            
+
+            
+            
+            
+            
+            
+            
+            
+
+            <td valign="top" class="residentNameBarName"><span id="name">A'Tester, Jackie  (3614)</span> </td>
+            <td valign="top" align="right" class="residentNameBarButtons">
+              <span id="clientCountSpan">
+                
+                  
+                  
+                  
+                    
+
+7 of 144
+<input type="button" class="pccButton" value="Prev" onclick="navNewClient(3772)">
+<input type="button" class="pccButton" value="Next" onclick="navNewClient(2142)">
+                    
+                  
+                
+              </span>
+            </td>
+          </tr>
+       </tbody></table>
+         
+           
+             
+               
+               
+                 
+               
+             
+           
+           
+           
+           
+         
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+           <tbody><tr>
+           
+             <td valign="top" class="residentProfileDetails">
+             
+               <p>Status: <span id="res_status">Current
+               </span>&nbsp;&nbsp;&nbsp;Location:&nbsp;<span id="res_unitRoomBed">South Wing 127-A</span>
+               
+               </p><br>
+               <p>
+                
+               Gender:
+               
+                  
+                  
+                  
+                  
+               
+               
+               &nbsp;&nbsp;&nbsp;&nbsp;
+               DOB:
+               
+                 6/15/1940
+               
+               
+               
+                 
+                 
+                 &nbsp;&nbsp;&nbsp;&nbsp;
+                 Age: 79
+               
+               </p><br>
+               <p>Physician:  </p><br>
+                 <table class="actionBar">
+                    <tbody><tr>
+                       <td class="careProfileBtn">
+                          
+                           
+                              <div style="padding-bottom: 2px;">
+                                
+                                <input type="button" id="careProfileResidentBtn" class="pccButton" onclick="javascript:printedReport();" value="Care�Profile">
+                              </div>
+                          
+                       </td>
+                       <td valign="top">
+                         
+                           <div class="residentDropDownWrapperEdit" style="padding-bottom: 2px;">
+                             <div class="residentDropDownButtonEdit"><a href="javascript:void(0)" class="residentLinkEdit"><span>Edit</span></a></div>
+                             <div class="residentDropDownListEdit">
+                               <ul id="listcontainerEdit">
+                                 
+                                 
+                                   <li><a href="javascript:editDemographicInfo(&#39;nonAdmin&#39;,2631)">Demographics</a></li>
+                                 
+                                   <li><a href="javascript:displayPhoto(2631)">Photo</a></li>
+                               </ul>
+                             </div>
+                           </div>
+                          
+                        </td>
+                        <td valign="top">
+                          
+                            
+                              <div class="residentDropDownWrapperPrint">
+                                <div class="residentDropDownButtonPrint"><a href="javascript:void(0)" class="residentLinkPrint"><span>Print</span></a></div>
+                                <div class="residentDropDownListPrint">
+                                  <ul id="listcontainerPrint">
+                                    
+                                      
+	                                      
+	                                      
+	                                      
+	                                      	<li><a href="javascript:generateEHR(2631)">Generate/View&nbsp;Clinical&nbsp;Chart</a></li>
+	                                      
+                                      
+                                    
+                                    
+                                    
+                                      <li><a href="javascript:generateCCD(2631,&#39;A\&#39;Tester, Jackie (3614)&#39;,&#39;nonAdmin&#39;)">Generate&nbsp;CCD</a></li>
+                                    
+                                    
+                                      <li><a href="javascript:openAuditDemographics(561,2631)">Audit&nbsp;Demographics</a></li>
+                                    
+                                    
+                                    
+                                  </ul>
+                                </div>
+                              </div>
+                            
+                          
+                        </td>
+                         <td colspan="4" valign="top">
+                         	
+						 </td>
+						 <td valign="top">
+                          
+                            
+                          
+                         </td>
+                     </tr>
+                  </tbody></table>
+               </td>
+			      
+               
+               
+	               <td valign="top" align="right" class="residentDetailsStatusWrapper">
+	               
+	                  <table id="vitals" class="pccData residentDetailsStatus" cellpadding="2" cellspacing="1" border="0">
+	                      <tbody>
+	                         <tr>
+	                           <td valign="top" colspan="3"><b>Current Vitals</b></td>
+	                           <td align="right" colspan="1">
+	                             <div class="wvTooltip" align="right">
+	                           	   <img src="./EAUI screen 3_files/wv_info.png">
+	                               <span class="wvTooltiptext">Click on any vitals to see graph.</span>
+	                             </div>
+	                           </td>
+	                         </tr>
+	                         <tr>
+	                           
+                                 
+                                 
+                                   <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 3);">
+                                 
+                                 
+	                               <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                   <div class="vitalDetails">
+                                     <div>
+	                                   <b>BP:</b>
+	                                   
+	                                     200/77
+	                                     mmHg
+	                                   
+	                                   <div>
+	                                     
+	                               	       2/6/2018 12:13
+ 								         
+	                                   </div>
+	                                 </div>
+	                                 </div>
+	                               </td>   
+	                             
+	                             
+							       
+								     <td valign="top" class="vitalWithException" onclick="openExceptionTrendingGraph(getCurrentClientId(), 5);">
+								    
+    							    
+							      
+                                    <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                    <div class="vitalDetails">
+                                      <div>
+                                        <b>Temp:101</b>
+                                          �F
+                                        </div>  
+                                        <div>12/11/2018 08:49</div>
+                                      </div>
+                                    </td>
+                                  
+							     
+                                    
+                                      <td valign="top" class="vitalWithException" onclick="openExceptionTrendingGraph(getCurrentClientId(), 6);">
+                                    
+                                    
+                                 
+                                   <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                   <div class="vitalDetails">
+	                                 <div>
+	                                   <b>Pulse:
+	                                   14</b>
+	                                   bpm
+	                                 </div>
+	                                 <div>12/11/2018 08:50</div>
+	                               </div>
+	                             </td>
+	                             
+	                            
+                                  
+                                    <td valign="top" class="vitalWithException" onclick="openExceptionTrendingGraph(getCurrentClientId(), 1);">
+                                  
+                                  
+                                
+                                  <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                  <div class="vitalDetails">
+	                                <div>
+	                                  <b>Weight:
+	                                  543</b>
+	                                  Lbs
+	                                </div>
+	                                <div>1/29/2018 11:56</div>
+                                  </div>
+	                           </td>
+	                         </tr>
+	                         <tr>
+	                           
+                                 
+                                   <td valign="top" class="vitalWithException" onclick="openExceptionTrendingGraph(getCurrentClientId(), 2);">
+                                 
+                                 
+                               
+                                 <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                 <div class="vitalDetails">
+                                   <div>
+	                                 <b>Resp:
+	                                  34</b>
+	                                  Breaths/min
+	                                </div>
+	                                <div>12/11/2018 08:50</div>
+                                  </div> 
+                                </td>
+	                         
+	                           
+	                             
+                                 
+                                   <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 7);">
+                                  
+                                
+                                  <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                  <div class="vitalDetails">
+	                                <div>
+	                                  <b>BS:
+	                                  123</b>
+	                                  mg/dL
+	                                </div>
+	                                <div>12/11/2018 08:50</div>
+	                              </div>
+	                            </td>
+	                           
+	                          
+                                
+                                
+                                  <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 9);">
+                                
+                              
+                                <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                                <div class="vitalDetails">
+	                              <div>
+	                                <b>O2:
+	                                97</b>
+	                                %
+	                              </div>
+	                              <div>12/11/2018 08:50</div>
+	                            </div>   
+	                          </td>
+	                         
+	                        
+                              
+                              
+                                <td valign="top" class="vital" onclick="openExceptionTrendingGraph(getCurrentClientId(), 10);">
+                              
+                            
+                              <div class="exceptionWarning"><img src="./EAUI screen 3_files/wv_warning.png"></div>
+                              <div class="vitalDetails">
+                                <div>
+	                              <b>Pain:
+	                              1</b>
+	                              
+	                            </div>
+	                            <div>12/11/2018 08:51</div>
+	                          </div>
+	                        </td>
+	                       </tr>
+	                     </tbody>
+	                  </table>
+	               
+	               </td>
+	            
+            </tr>
+         </tbody></table>
+      </td>
+   </tr>
+</tbody></table>
+
+
+<div id="trendingGraph" class="wvgraph">
+  <div class="wvgraph-content-table">
+	  <div class="wvgraph-content-table-cell">
+	  	<div class="wvgraph-content">
+	  		<div class="wvgraph-clientTrendgraph"></div>
+	  	</div>
+	  </div>
+  </div>
+</div>
+
+<script src="./EAUI screen 3_files/clientinfonew.js.download"></script>
+
+
+
+
+
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="residentDetailsWrapper">
+  <tbody><tr>
+    <td valign="top">
+      <div class="residentDetailsHeader">
+        
+        <div class="residentDetailsBar">
+          <table cellpadding="4" cellspacing="0" border="0" width="100%" class="pccData residentDetailsSpecifics" style="width:100%;">
+            <colgroup>
+              
+                
+                
+                  <col style="width: 180px">
+                
+              
+              <col style="width: 185px">
+              <col style="width: 180px">
+              <col>
+            </colgroup>
+            
+            
+              
+              <tbody><tr>
+                <td valign="top" class="residentDetailsLabel ">Allergies:</td>
+                
+                
+                <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+              </tr>
+            
+            
+            
+              
+                
+              
+              <tr>
+                <td valign="top" class="residentDetailsLabel residentInfoEmpty">Code Status:</td>
+                <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">
+                  
+                    &nbsp;
+                </td>
+              </tr>
+            
+            
+              
+            
+            
+            
+              <tr>
+                
+                <td valign="top" class="residentDetailsLabel residentInfoEmpty">Special Instructions:</td>
+                <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">&nbsp;</td>
+              </tr>
+            
+            
+            
+            
+              <tr class="residentDetailsSpecificsExtended">
+                <td valign="top" class="residentDetailsLabel">Diet:</td>
+                <td valign="top" colspan="3" class="residentDetailsSummary dietDescriptions">&nbsp;</td>
+              </tr>
+            
+            
+            
+              <tr class="residentDetailsSpecificsExtended">
+                <td valign="top" class="residentDetailsLabel">Diagnosis:</td>
+                
+                <td valign="top" colspan="3" class="residentDetailsSummary medicalDiagnosis">
+                  
+                </td>
+              </tr>
+            
+            <tr class="residentDetailsSpecificsExtended">
+              <td valign="top" class="residentDetailsLabel">Admission (Re-entry):</td>
+              <td valign="top" class="residentDetailsSummary">
+                
+                  8/11/2017&nbsp;
+                
+              </td>
+              <td valign="top" class="residentDetailsLabel hcDesc" align="right">&nbsp;</td>
+              <td valign="top" class="residentDetailsSummary hcValue" align="left">&nbsp;</td>
+            </tr>
+            <tr class="residentDetailsSpecificsExtended">
+              
+                
+                
+                
+                  <td valign="top" class="residentDetailsLabel">Initial Admission Date (MDS):</td>
+                
+              
+              <td valign="top" class="residentDetailsSummary">
+                
+                  8/11/2017&nbsp;
+                
+              </td>
+              
+                
+                  <td valign="top" class="residentDetailsLabel">Enterprise ID:</td>
+                  <td valign="top" class="residentDetailsSummary">561&nbsp;</td>
+                
+                
+              
+            </tr>
+            <tr class="residentDetailsSpecificsExtended">
+              <td valign="top" class="residentDetailsLabel">Discharge Date:</td>
+              <td valign="top" class="residentDetailsSummary">
+                
+              </td>
+              
+                
+                
+                  <td colspan="2">&nbsp;</td>
+                
+              
+            </tr>
+          </tbody></table>
+        </div>
+        <div id="progressbar"><div class="progress-label"></div></div>
+        <div class="slider">
+          <img id="idExtendedDetailSlider" alt="Show Extended Detail" src="./EAUI screen 3_files/schslider.png" border="0">
+        </div>
+        <input type="hidden" name="currentState" id="currentState" value="">
+      
+      </div>
+    </td>
+  </tr>
+</tbody></table>
+
+    <div id="comsContainer">
+    <noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div class="prodcomsEUI1"><div class="prodcomsEUI3"><button class="prodcomsEUI17 prodcomsEUI11" tabindex="0" type="button"><span class="prodcomsEUI16"><svg class="prodcomsEUI20" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path fill="none" d="M0 0h24v24H0z"></path><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></span><span class="prodcomsEUI234"></span></button></div><div class="prodcomsEUI2"><div><div class="prodcomsEUI58"><button class="prodcomsEUI17 prodcomsEUI11 prodcomsEUI12 prodcomsEUI59" tabindex="0" type="button" id="diagnosisBtn" aria-label="Diagnosis"><span class="prodcomsEUI16"><svg class="prodcomsEUI20 prodcomsEUI60" focusable="false" viewBox="0 0 61 50" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><text fill="#000" letter-spacing=".15" transform="translate(-1 32)"><tspan x="0" y="13">Diagnosis</tspan></text><path fill="#97CC04" fill-rule="nonzero" d="M43 14c0-2.2-1.8-4-4-4s-4 1.8-4 4c0 1.9 1.3 3.4 3 3.9V22H28v-5h2.3c1.5 0 2.8-1.1 3-2.6l1.6-11.1c.1-.6-.1-1.2-.5-1.6-.4-.4-1-.7-1.6-.7H31c0-.6-.4-1-1-1s-1 .4-1 1v2c0 .6.4 1 1 1s1-.4 1-1h1.8l-1.6 11.1c-.1.5-.5.9-1 .9h-6.5c-.5 0-.9-.4-1-.9L21.2 3H23c0 .6.4 1 1 1s1-.4 1-1V1c0-.6-.4-1-1-1s-1 .4-1 1h-1.8c-.6 0-1.2.3-1.6.7-.4.4-.6 1-.5 1.6l1.6 11.1c.3 1.5 1.6 2.6 3 2.6H26v6c0 .6.4 1 1 1h12c.6 0 1-.4 1-1v-5.1c1.7-.5 3-2 3-3.9z"></path></g></svg></span><span class="prodcomsEUI234"></span></button><button class="prodcomsEUI17 prodcomsEUI11 prodcomsEUI12 prodcomsEUI59" tabindex="0" type="button" id="memoBtn" aria-label="Memos"><span class="prodcomsEUI16"><svg class="prodcomsEUI20 prodcomsEUI61" focusable="false" viewBox="0 0 48 50" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><text fill="#000" letter-spacing=".15" transform="translate(-1 32)"><tspan x="0" y="13">Memos</tspan></text><g fill-rule="nonzero"><path d="M26.3.588v4.977h5.097z"></path><path d="M25.54 5.935V0H13.76a.75.75 0 0 0-.76.742v21.516c0 .41.34.742.76.742h17.48a.75.75 0 0 0 .76-.742V6.306h-6.08a.376.376 0 0 1-.38-.37zm-7.6 0h3.04c.21 0 .38.167.38.371 0 .205-.17.371-.38.371h-3.04a.375.375 0 0 1-.38-.37c0-.205.17-.372.38-.372zm9.12 11.871h-9.12a.375.375 0 0 1-.38-.37c0-.205.17-.371.38-.371h9.12c.21 0 .38.166.38.37 0 .205-.17.371-.38.371zm0-3.71h-9.12a.375.375 0 0 1-.38-.37c0-.205.17-.371.38-.371h9.12c.21 0 .38.166.38.37 0 .206-.17.372-.38.372zm.38-4.08c0 .205-.17.371-.38.371h-9.12a.375.375 0 0 1-.38-.37c0-.206.17-.372.38-.372h9.12c.21 0 .38.166.38.371z"></path></g></g></svg></span><span class="prodcomsEUI234"></span></button></div><hr><div class=""><ul class="prodcomsEUI62 prodcomsEUI63"><div><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/profile"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI48 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75" tabindex="0" role="button" id="navListItem-0"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81 prodcomsEUI50">Profile</span></div><span class="prodcomsEUI234"></span></div></a></div><div><div><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/vitals"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI46 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75 prodcomsEUI77 prodcomsEUI49" tabindex="0" role="button" id="navListItem-1"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81 prodcomsEUI52">Vitals</span></div><span class="prodcomsEUI234"></span></div></a><div class="prodcomsEUI120 prodcomsEUI121 prodcomsEUI47" id="collapse-1" style="min-height: 0px; height: auto; transition-duration: 241ms;"><div class="prodcomsEUI122"><div class="prodcomsEUI123"><ul class="prodcomsEUI62 prodcomsEUI63"><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/vitals"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI48 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75 prodcomsEUI43" tabindex="0" role="button" id="navListItem-2"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81">Vitals</span></div><span class="prodcomsEUI234"></span></div></a><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/bodysystems/pain"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI48 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75 prodcomsEUI77 prodcomsEUI49 prodcomsEUI43" tabindex="0" role="button" id="navListItem-3"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81">Pain</span></div><span class="prodcomsEUI234"></span></div></a></ul></div></div></div></div></div><div><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/baselines"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI48 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75" tabindex="0" role="button" id="navListItem-4"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81 prodcomsEUI50">Baselines</span></div><span class="prodcomsEUI234"></span></div></a></div><div><div><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/bodysystems/neurologic"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI46 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75" tabindex="0" role="button" id="navListItem-5"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81 prodcomsEUI50">Body Systems</span></div><span class="prodcomsEUI234"></span></div></a></div></div><div><div><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/other/safety"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI46 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75" tabindex="0" role="button" id="navListItem-16"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81 prodcomsEUI50">Other</span></div><span class="prodcomsEUI234"></span></div></a></div></div><div><a class="prodcomsEUI44" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/summary"><div class="prodcomsEUI17 prodcomsEUI66 prodcomsEUI48 prodcomsEUI69 prodcomsEUI74 prodcomsEUI75" tabindex="0" role="button" id="navListItem-21"><div class="prodcomsEUI78"><span class="prodcomsEUI84 prodcomsEUI93 prodcomsEUI81 prodcomsEUI50">Summary</span></div><span class="prodcomsEUI234"></span></div></a></div></ul></div></div></div><div class="prodcomsEUI4"><div class="prodcomsEUI125"><div class="prodcomsEUI1094"><div class="prodcomsEUI1096"><div class="prodcomsEUI1099"><div><div class="prodcomsEUI1215"><div class="prodcomsEUI1223 prodcomsEUI1211" id="MySelect"><label class="prodcomsEUI1238 prodcomsEUI1216 prodcomsEUI1227 prodcomsEUI1232 prodcomsEUI1235 prodcomsEUI1237" data-shrink="false" for="select-multiple-chip">Indicators of Pain</label><div class="prodcomsEUI1265 prodcomsEUI1252 prodcomsEUI1222 prodcomsEUI1266"><fieldset aria-hidden="true" class="prodcomsEUI1282 prodcomsEUI1259 prodcomsEUI1221" style="padding-left: 58.875px;"><legend class="prodcomsEUI1283" style="width: 0.01px;"><span>&#8203;</span></legend></fieldset><div class="prodcomsEUI1245"><div class="prodcomsEUI1246 prodcomsEUI1249 prodcomsEUI1248 prodcomsEUI1275 prodcomsEUI1260" aria-pressed="false" tabindex="0" role="button" aria-haspopup="true"><div class="prodcomsEUI1210"></div></div><input type="hidden" id="select-multiple-chip" value=""><svg class="prodcomsEUI20 prodcomsEUI1251" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M7 10l5 5 5-5z"></path></svg></div></div></div></div></div></div></div><div class="prodcomsEUI1097"><div class="prodcomsEUI1099"><p class="prodcomsEUI84 prodcomsEUI92">Click the body diagram to add pain issue(s)</p></div><div id="Pain-BodyImageMap"><div style="position: relative; width: 350px; height: 414px;"><img src="./EAUI screen 3_files/wholeBody.gif" usemap="#BodyMap" alt="" width="350" style="position: absolute; top: 0px; left: 0px; z-index: 1; user-select: none;"><canvas width="350" style="position: absolute; top: 0px; left: 0px; pointer-events: none; z-index: 2;" height="414"></canvas><map name="BodyMap" style="cursor: pointer;"><area shape="circle" coords="182.95454545454544,35.79545454545455,27.84090909090909"><area shape="circle" coords="105.79545454545455,26.25,20.68181818181818"><area shape="circle" coords="105.79545454545455,55.68181818181818,7.954545454545454"><area shape="circle" coords="105.79545454545455,93.06818181818181,23.863636363636363"><area shape="circle" coords="105.79545454545455,140.79545454545453,19.886363636363637"><area shape="circle" coords="105.79545454545455,178.97727272727272,11.931818181818182"><area shape="circle" coords="66.02272727272727,77.1590909090909,11.931818181818182"><area shape="circle" coords="145.5681818181818,77.1590909090909,11.931818181818182"><area shape="circle" coords="65.22727272727272,101.81818181818181,8.75"><area shape="circle" coords="146.36363636363635,101.81818181818181,8.75"><area shape="circle" coords="62.840909090909086,124.88636363636363,8.75"><area shape="circle" coords="148.75,124.88636363636363,8.75"><area shape="circle" coords="54.88636363636363,157.5,11.931818181818182"><area shape="circle" coords="156.70454545454544,157.5,11.931818181818182"><area shape="circle" coords="58.06818181818181,190.9090909090909,11.931818181818182"><area shape="circle" coords="153.52272727272725,190.9090909090909,11.931818181818182"><area shape="circle" coords="83.52272727272727,167.04545454545453,8.75"><area shape="circle" coords="128.0681818181818,167.04545454545453,8.75"><area shape="circle" coords="89.88636363636363,209.20454545454544,15.909090909090908"><area shape="circle" coords="121.70454545454545,209.20454545454544,15.909090909090908"><area shape="circle" coords="92.27272727272727,246.59090909090907,11.931818181818182"><area shape="circle" coords="119.31818181818181,246.59090909090907,11.931818181818182"><area shape="circle" coords="92.27272727272727,286.3636363636364,11.931818181818182"><area shape="circle" coords="119.31818181818181,286.3636363636364,11.931818181818182"><area shape="circle" coords="92.27272727272727,334.09090909090907,11.931818181818182"><area shape="circle" coords="119.31818181818181,334.09090909090907,11.931818181818182"><area shape="circle" coords="258.52272727272725,24.659090909090907,20.68181818181818"><area shape="circle" coords="258.52272727272725,54.090909090909086,7.954545454545454"><area shape="circle" coords="258.52272727272725,115.34090909090908,27.84090909090909"><area shape="circle" coords="258.52272727272725,175,19.886363636363637"><area shape="circle" coords="218.75,77.1590909090909,11.931818181818182"><area shape="circle" coords="298.2954545454545,77.1590909090909,11.931818181818182"><area shape="circle" coords="216.36363636363635,101.81818181818181,8.75"><area shape="circle" coords="300.6818181818182,101.81818181818181,8.75"><area shape="circle" coords="215.5681818181818,124.88636363636363,8.75"><area shape="circle" coords="301.4772727272727,124.88636363636363,8.75"><area shape="circle" coords="209.20454545454544,157.5,11.931818181818182"><area shape="circle" coords="307.84090909090907,157.5,11.931818181818182"><area shape="circle" coords="202.8409090909091,193.29545454545453,8.75"><area shape="circle" coords="314.20454545454544,193.29545454545453,8.75"><area shape="circle" coords="242.61363636363635,209.20454545454544,15.909090909090908"><area shape="circle" coords="274.4318181818182,209.20454545454544,15.909090909090908"><area shape="circle" coords="245,246.59090909090907,11.931818181818182"><area shape="circle" coords="272.0454545454545,246.59090909090907,11.931818181818182"><area shape="circle" coords="245,286.3636363636364,11.931818181818182"><area shape="circle" coords="272.0454545454545,286.3636363636364,11.931818181818182"><area shape="circle" coords="245,334.09090909090907,11.931818181818182"><area shape="circle" coords="272.0454545454545,334.09090909090907,11.931818181818182"></map></div></div><div class="prodcomsEUI1098"><div id="IssueListing" style="display: flex; flex-direction: column; padding: 5px;"><p class="prodcomsEUI84 prodcomsEUI92"></p></div></div></div></div></div><div class="prodcomsEUI147"><div class="prodcomsEUI155 prodcomsEUI157 prodcomsEUI156 prodcomsEUI151"><div class="prodcomsEUI152"><button class="prodcomsEUI17 prodcomsEUI159 prodcomsEUI170 prodcomsEUI171 prodcomsEUI149 prodcomsEUI173 prodcomsEUI174 prodcomsEUI148" tabindex="0" type="button" id="AddNotesButton"><span class="prodcomsEUI160">Add Notes</span><span class="prodcomsEUI234"></span></button></div><div class="prodcomsEUI153"><a class="prodcomsEUI17 prodcomsEUI159 prodcomsEUI150 prodcomsEUI170 prodcomsEUI171 prodcomsEUI150 prodcomsEUI173 prodcomsEUI174 prodcomsEUI148" tabindex="0" role="button" id="NextSectionButton" href="http://172.16.10.38/care/chart/enhanced_assessment.xhtml?ESOLassessid=15456&amp;ESOLclientid=2631&amp;retURL=%2Fadmin%2Fclient%2Fcp_assessment.jsp#/sections/baselines"><span class="prodcomsEUI160">Next</span><span class="prodcomsEUI234"></span></a><button class="prodcomsEUI17 prodcomsEUI159 prodcomsEUI170 prodcomsEUI171 prodcomsEUI150 prodcomsEUI173 prodcomsEUI174 prodcomsEUI148" tabindex="0" type="button" id="FinishLaterButton"><span class="prodcomsEUI160">Finish Later</span><span class="prodcomsEUI234"></span></button><button class="prodcomsEUI17 prodcomsEUI159 prodcomsEUI170 prodcomsEUI171 prodcomsEUI150 prodcomsEUI173 prodcomsEUI174 prodcomsEUI148" tabindex="0" type="button" id="CompleteButton"><span class="prodcomsEUI160">Complete</span><span class="prodcomsEUI234"></span></button></div></div></div></div><div class="prodcomsEUI5"><div class="prodcomsEUI505"><div class="prodcomsEUI501"><div class="prodcomsEUI506"><span class="prodcomsEUI514"><svg class="prodcomsEUI20" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4" fill="#00796B" fill-rule="evenodd"></circle></svg> Abnormalities &nbsp; / <svg class="prodcomsEUI20" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"><defs><path id="a" d="M9 17l5-5-5-5z"></path></defs><g transform="rotate(-90 12,12)" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"></use></mask><g fill="#ffa000" fill-opacity=".6" mask="url(#b)"><path d="M0 0h24v24H0z"></path></g></g></svg> Condition Alerts </span><br><div class="prodcomsEUI506"><div class="prodcomsEUI511">No Abnormalities or Condition Alerts</div></div></div></div><div class="prodcomsEUI504"><div class="prodcomsEUI515"><span class="prodcomsEUI523">Clinical Suggestions</span><br><div><div class="prodcomsEUI516">No Clinical Suggestions</div></div></div></div></div></div></div></div><script src="./EAUI screen 3_files/5.9475952f.chunk.js.download"></script><script src="./EAUI screen 3_files/main.ccccaaaa.chunk.js.download"></script></div>
+    <div id="wait" style="display: none;"><img alt="Loading" src="./EAUI screen 3_files/loading-bar.gif"></div>
+    <div style="clear:both"></div>
+
+    <form name="frmData" method="post" action="http://172.16.10.38/admin/client/cp_assessment.jsp">
+        <input type="hidden" name="ESOLassessid" value="15456">
+        <input type="hidden" name="retURL" value="/admin/client/cp_assessment.jsp">
+        <input type="hidden" name="ESOLclientid" value="2631">
+        <input type="hidden" name="ESOLtabType" value="C">
+    </form>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="appAriaHide">Footer Section</h2>
+
+<div class="footertext">
+	<div>
+		<b>FACILITY_1 (Shirley - COMS)</b><br>
+		247 Reese Road <br>
+		, AL <br>
+		
+		
+			<br>PCC Facility ID: 1
+		
+		
+	</div>
+	<div>
+		<b>PointClickCare</b><br>
+		5570 Explorer Drive<br>
+		Mississauga, Ontario L4W 0C4<br>
+		
+		<span class="footerWrap">Help Desk: (877) 722-2431 |</span>
+		<span class="footerWrap">(905) 817-6167</span><br>
+		<span class="footerWrap">Toll Free: (800) 277-5889 |</span>
+		<span class="footerWrap">Phone: (905) 858-8885 | </span>
+		<span class="footerWrap">Fax: (905) 858-2248</span>
+		
+	</div>
+	<div>
+		<a href="http://pointclickcare.com/us/privacy-policy/" target="_blank">Privacy Policy</a><br>
+		
+			<a href="javascript:void(pccPopup(&#39;/pccwebsite/Resourcecenter/resourcecenter.jsp&#39;, &#39;resourcecenter&#39;, 780, 700, &#39;scrollbars&#39;));">Customer Support</a><br>
+		
+		Version 3.7.20 - Version 1 (3.7.20-SNAPSHOT [LOCAL])<br>
+		Copyright 2000-2017 PointClickCare Technologies Inc. All rights reserved.<br>
+		<span id="deviceID"></span>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+</body></html>

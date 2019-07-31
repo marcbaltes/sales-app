@@ -628,6 +628,18 @@ body::-webkit-scrollbar{
    margin-left: -600px; /* width divided by 2 */
    margin-top: -388px; /* height divided by 2 */
 }
+.conditionBox{
+   padding: 10px;
+   background-color: rgb(240, 240, 240);
+   box-shadow: 0 3px 2px -2px rgba(29, 29, 29, 0.308);
+   border-radius: 5px;
+   font-size: 12px;
+   padding-top: 6px;
+   padding-bottom: 6px;
+}
+.outlineFix{
+   border: 2px solid red;
+}
 .backBtn{
    font-family: 'Calibri';
    font-size: 18px;
@@ -729,6 +741,15 @@ body::-webkit-scrollbar{
    border-left: none;
    padding: 2px;
    font-size: 15px;
+}
+.painIssueBox{
+   box-shadow:0px 0px 10px 4px #00000059 ;
+   height: 520px;
+   width: 800px;
+   background-color: white;
+   margin-top: 80px;
+   border-radius: 6px;
+   margin-bottom: 2000px;
 }
 
 
@@ -901,17 +922,135 @@ body::-webkit-scrollbar{
    border-radius: 100px;
    background-color: rgb(0, 127, 107);
    margin-top: 4px;
+   margin-right: 2px;
  }
 
 .softBox{
    padding: 5px;
    box-shadow:0px 0px 5px 1px #afafaf59 ;
 }
+.softBox2{
+   padding: 0px;
+   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.425);
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
 .inputCircle{
    height: 20px;
    width: 20px;
    border-radius: 100px;
    border: 2px solid grey;
+}
+.checkedInputCircle{
+   height: 20px;
+   width: 20px;
+   border-radius: 100px;
+   font-size: 24px;
+   margin-top: -7px;
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel{
+      height: 1471px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel{
+      height: 380px;
+   }
+}
+
+@media screen and (min-width: 1200px) {
+   .expandPanel2{
+      height: 889px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel2{
+      height: 455px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel3{
+      height: 631px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel3{
+      height: 380px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel4{
+      height: 466px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel4{
+      height: 455px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel5{
+      height: 208px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel5{
+      height: 380px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel6{
+      height: 1126px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel6{
+      height: 630px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel7{
+      height: 868px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel7{
+      height: 250px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel8{
+      height: 699px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel8{
+      height: 630px;
+   }
+}
+@media screen and (min-width: 1200px) {
+   .expandPanel9{
+      height: 441px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel9{
+      height: 630px;
+   }
+}
+.addNotesBtn{
+   font-weight: bold;
+   text-align: center;
+   border-radius: 5px;
+   border: none;
+   height: 35px;
+   width: 90px;
+   font-size: 14px;
+   color: rgb(44, 115, 0);
+   margin-left: 10px;
+   background-color: rgb(241, 241, 241);
+   box-shadow: 0 3px 2px -2px rgba(29, 29, 29, 0.308);
 }
 .closeCircle{
    height: 10px;
@@ -957,10 +1096,19 @@ body::-webkit-scrollbar{
    border-radius: 6px;
 }
 .inputSquare{
-   height: 20px;
-   width: 20px;
+   height: 19px;
+   width: 19px;
    border-radius: 2px;
    border: 2px solid grey;
+}
+.checkedInputSquare{
+   height: 19px;
+   width: 19px;
+   border-radius: 2px;
+   background-color: rgb(255, 255, 255);
+   color: white;
+   font-size: 24px;
+   margin-top: -7px;
 }
 
 /* ---------- Analytics Styles ---------- */

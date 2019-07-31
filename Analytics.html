@@ -916,7 +916,8 @@
 
    function indicatorUpdate(e){
       var id = e.target.id;
-      index = id[3];
+      index = id.substring(3, id.length);
+      index = parseInt(index, 10);
       updateInfoModal(index);
    }
 
