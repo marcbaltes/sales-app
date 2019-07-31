@@ -2319,7 +2319,7 @@
          </div>
          <!-- Screen 3: Show Care Pathways  -->
          <div class="carousel-item" id="slide2">
-            <div class="behind" style="zoom: 1; margin: 0px 10px;">
+            <div style="zoom: 1; margin: 0px 10px;">
                            <!-- Nav bars -->
             <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
                   <tbody>
@@ -2873,7 +2873,7 @@
                         
                              
                              
-                           <tr id="pathway_2" class="odd">
+                           <tr id="box5" class="odd" onclick="toggleOutline5()">
                                <td align="left" valign="middle">
                                   
                                      <a href="#">edit</a>&nbsp;
@@ -2905,7 +2905,7 @@
                              
                                 
                              
-                           <tr id="pathway_3" class="even">
+                           <tr id="box6" class="even" onclick="toggleOutline5()">
                                <td align="left" valign="middle">
                                   
                                      <a href="#">edit</a>&nbsp;
@@ -4411,6 +4411,24 @@
       }
       else{
          box.classList.add("outlined");
+      }
+   }
+
+   function toggleOutline5(){
+      var box = document.getElementById("box5");
+      if(box.classList.contains("outlineFixTop")){
+         box.classList.remove("outlineFixTop");
+      }
+      else{
+         box.classList.add("outlineFixTop");
+      }
+
+      var box2 = document.getElementById("box6");
+      if(box2.classList.contains("outlineFixBot")){
+         box2.classList.remove("outlineFixBot");
+      }
+      else{
+         box2.classList.add("outlineFixBot");
       }
    }
 

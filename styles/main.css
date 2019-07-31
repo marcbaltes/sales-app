@@ -551,6 +551,14 @@ br {
    box-shadow: 0px 0px 0px 1px rgb(204, 204, 204);
    margin-top: 2px;
 }
+.outlineFixTop{
+   border: 2px solid red;
+   border-bottom: none;
+}
+.outlineFixBot{
+   border: 2px solid red;
+   border-top: none;
+}
 .fullPage{
    margin: 0px;
    height: 100%;
