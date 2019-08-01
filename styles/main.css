@@ -1052,6 +1052,16 @@ body {
       height: 630px;
    }
 }
+@media screen and (min-width: 1200px) {
+   .expandPanel10{
+      height: 1098px;
+   }
+}
+@media screen and (max-width: 1200px) {
+   .expandPanel10{
+      height: 380px;
+   }
+}
 .addNotesBtn{
    font-weight: bold;
    text-align: center;
