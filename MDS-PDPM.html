@@ -21,7 +21,7 @@
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
    <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(140, 199, 80);">
-      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+      <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/nurse-icon3.png" alt="Home">
       </a>
       <ul class="navbar-nav">
@@ -430,7 +430,7 @@
                   <tbody>
                      <tr>
                         <td valign="top" class="residentProfile">
-                           <img src="./care-planning-screens/Care Plan Triggers - 1_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+                           <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
                         </td>
                         <td valign="top" width="100%" class="residentNameBarWrapper">
                            <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
@@ -448,7 +448,7 @@
                               <tbody>
                                  <tr style="margin-left: -10px;">
                                     <td valign="top" class="residentProfileDetails" width="35%"" >
-                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location:
+                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
                                        </p>
                                        <p><br>       
                                           Gender: Female
@@ -457,7 +457,7 @@
                                           &nbsp;&nbsp;&nbsp;&nbsp;
                                           Age: 85
                                        </p><br>
-                                       <p>Physician:  </p><br>
+                                       <p>Physician: Aaron Miller</p><br>
                                           <table class="actionBar">
                                              <tbody><tr>
                                                 <td class="careProfileBtn">
@@ -682,7 +682,7 @@
                                     <td valign="top" class="residentDetailsLabel ">Allergies:</td>
                                     
                                     
-                                    <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+                                    <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
                                  </tr>
                                  <tr>
                                     
@@ -890,8 +890,8 @@
       var mc = new Hammer(body);
       //enable all directions
       mc.get('swipe').set({
-         direction: Hammer.DIRECTION_ALL,
-         threshold: 1, 
+         direction: Hammer.DIRECTION_HORIZONTAL,
+         threshold: 0.1, 
          velocity:0.1
       });
       // listen to events...

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="min-width: 100%">
+<html lang="en" style="min-width: 100%" id="html">
 <head>
    <meta charset="UTF-8">
    <title>Care Planning</title>
@@ -21,7 +21,7 @@
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
    <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(166, 208, 103);">
-      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+      <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/nurse-icon.png" alt="Home">
       </a>
       <ul class="navbar-nav">
@@ -96,9 +96,8 @@
          <li data-target="#carouselSlide" style="background-color: rgb(166, 208, 103);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(166, 208, 103);" id="btn3" onclick="indicatorUpdate(event)" data-slide-to="3"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(166, 208, 103);" id="btn4" onclick="indicatorUpdate(event)" data-slide-to="4"></li>
-         <li data-target="#carouselSlide" style="background-color: rgb(166, 208, 103);" id="btn5" onclick="indicatorUpdate(event)" data-slide-to="5"></li>
       </ol>
-      <div class="carousel-inner fullPage">
+      <div class="carousel-inner">
          <!-- Screen 1: Enter Diagnosis  -->
          <div class="carousel-item active" id="slide0">
             <div class="behind" style="zoom: 1; margin: 0px 10px;">
@@ -191,7 +190,7 @@
                   <tbody>
                      <tr>
                         <td valign="top" class="residentProfile">
-                           <img src="./care-planning-screens/Care Plan Triggers - 1_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+                           <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
                         </td>
                         <td valign="top" width="100%" class="residentNameBarWrapper">
                            <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
@@ -209,7 +208,7 @@
                               <tbody>
                                  <tr style="margin-left: -10px;">
                                     <td valign="top" class="residentProfileDetails" width="35%"" >
-                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location:
+                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
                                        </p>
                                        <p><br>       
                                           Gender: Female
@@ -218,7 +217,7 @@
                                           &nbsp;&nbsp;&nbsp;&nbsp;
                                           Age: 85
                                        </p><br>
-                                       <p>Physician:  </p><br>
+                                       <p>Physician: Aaron Miller</p><br>
                                           <table class="actionBar">
                                              <tbody><tr>
                                                 <td class="careProfileBtn">
@@ -443,7 +442,7 @@
                                    <td valign="top" class="residentDetailsLabel ">Allergies:</td>
                                    
                                    
-                                   <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+                                   <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
                                  </tr>
                                  <tr>
                                    
@@ -1300,7 +1299,7 @@
                         <tbody>
                            <tr>
                               <td valign="top" class="residentProfile">
-                                 <img src="./care-planning-screens/Care Plan Triggers - 1_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+                                 <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
                               </td>
                               <td valign="top" width="100%" class="residentNameBarWrapper">
                                  <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
@@ -1318,7 +1317,7 @@
                                     <tbody>
                                        <tr style="margin-left: -10px;">
                                           <td valign="top" class="residentProfileDetails" width="35%"" >
-                                             <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location:
+                                             <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
                                              </p>
                                              <p><br>       
                                                 Gender: Female
@@ -1327,7 +1326,7 @@
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                                 Age: 85
                                              </p><br>
-                                             <p>Physician:  </p><br>
+                                             <p>Physician: Aaron Miller</p><br>
                                                 <table class="actionBar">
                                                    <tbody><tr>
                                                       <td class="careProfileBtn">
@@ -1552,7 +1551,7 @@
                                          <td valign="top" class="residentDetailsLabel ">Allergies:</td>
                                          
                                          
-                                         <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+                                         <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
                                        </tr>
                                        <tr>
                                          
@@ -2409,7 +2408,7 @@
             <tbody>
                <tr>
                   <td valign="top" class="residentProfile">
-                     <img src="./care-planning-screens/Care Plan Triggers - 1_files/no_image_found.gif" height="115" title="No Image Found" border="0">
+                     <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
                   </td>
                   <td valign="top" width="100%" class="residentNameBarWrapper">
                      <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
@@ -2427,7 +2426,7 @@
                         <tbody>
                            <tr style="margin-left: -10px;">
                               <td valign="top" class="residentProfileDetails" width="35%"" >
-                                 <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location:
+                                 <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
                                  </p>
                                  <p><br>       
                                     Gender: Female
@@ -2436,7 +2435,7 @@
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     Age: 85
                                  </p><br>
-                                 <p>Physician:  </p><br>
+                                 <p>Physician: Aaron Miller</p><br>
                                     <table class="actionBar">
                                        <tbody><tr>
                                           <td class="careProfileBtn">
@@ -2661,7 +2660,7 @@
                              <td valign="top" class="residentDetailsLabel ">Allergies:</td>
                              
                              
-                             <td valign="top" colspan="3" class="residentDetailsSummary  ">To Be Determined&nbsp;</td>
+                             <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
                            </tr>
                          
                          
@@ -2975,572 +2974,9 @@
          </div>
             </div>
          </div>
-         <!-- Screen 4: Generate Care Plan - View Triggered Items  -->
+         <!-- Screen 4: Review & Accept Triggered items  -->
          <div class="carousel-item" id="slide3">
-            <div class="behind" style="zoom: 1; margin: 0px 10px;">
-            <!-- Nav bars -->
-            <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
-                  <tbody>
-                     <tr>
-                        <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
-                        <td align="right" valign="top" class="slTopNav">
-                           <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
-                           <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
-                           <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
-                           <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle"></div>
-                           </span>
-                           <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
-                        </td>
-                     </tr>
-                  </tbody>
-         </table>
-         <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
-                  <tbody>
-                     <tr>
-                        <td valign="top">
-                           <div class="slMainNavTabs">
-                              <ul id="topTabs">
-                                 <li id="QTF_HomePageTab">
-                                    <a href="#" class="arrowDrop">Home</a>
-                                 </li>
-                                 <li id="QTF_AdminTab">
-                                    <a href="#" class="arrowDrop">Admin</a>
-                                 </li>
-                                 <li id="QTF_ClinicalTab" class="ClinicalTab">
-                                    <a href="#" class="arrowDrop">Clinical</a>
-                                 </li>
-                                 <li id="QTF_MarketingTab">
-                                    <a href="#" class="arrowDrop">IRM</a>
-                                 </li>
-                                 <li id="QTF_reportingTab">
-                                    <a href="#" class="arrowDrop">Reporting</a>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="slResidentSearch" style="float: right;">
-                              <form name="slsearch">
-                                 <table border="0" cellspacing="0" cellpadding="0">
-                                    <tbody>
-                                       <tr>
-                                          <td width="45">
-                                             <div id="searchSelect">
-                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                   <tbody>
-                                                      <tr>
-                                                         <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
-                                                         <td>
-                                                            <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
-                                                         </td>
-                                                      </tr>
-                                                   </tbody>
-                                                </table>
-                                             </div>
-                                          </td>
-                                          <td>
-                                             <input type="text" id="searchField" name="substring" autocomplete="off">
-                                          </td>
-                                          <td>
-                                             <input type="button" class="pccButton" value="Search">
-                                          </td>
-                                       </tr>
-                                    </tbody>
-                                 </table>
-                              </form>
-                           </div>
-                        </td>
-                     </tr>
-                  </tbody>
-         </table>
-         <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
-                  <tbody>
-                     <tr>
-                        <td align="left">
-                           <ul class="secondNavList"></ul>
-                        </td>
-                        <td valign="top" align="right" width="85"></td>
-                     </tr>
-                  </tbody>
-         </table>
-         <p style=>Triggered Care Plan Items</p>
-
-         <!-- Resident Info -->
-         <table border="0" cellpadding="1" cellspacing="0" width="100%">
-               <tbody>
-               <tr valign="top">
-                  <td width="50%">
-                     <table cellspacing="0" cellpadding="1" style="border: solid; border-width: 1px; border-color: rgb(0, 0, 0, 0.25);">
-                        <tbody><tr height="25" valign="middle">
-                           <td>&nbsp;</td>
-                           <td style="padding-left: 100px; padding-right: 100px;"><span style="font-size:10pt;font-weight:bold;">Resident:</span>
-                           <span style="font-size:10pt;">&nbsp;Smith, Stella (558874)&nbsp;</span></td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-                  
-                  <td width="25%"><table cellspacing="0" cellpadding="0" border="0">
-                        <tbody><tr>
-                          <td align="right" valign="middle">
-                          <b>Show Triggered Tasks:</b>&nbsp;&nbsp;
-                         </td>
-                          <td>
-                          <input type="checkbox" name="showTriggTask" id="idshowTriggTask" value="Y" checked="">
-                          </td>
-                        </tr>
-                       </tbody></table>
-                  </td>
-                  
-               </tr>
-            
-               
-               <tr>
-            
-                  <td width="75%">
-                      
-                     <div id="review"><table border="2" cellpadding="0" cellspacing="0" bordercolor="black"><tbody><tr><td class="unsignedDepartmentSelected"><strong>&nbsp;&nbsp;<a class="unsignedDepartmentSelected" href="#"><i>All</i></a>&nbsp;&nbsp;</strong></td></tr></tbody></table></div></td>
-                  <td></td>
-               </tr>
-               <tr height="5"><td></td></tr>
-               <tr>
-                  <td colspan="2" width="100%">
-                     <div style="float: right;" class="pccMessage pccInfo">Any item with the resolved or canceled icon will become active when checked and saved.</div>
-                  </td>
-               </tr>
-               <tr>
-                  <td colspan="2" width="100%" align="center" id="msg1" style="font-size:12pt;font-weight:bold;">
-                  <input id="idSaveBtn" type="button" class="pccButton" value="Save" title="Save: CTRL-SHIFT-S">
-                  <input id="idSelectAllBtn" type="button" class="pccButton" value="Select All" title="Select All: CTRL-SHIFT-A">
-                  <input id="idClearAllBtn" type="button" class="pccButton" value="Clear All" title="Clear All: CTRL-SHIFT-X">
-                  <input id="idRemoveAllBtn" type="button" class="pccButton" value="Remove All" title="Remove All: CTRL-SHIFT-R">
-            
-            
-                    <input id="idBackBtn" type="button" class="pccButton" value="Back" title="Back: CTRL-SHIFT-B">
-            
-                  </td>
-               </tr>
-               <tr height="5"><td></td></tr>
-         </tbody></table>
-
-         <!-- Triggers -->
-         <table border="0" cellspacing="0" cellpadding="3" width="100%">
-               <tbody><tr>
-                  <td class="detailColHeader" width="1%">&nbsp;</td>
-                  <td class="detailColHeader" width="33%">Focus</td>
-                  <td class="detailColHeader" width="33%">Goals</td>
-                  <td class="detailColHeader" width="33%">Interventions/Tasks</td>
-               </tr>
-                  <tr bgcolor="#EFEFEF">
-                  <td valign="top">
-                  <input type="checkbox" name="chkbox" id="id_47625_cb" value="47625" aria-labelledby="fd47625-label">
-                  </td>
-                  <td valign="top" class="listbutton2" title="6/19/2019
-         Pneumonia">
-                     <label id="fd47625-label" aria-hidden="true">
-                     Acute Pain&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
-                     </label>
-                     
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47632_cb" value="47632" aria-labelledby="id47632-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="id47632-label" aria-hidden="true">Resident Will Be Free of Pain / Discomfort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47641_cb" value="47641" aria-labelledby="it_47641-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="it_47641-label" aria-hidden="true">Administer medications to treat cough&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47642_cb" value="47642" aria-labelledby="it_47642-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="it_47642-label" aria-hidden="true">Evaluate for non-verbal indicators of pain&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47643_cb" value="47643" aria-labelledby="it_47643-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="it_47643-label" aria-hidden="true">Evaluate for pain related to coughing&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47693_cb" value="47693" aria-labelledby="it_47693-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="it_47693-label" aria-hidden="true">Utilize humidity (humidified oxygen or humidifier)&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47644_cb" value="47644" aria-labelledby="it_47644-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="it_47644-label" aria-hidden="true">Utilize positioning and relaxation techniques for comfort&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47692_cb" value="47692" aria-labelledby="it_47692-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Pneumonia"><label id="it_47692-label" aria-hidden="true">Encourage participation in coughing, deep breathing and forced expiratory techniques, as ordered&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-               </tr>
-                  <tr bgcolor="#FFFFFF">
-                  <td valign="top">
-                  <input type="checkbox" name="chkbox" id="id_47599_cb" value="47599" aria-labelledby="fd47599-label">
-                  </td>
-                  <td valign="top" class="listbutton2" title="6/19/2019
-         Arrhythmia">
-                     <label id="fd47599-label" aria-hidden="true">
-                     Arrhythmia &nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
-                     </label>
-                     
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47603_cb" value="47603" aria-labelledby="id47603-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="id47603-label" aria-hidden="true">Resident Will Maintain Optimal Tissue Perfusion&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47604_cb" value="47604" aria-labelledby="id47604-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="id47604-label" aria-hidden="true">Resident Will Remain in Normal Sinus Rhythm&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47609_cb" value="47609" aria-labelledby="it_47609-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="it_47609-label" aria-hidden="true">Evaluate arterial leg pulses&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47610_cb" value="47610" aria-labelledby="it_47610-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="it_47610-label" aria-hidden="true">Evaluate heart rate&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47611_cb" value="47611" aria-labelledby="it_47611-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="it_47611-label" aria-hidden="true">Evaluate pedal pulses&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47612_cb" value="47612" aria-labelledby="it_47612-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="it_47612-label" aria-hidden="true">If cardiac device present, verify date of last device interrogation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47618_cb" value="47618" aria-labelledby="it_47618-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="it_47618-label" aria-hidden="true">Evaluate heart rate character, rhythm&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-               </tr>
-                  <tr bgcolor="#EFEFEF">
-                  <td valign="top">
-                  <input type="checkbox" name="chkbox" id="id_47474_cb" value="47474" aria-labelledby="fd47474-label">
-                  </td>
-                  <td valign="top" class="listbutton2" title="6/19/2019
-         Cancer">
-                     <label id="fd47474-label" aria-hidden="true">
-                     Chemotherapy Treatment&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
-                     </label>
-                     
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47480_cb" value="47480" aria-labelledby="id47480-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="id47480-label" aria-hidden="true">Resident / Representative Will Understand and Participate in Treatment Regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47481_cb" value="47481" aria-labelledby="id47481-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="id47481-label" aria-hidden="true">Resident Will Experience Minimal  Side Effects Related to Chemotherapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47489_cb" value="47489" aria-labelledby="it_47489-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="it_47489-label" aria-hidden="true">Administer medications prior to treatment to minimize side effects, per provider order&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47490_cb" value="47490" aria-labelledby="it_47490-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="it_47490-label" aria-hidden="true">Determine Resident / Representative's baseline understanding of chemotherapy treatments&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47491_cb" value="47491" aria-labelledby="it_47491-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="it_47491-label" aria-hidden="true">Educate Resident / Representative on chemotherapy treatment schedule and anticipated side effects&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47492_cb" value="47492" aria-labelledby="it_47492-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="it_47492-label" aria-hidden="true">Educate Resident / Representative on the importance of routine laboratory monitoring&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47493_cb" value="47493" aria-labelledby="it_47493-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="it_47493-label" aria-hidden="true">Monitor Resident for potential complications related to long term nausea / vomiting&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47494_cb" value="47494" aria-labelledby="it_47494-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Cancer"><label id="it_47494-label" aria-hidden="true">Monitor weight for loss&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-               </tr>
-                  <tr bgcolor="#FFFFFF">
-                  <td valign="top">
-                  <input type="checkbox" name="chkbox" id="id_47522_cb" value="47522" aria-labelledby="fd47522-label">
-                  </td>
-                  <td valign="top" class="listbutton2" title="6/19/2019
-         Hyperthyroid">
-                     <label id="fd47522-label" aria-hidden="true">
-                     Fatigue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
-                     </label>
-                     
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47531_cb" value="47531" aria-labelledby="id47531-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="id47531-label" aria-hidden="true">Resident Will Experience Reduction in Fatigue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47540_cb" value="47540" aria-labelledby="it_47540-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47540-label" aria-hidden="true">Determine level of needed assistance based on ADLs / IADLs evaluation&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47541_cb" value="47541" aria-labelledby="it_47541-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47541-label" aria-hidden="true">Educate Resident / Representative on energy conservation techniques&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47542_cb" value="47542" aria-labelledby="it_47542-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47542-label" aria-hidden="true">Evaluate Resident's ability to perform ADLs / IADLs&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47562_cb" value="47562" aria-labelledby="it_47562-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47562-label" aria-hidden="true">Encourage times of rest and relaxation between care activities&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-               </tr>
-                  <tr bgcolor="#EFEFEF">
-                  <td valign="top">
-                  <input type="checkbox" name="chkbox" id="id_47600_cb" value="47600" aria-labelledby="fd47600-label">
-                  </td>
-                  <td valign="top" class="listbutton2" title="6/19/2019
-         Arrhythmia">
-                     <label id="fd47600-label" aria-hidden="true">
-                     Impaired Coping&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span>
-                     </label>
-                     
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47605_cb" value="47605" aria-labelledby="id47605-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="id47605-label" aria-hidden="true">Resident Will Demonstrate Effective Coping Mechanisms&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47570_cb" value="47570" aria-labelledby="id47570-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="id47570-label" aria-hidden="true">Resident Will Be Free of Fear and/or Anxiety&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-                  <td valign="top">
-                     <table border="0" cellspacing="0" cellpadding="3" width="100%">
-                     <tbody><tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47543_cb" value="47543" aria-labelledby="it_47543-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47543-label" aria-hidden="true">Encourage Resident to verbalize feelings regarding fear and / or anxiety&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47544_cb" value="47544" aria-labelledby="it_47544-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47544-label" aria-hidden="true">Encourage use of PRN medication to alleviate symptoms&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47545_cb" value="47545" aria-labelledby="it_47545-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47545-label" aria-hidden="true">Evaluate for cause of fear or anxiety&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47613_cb" value="47613" aria-labelledby="it_47613-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Arrhythmia"><label id="it_47613-label" aria-hidden="true">Monitor Resident's response to diagnosis of chronic medical issue&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                     <tr>
-                           <td valign="top" width="5%">
-                           <input type="checkbox" name="chkbox" id="id_47546_cb" value="47546" aria-labelledby="it_47546-label">
-                        </td>
-                           <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
-         Hyperthyroid"><label id="it_47546-label" aria-hidden="true">Staff to provide care in a confident, assured manner&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
-                           
-                           </td>
-                        </tr>
-                  </tbody></table>
-                  </td>
-         
-            <tr><td class="detailColHeader" colspan="5" height="10"></td></tr>
-         </tbody></table>
-            </div>
-         </div>
-         <!-- Screen 5: Review & Accept Triggered items  -->
-         <div class="carousel-item" id="slide4">
-            <div style="zoom: 1; margin: 0px 10px;">
+            <div style=" margin: 0px 10px;">
                <!-- Nav bars -->
                <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
                      <tbody>
@@ -3863,7 +3299,7 @@
                   </tr>
                      <tr bgcolor="#EFEFEF" id="box2" onclick="toggleOutline2()">
                      <td valign="top">
-                     <input type="checkbox" name="chkbox" id="chemoBox" value="47474" aria-labelledby="fd47474-label">
+                     <input type="checkbox" name="chkbox" id="chemoBox" class="chemoCheckBoxes" value="47474" aria-labelledby="fd47474-label">
                      </td>
                      <td valign="top" class="listbutton2" title="6/19/2019
             Cancer">
@@ -3876,7 +3312,7 @@
                         <table border="0" cellspacing="0" cellpadding="3" width="100%">
                         <tbody><tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47480_cb" value="47480" aria-labelledby="id47480-label">
+                              <input type="checkbox" name="chkbox" id="id_47480_cb" class="chemoCheckBoxes" value="47480" aria-labelledby="id47480-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="id47480-label" aria-hidden="true">Resident / Representative Will Understand and Participate in Treatment Regimen&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3885,7 +3321,7 @@
                            </tr>
                         <tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47481_cb" value="47481" aria-labelledby="id47481-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47481_cb" value="47481" aria-labelledby="id47481-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="id47481-label" aria-hidden="true">Resident Will Experience Minimal  Side Effects Related to Chemotherapy&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3898,7 +3334,7 @@
                         <table border="0" cellspacing="0" cellpadding="3" width="100%">
                         <tbody><tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47489_cb" value="47489" aria-labelledby="it_47489-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47489_cb" value="47489" aria-labelledby="it_47489-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="it_47489-label" aria-hidden="true">Administer medications prior to treatment to minimize side effects, per provider order&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3907,7 +3343,7 @@
                            </tr>
                         <tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47490_cb" value="47490" aria-labelledby="it_47490-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47490_cb" value="47490" aria-labelledby="it_47490-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="it_47490-label" aria-hidden="true">Determine Resident / Representative's baseline understanding of chemotherapy treatments&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3916,7 +3352,7 @@
                            </tr>
                         <tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47491_cb" value="47491" aria-labelledby="it_47491-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47491_cb" value="47491" aria-labelledby="it_47491-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="it_47491-label" aria-hidden="true">Educate Resident / Representative on chemotherapy treatment schedule and anticipated side effects&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3925,7 +3361,7 @@
                            </tr>
                         <tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47492_cb" value="47492" aria-labelledby="it_47492-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47492_cb" value="47492" aria-labelledby="it_47492-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="it_47492-label" aria-hidden="true">Educate Resident / Representative on the importance of routine laboratory monitoring&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3934,7 +3370,7 @@
                            </tr>
                         <tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47493_cb" value="47493" aria-labelledby="it_47493-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47493_cb" value="47493" aria-labelledby="it_47493-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="it_47493-label" aria-hidden="true">Monitor Resident for potential complications related to long term nausea / vomiting&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -3943,7 +3379,7 @@
                            </tr>
                         <tr>
                               <td valign="top" width="5%">
-                              <input type="checkbox" name="chkbox" id="id_47494_cb" value="47494" aria-labelledby="it_47494-label">
+                              <input type="checkbox" name="chkbox" class="chemoCheckBoxes" id="id_47494_cb" value="47494" aria-labelledby="it_47494-label">
                            </td>
                               <td valign="middle" class="listbutton2" width="90%" title="6/19/2019
             Cancer"><label id="it_47494-label" aria-hidden="true">Monitor weight for loss&nbsp;&nbsp;<span style="color:Blue;font:bold">PATH</span></label>
@@ -4024,8 +3460,8 @@
             </div>
 
          </div>
-         <!-- Screen 6: Personalizing Care Plan  -->
-         <div class="carousel-item" id="slide5">
+         <!-- Screen 5: Personalizing Care Plan  -->
+         <div class="carousel-item" id="slide4">
             <div style="zoom: 1; margin: 0px 10px;">
             <!-- Nav bars -->
             <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -4279,7 +3715,7 @@
 
    <script>
    var index = 0;
-   var slideCount = 5;
+   var slideCount = 4;
    $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
       $('[data-toggle="popover"]').popover({
@@ -4301,14 +3737,14 @@
       //swiping (hammer.js)
       var body = document.getElementById("body");
       var mc = new Hammer(body);
-      //enable all directions
+   
       mc.get('swipe').set({
-         direction: Hammer.DIRECTION_ALL,
-         threshold: 1, 
+         direction: Hammer.DIRECTION_HORIZONTAL,
+         threshold: 0.1, 
          velocity:0.1
       });
       // listen to events...
-      mc.on("swipeup swipedown swipeleft swiperight tap press", function(ev) {
+      mc.on("swipeleft swiperight", function(ev) {
         if(ev.type == "swiperight"){
            index--;
            if(index < 0){index = slideCount;}
@@ -4346,6 +3782,17 @@
    }
 
    function updateInfoModal(index){
+      if(index == 3){ //(change) 
+         //scrollable screen
+         $("#html").addClass("scroll");
+         $("#body").addClass("scroll");
+      }
+      else{
+         $("#html").removeClass("scroll");
+         $("#body").removeClass("scroll");
+         document.body.scrollTop = 0; // For Safari
+         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
       var bodyText = document.getElementById("bodyText");
       if(index == 0){
          bodyText.innerHTML = "Upon the entry of diagnosis, COMS® Care Pathways are triggered."
@@ -4357,12 +3804,9 @@
          bodyText.innerHTML = "Notice that it is possible to have triggered more than one care pathway per diagnosis. Arrhythmia for example triggers both the anti-coagulant care pathway and the arrhythmia care pathway. <br> Once the nurse accepts the care pathways, the corresponding focus – goals - interventions and tasks will be sent to the care plan triggered items"
       }
       else if(index == 3){
-         bodyText.innerHTML = "Here we see all the triggered items.  I can click select all and then de-select the items I do not wish to add to the care plan. "
-      }
-      else if(index == 4){
          bodyText.innerHTML = "I can see what care pathways triggered the focus, goals, interventions by hovering over the “PATH”. <br>Note – the Resident doesn’t have a cardiac device, so I deselected this item. <br>Note – I am not sure if the resident is currently receiving chemotherapy, so I can deselect these times as well until it can be verified."
       }
-      else if(index == 5){
+      else if(index == 4){
          bodyText.innerHTML = "Once I have saved my accepted triggered items, I can go inside to personalize or add a new custom goal. I am also able to use my other care plan libraries. "
       }
    }
@@ -4376,21 +3820,31 @@
 
    function toggleOutline(){
       var box = document.getElementById("box1");
+      var checkBox = document.getElementById("cardiacBox");
       if(box.classList.contains("outlined")){
          box.classList.remove("outlined");
+         checkBox.checked = true;
       }
       else{
          box.classList.add("outlined");
+         checkBox.checked = false;
       }
    }
 
    function toggleOutline2(){
       var box = document.getElementById("box2");
+      var chemoCheckBoxes = document.getElementsByClassName("chemoCheckBoxes");
       if(box.classList.contains("outlined")){
          box.classList.remove("outlined");
+         for(var i = 0; i < chemoCheckBoxes.length; i++){
+            chemoCheckBoxes[i].checked = true;
+         }
       }
       else{
          box.classList.add("outlined");
+         for(var i = 0; i < chemoCheckBoxes.length; i++){
+            chemoCheckBoxes[i].checked = false;
+         }
       }
    }
 

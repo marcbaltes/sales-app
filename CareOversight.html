@@ -21,7 +21,7 @@
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
    <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(237, 160, 135);">
-      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+      <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/mandon3-icon.png" alt="Home">
       </a>
       <ul class="navbar-nav">
@@ -1412,7 +1412,7 @@
                         <div class="col-6">
                            <div class="qrInfo row container" style="margin: 0px; margin-left: 5px;">
                               <div class="col-3" style="padding-left: 0px;">
-                                 <img src="./icons/defaultResImg.png" style="border: 1px solid black; margin-top: 11px;" alt="">
+                                 <img src="./icons/stellaPic.png" style="border: 1px solid black; margin-top: 11px;height: 80px; width: 80px;" alt="">
                               </div>
                               <div class="col-9" style="padding-top: 15px;">
                                  <h6 style="font-weight: bold">D / 167-1</h6>
@@ -2173,8 +2173,8 @@
       var mc = new Hammer(body);
       //enable all directions
       mc.get('swipe').set({
-         direction: Hammer.DIRECTION_ALL,
-         threshold: 1, 
+         direction: Hammer.DIRECTION_HORIZONTAL,
+         threshold: 0.1, 
          velocity:0.1
       });
       // listen to events...

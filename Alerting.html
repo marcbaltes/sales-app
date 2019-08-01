@@ -27,7 +27,7 @@
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
    <nav class="navbar navbar-expand bg-nav py-0 alertingNav" style="background-color: rgb(204, 190, 135);">
-      <a href="./MainMenu.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
+      <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/mandon-icon.png" alt="Home">
       </a>
       <ul class="navbar-nav">
@@ -161,8 +161,8 @@
       var mc = new Hammer(body);
       //enable all directions
       mc.get('swipe').set({
-         direction: Hammer.DIRECTION_ALL,
-         threshold: 1, 
+         direction: Hammer.DIRECTION_HORIZONTAL,
+         threshold: 0.1, 
          velocity:0.1
       });
       // listen to events...

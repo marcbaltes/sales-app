@@ -551,6 +551,10 @@ br {
    box-shadow: 0px 0px 0px 1px rgb(204, 204, 204);
    margin-top: 2px;
 }
+input[type="checkbox"]{
+   pointer-events: none;
+   
+}
 .outlineFixTop{
    border: 2px solid red;
    border-bottom: none;
@@ -587,9 +591,6 @@ body {
    min-height: 100%;
    width: 100%;
    overflow: hidden;
-}
-body::-webkit-scrollbar{
-   width: 0 !important;
 }
 .tooltip:hover:before {
    border: solid;
@@ -1397,13 +1398,13 @@ table.asmtTable{
    }
 }
 .coordScreen1{
-   height: 409px;
-   width: 800px;
+   height: 550px;
+   width: 1000px;
    position: relative;
    top: 50%;
    left: 50%;
-   margin-left: -400px; /* width divided by 2 */
-   margin-top: 50px; /* height divided by 2 */
+   margin-left: -480px; /* width divided by 2 */
+   margin-top: 0px; /* height divided by 2 */
 }
 .eventBox{
    background-color: white;
