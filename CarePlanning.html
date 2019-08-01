@@ -20,7 +20,7 @@
 </head>
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
-   <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(166, 208, 103);">
+   <nav class="navbar navbar-expand bg-nav py-0 fixed-top" id="navBar" style="background-color: rgb(166, 208, 103);">
       <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/nurse-icon.png" alt="Home">
       </a>
@@ -99,7 +99,7 @@
       </ol>
       <div class="carousel-inner">
          <!-- Screen 1: Enter Diagnosis  -->
-         <div class="carousel-item active" id="slide0">
+         <div class="carousel-item active" id="slide0" style="margin-top: 80px;">
             <div class="behind" style="zoom: 1; margin: 0px 10px;">
                <!-- Nav bars -->
                <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -1208,7 +1208,7 @@
             <img src="./care-planning-screens/Care Plan Triggers - 1_files/screen1window.png" class="screen1window" alt="">   
          </div>
          <!-- Screen 2: Diagnosis trigger Care Pathways  -->
-         <div class="carousel-item" id="slide1">
+         <div class="carousel-item" id="slide1" style="margin-top: 80px;">
             <div class="behind" style="zoom: 1; margin: 0px 10px;">
                      <!-- Nav bars -->
                      <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -2317,7 +2317,7 @@
             <img src="./care-planning-screens/Care Plan Triggers - 1_files/screen2window.png" class="screen1window" alt=""> 
          </div>
          <!-- Screen 3: Show Care Pathways  -->
-         <div class="carousel-item" id="slide2">
+         <div class="carousel-item" id="slide2" style="margin-top: 80px;">
             <div style="zoom: 1; margin: 0px 10px;">
                            <!-- Nav bars -->
             <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -2975,7 +2975,7 @@
             </div>
          </div>
          <!-- Screen 4: Review & Accept Triggered items  -->
-         <div class="carousel-item" id="slide3">
+         <div class="carousel-item" id="slide3" style="margin-top: 80px;">
             <div style=" margin: 0px 10px;">
                <!-- Nav bars -->
                <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -3461,7 +3461,7 @@
 
          </div>
          <!-- Screen 5: Personalizing Care Plan  -->
-         <div class="carousel-item" id="slide4">
+         <div class="carousel-item" id="slide4" style="margin-top: 80px;">
             <div style="zoom: 1; margin: 0px 10px;">
             <!-- Nav bars -->
             <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -3783,8 +3783,6 @@
 
    function updateInfoModal(index){
       if(index == 3){ //(change) 
-         //scrollable screen
-         $("#html").addClass("scroll");
          $("#body").addClass("scroll");
       }
       else{
