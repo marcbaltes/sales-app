@@ -1424,8 +1424,8 @@
                         <div class="col-6">
                            <div class="qrInfo row container" style="margin: 0px; margin-left: -4px;">
                               <div class="col-12" style="padding-top: 15px; padding-left: 0px;">
-                                 <h6 style="font-weight: bold">Primary Dx: <span style="font-weight: 100">-</span></h6>
-                                 <h6 style="font-weight: bold; font-size: 14px;">Current Assigned Protocol(s): <span style="font-weight: 100"></span></h6>
+                                 <h6 style="font-weight: bold">Primary Dx: <span style="font-weight: 100">Unspecified Atrial Fibrillation</span></h6>
+                                 <h6 style="font-weight: bold; font-size: 14px;">Current Assigned Protocol(s):  <span style="font-weight: 100"> Care Review Daily</span></h6>
                               </div>
                            </div>
                         </div>
@@ -1438,8 +1438,14 @@
                                  <div style="font-size: 14px;">Task Completed 0% (0/1)</div>
                               </div>
                               <div class="row container" style="padding-left: 30px; padding-top: 5px;">
-                                 <div class="greenCircle"></div>
-                                 <div style="font-size: 14px;">0 New Change(s) in Condition</div>
+                                 <div class="yellowCircle"></div>
+                                 <div style="font-size: 14px;">12 New Changes in Condition</div>
+                              </div>
+                              <div class="row container" style="padding-left: 30px; padding-top: 5px;">
+                                 &nbsp;
+                                 <div class="fa fa-bolt" style="color: red; font-size: 16px;"></div>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;
+                                 <div style="font-size: 14px;">First 72 hours of Admission</div>
                               </div>
                            </div>
                         </div>
@@ -1453,19 +1459,23 @@
                               <div class="row container" style="padding-left: 15px; padding-top: 10px; margin: 0px;">
                                  <div class="col-6" style="border-right: 1px solid rgb(153, 153, 153); padding-left: 8px; padding-top: 6px; border-bottom: 1px solid rgb(153, 153, 153); height: 90px;">
                                     Temp
-                                    <div style="font-weight: bold; color: rgb(0, 153, 255); font-size: 16px; margin-left: 45px; margin-top: 2px;">_</div>
+                                    <div style="color: red; font-size: 20px; margin-left: 20px; margin-top: 6px;">97.3 F</div>
+                                    <div style="font-size: 11px; margin-top: 10px;">07/26/19 02:57 PM</div>
                                  </div>
                                  <div class="col-6" style="border-left: 1px solid rgb(153, 153, 153); padding-left: 8px; padding-top: 6px; border-bottom: 1px solid rgb(153, 153, 153); height: 90px;">BP
-                                    <div style="font-weight: bold; color: rgb(0, 153, 255); font-size: 16px; margin-left: 45px; margin-top: 2px;">_</div>
+                                    <div style="color: red; font-size: 20px; margin-left: 15px; margin-top: 6px;">134 / 82</div>
+                                    <div style="font-size: 11px; margin-top: 10px;">07/26/19 02:57 PM</div>
                                  </div>
                               </div> 
                               <div class="row container" style="padding-left: 15px; padding-top: 10px; margin: 0px; margin-top: -10px;">
                                  <div class="col-6" style="border-right: 1px solid rgb(153, 153, 153); padding-left: 8px; padding-top: 6px; border-top: 1px solid rgb(153, 153, 153); height: 90px;">
                                     HR
-                                    <div style="font-weight: bold; color: rgb(0, 153, 255); font-size: 16px; margin-left: 45px; margin-top: 2px;">_</div>
+                                    <div style="color: red; font-size: 20px; margin-left: 15px; margin-top: 6px;">75 / min</div>
+                                    <div style="font-size: 11px; margin-top: 10px;">07/26/19 02:57 PM</div>
                                  </div>
                                  <div class="col-6" style="border-left: 1px solid rgb(153, 153, 153); padding-left: 8px; padding-top: 6px; border-top: 1px solid rgb(153, 153, 153); height: 90px;">Resp / POx
-                                    <div style="font-weight: bold; color: rgb(0, 153, 255); font-size: 16px; margin-left: 45px; margin-top: 2px;">_ <span style="color: black;"> /</span> _</div>
+                                    <div style="color: red; font-size: 20px; margin-left: 20px; margin-top: 6px;">20 <span style="color: black;"> / -</span></div>
+                                    <div style="font-size: 11px; margin-top: 10px;">07/26/19 02:57 PM</div>
                                  </div>
                               </div> 
                            </div>
@@ -2261,7 +2271,7 @@
       index = id.substring(3, id.length);
       index = parseInt(index, 10);
       updateInfoModal(index);
-   }}
+   }
 
    function saveIndex(e){
       var id = e.target.id;
