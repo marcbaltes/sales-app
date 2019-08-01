@@ -26,7 +26,7 @@
 </head>
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
-   <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(233, 135, 110);">
+   <nav class="navbar navbar-expand bg-nav py-0 fixed-top" style="background-color: rgb(233, 135, 110);">
       <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/mandon4-icon.png" alt="Home">
       </a>
@@ -111,7 +111,7 @@
       </ol>
       <div class="carousel-inner">
          <!-- Screen 1 -->
-         <div class="carousel-item active" id="slide0">
+         <div class="carousel-item active" id="slide0" style="margin-top: 80px;">
             <!-- Nav bars -->
             <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
                      <tbody>
@@ -255,7 +255,7 @@
             </div>
          </div>
          <!-- Screen 2 -->
-         <div class="carousel-item active" id="slide1">
+         <div class="carousel-item active" id="slide1" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -499,7 +499,7 @@
             </table>
          </div>
          <!-- Screen 3 daily ccm -->
-         <div class="carousel-item active" id="slide2">
+         <div class="carousel-item active" id="slide2" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -597,7 +597,7 @@
             <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px; text-align: center;"><input type="text" value="View Details" style="height: 30px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; font-weight: bold; width: 120px; font-size: 14px; color: rgb(152, 188, 255); border-color: rgb(152, 188, 255);" class="btn btn-outline-primary"></input></div>
          </div>
          <!-- Screen 4 weekly ccm -->
-         <div class="carousel-item active" id="slide3">
+         <div class="carousel-item active" id="slide3" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -876,7 +876,7 @@
 
    function updateInfoModal(index){
       var bodyText = document.getElementById("bodyText");
-      if(index != 0){
+      if(index != 0 && index != 1){
          //scrollable screen
          $("#html").addClass("scroll");
          $("#body").addClass("scroll");
