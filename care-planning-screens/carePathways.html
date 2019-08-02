@@ -3,7 +3,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Evaluations List</title>
+   <title>Care Pathways</title>
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
    <link rel="stylesheet" href="../../styles/main.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -11,17 +11,17 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
    
    <!-- Icon -->
-   <link rel="icon" href="../../icons/circlelogo.png">
+   <link rel="icon" href="../icons/circlelogo.png">
 </head>
 <body style="background-color: gainsboro">
    <nav class="navbar navbar-expand-sm fixed-bottom">
       <ul class="navbar-nav">
          <li class="nav-item" style="word-wrap: break-word; height: 100px; width: 150px; text-align: center;">
-            <a onclick="goBack()" class="btn btn-info backBtn" style="margin-right: 22px; margin-top: 27px;" href="#">Back to Evaluations</a>
+            <a onclick="goBack()" class="btn btn-info backBtn" style="margin-right: 22px; margin-top: 27px;" href="#">Back to Care Planning</a>
          </li>
       </ul>
    </nav>
-   <img style="display: block; margin-left: auto; margin-right: auto;" src="./evaluations-list.PNG" alt="">
+   <img style="display: block; margin-left: auto; margin-right: auto;" src="./carePathways.png" alt="">
 </body>
 
 <script>
@@ -34,7 +34,7 @@
 
    function goBack(){
       if(index == undefined){index = 0;}
-      window.location.href = "../../Evaluations.html?index=" + index;
+      window.location.href = "../CarePlanning.html?index=" + index;
    }
 </script>
 

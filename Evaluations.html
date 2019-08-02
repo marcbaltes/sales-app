@@ -85,6 +85,7 @@
                   <a href="#" onclick="saveIndex(event)"><h6 id="graphic2" class="modalText">UDA Experience Comparison</h6></a>
                   <a href="#" onclick="saveIndex(event)"><h6 id="graphic3" class="modalText">COMS 11 Focus Care Pathways</h6></a>
                   <a href="#" onclick="saveIndex(event)"><h6 id="graphic4" class="modalText">COMS Evaluations List</h6></a>
+                  <a href="#" onclick="saveIndex(event)"><h6 id="graphic5" class="modalText">Personalization of COMS Standard Content</h6></a>
                </div>
                <button class="btn-lg closeBtn" type="button" style="border-width: 0px; border-radius: 0px; background-color: dimgrey" data-dismiss="modal"><h6 class="imgBtn modalText" style="margin-bottom: -1px; color: white;">Close</h6></button>
             </div>
@@ -5637,15 +5638,18 @@
       else if(id == "graphic3"){
          window.location.href="./evaluations-screens/graphics/FocusCarePathways.html?index=" + index;
       }
-      else{
+      else if(id == "graphic4"){
          window.location.href="./evaluations-screens/graphics/EvaluationsList.html?index=" + index;
+      }
+      else{
+         window.location.href = "./evaluations-screens/graphics/StandardContent.html?index=" + index;
       }
    }
 
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 7;} //(change)
+      if(location == -1){index = 0;} //(change)
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){
