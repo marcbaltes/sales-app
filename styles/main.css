@@ -650,6 +650,19 @@ body {
    margin-left: -600px; /* width divided by 2 */
    margin-top: -388px; /* height divided by 2 */
 }
+.bulletBox{
+   position: relative; width: 80%; bottom: 100px; 
+}
+.bulletBox2{
+   background-color: rgb(243, 243, 243);
+   border-radius: 5px;
+   border: 1px solid rgb(182, 182, 182);
+   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.425);
+   padding: 10px;
+   font-family: 'Calibri';
+   font-size: 16px;
+   padding-left: 40px;
+}
 .conditionBox{
    padding: 10px;
    background-color: rgb(240, 240, 240);
@@ -676,16 +689,11 @@ body {
    margin-top: -350px; /* height divided by 2 */
 }
 .screen6new{
-   margin-left: auto;
-   margin-right: auto;
-   position: absolute;
+   position: relative;
    list-style-position: inside; 
    font-family: 'Calibri';
    font-size: 18px;
-   top: 50%;
-   left: 50%;
-   margin-left: -175px;
-   margin-top: 200px;
+   margin-left: auto;
 }
 .screen6img{
    margin-top: 15px;
