@@ -1,0 +1,58 @@
+﻿.filterContainer
+{
+    background-color:#4a90e2;
+    color:White;
+}    
+
+.filterFieldsTable
+{
+    display:none;
+    padding:0;
+    position:absolute;
+    z-index:90000;
+    left:0;
+    top:0;
+    background-color:#404040;
+    color:White;
+  	filter:alpha(opacity=95);
+	opacity:0.95;
+}    
+
+.filters-open .filterFieldsTable 
+{
+    display:block;
+}
+
+.filters-open .filterImage 
+{
+    background-image:url('../App_Themes/COMS/carat-d-white.png'); 
+}
+
+.filterLabel 
+{
+    display:block;
+}
+        
+.filterRow
+{
+    display:block;
+    padding-top:0.25em;
+    padding-bottom:0.25em;
+}
+    
+.filterItemLabel
+{
+    display:block;
+    clear:both;
+    float:left;
+    width:100%
+}    
+
+.filterItemCol
+{
+    display:block;
+    clear:both;
+    float:left;
+    width:95%
+}    
+   

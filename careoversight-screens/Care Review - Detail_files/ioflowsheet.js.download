@@ -1,0 +1,294 @@
+﻿var IOFlowsheet = IOFlowsheet || {};
+var ASMTBinding = ASMTBinding || {};
+
+if (!ko.bindingHandlers.datePickerRAD) {
+    ko.bindingHandlers.datePickerRAD = {
+        init: function (element, valueAccessor, allBindingsAccessor) {
+            var options = allBindingsAccessor().datepickerOptions || {};
+            $(element).datepicker({
+                showOn: "button",
+                buttonImage: "../app_themes/coms/calendar-black.png",
+                buttonImageOnly: true,
+                buttonText: "Select date",
+                minDate: "-365d",
+                maxDate: "+365d"
+            });
+            $(".ui-datepicker-trigger").css("margin-left", "0.5em");
+            $(".ui-datepicker-trigger").css("vertical-align", "middle");
+            $(document).find('input[data-datepickermax]').each(function (index, element) {
+                var self = this;
+                var maxVal = $(self).attr('data-datepickermax');
+                $(self).datepicker('option', 'maxDate', maxVal);
+            })
+            //handle the field changing
+            ko.utils.registerEventHandler(element, "change", function () {
+                var observable = valueAccessor();
+                // Start - Card #703: Bug - Date time validation
+                var substring = "/"
+                var dateValue = $(element).datepicker().val();
+                if (dateValue != "" && (dateValue.indexOf(substring) !== -1)) {
+                    var inputDate = new Date($(element).datepicker().val());
+
+                    if (inputDate.getYear() >= 100 || inputDate.getYear() < 0) {
+                        inputDate.setFullYear(1900 + inputDate.getYear())
+                    } else {
+                        inputDate.setFullYear(2000 + inputDate.getYear())
+                    }
+
+                    var controlDate = $(element).datepicker("getDate");
+
+                    if (inputDate != controlDate) {
+                        observable(inputDate.format("MM/dd/yyyy"));
+                    }
+                    else {
+                        observable(controlDate.format("MM/dd/yyyy"));
+                    }
+                }
+                else {
+                    COMS.Validation.ShowErrorBubble("Please enter a valid date in the mm/dd/yyyy.", $(element));
+                }
+            });
+
+            //handle disposal (if KO removes by the template binding)
+            ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+                $(element).datepicker("destroy");
+            });
+
+        },
+        update: function (element, valueAccessor) {
+            var value = ko.utils.unwrapObservable(valueAccessor());
+            if (!value) {
+                $(element).datepicker("setDate", null);
+            }
+            else {
+                var parsedDate = $.datepicker.parseDate('mm/dd/yy', value);
+                $(element).datepicker("setDate", parsedDate);
+            }
+        }
+    };
+}
+
+IOFlowsheet.IOFlowsheetVMCreate = function () {
+    var self = this;
+
+    self.residentObject = null;
+
+    self.CreateObservationVM = function (CADDIdx) {
+        var newObs = ko.mapping.fromJSON(self.ObservationPrototypeJSON);
+        newObs.CaddEntityIdx(CADDIdx.toLowerCase());
+        return newObs;
+    }
+
+    self.ObservationPrototypeJSON = '';
+    self.ObservationVMs = ko.observableArray();
+    self.SaveValidation = new COMS.Validation();
+    self.AssessmentTypeIdx = '';
+    self.AstFrmAssessmentInfoIdx = '';
+    self.RequiresPIN = false;
+
+    self.GetTotals = function (residentObject) {
+        self.residentObject = residentObject;
+        if (ASMTBinding && ASMTBinding.IO_Flowsheet) {
+            ASMTBinding.IO_Flowsheet.OralIntake.Value("");
+            ASMTBinding.IO_Flowsheet.OralIntakeTotal.Value("");
+            ASMTBinding.IO_Flowsheet.TFFlushIntake.Value("");
+            ASMTBinding.IO_Flowsheet.TFFlushIntakeTotal.Value("");
+            ASMTBinding.IO_Flowsheet.IVIntake.Value("");
+            ASMTBinding.IO_Flowsheet.IVIntakeTotal.Value("");
+            ASMTBinding.IO_Flowsheet.OtherIntake.Value("");
+            ASMTBinding.IO_Flowsheet.OtherIntakeTotal.Value("");
+            ASMTBinding.IO_Flowsheet.TotalIntake.Value("");
+            ASMTBinding.IO_Flowsheet.UrineOutput.Value("");
+            ASMTBinding.IO_Flowsheet.UrineOutputTotal.Value("");
+            ASMTBinding.IO_Flowsheet.EmesisOutput.Value("");
+            ASMTBinding.IO_Flowsheet.EmesisOutputTotal.Value("");
+            ASMTBinding.IO_Flowsheet.DrainsOutput.Value("");
+            ASMTBinding.IO_Flowsheet.DrainsOutputTotal.Value("");
+            ASMTBinding.IO_Flowsheet.OtherOutput.Value("");
+            ASMTBinding.IO_Flowsheet.OtherOutputTotal.Value("");
+            ASMTBinding.IO_Flowsheet.TotalOutput.Value("");
+            ASMTBinding.IO_Flowsheet.LastBMDate.Value("");
+        }
+
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json, charset=utf-8',
+            url: '/assessment/io_flowsheet/Data',
+            data: {},
+            success: function (data) {
+                if (data != null) {
+                    self.ObservationPrototypeJSON = data.ObservationPrototypeJSON;
+                    self.AssessmentTypeIdx = data.AssessmentTypeIdx;
+                    self.AstFrmAssessmentInfoIdx = data.AstFrmAssessmentInfoIdx;
+                    self.RequiresPIN = data.RequiresPIN;
+
+                    if (!ASMTBinding.IO_Flowsheet) {
+                        ASMTBinding.IO_Flowsheet = {
+                            OralIntake: self.CreateObservationVM('7DB4B5A0-064A-4941-9FBE-AAE41EAD9C95'),
+                            OralIntakeTotal: self.CreateObservationVM('10EE8442-907A-4871-A0BF-E3B9930E3410'),
+                            TFFlushIntake: self.CreateObservationVM('5CDACB29-F8DA-4D05-98C0-85D0E9E4392F'),
+                            TFFlushIntakeTotal: self.CreateObservationVM('EA039CCE-91CD-4BF5-A6D4-2CD80BF0A0FD'),
+                            IVIntake: self.CreateObservationVM('E5C4B781-F55B-487A-83CD-6E43EA74F265'),
+                            IVIntakeTotal: self.CreateObservationVM('AC5CC09B-B956-4802-A324-76F3009C7866'),
+                            OtherIntake: self.CreateObservationVM('9CBA8EB0-5F2B-4392-81D5-38BC7A21409C'),
+                            OtherIntakeTotal: self.CreateObservationVM('7D26AC45-6D1C-486C-9130-DC6FAED4AF48'),
+                            TotalIntake: self.CreateObservationVM('22083098-3C8E-49AC-A5D1-32C2878ECA56'),
+                            UrineOutput: self.CreateObservationVM('C3C399BA-640A-4E65-95F1-CBB261ABA173'),
+                            UrineOutputTotal: self.CreateObservationVM('542FCE2D-D2C9-49A2-BA86-FC611779E234'),
+                            EmesisOutput: self.CreateObservationVM('ED816DF4-ED1B-484B-93E7-074155CA8E7A'),
+                            EmesisOutputTotal: self.CreateObservationVM('5CCB56C6-A873-4121-9F9F-9B07187D967B'),
+                            DrainsOutput: self.CreateObservationVM('0BE28212-452C-4B65-BACC-DFF30E6F5406'),
+                            DrainsOutputTotal: self.CreateObservationVM('58584C72-9620-4AAA-8BAD-44E5D81C63C2'),
+                            OtherOutput: self.CreateObservationVM('5D58BE2A-2450-41A7-95EF-7D819D58FCC3'),
+                            OtherOutputTotal: self.CreateObservationVM('F2964EAB-BAF5-4965-89F7-21BCB23F2703'),
+                            TotalOutput: self.CreateObservationVM('B48C7707-E386-47C8-B510-413D61D48A5B'),
+                            LastBMDate: self.CreateObservationVM('e24f5259-80a5-422d-a4c2-d08b517aab2e')
+                        }
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.OralIntake);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.OralIntakeTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.TFFlushIntake);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.TFFlushIntakeTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.OtherIntake);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.OtherIntakeTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.IVIntake);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.IVIntakeTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.TotalIntake);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.UrineOutput);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.UrineOutputTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.EmesisOutput);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.EmesisOutputTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.DrainsOutput);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.DrainsOutputTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.OtherOutput);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.OtherOutputTotal);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.TotalOutput);
+                        self.ObservationVMs.push(ASMTBinding.IO_Flowsheet.LastBMDate);
+
+                        ko.applyBindings(self, document.getElementById('divIOFlowsheetPane'));
+                        $('#divIOFlowsheetPane').find("input[data-validation]").each(function (index, input) {
+                            var caddIdx = $(input).attr('data-validation');
+                            if (caddIdx) {
+                                COMS.Validation.AttachValidation(caddIdx, input, self.ObservationVMs, data.CADD_MeasurementSystemDef_idx, self.SaveValidation);
+                            }
+                        });
+                    }
+
+                    //Set output totals
+                    ASMTBinding.IO_Flowsheet.DrainsOutputTotal.Value(data.Totals[0].DrainsOutputTotal);
+                    ASMTBinding.IO_Flowsheet.EmesisOutputTotal.Value(data.Totals[0].EmesisOutputTotal);
+                    ASMTBinding.IO_Flowsheet.UrineOutputTotal.Value(data.Totals[0].UrineOutputTotal);
+                    ASMTBinding.IO_Flowsheet.OtherOutputTotal.Value(data.Totals[0].OtherOutputTotal);
+                    ASMTBinding.IO_Flowsheet.OralIntakeTotal.Value(data.Totals[0].OralIntakeTotal);
+                    ASMTBinding.IO_Flowsheet.TFFlushIntakeTotal.Value(data.Totals[0].TFFlushIntakeTotal);
+                    ASMTBinding.IO_Flowsheet.IVIntakeTotal.Value(data.Totals[0].IVIntakeTotal);
+                    ASMTBinding.IO_Flowsheet.OtherIntakeTotal.Value(data.Totals[0].OtherIntakeTotal);
+
+                    ASMTBinding.IO_Flowsheet.TotalIntake.Value(data.Totals[1].CurrentIntakeTotal);
+                    ASMTBinding.IO_Flowsheet.TotalOutput.Value(data.Totals[1].CurrentOutputTotal);
+                }
+            }
+        });
+    }
+
+    self.FinishNow = function (data, event) {
+        if (self.SaveValidation(event)) {
+            event.preventDefault();
+            return;
+        }
+        if (self.RequiresPIN == true) {
+            COMSNamespace.ShowPinEntry(function () {
+                self.SaveData(self.CompleteAssessment);
+            });
+        }
+        else {
+            self.SaveData(self.CompleteAssessment);
+        }
+    }
+
+    self.SaveData = function () {
+        ShowProgressDisplay();
+        var model = {
+            Observations: [],
+            Interventions: [],
+            Medications: [],
+            RAD_AssessmentIdx: '00000000-0000-0000-0000-000000000000',
+            RAD_AssessmentTypeIdx: self.AssessmentTypeIdx,
+            AstFrmAssessmentInfoIdx: self.AstFrmAssessmentInfoIdx,
+            ResidentIdx: self.residentObject.ResidentIdx,
+            AdmissionIdx: self.residentObject.Idx,
+            IsNew: true,
+            IsQuickAssessment: false,
+            IsNighttimeAssessment: false,
+            AreInterventionsDirty: false,
+            AreObservationsDirty: true,
+            IsProfile20ReadOnly: true
+        };
+
+        var observationsToSave = ko.observableArray();
+        ko.utils.arrayForEach(self.ObservationVMs(), function (observation) {
+            if (self.DoesObservationHaveValue(observation)) {
+                observationsToSave.push(observation);
+            }
+        });
+        model.Observations = observationsToSave();
+
+        var jsonData = " { 'id' : " + JSON.stringify(ko.mapping.toJSON(model)) + " } ";
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json;",
+            dataType: "json",
+            url: '/assessment/assessment/SaveData',
+            data: jsonData,
+            success: function (data) {
+                var respModel = JSON.parse(data);
+                if (respModel.IsClosed) {
+                    COMSNamespace.ShowMessageModal("This assessment has been closed.", function () {
+                        COMS.IOFlowsheet.Complete();
+                    });
+                    return;
+                }
+                self.CompleteAssessment(respModel.RAD_AssessmentIdx);
+            },
+            error: function (error) {
+                HideProgressDisplay();
+            }
+        });
+    }
+
+    self.CompleteAssessment = function (radIdx) {
+        $.ajax({
+            type: 'GET',
+            contentType: "application/json;",
+            dataType: "json",
+            url: '/assessment/assessment/complete/' + radIdx,
+            success: function (msg) {
+                HideProgressDisplay();
+                if (msg) {
+                    COMSNamespace.ShowMessageModal(msg, function () {
+                        COMS.IOFlowsheet.Complete();
+                    });
+                    return;
+                }
+                COMS.IOFlowsheet.Complete();
+            },
+            error: function (error) {
+                HideProgressDisplay();
+            }
+        });
+    }
+
+    self.DoesObservationHaveValue = function (observation) {
+        var hasValue = observation.Value().length > 0 || observation.LegalValues().length > 0;
+        if (!hasValue && observation.Children) {
+            ko.utils.arrayForEach(observation.Children(), function (child) {
+                hasValue |= self.DoesObservationHaveValue(child);
+            });
+        }
+        if (!hasValue) observation.Idx(COMSNamespace.EmptyGuid);
+        return hasValue;
+    }
+
+}
+
+
+

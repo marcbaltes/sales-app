@@ -1,0 +1,105 @@
+var CADDMeasurementUnits = CADDMeasurementUnits || {};CADDMeasurementUnits.CADDUnits = new Array();
+CADDMeasurementUnits.GetCADDUnitsAbbreviation = function(caddIdx, measurementSystemIdx) {
+let units = ko.utils.arrayFirst(CADDMeasurementUnits.CADDUnits, function (c) {return c.CADDIdx == caddIdx && c.MeasurementSystemIdx == measurementSystemIdx;});
+if(units != null) {return units.Abbreviation;} else { return '';}
+}
+CADDMeasurementUnits.GetCADDUnits = function(caddIdx, measurementSystemIdx) {
+let units = ko.utils.arrayFirst(CADDMeasurementUnits.CADDUnits, function (c) {return c.CADDIdx == caddIdx && c.MeasurementSystemIdx == measurementSystemIdx;});
+return units;
+}
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': '6770f64f-1005-4102-a1b7-1dc6be09719f', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+AlertMin: 90, AlertMax: 3000, ValidMin: 0, ValidMax: 6000, 'Units': 'Milliliters', 
+'Abbreviation': 'ml'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': '6770f64f-1005-4102-a1b7-1dc6be09719f', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+AlertMin: 100, AlertMax: 2000, ValidMin: 0, ValidMax: 6000, 'Units': 'Cubic Centimeters', 
+'Abbreviation': 'ccs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'f2ddd310-dfb5-4aa2-b695-24cce6b86dde', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+ValidMin: 0, ValidMax: 500, 'Units': 'Kilograms', 
+'Abbreviation': 'kgs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'f2ddd310-dfb5-4aa2-b695-24cce6b86dde', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+ValidMin: 0, ValidMax: 1100, 'Units': 'Pounds', 
+'Abbreviation': 'lbs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'ea775a6c-6a5d-432c-93d0-4069a976fb42', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+AlertMin: 90, AlertMax: 3000, ValidMin: 0, ValidMax: 6000, 'Units': 'Milliliters', 
+'Abbreviation': 'ml'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'ea775a6c-6a5d-432c-93d0-4069a976fb42', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+AlertMin: 90, AlertMax: 3000, ValidMin: 0, ValidMax: 6000, 'Units': 'Cubic Centimeters', 
+'Abbreviation': 'ccs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': '726c3754-022e-4131-bd88-4c4e0c328c45', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+AlertMin: 1, AlertMax: 300, ValidMin: 1, ValidMax: 300, 'Units': 'Centimeters', 
+'Abbreviation': 'cms'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': '726c3754-022e-4131-bd88-4c4e0c328c45', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+AlertMin: 1, AlertMax: 120, ValidMin: 1, ValidMax: 120, 'Units': 'Inches', 
+'Abbreviation': 'inches'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': '8abf8721-84e3-4973-a765-ade7425a86b2', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+AlertMin: 5, AlertMax: 635.91, ValidMin: 4.54, ValidMax: 636.36, 'Units': 'Kilograms', 
+'Abbreviation': 'kgs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': '8abf8721-84e3-4973-a765-ade7425a86b2', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+AlertMin: 11, AlertMax: 1399, ValidMin: 10, ValidMax: 1400, 'Units': 'Pounds', 
+'Abbreviation': 'lbs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'cebe4fd5-4978-4670-9d44-b382821a2022', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+AlertMin: 36.5, AlertMax: 37.2, ValidMin: 34.44, ValidMax: 42.22, 'Units': 'Celsius', 
+'Abbreviation': 'C'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'cebe4fd5-4978-4670-9d44-b382821a2022', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+AlertMin: 97.8, AlertMax: 99, ValidMin: 94, ValidMax: 108, 'Units': 'Fahrenheit', 
+'Abbreviation': 'F'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'b1c0d2d0-0ada-4f9e-a995-df03db17f71d', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+AlertMin: 5, AlertMax: 635.91, ValidMin: 4.54, ValidMax: 636.36, 'Units': 'Kilograms', 
+'Abbreviation': 'kgs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'b1c0d2d0-0ada-4f9e-a995-df03db17f71d', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+AlertMin: 11, AlertMax: 1399, ValidMin: 10, ValidMax: 1400, 'Units': 'Pounds', 
+'Abbreviation': 'lbs'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'ef7360fc-3c6a-43f6-8829-f0bb897249d6', 
+'MeasurementSystemIdx': 'e6b0dd21-bae5-477a-a6d6-cf5126577f8c', 
+'Units': 'Centimeters', 
+'Abbreviation': 'cms'
+});
+CADDMeasurementUnits.CADDUnits.push({
+'CADDIdx': 'ef7360fc-3c6a-43f6-8829-f0bb897249d6', 
+'MeasurementSystemIdx': 'ae3365c9-a899-45eb-8183-fc0f57c3bfcf', 
+'Units': 'Inches', 
+'Abbreviation': 'inches'
+});

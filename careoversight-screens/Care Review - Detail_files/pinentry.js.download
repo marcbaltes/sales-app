@@ -1,0 +1,64 @@
+﻿var COMSNamespace = COMSNamespace || {};
+if (!COMSNamespace.ShowPinEntry) {
+    COMSNamespace.ShowPinEntry = function (callback, cancelCallback) {
+        $('#btnclosepinentry').hide();
+        $('#divPINEntry').on('shown.bs.modal', function () {
+            if (!cancelCallback) {
+                $('#btnclosepinentry').show();
+            }
+            $('#txtPINEntry').focus();
+        });
+        $('#divPINEntry').on('hidden.bs.modal', function () {
+            COMSNamespace.OnPinCancel();
+        });
+
+
+        $('#txtPINEntry').val('');
+        $('#divPINEntry').modal("show");
+        COMSNamespace.PINVerifiedCallback = callback;
+        if (cancelCallback) {
+            COMSNamespace.OnPinCancelCallback = cancelCallback;
+        }
+        else COMSNamespace.OnPinCancelCallback = null;
+    }
+
+    COMSNamespace.OnPinCancel = function () {
+        if (COMSNamespace.OnPinCancelCallback) {
+            COMSNamespace.OnPinCancelCallback();
+            COMSNamespace.OnPinCancelCallback = null;
+        }
+    }
+
+    COMSNamespace.ValidatePin = function () {
+        $('#spanPINEntryMessage').html("");
+        var pin = $('#txtPINEntry').val();
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            url: "/api/commonfunctions/VerifyPIN",
+            data: "{'PINCandidate': '" + pin + "' }",
+            dataType: "json",
+            success: function (data) {
+                if (data) {
+                    COMSNamespace.OnPinCancelCallback = null;
+                    $('#divPINEntry').modal("hide");
+                    if (COMSNamespace.PINVerifiedCallback) {
+                        COMSNamespace.PINVerifiedCallback();
+                        COMSNamespace.PINVerifiedCallback = null;
+                    }
+                }
+                else {
+                    $('#txtPINEntry').val('');
+                    $('#txtPINEntry').focus();
+                    $('#spanPINEntryMessage').html("Unable to verify PIN.");
+                }
+            },
+            error: function () {
+                $('#spanPINEntryMessage').html("Error validating PIN.");
+            }
+        });
+    }
+}
+
+

@@ -13,6 +13,31 @@
    <link rel="icon" href="./icons/circlelogo.png">
 </head>
 <body>
+   <!-- Static Navbar -->
+   <nav class="navbar navbar-expand bg-nav py-0 fixed-top">
+      <ul class="navbar-nav ml-auto">
+         <a href="#" class="nav-item imgBtn" id="info" style="margin-right:-10px;" onclick="showModal(event)">
+            <img class="img-fluid infoImg hvr-grow" style="height: 75px; width: 75px;"src="./icons/infoBtnBlue.png" alt="info">
+         </a>
+      </ul>
+
+         <!-- Info Modal -->
+         <div class="modal fade" id="infoModal">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  <div class="modal-body">
+                     <h6 class="modalText"><b>Supporting Documents</b></h6>
+                     <a href="./homePageDocs/carePathways.html"><h6 class="modalText">COMS Care Pathways List</h6></a>
+                     <a href="./homePageDocs/EvaluationsList.html"><h6 class="modalText">COMS Evaluations List</h6></a>
+                     <a href="./homePageDocs/FocusCarePathways.html"><h6 class="modalText">COMS 11 Focus Care Pathways</h6></a>
+                     <a href="./homePageDocs/StandardContent.html"><h6 class="modalText">Personalization of COMS Standard Content</h6></a>
+                     <a href="./homePageDocs/UDAExperience.html"><h6 class="modalText">UDA Experience Comparison</h6></a>
+                  </div>
+                  <button class="btn-lg closeBtn" type="button" style="border-width: 0px; border-radius: 0px; background-color: dimgrey" data-dismiss="modal"><h6 class="imgBtn modalText" style="margin-bottom: -1px; color: white;">Close</h6></button>
+               </div>
+            </div>
+         </div>
+      </nav>
    <img src="./icons/wheel2.png" alt="wheel" id="wheel" class="wheel">
    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
    <svg class="svgWheel"
@@ -108,6 +133,12 @@
          </a>
       </g>
    </svg>
+
+   <script>
+      function showModal(e){
+      $("#info").attr("data-toggle", "modal");
+      $("#info").attr("data-target", "#infoModal");
+   }</script>
       
 
    <!-- jQuery -->

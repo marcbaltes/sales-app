@@ -1,0 +1,64 @@
+﻿function SetCacheItem(cacheKey, cacheObject, cacheExpirationLimitMinutes) {
+    if (typeof (Storage) !== "undefined") {
+        var cacheArray = {
+           object: cacheObject
+         , expiration: (new Date()).getTime() + (cacheExpirationLimitMinutes * 60 * 1000) 
+        };
+        
+        localStorage.setItem(cacheKey, JSON.stringify(cacheArray));
+    }
+}
+
+function GetCacheItem(cacheKey) {
+    CleanUpCache();
+
+    var rtn = null;
+
+    if (typeof (Storage) !== "undefined") {
+        var cacheItem = JSON.parse(localStorage.getItem(cacheKey));
+        if (cacheItem && cacheItem.object) {
+            rtn = cacheItem.object;
+        }
+    }
+
+    return rtn;
+}
+
+function RemoveCacheItem(cacheKey) {
+    if (typeof (Storage) !== "undefined") {
+        var key = localStorage.getItem(cacheKey);
+        if (key) {
+            localStorage.removeItem(cacheKey);
+        }
+    }
+}
+
+function CleanUpCache() {
+    if (typeof (Storage) !== "undefined") {
+        var len = localStorage.length;
+        var keystoremove = [];
+        for (var i = 0; i < len; i++) {
+            var key = localStorage.key(i);
+
+            var item = {};
+            try {
+                item = JSON.parse(localStorage.getItem(key));
+            }
+            catch (e) {
+                item = NaN;
+            }
+          if (item && item.expiration) {
+                var expirationDate = item.expiration;
+                if (expirationDate) {
+                    if (expirationDate < (new Date()).getTime()) {
+                        keystoremove.push(key);
+                    }
+                }
+            }
+        }
+
+        for (var i = 0; i < keystoremove.length; i++) {
+            localStorage.removeItem(keystoremove[i]);
+        }
+    }
+}

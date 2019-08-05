@@ -1,0 +1,78 @@
+﻿var COMSNamespace = COMSNamespace || {};
+
+COMSNamespace.ShowSlideoutTimer = -1;
+
+COMSNamespace.PopulateObservableArray = function (source, observableArray, objectFunction) {
+    if (source && source.length > 0) {
+        var tempArray = [];
+        for (var i = 0; i < source.length; i++) {
+            tempArray.push(new objectFunction(source[i]));
+        }
+        observableArray(tempArray);
+    }
+}
+
+COMSNamespace.ShowSlideoutMessage = function (message, isError, autoHide, parentId) {
+    var element;
+    var elementText;
+    if (parentId) {
+        element = $('#' + parentId + ' > div.MessageSlideOut').get(0);
+        if (!element) {
+            $('#' + parentId).append('<div class="MessageSlideOut"><a href="#" onclick="COMSNamespace.HideSlideoutMessage(this);return false;"><span class="MessageSlideOutClose"><img src="../App_Themes/COMS/delete-black.png" /></a></span><span class="MessageSlideOutText"></span></div>');
+        }
+        element = $('#' + parentId + ' > div.MessageSlideOut');
+        elementText = $('#' + parentId + ' > div.MessageSlideOut .MessageSlideOutText');
+    }
+    else {
+        element = $('body > div.MessageSlideOut').get(0);
+        if (!element) {
+            $("body").append('<div class="MessageSlideOut"><a href="#" onclick="COMSNamespace.HideSlideoutMessage(this);return false;"><span class="MessageSlideOutClose"><img src="../App_Themes/COMS/delete-black.png" /></a></span><span class="MessageSlideOutText"></span></div>');
+        }
+        element = $('body > div.MessageSlideOut');
+        elementText = $('body > div.MessageSlideOut .MessageSlideOutText');
+    }
+
+    if (COMSNamespace.ShowSlideoutTimer > 0) {
+        clearTimeout(COMSNamespace.ShowSlideoutTimer);
+        COMSNamespace.ShowSlideoutTimer = -1;
+    }
+
+    $(element).css('width', '0');
+    $(elementText).css('white-space', 'nowrap');
+    $(elementText).text(message);
+    if (isError) {
+        $(element).css('border-color', '#ff0000');
+    }
+    
+    $(element).addClass("MessageSlideOutVisible");
+    $(element).animate({ width: '75%' }, function () {
+        $(elementText).css('white-space', 'normal');
+        if (autoHide) {
+            COMSNamespace.ShowSlideoutTimer = setTimeout(function () {
+                COMSNamespace.ShowSlideoutTimer = -1;
+                $(elementText).css('white-space', 'nowrap');
+                $(element).animate({ width: '0' }, function () { $(element).removeClass("MessageSlideOutVisible"); });
+            }, 6000);
+        }
+    });
+}
+
+COMSNamespace.HideSlideoutMessage = function (source) {
+    COMSNamespace.ShowSlideoutTimer = -1;
+    var jqElement = $(source).closest(".MessageSlideOut");
+    jqElement.children(".MessageSlideOutText").css('white-space', 'nowrap');
+    jqElement.animate({ width: '0' }, function () { jqElement.removeClass("MessageSlideOutVisible"); });
+}
+
+COMSNamespace.DisplayCommunicationFault = function (widgetElementId, model, parentId) {
+    if (widgetElementId) {
+        COMSNamespace.HideWidgetOverlay(widgetElementId);
+    } else {
+        HideProgressDisplay();
+    }
+    if (model && model.operationInProgress) {
+        model.operationInProgress(false);
+    }
+    COMSNamespace.ShowSlideoutMessage('Communication error!', true, false, parentId);
+}
+

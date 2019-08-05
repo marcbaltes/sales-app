@@ -1,0 +1,159 @@
+﻿var COMS = COMS || {};
+
+if (!COMS.Validation) {
+    COMS.Validation = COMS.Validation || {};
+    
+    COMS.Validation = function () {
+        var self = function (event) {
+            var error = false;
+            ko.utils.arrayFirst(self.Validations, function (v) {
+                if (v && v()) {// got error
+                    error = true;
+                }
+                return error;
+            });
+            if (error && event)
+                event.preventDefault();
+            return error;
+        };
+        self.Validations = [];
+        self.Register = function (validation) {
+            self.Validations.push(validation);
+            return self;
+        }
+        return self;
+    };
+
+    COMS.Validation.PerformValidation = function (assessmentValue, cadd, units) {
+        if (!assessmentValue || !cadd) { return ''; }
+
+        if (assessmentValue.trim().length == 0) { return ''; }
+        var value;
+        if (cadd.IType == 10) {
+            if (assessmentValue % 1 != 0) {
+                return 'Please enter a valid integer value';
+            }
+            value = parseInt(assessmentValue);
+            if (isNaN(value)) {
+                return 'Please enter a valid integer value';
+            }
+        }
+        else {
+            value = parseFloat(assessmentValue);
+            if (isNaN(value)) {
+                return 'Please enter a valid decimal value';
+            }
+        }
+
+        var valMin = parseFloat(units != null && units.ValidMin ? units.ValidMin : cadd.ValidMin);
+        var valMax = parseFloat(units != null && units.ValidMax ? units.ValidMax : cadd.ValidMax);
+
+        if (value < valMin || value > valMax) {
+            return 'Value must be between ' + valMin + ' and ' + valMax;
+        }
+
+        return '';
+    }
+
+    COMS.Validation.AttachValidation = function (CADDIdx, domElement, ObsArray, measurementSystemIdx, saveValidation) {
+        var caddIdxUpper = CADDIdx.toLowerCase();
+        var boundObject = ko.utils.arrayFirst(ObsArray(), function (ele) {
+            return ele.CaddEntityIdx() == caddIdxUpper;
+        });
+        if (domElement && boundObject) {
+            var cadd = CADDLibrary.GetCADD(CADDIdx);
+            if (cadd) {
+                let systemIdx = measurementSystemIdx;
+                let units = CADDMeasurementUnits.GetCADDUnits(CADDIdx, systemIdx);
+                var jqInputElement = $(domElement);
+                if (cadd.MaxChars) {
+                    jqInputElement.attr("maxlength", cadd.MaxChars.toString());
+                }
+                else {
+                    jqInputElement.attr("maxlength", "1000");
+                }
+                if (cadd.ValidMin || cadd.ValidMax || (units != null && (units.ValidMin || units.ValidMax))) {
+                    var validateHasError = function (newValue) {
+                        if (boundObject.ValidationError || newValue) {
+                            var errorString = boundObject.ValidationError || COMS.Validation.PerformValidation(newValue, cadd, units);
+                            if (errorString) {
+                                $('.speechbubble').hide();
+                                COMS.Validation.ShowErrorBubble(errorString, domElement)
+                                return errorString;
+                            }
+                        }
+                        return false;
+                    };
+                    jqInputElement.on("blur", function (e) {
+                        if (boundObject.ValidationError) {
+                            boundObject.ValidationError = null;
+                            $('.speechbubble').hide();
+                        }
+
+                        var errorString = validateHasError(boundObject.Value())
+
+                        if (errorString) {
+                            $('.speechbubble').hide();
+                            boundObject.Value('');
+                            boundObject.ValidationError = errorString;
+                            COMS.Validation.ShowErrorBubble(errorString, domElement)
+                        }
+                    });
+
+                    if (saveValidation) {
+                        saveValidation.Register(function () {
+                            var er = validateHasError(boundObject.Value());
+                            if (er) {
+                                jqInputElement.focus();
+                                return er;
+                            }
+                        })
+                    }
+                }
+            }
+        }
+
+        return boundObject;
+    }
+    
+    COMS.Validation.ShowErrorBubble = function (errorString, inputElement) {
+        var inputPosition = $(inputElement).offset();
+        var inputHeight = $(inputElement).outerHeight();
+        $(inputElement).uniqueId();
+        var speechBubbleID = $(inputElement).attr('id') + "_ValidationBubble";
+        if ($('#' + speechBubbleID).length <= 0) {
+            var parent = $(inputElement).parent();
+            var reuslt = parent.append('<div id="' + speechBubbleID + '" class="speechbubble"><span class="speechbubbletext">' + errorString + '</span><a href="#" onclick="COMS.Validation.CloseErrorBubble(\'' + speechBubbleID + '\');return false;"><img src="../App_Themes/COMS/delete-black.png" alt="" /></a></div>');
+        } else {
+            $('#' + speechBubbleID + ' .speechbubbletext').text(errorString);
+            $('#' + speechBubbleID).show();
+        }
+        $('#' + speechBubbleID).offset({ top: (inputPosition.top + inputHeight + 10), left: inputPosition.left });
+    }
+
+    COMS.Validation.CloseErrorBubble = function (bubbleId) {
+        if (bubbleId) {
+            $('#' + bubbleId).hide();
+        } else {
+            $('.speechbubble').hide();
+        }
+    }
+
+    COMS.Validation.IsValidDate = function (d) {
+        if (Object.prototype.toString.call(d) === "[object Date]") {
+            // it is a date
+            if (isNaN(d.getTime())) {  // d.valueOf() could also work
+                // date is not valid
+                return false;
+            }
+            else {
+                // date is valid
+                return true;
+            }
+        }
+        else {
+            // not a date
+            return false;
+        }
+    };
+}

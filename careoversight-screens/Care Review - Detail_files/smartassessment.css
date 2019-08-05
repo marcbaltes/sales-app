@@ -1,0 +1,205 @@
+@font-face { font-family: 'OpenSans';
+    src: url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Regular.eot');
+    src: url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Regular.woff') format('woff'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Regular.ttf') format('truetype'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Regular.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face { font-family: 'OpenSansSemiBold';
+    src: url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Semibold.eot');
+    src: url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Semibold.woff') format('woff'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Semibold.ttf') format('truetype'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Semibold.svg#open_sanssemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face { font-family: 'OpenSansBold';
+    src: url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Bold.eot');
+    src: url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Bold.woff') format('woff'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Bold.ttf') format('truetype'),
+         url('/App_Themes/COMS/SmartAssessmentFonts/OpenSans-Bold.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/* GLOBAL CUSTOM CLASSES */
+/*-----------------------*/
+
+/* -- Skin and Pain Badges -- */
+.badge.badgeResolved { margin-bottom:4px; background-color:#32ff04; color:#32ff04; border:1px solid #525252; padding: 1px 4px; font-size: 9px; }
+.badge.badgeNoChange { margin-bottom:4px; background-color:#fff600; color:#fff600; border:1px solid #525252; padding: 1px 4px; font-size: 9px; }
+.badge.badgeChanged { margin-bottom:4px; background-color:#ff0000; color:#ff0000; border:1px solid #525252;  padding: 1px 4px; font-size: 9px; }
+
+
+.glyphicon.glyphicon-COMS-dot:before {
+    content: "\25cf";
+    font-size: 1.5em;
+}
+.glyphicon.glyphicon-COMS-dot2:before {
+    content: "\25cf";
+    font-size: 1em;
+}
+input[type="radio"], input[type="checkbox"] { margin: 2px 0 0 ; }
+
+.COMS-text-red { color:red; }
+.COMS-background-gray { background-color:#f1eff2; }
+
+.DivProcessing                    { position:absolute; top:0px;	right:0px; bottom:0px; left:0px; background-color:rgba(228,229,242,.5); z-index:199970; background-size:96px 96px; background-image:url('../App_Themes/COMS/Loading.gif');	background-position:center center; background-repeat:no-repeat; }
+.DivProcessing.DivProcessingSmall { background-size:64px 64px; }
+.DivProcessingContainer { position:relative; }
+
+.form-group-horizontal { overflow:hidden; }
+.form-group-horizontal > label { float:left; width:50%; padding-top:5px; }
+.form-group-horizontal > .form-control { float:left; width:50%; }
+
+@media (min-width:1200px) {
+  .col-sm-6.big-gutter             { padding-right:15px; }
+  .col-sm-6.big-gutter + .col-sm-6 { padding-left:15px; }
+}
+
+.speechbubble { position: absolute; left:0; top:0; min-height:2em; text-align: center; padding:0.2em;	padding-right:1.5em;	font-size:1em;	background-color: #fff;	border: 2px solid #f00000;	-webkit-border-radius: 0.25em;	-moz-border-radius: 0.25em;	border-radius: 0.25em;	-webkit-box-shadow: 2px 2px 4px #888;	-moz-box-shadow: 2px 2px 4px #888;	box-shadow: 2px 2px 4px #888;	vertical-align:middle; }
+.speechbubble img { position: absolute; right:2px; top:0.3em; }
+.speechbubble:before { content: ' '; position: absolute;	width: 0;	height: 0;	left: 30px;	top: -12px;	border: 6px solid;	border-color: transparent transparent #f00000 #f00000 ; }
+.speechbubble:after {	content:' '; position:absolute;	width:0; height:0; left:32px;	top:-7px;	border:4px solid;	border-color:transparent transparent #fff #fff ; }
+
+
+/* SMART ASSESSMENT */
+/*------------------*/
+
+#SmartAssessment { display:none; position:relative; }
+
+#SmartAssessment .nav-tabs { border-bottom:none; }
+#SmartAssessment .nav-tabs li,
+#SmartAssessment .nav-tabs li a,
+#SmartAssessment .nav-tabs li a:hover,
+#SmartAssessment .nav-tabs li.active a,
+#SmartAssessment .nav-tabs li.active a:hover { margin-right:0px; border:none; background:none; outline:none; }
+#SmartAssessment .nav-tabs li { margin-bottom:0px; }
+#SmartAssessment .nav-tabs li.active a { font-weight:bold; }
+
+#SmartAssessment .nav-tabs > li > a > span.glyphicon-ok { display:inline-block; font-size:16px; color:#00d115; }
+#SmartAssessment .nav-tabs > li > a > span.delta-badge { display:inline-block; background-image:url(/Images/smart-assessment/delta-badge.png); background-position:center center; background-size:100%; background-repeat:no-repeat; text-align:center; font-weight:normal; font-family:OpenSans; color:white; }
+#SmartAssessment .nav-tabs > li > a > span.glyphicon-ok,
+#SmartAssessment .nav-tabs > li > a > span.delta-badge { position:absolute; }
+
+#SmartAssessmentPrimaryNavigation { border-bottom:3px solid #e2dfe3; padding-left:0px; padding-right:0px; }
+#SmartAssessmentPrimaryNavigation .nav a { padding:15px 21px; font-family:'OpenSansSemiBold'; font-size:14px; }
+@media (max-width: 950px) 
+{
+    #SmartAssessmentPrimaryNavigation .nav a { padding:5px 10px; font-family:'OpenSansSemiBold'; font-size:12px; }
+}
+#SmartAssessmentPrimaryNavigation > button { float:right; margin-right:8px; margin-top:8px; }
+
+#SmartAssessmentPrimaryNavigation span.glyphicon-ok { top:10px; left:8px; }
+#SmartAssessmentPrimaryNavigation span.delta-badge { bottom:5px; right:4px; width:24px; height:24px; padding-top:6px; font-size:12px; }
+
+#SmartAssessmentChart { padding-left:0; padding-right:0; }
+#SmartAssessmentChart .SmartAssessmentChartAbnormal,
+#SmartAssessmentChart .checkbox + .checkbox,
+#SmartAssessmentChart .checkbox { margin:0px 0px 0px 0px; padding:4px 0px 4px 0px; }
+#SmartAssessmentChart { padding-right:0px; }
+#SmartAssessmentChart .SmartAssessmentChartAbnormal { padding-left:20px; }
+#SmartAssessmentChart .SmartAssessmentChartAbnormalMarker { margin-left:-20px; }
+
+.SmartAssessmentSecondaryNavigation { padding:5px 0px 5px 0px; }
+.SmartAssessmentSecondaryNavigation li { float:none; }
+.SmartAssessmentSecondaryNavigation li > a { padding-left:0; padding-top:8px; padding-bottom:8px }
+.SmartAssessmentSecondaryNavigation span.delta-badge { bottom:5px; left:6px; width:20px; height:20px; padding-top:4px; font-size:11px; }
+
+.SmartAssessmentSecondaryTabContent { border-right:1px solid #e2dfe3; border-left:1px solid #e2dfe3; padding-top:25px; } /* was not merging - this will fake out the commit for a second try */
+.SmartAssessmentSecondaryTabContent h4 { margin-top:0px; }
+.SmartAssessmentSecondaryTabContent .observation-group { margin-bottom:45px; }
+.SmartAssessmentSecondaryTabContent smart-assessment-note-control { float:right; padding-right:15px; margin-top:15px; margin-bottom:15px; }
+
+.GrpCADD { margin-bottom:20px; }
+.GrpCADD .dropdown-toggle { cursor:pointer; overflow:hidden; }
+.GrpCADD .dropdown-toggle .GrpCADDHeading { padding:3px 10px 3px 0px; font-weight:bold; }
+.GrpCADD .dropdown-toggle .GrpCADDSelections { position:relative; border:solid #cacaca 1px; padding:3px 25px 3px 3px; background:white; overflow:hidden; }
+.GrpCADD .dropdown-toggle .GrpCADDSelections .caret { position:absolute; top:13px; right:10px; }
+.GrpCADD .dropdown-toggle .GrpCADDSelections .text-muted,
+.GrpCADD .dropdown-toggle .GrpCADDSelections .GrpCADDSelectionColumn { float:left; margin:3px 0px 3px 0px; padding:0px 3px 0px 3px; }
+.GrpCADD .dropdown-toggle .GrpCADDSelections .GrpCADDSelectionColumn .GrpCADDSelection { background-color:#f1eff2; border:1px solid #cacaca; padding:2px 4px 2px 4px; }
+.GrpCADD .dropdown-menu { top:20px; left:-1%; width:102%; }
+.GrpCADD .dropdown-menu > li > a { white-space:normal; }
+.GrpCADD .dropdown-menu .GrpCADDItem { padding-left:36px; }
+.GrpCADD .dropdown-menu .GrpCADDItem > input { margin-left:-24px; margin-right:7px; }
+.GrpCADD .dropdown-menu .GrpCADDItem > span { position:relative; top:-2px; }
+
+.expanded-content { margin-top:6px; padding:10px; background-color:#f1eff2; }
+.expanded-content .GrpCADD { margin-bottom:10px; }
+.expanded-content .GrpCADD .dropdown-toggle .GrpCADDHeading,
+.expanded-content label { font-weight:normal; }
+.expanded-content .row { margin-left:-14px; margin-right:-14px; }
+.expanded-content .row .col-sm-6 { padding-left:14px; padding-right:14px; }
+.expanded-content .row .col-sm-6 .GrpCADD .dropdown-toggle .GrpCADDHeading { float:none; width:auto; }
+.expanded-content .row .col-sm-6 .GrpCADD .dropdown-toggle .GrpCADDSelections { width:auto; }
+
+.expanded-content-transparent { margin-top:0px; padding-top:0px; background-color:transparent; }
+
+#SmartAssessment .canvas-graph { width:100%; min-height:200px; }
+
+@media (min-width:1400px) {
+  .GrpCADD .dropdown-toggle .GrpCADDHeading { float:left; width:30%; }
+  .GrpCADD .dropdown-toggle .GrpCADDSelections { width:70%; }
+  .GrpCADD .dropdown-menu { top:-4px; left:29%; width:72%; }
+  .GrpCADDStacked > .GrpCADD .dropdown-toggle .GrpCADDHeading { float:none; width:auto; }
+  .GrpCADDStacked > .GrpCADD .dropdown-toggle .GrpCADDSelections { width:auto; }
+  .GrpCADDStacked > .GrpCADD .dropdown-menu { top:20px; left:-1%; width:102%; }
+}
+
+.chart-summary-container { border-top: 2px solid #ddd; padding:2px; min-height:200px; }
+.chart-summary-container span { padding:0; margin:0; }
+
+.WholeBodyPart {   background-image : url('/Images/Body/wholeBody.gif');    background-repeat:no-repeat;    background-size: 100% 100%;    width :440px;    height : 440px; }
+
+.AssessmentDateControl { width:85%; border: 1px solid #ccc; border-radius:4px; box-shadow:inset 0px 1px 1px rgba(0,0,0,0.075); font-size:14px; font-weight:400; color: #555; line-height:19.99px; padding-top:2px; padding-bottom:2px; padding-left:6px; padding-right:6px; }
+.AssessmentDateControl:focus { box-shadow:inset 0px 1px 1px rgba(0,0,0,0.075), 0px 0px 8px rgba(102,175,233,0.6); border-color:#66afe9; }
+
+#SmartAssessment .col-sm-6 > canvas { margin-left:auto; margin-right:auto; }
+
+.SmartAssessmentBodyChartObservation { position:relative; min-height:60px; margin-bottom:15px; padding:5px 15px 5px 15px; background-color:#f1eff2; }
+.SmartAssessmentBodyChartObservation > span.glyphicon,
+.SmartAssessmentBodyChartObservation > button { float:right; margin:7px; color:#4a90e2; cursor:pointer; }
+.SmartAssessmentBodyChartObservation > div { margin-top:7px; margin-bottom:7px; }
+
+#SmartAssessmentProfile { margin-top:15px; }
+#SmartAssessmentProfile #SmartAssessmentProfileExpandCollapse { position:absolute; top:12px; right:25px; }
+
+.ProfileGroup { position:relative; margin-bottom:30px; border-top:1px solid rgb(202, 202, 202); border-radius: 5px 5px 0px 0px; background:rgb(245, 245, 245); overflow:hidden; }
+.ProfileGroup header { border-right:1px solid rgba(202, 202, 202, 1); border-bottom: 1px solid rgba(202, 202, 202, 1); border-left: 1px solid rgba(202, 202, 202, 1); border-radius: 5px 5px 5px 5px; padding:10px 10px 10px 18px; background: rgb(255, 255, 255); font-size:16px; font-weight:bold; color: rgba(74, 144, 226, 1); }
+.ProfileGroup header:hover { background-color: rgba(228, 237, 246, 1); }
+.ProfileGroup header span:first-child { position:relative; padding-right:5px; line-height:16px; }
+
+.ProfileGroupEdittable { cursor:pointer; }
+.ProfileGroupEdittable header { cursor:pointer; }
+
+.ProfileGroupHasData { background-color: rgba(245, 245, 245, 1); border-right: 1px solid rgba(202, 202, 202, 1); border-bottom: 1px solid rgba(202, 202, 202, 1); border-left: 1px solid rgba(202, 202, 202, 1); }
+.ProfileGroupHasData header { margin-bottom:10px; background-color: rgba(228, 237, 246, 1); border-right: none; border-bottom: 1px solid rgba(202, 202, 202, 1); border-left: none; }
+
+.ProfileGroupCADDBodyView { margin:0px 10px 10px 18px;  overflow:hidden;}
+
+.ProfileGroupCADDBodyEdit { margin:0px 10px 10px 18px;  overflow:hidden;}
+.ProfileGroupCADDBodyEdit .glyphicon { margin-left:-20px; }
+
+.ProfileGroupPencil { position:absolute; top:54px; right:15px; color:#4a90e2; }
+
+.SmartAssessmentVitalsTabPane > .row { margin-bottom:20px; }
+.SmartAssessmentVitalsTabPane .form-group > label { font-weight:normal; }
+.SmartAssessmentVitalsTabPane .form-group:first-child > label { font-weight:bold; }
+.SmartAssessmentVitalsTabPane .form-group .glyphicon-COMS-dot.primary { color:#F16220; }
+.SmartAssessmentVitalsTabPane .form-group .glyphicon-COMS-dot.secondary { color:#B9ED80; }
+.SmartAssessmentVitalsTabPane canvas { border:solid #cacaca 1px; }
+
+lucky-charms { display:inline-block; overflow:hidden; }
+.lucky-charm { display:inline-block; background-repeat:no-repeat; background-position:center center; background-size:contain; overflow:hidden; }
+.lucky-charm-care-guide { display:block; float:left; width:13px; height:24px; background-image:url(../App_Themes/COMS/SmartAssessmentLuckyCharms/ribbon.png); }
+.lucky-charm-quality { width:12px; height:12px; background-image:url(../App_Themes/COMS/SmartAssessmentLuckyCharms/star.png); }
+.lucky-charm-mds { width:12px; height:12px; background-image:url(../App_Themes/COMS/SmartAssessmentLuckyCharms/diamond.png); }
+.lucky-charm-care-guide ~ .lucky-charm-quality ~ .lucky-charm-mds { display:block; }

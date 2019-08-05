@@ -935,7 +935,7 @@ body {
    border-left: 7px solid transparent;
    border-right: 7px solid transparent;
    margin-top: 5px;
-   border-bottom: 11px solid rgb(248, 183, 42);
+   border-bottom: 11px solid rgb(252, 114, 0);
  }
 
  .caretTriangle {
@@ -950,9 +950,24 @@ body {
    height: 12px;
    width: 12px;
    border-radius: 100px;
-   background-color: rgb(0, 127, 107);
+   background-color: rgb(64, 177, 179);
    margin-top: 4px;
    margin-right: 2px;
+ }
+ .blueCircle2 {
+   min-height: 12px;
+   border-radius: 100px;
+   background-color: rgb(64, 177, 179);
+   max-width: 12px !important;
+   min-width: 12px !important;
+ }
+ .orangeTriangle2 {
+   width: 0; 
+   height: 0; 
+   border-left: 7px solid transparent;
+   border-right: 7px solid transparent;
+   margin-top: -1px;
+   border-bottom: 11px solid rgb(252, 114, 0);
  }
 
 .softBox{

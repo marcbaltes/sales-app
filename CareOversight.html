@@ -20,7 +20,7 @@
 </head>
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
-   <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(237, 160, 135);">
+   <nav class="navbar navbar-expand bg-nav py-0 fixed-top" style="background-color: rgb(237, 160, 135);">
       <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/mandon3-icon.png" alt="Home">
       </a>
@@ -102,6 +102,7 @@
          <li data-target="#carouselSlide" style="background-color: rgb(237, 160, 135);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(237, 160, 135);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(237, 160, 135);" id="btn3" onclick="indicatorUpdate(event)" data-slide-to="3"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(237, 160, 135);" id="btn4" onclick="indicatorUpdate(event)" data-slide-to="4"></li>
       </ol>
       <div class="carousel-inner">
          <!-- Screen 1 -->
@@ -755,7 +756,7 @@
 
          </div>
          <!-- Screen 2 -->
-         <div class="carousel-item" id="slide1">
+         <div class="carousel-item" id="slide1" style="margin-top: 80px;">
                <!-- Navbar -->
                <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                   <a href="#" class="navbar-brand">
@@ -1503,7 +1504,7 @@
                </div>
             </div>
          <!-- Screen 3 -->
-         <div class="carousel-item" id="slide2">
+         <div class="carousel-item" id="slide2" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -2153,8 +2154,1952 @@
    
          </div>
          <!-- Screen 4 -->
-         <div class="carousel-item" id="slide3">
+         <div class="carousel-item" id="slide3" style="margin-top: 80px;">
             <h1>screen 4</h1>
+         </div>
+         <!-- Screen 5 -->
+         <div class="carousel-item" id="slide4" style="margin-top: 80px;">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
+               <a href="#" class="navbar-brand">
+                  <img src="./icons/logo-green.png" alt="" style="margin-top: 0px;">
+               </a>
+               <ul class="navbar-nav mr-auto" style="margin-top: 1px;">
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Home</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Residents</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+                  <span class="navItem">
+                     <a style="text-align: left; margin-top: 18px; margin-bottom: -30px;" href="#" data-toggle="" class="dropdown-toggle linkMain portraitFix" title="Home"><span class="show-xs hidden-sm show-md show-lg">Reports</span><span class="hidden-xs show-sm hidden-md hidden-lg"><span class="glyphicon glyphicon-home"></span></span><span class="caret right"></span></a>
+                  </span>
+               </ul>
+               <ul class="navbar-nav ml-auto" style="margin-top: 1px;">
+                  <span class="navItem" style="margin-top: -2px; margin-bottom: -30px; color: black;">In<span><img src="./icons/insight1.png" alt=""></span>Sights</span>
+
+                  <span style="margin-top: 1px; margin-bottom: -30px;" class="navItemSm dropdown-toggle">Facility: Shady Elms</span>
+                  <div class="navItemSm" style="text-align: right; line-height: 0px; margin-top: 1px; margin-bottom: -30px;">
+                     <p style="color: white;">Chris Smith</p>
+                     <p>Lock Screen Logout</p>
+                  </div>
+                  <span style="margin-top: -3px; margin-right: -10px;" class="navItemSm"><img src="./icons/nav-buttons.png" alt=""></span>
+               </ul>
+            
+            </nav>
+            <!-- resident header -->
+            <div class="row" style="border-bottom: 4px solid rgb(203, 228, 143); border-top: 1px solid rgb(150, 150, 150); padding-left: 10px; margin: 0px;">
+               <div class="col-2 row" style="padding-left: 15px; white-space: nowrap; padding-right: 0px;">
+                  <a href="#" class="navbar-brand" style="padding: 0px; font-size: 13px;">
+                     <img src="./icons/defaultResImg.png" alt="" style="margin-top: 0px; height: 50px; width: 50px; border: 1px solid black;">
+                  </a>
+                  <ul class="navbar-nav " style="margin-top: 1px; padding-top: 6px;">
+                     <div><b>Keith Carney</b></div>
+                     <div>D / 166-2</div>
+                  </ul>
+               </div>
+               <div class="col-10 row">
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="border-right: 1px solid rgb(202, 202, 202); padding: 5px 20px; color: white;">s</li>
+                  </ul>
+                  <ul class="navbar-nav" >
+                     <li style="padding: 5px 20px; padding-top: 15px; background-color: rgb(206, 230, 150); height: 50px;">Memos</li>
+                  </ul>
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="border-left: 1px solid rgb(202, 202, 202); padding: 5px 20px;">Vitals</li>
+                  </ul>
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="border-left: 1px solid rgb(202, 202, 202); padding: 5px 20px;">9 Diagnosis</li>
+                  </ul>
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="border-left: 1px solid rgb(202, 202, 202); padding: 5px 20px;">Alerts</li>
+                  </ul>
+                  <ul class="navbar-nav" >
+                     <li style="border-left: 1px solid rgb(97, 167, 179); height: 50px; color: white">s</li>
+                  </ul>
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="border-right: 1px solid rgb(202, 202, 202);  padding: 5px 20px;" class="dropdown-toggle">Tasks</li>
+                  </ul>
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="padding: 9px 20px;" class="fa fa-bars"></li>
+                  </ul>
+                  <ul class="navbar-nav" >
+                     <li style="border-left: 1px solid rgb(97, 167, 179); height: 50px; color: white">s</li>
+                  </ul>
+                  <ul class="navbar-nav" style="padding-top: 10px;">
+                     <li style="border-right: 1px solid rgb(202, 202, 202);  padding: 5px 20px;" class="dropdown-toggle">Resident List: Carney, Keith</li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row" style="margin: 20px 0; padding-left: 20px;">
+               <div class="col-11"><i>The Daily Care Review is for the use of quality assurance committee. Please use Notes for documentation to be included in legal medical record.</i></div>
+               <div class="col-1" style="padding: 0px;">
+                  <a class="btn btn-xs btn-pad btn-primary">Add Memo</a>
+               </div>
+            </div>
+            <div class="row" style="margin: 20px 0 5px 0; padding-left: 20px;">
+               <div class="col-10" style="padding-top: 20px;">
+                  <span style="position: relative;">
+                     <input type="radio">
+                     <span>All Observable Items & Categories</span>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                  <span style="position: relative;">
+                     <input type="radio" style=" bottom: 3px;">
+                     <span >Abnormal Findings Only</span>
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                  <span>
+                     <input type="radio" checked="true">
+                     <span>All Findings</span>
+                  </span>
+               </div>
+               <div class="col-1 ml-auto" style="padding: 0px;">
+                  <img src="./icons/careOSGraph.png" alt="">
+               </div>
+            </div>
+            <div class="row" style="background-color: rgb(238, 238, 238); padding: 5px 0; margin: 0px 10px 0px 10px;">
+               <div class="col-4">
+                  <select type="text" value="Clinical Evaluation Only" style="border-radius: 4px; font-family: Arial; padding: 5px; color: rgb(54, 54, 54);"  class="dropdown-toggle">
+                     <option selected="selected">Clinical Evaluation Only</option>
+                  </select>
+               </div>
+               <div class="col-4" style="text-align: center; padding-top: 5px;">
+                  <input type="radio" checked="true">
+                  <span ><b>Abnormal Findings Only</b></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio">
+                  <span ><b>By Shift</b></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               </div>
+               <div class="col-4" style="text-align: right">
+                  <input type="text" value="7/26/2019 2:00PM" style="border-radius: 3px; color: rgb(182, 182, 182); font-family: Arial; padding-left: 5px; width: 110px; margin-top: 3px; border: 1px solid rgb(168, 191, 222);">
+                  &nbsp;
+                  <span class="fa fa-calendar" style="font-size: 16px; color: dimgrey;"></span>
+                  &nbsp;&nbsp;
+                  <span class="fa fa-clock-o" style="font-size: 16px; color: dimgrey;"></span>
+                  &nbsp;
+                  <div class="btn btn-xs btn-pad btn-primary" style="margin-top: -4px !important;">Apply</div>
+               </div>
+            </div>
+            <div class="row justify-content-center" style="margin: 0px 20px 0px 10px; padding: 5px 0;">
+               <<< Previous 3 &nbsp;&nbsp; < Previous 1 &nbsp;&nbsp; Next 1 > &nbsp;&nbsp; Next 3 >>>
+            </div>
+
+            <!-- care review table -->
+            <table style="width: 100%; margin: 0px 10px 0px 10px;">
+               <tr>
+                  <th width="13%" style="padding-left: 5px; font-weight: 100; padding-top: 25px;">Observations</th>
+                  <th width="25%" style="font-weight: 100; background-color: rgb(206, 230, 150); line-height: 13px;padding: 7px 0 6px 0; text-align: center; color: rgb(118, 118, 118); border-bottom: 1px solid rgb(221, 221, 221);">
+                     <div>7/8 9:30AM Nurse 1</div>
+                     <div>Abn 15 : Obs 113</div>
+                     <div>Skilled Evaluation</div>
+                  </th>
+                  <th width="25%" style="font-weight: 100; background-color: rgb(206, 230, 150); line-height: 13px;padding: 7px 0 6px 0; text-align: center; color: rgb(118, 118, 118); border-bottom: 1px solid rgb(221, 221, 221);">
+                     <div>7/8 9:30AM Nurse 2</div>
+                     <div>Abn 5 : Obs 68</div>
+                     <div>Skilled Evaluation</div>
+                  </th>
+                  <th width="25%" style="font-weight: 100; background-color: rgb(206, 230, 150); line-height: 13px;padding: 7px 0 6px 0; text-align: center; color: rgb(118, 118, 118); border-bottom: 1px solid rgb(221, 221, 221);">
+                     <div>7/10 9:30AM Nurse 1</div>
+                     <div>Abn 16 : Obs 93</div>
+                     <div>Skilled Evaluation</div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Vital Signs</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Heart Rate</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Rhythm [<span style="font-weight: bold"> Irregular </span>], Character [ Normal ], Heart Rate [ 66 ], Pulse Type [ Irregular - chronic ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Rhythm [ Regular ], Character [ Normal ], Heart Rate [ 66 ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Rhythm [<span style="font-weight: bold"> Irregular </span>], Character [ Normal ], Heart Rate [ 68 ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Respiratory Rate</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Respirations [ 19 ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Respirations [<span style="font-weight: bold"> 19 </span>]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Respirations [ 17 ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Pulse Ox</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Pulse Ox %  [ 94 ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Pulse Ox %  [ 94 ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Pulse Ox %  [ 94 ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Temperature</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Temperature [<span style="font-weight: bold"> 96.9 </span>], Route [ Axilla ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">BP</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Systolic BP [<span style="font-weight: bold"> 145 </span>], Diastolic BP [ 83 ], BP Position [ Sitting - Right Arm ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">BP Position [ Lying - Left Arm ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">BP Position [ Lying - Right Arm ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Cardiovascular</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Edema</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11">Edema [<span style="font-weight: bold"> Yes </span>], Non-pitting edema [ <span style="font-weight: bold"> Lower Extremity </span>]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11">Edema [<span style="font-weight: bold"> Yes </span>], Non-pitting edema [ <span style="font-weight: bold"> Lower Extremity </span>]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Circulation Checks</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Capillary Refill</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid white;">Antiembolic Treatment</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Calf Tenderness [ No ], Antiembolic Treatment [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Antiembolic Treatment [ TEDs ], Calf Tenderness [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Antiembolic Treatment [ TEDs ], Calf Tenderness [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Pedal Pulses</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Right Pedal Pulse (+) [ +2 - Normal ], Left Pedal Pulse (+) [ 2+ - Normal ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Right Pedal Pulse (+) [ +2 - Normal ], Left Pedal Pulse (+) [ 2+ - Normal ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Right Pedal Pulse (+) [ +2 - Normal ], Left Pedal Pulse (+) [ 2+ - Normal ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Respiratory</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Left Lung</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Clear [ No ], Left Lung Sounds On Expiratiion [ Yes ], Left Lung Sounds On Inhalation [ Yes ], Left Lung location [ Upper lobe ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Clear [ No ], Left Lung Sounds On Expiration [ Yes ], Left Lung Sounds on Inhalation [ Yes ], Left lung location [ Upper lobe ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Character</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><b style="font-weight: bold;">Dry Non-Productive Cough</b></div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11"><b>Dry Non-Productive Cough</b></div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Right Lung</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Clear [ No ], Right Lung Sounds On Expiration [ Yes ], Right Lung Sounds on Inhalation [ Yes ], Right lung location [ Upper lober ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Clear [ No ], Right Lung Sounds On Expiration [ Yes ], Right Lung Sounds on Inhalation [ Yes ], Right lung location [ Upper lober ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Breath Sounds Left Lung</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Left Lung Breath Sounds [ <span style="font-weight: bold;">Wheezes</span> ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Left Lung Breath Sounds [ <span style="font-weight: bold;">Crackles</span> ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Breath Sounds Right Lung</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Right Lung Breath Sounds [ <span style="font-weight: bold;">Wheezes</span> ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Right Lung Breath Sounds [ <span style="font-weight: bold;">Crackles</span> ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Respiratory Character</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold;">SOB, Upon Exertion</span>, Difficulty Breathing [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold;">Difficulty Breathing/SOB, SOB, While Laying Flat, SOB, Upon Exertion</span></div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Oxygen Therapy</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Delivery Method [ Nasal Cannula ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Delivery Method [ Nasal Cannula ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Delivery Method [ Nasal Cannula ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Cough</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold;">Cough</span></div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold;">Cough</span></div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Antibiotic for Respiratory Infection</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); color: rgb(206, 230, 150);">a</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">• Respiratory Notes { coughing with meals, thickend fluids }</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Mood & Behavior</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Mood</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Pleasant [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Behavior</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Behavior none [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Sleep</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Sleep Cycle [ Sleeps Through the Night ], Wanders at Night [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Sleep Cycle [ Sleeps Through the Night ], Wanders at Night [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Sleep Cycle [ Sleeps Through the Night ], Wanders at Night [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Psychospiritual</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Needs Are Met [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Pain</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Pain</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Indicators of Pain [ None ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221); ">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Mood and Behavior/Pyscho/Spiritual</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Antipsychotic Medications</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Is residents on antipsychotic medications? [ Yes ], Participation in facility activities [ Participating ], Pyschotrpoic medication summary [ Adm/Review of Records ], Medication of effectiveness [ Effective ], Medication produced Side Effects [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Is residents on antipsychotic medications? [ Yes ], Participation in facility activities [ Participating ], Pyschotrpoic medication summary [ Adm/Review of Records ], Medication of effectiveness [ Effective ], Medication produced Side Effects [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Is residents on antipsychotic medications? [ Yes ], Participation in facility activities [ Participating ], Pyschotrpoic medication summary [ Adm/Review of Records ], Medication of effectiveness [ Effective ], Medication produced Side Effects [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Neurologic</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Neurologic</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Obeys Commands [ Yes ], Denise weakness, tremors, numbness or tingling [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Eyes / Pupils</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">BP</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Laying</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Laying Systolic BP [ 104 ], Laying Diastolic BP [ <span style="font-weight: bold;"> 56 </span> ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2"></div>
+                        </div>
+                        <div class="col-11">Laying Systolic BP [ 104 ], Laying Diastolic BP [ <span style="font-weight: bold;"> 56 </span> ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Functional</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Functional</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Functional Eating [ Setup or clean-up assistance ], Functional Oral Hygiene [ Dependent ], Functional Toileting Hygiene [ Substantial / maximal assistance ] , Resident able to move all extremities [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Ability to Move Extremities [ Able to More RUE ], Functional Eating [ Supervision or touching assistance ], Functional Oral Hygiene [ Dependent ], Functional Toileting Hygiene [ Dependent ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Ability to Move Extremities [ Able to More RUE ], Functional Eating [ Setup or clean-up assistance ], Functional Oral Hygiene [ Dependent ], Functional Toileting Hygiene [ Activity was not completed ], Functional Toileting Hygiene Not Performed [ Not attempted due to medical condition or safety concerns ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Mobility</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Activity Preference [ Self Activity ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Activity Preference [ No Preference ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Activity Preference [ No Preference ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Positioning</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Positioning [ Turn Schedule ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Positioning [ Turn Schedule ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Devices</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Devices [ Manual Wheelchair ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255);">Functional Limitation in Range of Motion</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                      <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+                <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">Therapy</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                      <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">• Functional ST Participation { Participates in Therapy [ Yes ] } Participates in Therapy [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">• Functional ST Participation { Participates in Therapy [ Yes ] } Participates in Therapy [ Yes ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Activities of Daily Living (ADL)</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                   <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); color: rgb(206, 230, 150);">a</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Gastrointestinal</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Gastrointestinal</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Bowel Sounds Present x4 [ Yes ], Non-Tender Abdomen [ Yes ], Flat [ Yes ], Denies indigestion, nausea, vomiting, diarrhea or constipation [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Bowel Continence</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">New Continence [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Incontinent [ Yes ], New Continence [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Incontinent [ Yes ], New Continence [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Date of Last BM</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Date of Last BM [ 06/23/2019 ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Date of Last BM [ 07/01/2019 ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Date of Last BM [ 07/07/2019 ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Stool Color</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Stool Color [ WNL ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Stool Color [ WNL ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Stool Color [ WNL ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Antibiotic for GI Infection</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Nutrition</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Nutrition</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold">Difficulty Swallowing at Times, Change in Appetite</span>, Complaints of Thirst [ No ], Signs and symptoms of possible Swallowing Disorder [ <span style="font-weight: bold"> Coughing or choking during meals or when swallowing medications </span>]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold">Difficulty Swallowing at Times, Change in Appetite</span>, Complaints of Thirst [ No ], Signs and symptoms of possible Swallowing Disorder [ <span style="font-weight: bold"> Coughing or choking during meals or when swallowing medications </span>]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold">Difficulty Swallowing at Times, Change in Appetite</span>, Complaints of Thirst [ No ], Signs and symptoms of possible Swallowing Disorder [ <span style="font-weight: bold"> Coughing or choking during meals or when swallowing medications </span>]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Diet Type</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">NPO (Nothing Per Oral) [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11">NPO (Nothing Per Oral) [ Yes ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Nutrition Notes</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">• Notes { Receives speech therapy, pureed nectar thick fluids, coughing and choking with meals }</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Skin</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Skin</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">WNL [ Yes ], Warm/Dry [ Yes ], Normal Turgor [ Yes ], Oral Muccous Membrane Moist [ Yes ], Skin color WNL [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Labs / Education / Notification</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Concerns</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Education</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold">Resident/Family Aware of Diagnosis and Plan of Care</span>, Education New Order [ No ], Education Provided R/T Diagnosis [ No ], Education Provided in Preparation for Discharge [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold">Resident/Family Aware of Diagnosis and Plan of Care</span></div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold">Resident/Family Aware of Diagnosis and Plan of Care</span>, Education New Order [ No ], Education Provided R/T Diagnosis [ No ], Education Provided in Preparation for Discharge [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Labs</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Abnormal Labs [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Abnormal Labs [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Abnormal Labs [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Physician/Responsible Party Notification</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Physician Notified [ No ], Resident/Responsible Party Notified Regarding Resident's Condition/New Order [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Physician Notified [ No ], Resident/Responsible Party Notified Regarding Resident's Condition/New Order [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Safety</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Assist Devices</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Assist Devices [ Low Bed ] , Assist Devices [ Halo Bar ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Assist Devices [ Grab Bar ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Assist Devices [ Grab Bar ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Call Light</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Seizure Precautions</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-check"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Special Care</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Antibiotic</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Is resident on antibiotic not elsewhere documented within assessment? [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Is resident on antibiotic not elsewhere documented within assessment? [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Is resident on antibiotic not elsewhere documented within assessment? [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Mental Status</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Current Mental Status</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11">Level of Impairment [ <span style="font-weight: bold;"> Mild Impairment (Some Confusion) ]</span>, New Onset Confusion [ No ], Orientation [ Confused ], Orientation [ Short-term memory loss ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2"></div>
+                        </div>
+                        <div class="col-11">Level of Impairment [ <span style="font-weight: bold;"> Mild Impairment (Some Confusion) ]</span></div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Communication</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Verbal [ Yes ], Coherence [ Coherent ], Ability to Understand Others [ Understands ], Speech [ Clear ], Makes self understood [ Understood ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Verbal [ Yes ], Coherence [ Coherent ], Speech [ Clear ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="orangeTriangle2" style="border-bottom: none;"></div>
+                        </div>
+                        <div class="col-11">Verbal [ Yes ], Coherence [ Coherent ], Ability to Understand Others [ Understands ], Speech [ Clear ], Makes self understood [ Understood ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Mental Status</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">• Notes { periods of confusion, forgetfulness }</div>
+                     </div>
+
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">EENT</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Dental</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Dental Condition [ No natural teeth or tooth fragment(s)</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Additional Info</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">ADLs</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Assistive Device (if applicable) [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Genitournary</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Antibiotic for Urinary Infection</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">On urinary antibiotics [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">On urinary antibiotics [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">On urinary antibiotics [ No ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Urine</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Clear/Yellow [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11"><span style="font-weight: bold;"> Amber</span></div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Complaints</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">None [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-12 my-auto" style="text-align: center;">
+                           <span class="fa fa-minus"></span>
+                        </div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">None [ Yes ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(255, 255, 255); ">Catheter</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Peri care provided [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Peri care provided [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Peri care provided [ Yes ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Continence</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Urinary Continence [ Yes ]. New Urinary Incontinence [ No ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Urinary Continence [ Yes ]. New Urinary Incontinence [ No ], Adult brief [ Yes ]</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Urinary Continence [ Yes ]. New Urinary Incontinence [ No ], Adult brief [ Yes ]</div>
+                     </div>
+                  </th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px;">Nursing Notes</th>
+               </tr>
+               <tr style="border-top: 1px solid rgb(221, 221, 221); text-align: center; border-bottom: 1px solid rgb(221, 221, 221);">
+                  <th style="padding: 5px; padding-left: 0px; font-weight: 100; background-color: rgb(206, 230, 150); color: rgb(118, 118, 118); width: 13%; border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); ">Nursing Notes</th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Applied Clinical Suggestions: - Assessed for abnormal breath sounds. - Resident advised not to rise rapidly. - Medication(s) administered as order. - Assisted with cough/deep breathing to improve cough productivity. - Oxygen administered as needed, pre standing order</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Applied Clinical Suggestions: - Resident advised not to rise rapidly. - Dietary intake reviewed and monitored.</div>
+                     </div>
+                  </th>
+                  <th style="margin: 0px; text-align: left; font-weight: 100; width: 25%; border-right: 1px solid rgb(221, 221, 221);">
+                     <div style="display: flex;">
+                        <div class="col-1 my-auto">
+                           <div class="blueCircle2" style="background-color: white;"></div>
+                        </div>
+                        <div class="col-11">Applied Clinical Suggestions: - Medication(s) administered as order. - Vital signs and pulse ox assessed. - Assessed for pain.</div>
+                     </div>
+                  </th>
+               </tr>
+            </table>
+            <div style="text-align: right; padding-right: 10px; height: 40px; padding-top: 12px;"><b>Legend: </b><span class="fa fa-bookmark" style="color: rgb(255, 217, 0);"></span> Care Guide | <span class="fa fa-circle" style="color: rgb(64, 177, 179);"></span> Abnormal | <img src="./icons/orangeTriangle.png"> Condition Alert | <span class="fa fa-check"></span> No Abnormal/Condition Alert | <span class="fa fa-minus"></span> Not Documented</div>
+            <div style="padding: 5px; background-color: rgb(241, 239, 242); border: 1px solid rgb(221, 221, 221);font-weight: bold; margin: 0 10px; border-left: none; border-right: none;">Staff Memos</div>
+            <div class="row container-fluid" style="margin: 0px; font-weight: bold; padding: 8px;">
+               <div class="col-2">
+                  Date & Time:
+               </div>
+               <div class="col-8">
+                  Memo:
+               </div>
+               <div class="col-2">
+                  Nurse:
+               </div>
+            </div>
+            <div class="row" style="padding: 5px; background-color: rgb(215, 230, 188); border: 1px solid rgb(221, 221, 221); margin: 0 10px; border-left: none; border-right: none;">
+               <div class="col-2">
+                  6/25/19 08:57 AM
+               </div>
+               <div class="col-8">
+                  Memo: C: BP has been elevated x last two assessments. There have also been changes in his respiratory. Please notify MD.
+               </div>
+               <div class="col-2">
+                  Sally Spencer (Director of Nursing)
+               </div>
+            </div>
+            <div style="padding: 5px; background-color: rgb(241, 239, 242); border: 1px solid rgb(221, 221, 221);font-weight: bold; margin: 0 10px; border-left: none; border-right: none; margin-top: 20px;">Narrative Notes</div>
+            <div class="row container-fluid" style="margin: 0px; font-weight: bold; padding: 8px; margin-bottom: 30px;">
+               <div class="col-2">
+                  Date & Time:
+               </div>
+               <div class="col-8">
+                 Note:
+               </div>
+               <div class="col-2">
+                  Nurse:
+               </div>
+            </div>
+            <div class="row container-fluid" style="margin: 0px;">
+               <div class="col-6" style="margin-bottom: -200px;">
+                  <h5 style="color: rgb(119, 119, 119);">Variance Entry</h5>
+                  <div class="row container-fluid" style="margin: 0px;">
+                     <div class="col-6" style="margin-bottom: 30px;">
+                        <span style="font-weight: bold">Variance Date</span>
+                        <input type="text" value="8/4/2019" style="border-radius: 3px; font-family: Arial; padding-left: 5px; width: 110px; margin-top: 3px; border: 1px solid rgb(168, 191, 222);">
+                        <span class="fa fa-calendar" style="font-size: 16px; color: dimgrey;"></span>
+                        <div style="color: rgb(119, 119, 119);">
+                           Please note, the variance date is the date of care being reviewed. Default is yesterday.
+                        </div>
+                     </div>
+                     <div class="col-6" style="text-align: right;">
+                        <a class="btn btn-xs btn-pad btn-primary">Save + Memo</a>
+                        <div style="margin-top: 10px;">
+                           <a style="margin-top: 20px; background-color: rgb(151, 174, 175); font-weight: bold; font-size: 15px; border-radius: 5px; padding: 8px;"><span class="fa fa-check"></span>Completed Quick Review</a> 
+                        </div>
+                     </div>
+                  </div>
+                  <div style="font-weight: bold;">Variance Types</div>
+                  <div><input type="radio"><span> Clinical</span></div>
+                  <div><input type="radio"><span> Other Variance</span></div>
+                  <div><input type="radio"><span> Resident/Family</span></div>
+                  <div style="margin-bottom: 20px;"><input type="radio"><span> Staff</span></div>
+                  <div style="font-weight: bold;">Variance Detail</div>
+                  <div>(250 Characters Left)</div>
+                  <div style="font-size: 11px;">Variances are for the exclusive use of the quality assurance committee. Please use Notes for documentation to be included in the legal medical record.
+                  </div>
+                  <div style="height: 300px; border: 1px solid rgb(169, 169, 169);"></div>
+               </div>
+               <div class="col-6">
+                  <h5 style="color: rgb(119, 119, 119);">Outcome Measures</h5>
+                  <div style="padding: 8px; font-weight: bold; border-radius: 5px; border: 1px solid rgb(221,221,221); background-color: rgb(245, 245, 245); font-size: 15px; margin-bottom: 5px;">General</div>
+                  <div style="padding: 8px; font-weight: bold; border-radius: 5px; border: 1px solid rgb(221,221,221); background-color: rgb(245, 245, 245); font-size: 15px; margin-bottom: 5px;">Altered Nutrition Status</div>
+                  <div style="padding: 8px; font-weight: bold; border-radius: 5px; border: 1px solid rgb(221,221,221); background-color: rgb(245, 245, 245); font-size: 15px; margin-bottom: 5px;">Dementia</div>
+                  <div style="padding: 8px; font-weight: bold; border-radius: 5px; border: 1px solid rgb(221,221,221); background-color: rgb(245, 245, 245); font-size: 15px; margin-bottom: 5px;">Arrhythmia</div>
+                  <div style="padding: 8px; font-weight: bold; border-radius: 5px; border: 1px solid rgb(221,221,221); background-color: rgb(245, 245, 245); font-size: 15px; margin-bottom: 400px;">Arthritis DJD</div>
+               </div>
+            </div>
          </div>
       </div>
    </div>
@@ -2168,7 +4113,7 @@
    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 
    <script>
-   var slideCount = 3;
+   var slideCount = 4;
    $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
       $('[data-toggle="popover"]').popover({
@@ -2228,17 +4173,17 @@
 
    function updateInfoModal(index){
       var bodyText = document.getElementById("bodyText");
-      // if(index == 1){
-      //    //scrollable screen
-      //    $("#html").addClass("scroll");
-      //    $("#body").addClass("scroll");
-      // }
-      // else{
-      //    $("#html").removeClass("scroll");
-      //    $("#body").removeClass("scroll");
-      //    document.body.scrollTop = 0; // For Safari
-      //    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      // }
+      if(index == 4){
+         //scrollable screen
+         $("#html").addClass("scroll");
+         $("#body").addClass("scroll");
+      }
+      else{
+         $("#html").removeClass("scroll");
+         $("#body").removeClass("scroll");
+         document.body.scrollTop = 0; // For Safari
+         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
 
       if(index == 0){
          bodyText.innerHTML = "screen 1 text"
@@ -2290,7 +4235,7 @@
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 0;}
+      if(location == -1){index = 0;}   
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){

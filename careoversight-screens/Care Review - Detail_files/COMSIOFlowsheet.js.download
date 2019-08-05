@@ -1,0 +1,141 @@
+﻿var COMS = COMS || {};
+COMS.IOFlowsheet = COMS.IOFlowsheet || {};
+
+COMS.IOFlowsheet.VM = null;
+COMS.IOFlowsheet.Instance = null;
+
+COMS.IOFlowsheet.Complete = function () {
+
+    HideProgressDisplay();
+    $('.modal-backdrop').remove();
+    $('#ResName').text('');
+    $('#ResId').text('');
+    COMS.IOFlowsheet.Instance.lityLightBox.close();
+}
+
+COMS.IOFlowsheet.Main = function () {
+    var self = this;
+
+    self.residentObject = null;
+    self.htmlLoaded = ko.observable(false);
+    self.lityLightBox = null;
+
+    $(document).on('lity:open', function (event, instance) {
+        if (COMSNamespace.ResidentHeaderViewModel.isCollapsed() == true || COMSNamespace.ResidentHeaderViewModel.isCollapsed() == false) {
+            //do nothing 
+        }
+        else {
+            COMSNamespace.MyResidents.ViewModel.SuppressLazyLoad(true); 
+        }
+        HideProgressDisplay();
+
+    });
+
+    $(document).on('lity:close', function (event, instance) {
+
+        $('#divPINEntry').hide();
+        $('#IOFlowsheetCtrl').hide();
+
+        self.lityLightBox = null;
+        if (COMSNamespace.ResidentHeaderViewModel.isCollapsed() == true || COMSNamespace.ResidentHeaderViewModel.isCollapsed() == false) {
+            //do nothing 
+        }
+        else {
+            COMSNamespace.MyResidents.ViewModel.SuppressLazyLoad(false);
+        }
+        
+    });
+
+    self.LoadContent = function (html) {
+
+        if (!self.htmlLoaded()) {
+            $('#IOFlowsheetCtrl').html(html);
+            $('#IOFlowsheetCtrl').css('padding-bottom', '20px');
+            $('#IOFlowsheetCtrl').css('background-color', '#f1eff2');
+
+            self.htmlLoaded(true);
+        }
+
+        lity.options('template', '<div class="lity" role="dialog" aria-label="Dialog Window (Press escape to close)" tabindex="-1"><div class="lity-wrap" role="document"><div class="lity-loader" aria-hidden="true">Loading...</div><div class="lity-container"><div class="lity-content"></div><button class="lity-close" type="button" aria-label="Close (Press escape to close)" data-lity-close>&times;</button></div></div></div>');
+
+        var lite = lity($('#IOFlowsheetCtrl'));
+
+        lite.element().find('.lity-iframe .lity-container').css({ 'width': '100%', 'max-width': '650px;' });
+        lite.element().find('.lity-iframe-container').css({ 'width': '100%', 'max-width': '650px;', 'overflow': 'hidden' });
+        lite.element().find('.lity-container').css({ 'min-width': '650px' });
+
+        self.lityLightBox = lite;
+
+        if (self.residentObject.isCollapsed == undefined && self.residentObject.fromNCM == true) {
+            $('#ResName').text(self.residentObject.FullName);
+            $('#ResId').text(self.residentObject.ResidentId);
+        }
+        else if (self.residentObject.isCollapsed == undefined) {
+            $('#ResName').text(self.residentObject.FullName());
+            $('#ResId').text(self.residentObject.ResidentID());
+        }
+        else if (self.residentObject.isCollapsed() == true || self.residentObject.isCollapsed() == false) {
+            $('#ResName').text(self.residentObject.FirstName() + ' ' + self.residentObject.LastName());
+            $('#ResId').text(self.residentObject.ResidentID());
+        }
+
+        if (!COMS.IOFlowsheet.VM) {
+            COMS.IOFlowsheet.VM = new IOFlowsheet.IOFlowsheetVMCreate()
+        }
+        COMS.IOFlowsheet.VM.GetTotals(self.residentIDs);
+        $('#IOFlowsheetCtrl').show();
+    }
+
+    self.Load = function (data) {
+
+        ShowProgressDisplay("Loading page...");
+        if (data.isCollapsed == undefined && data.fromNCM == true) {
+            var searchModel = {
+                Idx: data.Idx,
+                ResidentIdx: data.ResidentIdx
+            }
+        }
+        else if (data.isCollapsed == undefined) {
+            var searchModel = {
+                Idx: data.Idx(),
+                ResidentIdx: data.ResidentIdx()
+            }
+        }
+        else if (data.isCollapsed() == true || data.isCollapsed() == false) {
+            var searchModel = {
+                Idx: data.Idx(),
+                ResidentIdx: data.ResResident_Idx()
+            }
+        }        
+
+        self.residentObject = data;
+        self.residentIDs = searchModel;
+
+        $.ajax({
+            type: 'POST',
+            contentType: "application/json;",
+            url: '/resident/myresidents/selectadmission',
+            data: ko.toJSON(searchModel),
+            success: function () {
+                $.ajax({
+                    type: 'GET',
+                    contentType: 'text/html',
+                    url: '/Assessment/IO_Flowsheet/Modal',
+                    success: self.LoadContent
+                });
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+        
+        return;
+    }
+}
+
+LoadIOFlowsheet = function (resData) {
+    if (!COMS.IOFlowsheet.Instance) {
+        COMS.IOFlowsheet.Instance = new COMS.IOFlowsheet.Main();
+    }
+    COMS.IOFlowsheet.Instance.Load(resData);
+}
+

@@ -1,0 +1,557 @@
+﻿
+#ResidentHeader
+{
+    color: #4a4a4a;
+}
+#ResidentHeader .container, #ResidentHeader .container-fluid, #ResidentHeader .col-sm-1, #ResidentHeader .col-md-1, #ResidentHeader .col-lg-1, #ResidentHeader .col-sm-2, #ResidentHeader .col-md-2, #ResidentHeader .col-lg-2, #ResidentHeader .col-sm-3, #ResidentHeader .col-md-3, #ResidentHeader .col-lg-3, #ResidentHeader .col-sm-4, #ResidentHeader .col-md-4, #ResidentHeader .col-lg-4, #ResidentHeader .col-sm-5, #ResidentHeader .col-md-5, #ResidentHeader .col-lg-5, #ResidentHeader .col-sm-6, #ResidentHeader .col-md-6, #ResidentHeader .col-lg-6, #ResidentHeader .col-sm-7, #ResidentHeader .col-md-7, #ResidentHeader .col-lg-7, #ResidentHeader .col-sm-8, #ResidentHeader .col-md-8, #ResidentHeader .col-lg-8, #ResidentHeader .col-sm-9, #ResidentHeader .col-md-9, #ResidentHeader .col-lg-9, #ResidentHeader .col-sm-10, #ResidentHeader .col-md-10, #ResidentHeader .col-lg-10, #ResidentHeader .col-sm-11, #ResidentHeader .col-md-11, #ResidentHeader .col-lg-11, #ResidentHeader .col-sm-12, #ResidentHeader .col-md-12, #ResidentHeader .col-lg-12
+{
+    padding-right: 0px;
+    
+    margin-bottom: 0;
+}
+#ResidentHeader
+{
+    margin-right: -8px;
+    margin-left: -8px;
+}
+
+p.vitalsColTitles { font-size:14px; }
+    .glyphicon.glyphicon-remove.removeGraph { font-size:12px; }
+    
+#ResidentHeader .table > tbody + tbody
+{
+    border-top: none;
+}
+
+.HEADERCOMS-button-white
+{
+    border: solid #4a90e2 1px;
+    background-color: white;
+    font-weight: bold;
+    color: #4a90e2;
+    background-image: none;
+}
+.HEADERCOMS-button-white:hover
+{
+    border: solid #4a90e2 1px;
+    background-color: white;
+    color: #4a90e2;
+    background-image: none;
+}
+.HEADERCOMS-button-white:focus
+{
+    border: solid #4a90e2 1px;
+    background-color: white;
+    color: #4a90e2;
+    background-image: none;
+}
+.HEADERCOMS-button-white[disabled]
+{
+    border: solid #cacaca 1px;
+    color: #cacaca;
+    background-color: white;
+    font-weight: bold;
+    background-image: none;
+}
+
+.bootstrap-iso .HEADERCOMS-button-white
+{
+    border: solid #4a90e2 1px;
+    background-color: white;
+    font-weight: bold;
+    color: #4a90e2;
+    background-image: none;
+}
+.bootstrap-iso .HEADERCOMS-button-white:hover
+{
+    border: solid #4a90e2 1px;
+    background-color: white;
+    color: #4a90e2;
+    background-image: none;
+}
+.bootstrap-iso .HEADERCOMS-button-white:focus
+{
+    border: solid #4a90e2 1px;
+    background-color: white;
+    color: #4a90e2;
+    background-image: none;
+}
+.bootstrap-iso .HEADERCOMS-button-white[disabled]
+{
+    border: solid #cacaca 1px;
+    color: #cacaca;
+    background-color: white;
+    font-weight: bold;
+    background-image: none;
+}
+
+.headerTaskItem 
+{
+    padding-left:3px;
+    padding-right:3px;
+    text-align:left;
+    font-size:11px;
+}
+
+.resPicNameSecInfo {  padding: 4px 0 5px 15px;}
+
+.dropdown-menu.resNav { padding-top:0; min-width:300px;  }
+
+
+.dropdown-menu, .navbar, .headerTaskItem  {
+    min-width: 143px;
+}
+.headerTaskItem > a > span, .headerTaskItem > a  
+{
+    color: #666;
+    font-weight:normal;
+    text-align:left;
+}
+
+.headerTaskItem > a:hover > span
+{
+    color: #666;
+    font-weight:normal;
+    text-align:left;
+}
+
+#ResidentHeaderProfile
+{
+    padding-left:10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#ResidentHeaderProfile > img
+{
+    float: left;
+    width: 52px;
+    height: 52px;
+    border: solid #4a4a4a 1px;
+    margin-right: 8px;
+}
+#ResidentHeaderProfile #ResidentHeaderProfileName a
+{
+    color: #4a90e2;
+}
+#ResidentHeaderProfile > div
+{
+    margin-bottom: 2px
+    ;
+}
+
+#ResidentHeaderNavigation
+{
+    position: relative;
+}
+#ResidentHeaderNavigation.col-sm-9, #ResidentHeaderNavigation.col-lg-10
+{
+    padding-left: 0px;
+}
+
+/* DO NOT REMOVE - NO MATTER WHAT - CONTROLS ORANGE NOTIFICATION BUBBLES */
+div.badge.badgeOrange
+{
+    position: absolute;
+    background: #FF5B03;
+    opacity: 0.8;
+    height:2rem;
+    top:-10px;
+    left:-1px;
+    width:2rem;
+    border-radius: 50%;
+    text-align: center;
+}  
+/* ///////////////// */
+  
+#ResidentHeaderNavigation ul.nav-tabs > li.dividerReZ
+{
+    background-color: #cacaca;
+    position: relative;
+    width: 1px;
+    height: 28px;
+    margin-top: 12px;
+}
+#ResidentHeaderNavigation ul.nav-tabs > li.dividerReZEnd
+{
+    background-color: #61a7b3;
+    position: relative;
+    width: 1px;
+    height: 52px;
+}   
+#ResidentHeaderNavigation ul.navbar-nav > li.dividerReZEnd {
+    background-color: #61a7b3;
+    position: relative;
+    width: 1px;
+    height: 52px;
+}         
+#ResidentHeaderNavigation ul.navbar-nav > li.dividerReZ 
+{
+    background-color: #cacaca;
+    position: relative;
+    width: 1px;
+    height: 28px;
+    margin-top: 12px;
+}
+#ResidentHeaderNavigation ul.nav-tabs, #ResidentHeaderNavigation ul.nav-tabs  > li, #ResidentHeaderNavigation ul.nav-tabs > li > a, #ResidentHeaderNavigation ul.nav-tabs > li > a:hover, #ResidentHeaderNavigation ul.nav-tabs > li.active > a,  #ResidentHeaderNavigation ul.nav-tabs > li > a:hover
+{
+    margin: 0px;    
+    padding: 0;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-radius: 0px;
+    outline: none;
+    background-color: transparent; 
+}
+#ResidentHeaderNavigation ul.nav-tabs > li > a
+{
+    min-width: 70px;
+    padding:5px 15px 18px 15px;
+    margin-top:12px;
+    border-radius: 0;
+    background-color: transparent;
+    font-weight: normal;
+    color: #4a90e2;
+}
+#ResidentHeaderNavigation ul.nav-tabs > li.active > a, #ResidentHeaderNavigation ul.nav-tabs > li > a:hover
+{
+     padding:17px 15px 18px 15px;
+     /*margin-top:12px;*/
+     background-color: #61a7b3;
+     color:#fff;
+     border-radius: 0;
+}
+.nav>li.resNavTabs>a:hover, .nav>li.resNavTabs>a:focus 
+{
+     padding:5px 15px 17px 15px;
+     margin-top:12px;
+     background-color: #61a7b3;
+     color:#fff;
+     border-radius: 0;
+}
+
+
+#ResidentHeaderNavigation ul.nav-tabs > li > a
+{
+    text-align: center;
+}
+
+#ResidentHeaderMain
+{
+    min-height: 140px;
+}
+#ResidentHeaderMain
+{
+}
+#ResidentHeaderMain .tab-pane
+{
+    position: relative;
+}
+#ResidentHeader.collapsed #ResidentHeaderMain
+{
+    min-height: 0px;
+    max-height: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+#ResidentHeaderVitalsTabPane .VitalsTitle
+{
+    padding-bottom: 5px;
+    color: #4e90e2;
+    font-weight: normal;
+    text-align: center;
+}
+#ResidentHeaderVitalsTabPane .VitalsText
+{
+    text-align: center;
+}
+td.VitalsText:first-child
+{
+    color: #999;
+    padding-top: 4px;
+}
+#ResidentHeaderVitalsTabPane .VitalsColumn
+{
+    border-right: 1px solid #d3d3d3 !important;
+    text-align: center;
+}
+#ResidentHeaderVitalsTabPane .VitalAbnormal
+{
+    font-weight: bold;
+}
+
+#ResidentHeaderAlertsTabPane table, #ResidentHeaderMemosTabPane table
+{
+    border-top: none;
+    vertical-align: top;
+}
+#ResidentHeaderAlertsTabPane table td, #ResidentHeaderMemosTabPane table td
+{
+    border: none;
+    border-bottom: solid #e6e6e6 1px;
+    text-align:left;
+    max-width:90%;  /*  added to pull in the TR so it does not pass behind the Alert button */
+}
+
+#ResidentHeaderAlertsTabPane, #ResidentHeaderMemosTabPane
+{
+    font-size: 13px;
+}
+#ResidentHeaderAlertsTabPane > .btn.AddEntityButton, #ResidentHeaderMemosTabPane > .btn.AddEntityButton
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+div.stickyBtn
+{
+    position: sticky;
+    top: 5px;
+    float: right;
+    padding-right: 5px;
+}
+
+.alertBtnSp
+{
+    margin-right: 0.5em;
+    font-size: 16px;
+}
+div.ResNavPadding
+{
+    padding-left: 0px;
+}
+div#ResidentHeaderContent
+{
+  
+}
+td.VitalsText
+{
+    padding: 10px !important;
+}
+div.alertDivsResHead
+{
+    width: 29%;
+    float: left;
+}
+hr.hrResHead
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #d3d3d3;
+    height: 1px;
+}
+
+td.memoTdGroup1
+{
+    color: #d3d3d3;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 4em;
+}
+td.memoTdGroup2
+{
+    color: #ff0000;
+    text-align: left;
+    vertical-align: top;
+    width: 100%;
+    line-height: 20px;
+}
+btn > span.resMemoBtn
+{
+    margin-right: 0.5em;
+    font-size: 16px;
+}
+div.resHeadTablePad
+{
+    padding: 10px;
+}
+div.resHeadTablePad > table
+{
+    width: 87%;
+}
+a.expandCollapseBtnClass
+{
+    float:right;
+    margin-right: 20px;
+    text-decoration: none;
+}
+div.resHeadPencil
+{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+span.memoWhiteSpace
+{
+    white-space: nowrap;
+}
+span.resHeadToggColl
+{
+    position: relative;
+    top: 2px;
+}
+div.resHeadAllergyTextName
+{
+    padding-left: 20px;
+    padding-top: 8px;
+}
+span.memoOwnerTitle
+{
+    margin-left: 0.5em;
+}
+span.vitalsColor
+{
+    color: #ff0000;
+}
+div.resHeadMainWidth
+{
+    width: 95%;
+}
+div.resHeadInnerWidth
+{
+    margin: 0px;
+    width: 93%;
+}
+div.resHeadInnerWidth > div
+{
+    margin: 0px;
+}
+div.resHeadInnerWidth > div > div
+{
+    padding: 0 10px;
+}
+div.resHeadVertLiName
+{
+    padding-top: 8px;
+    padding-left: 20px;
+}
+
+#ResidentHeaderNavigation
+{
+    font-size: 12px;
+}
+strong.resHeadName
+{
+    font-size: 12px;
+    padding-left:3px;
+}
+div.resHeadNameSize, div.resHeadNameSizeNoCon, table .resHeadNameSizeTbl
+{
+    font-size: 13px !important;
+    padding-bottom:10px;
+}
+div.resHeadNameSizeNoCon
+{
+    padding: 10px;
+}
+
+#ResidentHeaderAlertsTabPane table > tr:first-child > td:last-child::before, #ResidentHeaderMemosTabPane table > tr:first-child > td:last-child::before, #ResidentHeaderAlertsTabPane table > tbody:first-child > tr:first-child > td:last-child::before, #ResidentHeaderMemosTabPane table > tbody:first-child > tr:first-child > td:last-child::before
+{
+    content: '';
+    float: right;
+    width: 90px;
+    height: 30px;
+}
+
+/* The below styles the Vitals table - edit with care */
+#ResidentHeaderVitalsTabPane .table>thead>tr>th, 
+#ResidentHeaderVitalsTabPane .table>tbody>tr>th, 
+#ResidentHeaderVitalsTabPane .table>tfoot>tr>th, 
+#ResidentHeaderVitalsTabPane .table>thead>tr>td, 
+#ResidentHeaderVitalsTabPane .table>tbody>tr>td, 
+#ResidentHeaderVitalsTabPane .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1;
+    vertical-align: top;
+    border-right: 1px solid #ddd;
+    border-top: 1px solid #fff; 
+    text-align:left;
+    font-size:12px;
+}
+/* --------- */
+
+.row.dataClose { display:block; padding-right:10px; padding-bottom:20px; }
+.dataPad { min-height:15px; padding-bottom: 4px; padding-top: 3px; }
+
+.col-sm-9.col-lg-5.resMemosSec { display:block; max-width:520px; }
+.col-sm-5.resTasksSec { display:block; width:38%; }
+.col-sm-6.col-lg-2.resListSec { display:block; padding:20px 0 15px 15px; }
+.col-md-3.patientData { display:block; padding-top:15px;  min-height: 140px; }
+.col-md-9.resNavContent { display:block; border-left:2px solid #ccc; }
+.col-sm-12.col-md-2.resDataLeftSec { display:block; background-color:#fff;  padding:18px 10px 0 15px; }
+
+.row.collapseBorderBot { border-bottom:1px solid #61a7b3; }
+.row.SubRowExpand { border-top:1px solid #ccc;  }
+
+.glyphicon.glyphicon-menu-hamburger.resNav { line-height:17px; }
+	
+	 .row.vitalsResponsive { display:none; }
+	 div.vitalsTable { display:block; }
+	 .resListPadding { display:block;  padding:20px 20px 15px 15px; }
+
+
+.hide_overflow {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+}
+	
+@media screen and (max-width: 1245px) {
+	.dividerRes { position: relative; border-left: 1px solid #4A81FF; padding-top: 3px; padding-right:15px; margin-left:0; }	
+}
+
+@media screen and (max-width: 1200px) {
+ /*   .col-sm-5 { width:100%; border-top:1px solid #ccc; }
+     .col-sm-6 { width:100%; border-top:1px solid #ccc; }*/
+}
+
+@media screen and (max-width:1140px ) {
+    .col-md-3.patientData { display:block; border:none; }
+	.col-sm-12.col-md-2.resDataLeftSec { display:block; background-color:#fff; border-bottom:1px solid #ccc; padding:0 10px 0 0; }
+	.col-md-4.resDataMidSec { display:block; background-color:#fff; border-bottom:1px solid #ccc; padding: 0 -15px 0 -15px; }
+	.col-md-4.resDataRightSec { display:block; background-color:#fff; padding: 0 -15px 0 -15px; }
+	.col-md-6.colL { display:block; padding-left:15px; padding-right:15px; }
+	.col-md-6.colR { display:block; padding-left:15px; padding-right:15px; }	
+	
+	.col-sm-3.col-lg-2.resPicNameSec { display:block; width:100%; border-bottom:1px solid #ccc; height:52px; border-right:none;}
+	.col-sm-6.col-sm-5.resTasksSec { display:block; width:100%; border-top:1px solid #ccc; padding-left:0;  border-left:none; border-right:none;}
+	.col-md-6.col-lg-2.resListSec { display:block; width:100%; border-bottom:1px solid #ccc; padding: 10px 0 8px 15px;  } 
+}
+
+@media screen and (max-width: 720px) {
+    
+}
+
+@media screen and (max-width: 768px) {
+    
+    #ResidentHeaderAlertsTabPane table td, #ResidentHeaderMemosTabPane table td {
+    border: none;
+    border-bottom: solid #e6e6e6 1px;
+    text-align:left;
+    max-width:100%;  /*  added to pull in the TR so it does not pass behind the Alert button */
+}
+
+.table.table-responsive.msgAlerts  { 
+    width: 100%;
+    margin-bottom: 13.5px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: none; }
+
+    .row.vitalsResponsive { display:block; }
+    div.vitalsTable { display:none; }
+    .borderTop { border-top: 1px solid #ccc; }
+    .col-md-9.resNavContent { display:block; border:none; }
+    .table.table-responsive.compactList { border:none; }
+    .col-sm-3.col-md-2.resPicNameSec { display:block; width:100%; height:52px; } 
+    .col-sm-9.col-lg-5.resMemosSec { display: block; max-width: 100%;  border-top:1px solid #ccc; }
+    
+}
+@media screen and (max-width: 445px) {
+    #zIndexCloseDiv  { display:block; float:right; padding:3px 8px; color:#fff;  margin:0; }
+}
