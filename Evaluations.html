@@ -105,6 +105,7 @@
          <li data-target="#carouselSlide" style="background-color: rgb(159, 205, 95);" id="btn5" onclick="indicatorUpdate(event)" data-slide-to="5"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(159, 205, 95);" id="btn6" onclick="indicatorUpdate(event)" data-slide-to="6"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(159, 205, 95);" id="btn7" onclick="indicatorUpdate(event)" data-slide-to="7"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(159, 205, 95);" id="btn8" onclick="indicatorUpdate(event)" data-slide-to="8"></li>
       </ol>
       <div class="carousel-inner">
          <!-- Screen 1: EAUI Vital Signs -->
@@ -3868,42 +3869,46 @@
                </div>
             </div>
          </div>
-         <!-- Screen 7: comparison graphic -->
+         <!-- Screen 7: summary page -->
          <div class="carousel-item" id="slide6" style="margin-top: 80px;">
-            <div style="font-size: 30px; padding: 10px; margin: 0 50px 0 50px; font-family: Calibri;">New User Experience</div>
-            <div class="shadow-sm p-3 mb-5" style="border: 1px solid rgb(190, 190, 190); border-radius: 5px; margin: 0 50px 0 50px;">
-               <div class="row">
-                  <div class="col-12 col-xl-9">
-                     <img src="./evaluations-screens/graphics/newExp2.png" class="mx-auto d-block img-fluid" alt="">
-                  </div>
-                  <div class="col-12 col-xl-3">
-                     <ul class="bulletBox2" style="position: relative;top: 50%;transform: translateY(-50%);">
-                        <li>Clinically complex evaluations</li>
-                        <li>Require advanced rules</li>
-                        <li>Disease specific soft required logic</li>
-                        <li>"Larger" evaluations</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-            <div style="font-size: 30px; padding: 10px; margin: 0 50px 0 50px; font-family: Calibri; margin-top: -45px;">Existing User Experience</div>
-            <div class="shadow-sm p-3 mb-5" style="border: 1px solid rgb(190, 190, 190); border-radius: 5px; margin: 0 50px 0 50px;">
-               <div class="row">
-                  <div class="col-12 col-xl-9">
-                     <img src="./evaluations-screens/graphics/oldExp2.png" class="mx-auto d-block img-fluid" alt="">
-                  </div>
-                  <div class="col-12 col-xl-3" >
-                     <ul class="bulletBox2" style="position: relative;top: 50%;transform: translateY(-50%);">
-                        <li>Non-complex evaluations</li>
-                        <li>Contain basic rules</li>
-                        <li>"Smaller" evaluations</li>
-                     </ul>
+            summary page
+         </div>
+         <!-- Screen 8: comparison graphic -->
+         <div class="carousel-item" id="slide7" style="margin-top: 80px;">
+               <div style="font-size: 30px; padding: 10px; margin: 0 50px 0 50px; font-family: Calibri;">New User Experience</div>
+               <div class="shadow-sm p-3 mb-5" style="border: 1px solid rgb(190, 190, 190); border-radius: 5px; margin: 0 50px 0 50px;">
+                  <div class="row">
+                     <div class="col-12 col-xl-9">
+                        <img src="./evaluations-screens/graphics/newExp2.png" class="mx-auto d-block img-fluid" alt="">
+                     </div>
+                     <div class="col-12 col-xl-3">
+                        <ul class="bulletBox2" style="position: relative;top: 50%;transform: translateY(-50%);">
+                           <li>Clinically complex evaluations</li>
+                           <li>Require advanced rules</li>
+                           <li>Disease specific soft required logic</li>
+                           <li>"Larger" evaluations</li>
+                        </ul>
+                     </div>
                   </div>
                </div>
-            </div>
+               <div style="font-size: 30px; padding: 10px; margin: 0 50px 0 50px; font-family: Calibri; margin-top: -45px;">Existing User Experience</div>
+               <div class="shadow-sm p-3 mb-5" style="border: 1px solid rgb(190, 190, 190); border-radius: 5px; margin: 0 50px 0 50px;">
+                  <div class="row">
+                     <div class="col-12 col-xl-9">
+                        <img src="./evaluations-screens/graphics/oldExp2.png" class="mx-auto d-block img-fluid" alt="">
+                     </div>
+                     <div class="col-12 col-xl-3" >
+                        <ul class="bulletBox2" style="position: relative;top: 50%;transform: translateY(-50%);">
+                           <li>Non-complex evaluations</li>
+                           <li>Contain basic rules</li>
+                           <li>"Smaller" evaluations</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
          </div>
          <!-- Screen 8: Braden screen 2 -->
-         <div class="carousel-item" id="slide7" style="margin-top: 80px;">
+         <div class="carousel-item" id="slide8" style="margin-top: 80px;">
                <div style="zoom: 1; margin: 0px 10px;">
                                        <!-- Nav bars -->
                                        <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
@@ -4421,7 +4426,7 @@
    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 
    <script>
-   var slideCount = 7;
+   var slideCount = 8;
    $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
       $('[data-toggle="popover"]').popover({
@@ -4515,6 +4520,9 @@
          bodyText.innerHTML = "screen 7 text"
       }
       else if(index == 7){
+         bodyText.innerHTML = "The first three evaluations that will be built in the new format will be Skilled, Long Term Care and Clinical Admission. These have been chosen due to the clinical complexity.<br>Non-clinically complex evaluations will continue be built in the existing UDA engine but, will transition to the new format over time."
+      }
+      else if(index == 8){
          bodyText.innerHTML = "Example of evaluation structure build in UDA format. As they are completed by the nurse, abnormalities are identified, and clinical suggestions triggered."
       }
    }
