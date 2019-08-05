@@ -77,7 +77,7 @@
          <div class="modal-dialog modal-lg">
             <div class="modal-content">
                <div class="modal-body">
-                  <h6 class="modalText" id="bodyText">screen 1 text</h6>
+                  <h6 class="modalText" id="bodyText"></h6>
                   <hr>
                   <h6 class="modalText"><b>Supporting Documents</b></h6>
                   <a href="#" onclick="saveIndex(event)"><h6 id="graphic2" class="modalText">COMS 11 Focus Care Pathways</h6></a>
@@ -955,28 +955,19 @@
       }
 
       if(index == 0){
-         bodyText.innerHTML = "screen 1 text"
+         bodyText.innerHTML = "Standard evaluations will populate to the MDS based on RAI recommendations."
       }
       else if(index == 1){
          bodyText.innerHTML = "screen 2 text"
       }
       else if(index == 2){
-         bodyText.innerHTML = "screen 3 text"
+         bodyText.innerHTML = "To support PDPM a large mapping exercise has taken place. Currently 32,988 ICD-10 CM codes are mapped to the appropriate 58 care pathways. This will ensure that rules logic within the new evaluation experience is triggered through advanced clinical rules engine."
       }
       else if(index == 3){
-         bodyText.innerHTML = "screen 4 text"
+         bodyText.innerHTML = "The advanced clinical rules engine triggers disease specific evaluation content for 11 diseases using “soft required” functionality. This guides the nurse to obtain supporting documentation to the diagnosis and proactively manage the diagnosis / reduce RTH risk."
       }
       else if(index == 4){
-         bodyText.innerHTML = "screen 5 text"
-      }
-      else if(index == 5){
-         bodyText.innerHTML = "screen 6 text"
-      }
-      else if(index == 6){
-         bodyText.innerHTML = "screen 7 text"
-      }
-      else if(index == 7){
-         bodyText.innerHTML = "screen 8 text"
+         bodyText.innerHTML = "The advanced clinical rules engine identifies the “expected” vs. “unexpected” findings and uses that information to help the nurse determine next steps in care. These findings can also assist in identifying diagnosis missing from the active list or new onset disease processes."
       }
    }
 

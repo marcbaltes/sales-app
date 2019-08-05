@@ -79,7 +79,8 @@
          <div class="modal-dialog modal-lg">
             <div class="modal-content">
                <div class="modal-body">
-                  <h6 class="modalText" id="bodyText">screen 1 text</h6>
+                  <h6 class="modalText" id="bodyText">
+                  </h6>
                   <hr>
                   <h6 class="modalText"><b>Supporting Documents</b></h6>
                   <a href="#" onclick="saveIndex(event)"><h6 id="graphic2" class="modalText">UDA Experience Comparison</h6></a>
@@ -4000,8 +4001,6 @@
                                           <div class="row container-fluid">
                                              <div class="bradenInfoTitle">Description:</div>&nbsp;&nbsp;&nbsp;
                                              <div style="color: rgb(168, 22, 22);">Admission</div>
-                                             <div class="bradenInfoTitle" style="width: 245px;">Score:</div>&nbsp;&nbsp;&nbsp;
-                                             <div style="color: rgb(24, 107, 185);">12.0</div>
                                           </div>
                                           <div class="row container-fluid">
                                              <div class="bradenInfoTitle">Date:</div>&nbsp;&nbsp;&nbsp;
@@ -4495,28 +4494,28 @@
       }
 
       if(index == 0){
-         bodyText.innerHTML = "screen 1 text"
+         bodyText.innerHTML = "The evaluation opens to the profile page, information will push/pull from the Care Profile. The left navigation allows the user to move around within each section easily.<br>Diagnosis icon allows the nurse to see active and resolved diagnosis while at the bedside to support an individualized care delivery approach.<br>Memos allows nurse to see memos entered through Care Oversight – this feedback is used to direct and guide nursing staff on appropriate next steps in care."
       }
       else if(index == 1){
-         bodyText.innerHTML = "screen 2 text"
+         bodyText.innerHTML = "Vitals will prepopulate evaluation if entered within 1 hour.<br>One example of the detailed rules logic available in the enhanced evaluation experience is the ability to differentiate between expected and unexpected clinical findings. The rules engine is aware of the Resident’s diagnosis and can use the Care Pathway to determine if the finding is expected.<br><i>For example: Diagnosis of arrhythmia. Finding of irregular heart rate would be expected = abnormal. However, if no diagnosis of arrhythmia, the irregular heart rate would not be expected = condition alert.</i><br>Based on the abnormals and condition alerts, clinical suggestions are triggered to guide the nurse on appropriate nursing intervention based on the findings."
       }
       else if(index == 2){
-         bodyText.innerHTML = "screen 3 text"
+         bodyText.innerHTML = "The user can click on a body image bubble to enter multiple unique pain locations / skin issues. Only appropriate questions are asked based on the item documented. These issues are “remembered” the next time a nurse documents and prompts the nurse to provide a status before documenting new items."
       }
       else if(index == 3){
-         bodyText.innerHTML = "screen 4 text"
+         bodyText.innerHTML = "There are 11 diagnosis identified by CMS as the most common to return to the hospital. The new experience assigns “required” questions to appropriate fields based on the diagnosis / care pathway triggered.<br>Mental status has “required” question within that page, therefore the nurse must complete the section and can’t use baseline."
       }
       else if(index == 4){
-         bodyText.innerHTML = "screen 5 text"
+         bodyText.innerHTML = "Based on the responses to some questions, the evaluation will hard require additional responses. For example – the nurse documents “Cold and discolored extremity”. It is necessary to know the location (which extremity) so that is required to be answered."
       }
       else if(index == 5){
-         bodyText.innerHTML = "screen 6 text"
+         bodyText.innerHTML = "If the nurse does not answer questions appropriate for the Resident based on the 11 diagnosis the system will softly remind the nurse the question is appropriate for the Resident based on their care pathway."
       }
       else if(index == 6){
          bodyText.innerHTML = "screen 7 text"
       }
       else if(index == 7){
-         bodyText.innerHTML = "screen 8 text"
+         bodyText.innerHTML = "Example of evaluation structure build in UDA format. As they are completed by the nurse, abnormalities are identified, and clinical suggestions triggered."
       }
    }
 
