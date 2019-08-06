@@ -974,6 +974,13 @@ body {
    padding: 5px;
    box-shadow:0px 0px 5px 1px #afafaf59 ;
 }
+.summaryBox{
+   border-radius: 5px;
+   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.425);
+   height: 40px;
+   margin: 5px;
+   padding-top: 9px;
+}
 .softBox2{
    padding: 0px;
    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.425);
