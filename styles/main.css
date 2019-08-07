@@ -1,3 +1,12 @@
+@font-face {
+   font-family: 'Calibri';
+   src: url('../fonts/Calibri.eot'); /* IE9 Compat Modes */
+   src: url('../fonts/Calibri.woff') format('woff'), /* Pretty Modern Browsers */
+        url('../fonts/Calibri.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/Calibri.svg') format('svg'); /* Legacy iOS */
+ }
+
+
 /* ---------- Main Menu ---------- */
 .svgWheel{
    height: 667px;
@@ -87,7 +96,7 @@ br {
       background-color: Transparent;
       background-repeat: no-repeat;
       border: none;
-      font-family: 'Calibri';
+      font-family: 'Calibri', Fallback, sans-serif;
       margin-left: 23px;
       margin-right: 23px;
       line-height: 125%;
@@ -104,7 +113,7 @@ br {
       margin-left: 10px;
       margin-right: 10px;
       border: none;
-      font-family: 'Calibri';
+      font-family: 'Calibri', Fallback, sans-serif;
       line-height: 125%;
       display: inline-block;
       vertical-align: middle;
@@ -631,7 +640,7 @@ body {
    background-color: white;
 }
 .modalText{
-   font-family: 'Calibri';
+   font-family: 'Calibri', Fallback, sans-serif;
    font-size: 18px;
 }
 
@@ -659,7 +668,7 @@ body {
    border: 1px solid rgb(182, 182, 182);
    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.425);
    padding: 10px;
-   font-family: 'Calibri';
+   font-family: 'Calibri', Fallback, sans-serif;
    font-size: 16px;
    padding-left: 40px;
 }
@@ -676,7 +685,7 @@ body {
    border: 2px solid red;
 }
 .backBtn{
-   font-family: 'Calibri';
+   font-family: 'Calibri', Fallback, sans-serif;
    font-size: 18px;
 }
 .graphic3{
@@ -691,7 +700,7 @@ body {
 .screen6new{
    position: relative;
    list-style-position: inside; 
-   font-family: 'Calibri';
+   font-family: 'Calibri', Fallback, sans-serif;
    font-size: 18px;
    margin-left: auto;
 }
@@ -701,7 +710,7 @@ body {
 }
 .screen6title{
    margin-top: 80px;
-   font-family: 'Calibri';
+   font-family: 'Calibri', Fallback, sans-serif;
 }
 .fillSpace3{
    height: 231px;
@@ -1184,7 +1193,7 @@ body {
 .cardBox > h2{
    text-align: center;
    color: grey;
-   font-family: Calibri;
+   font-family: 'Calibri', Fallback, sans-serif;
    padding: 10px;
    margin-top: 15px;
    font-weight: bold;
@@ -1192,7 +1201,7 @@ body {
 .cardBox > p{
    text-align: center;
    color: grey;
-   font-family: Calibri;
+   font-family: 'Calibri', Fallback, sans-serif;
    padding: 10px;
    font-weight: bold;
    line-height: 0px;
