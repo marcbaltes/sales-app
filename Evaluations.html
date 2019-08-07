@@ -2119,9 +2119,62 @@
                               </div>
                               <div class="col-8" style="padding-left: 25px; padding-right: 30px;">
                                  <img class="mx-auto d-block img-fluid" src="./evaluations-screens/graphics/bodyDiagram.png" alt="">
+                       
                               </div>
                            </div>
-                           <div class="row" style="font-size: 16px; padding-left: 0px; padding-right: 20px; padding-top: 25px; margin-bottom: 20px; margin-left: -35px; margin-top: 60px;" >
+
+                           <div class="row">
+                              <div class="col-5"></div>
+                              <div class="col-6">
+                                 <div class="conditionBox row" style="padding: 5px 10px;">
+                                    <div class="col-10" style="font-size: 12px; padding: 0px;">
+                                       <p style="font-weight: bold; margin-bottom: 5px;">Frontal area <span style="font-weight: 100;">(Condition ID: 8A-90BD)</span></p>
+                                       <p style="margin-bottom: 0px;">Pain score: 5 (Moderate)</p>
+                                    </div>
+                                    <div class="col-2" style="text-align: right; color: rgb(99, 155, 0); font-size: 16px; padding: 0px;">
+                                       <span class="fa fa-pencil"></span>
+                                       &nbsp;&nbsp;&nbsp;
+                                       <span class="fa fa-trash"></span>
+                                    </div>
+                                 </div>
+                                 <div class="conditionBox row" style="padding: 5px 10px; margin-top: 10px;">
+                                    <div class="col-10" style="font-size: 12px; padding: 0px;">
+                                       <p style="font-weight: bold; margin-bottom: 5px;">RLQ <span style="font-weight: 100;">(Condition ID: 9D-B23B)</span></p>
+                                       <p style="margin-bottom: 0px;">Pain score: 6 (Moderate)</p>
+                                    </div>
+                                    <div class="col-2" style="text-align: right; color: rgb(99, 155, 0); font-size: 16px; padding: 0px;">
+                                       <span class="fa fa-pencil"></span>
+                                       &nbsp;&nbsp;&nbsp;
+                                       <span class="fa fa-trash"></span>
+                                    </div>
+                                 </div>
+                                 <div class="conditionBox row" style="padding: 5px 10px; margin-top: 10px;">
+                                    <div class="col-10" style="font-size: 12px; padding: 0px;">
+                                       <p style="font-weight: bold; margin-bottom: 5px;">Right foot <span style="font-weight: 100;">(Condition ID: 86-F8EA)</span></p>
+                                       <p style="margin-bottom: 0px;">Pain score: 2 (Mild)</p>
+                                    </div>
+                                    <div class="col-2" style="text-align: right; color: rgb(99, 155, 0); font-size: 16px; padding: 0px;">
+                                       <span class="fa fa-pencil"></span>
+                                       &nbsp;&nbsp;&nbsp;
+                                       <span class="fa fa-trash"></span>
+                                    </div>
+                                 </div>
+                                 <div class="conditionBox row" style="padding: 5px 10px; margin-top: 10px;">
+                                    <div class="col-10" style="font-size: 12px; padding: 0px;">
+                                       <p style="font-weight: bold; margin-bottom: 5px;">Left foot <span style="font-weight: 100;">(Condition ID: C8-BCDF)</span></p>
+                                       <p style="margin-bottom: 0px;">Pain score: 2 (Mild)</p>
+                                    </div>
+                                    <div class="col-2" style="text-align: right; color: rgb(99, 155, 0); font-size: 16px; padding: 0px;">
+                                       <span class="fa fa-pencil"></span>
+                                       &nbsp;&nbsp;&nbsp;
+                                       <span class="fa fa-trash"></span>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-1"></div>
+                           </div>
+           
+                           <div class="row" style="font-size: 16px; padding-left: 0px; padding-right: 20px; padding-top: 25px; margin-bottom: 20px; margin-left: -35px; margin-top: 40px;" >
                               <div class="col-2" style="text-align: left;">
                                  <button class="addNotesBtn" style="width: 110px;">ADD NOTES</button>
                               </div>
@@ -5617,7 +5670,7 @@
    function getPage(){
       var search = document.location.search;
       var location = search.indexOf("=");
-      if(location == -1){index = 0} //(change)
+      if(location == -1){index = 2} //(change)
       else{index = search[location+1];}
 
       for(var i = 0; i < slideCount+1; i++){
