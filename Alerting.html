@@ -23,6 +23,7 @@
 
    <!-- Icon -->
    <link rel="icon" href="./icons/circlelogo.png">
+   <script src="https://use.fontawesome.com/03bfaf9aa9.js"></script>
 
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113647301-2"></script>
@@ -36,7 +37,7 @@
 </head>
 <body style="height: 10px;" id="body">  
    <!-- Static Navbar -->
-   <nav class="navbar navbar-expand bg-nav py-0 alertingNav" style="background-color: rgb(204, 190, 135);">
+   <nav class="navbar navbar-expand bg-nav py-0 fixed-top" style="background-color: rgb(140, 199, 80);">
       <a href="./index.html" class="nav-item" id="homeBtn" style="margin-left:-16px;">
          <img class="img" id="homeImg" src="./icons/mandon-icon.png" alt="Home">
       </a>
@@ -114,34 +115,3013 @@
    <!-- Carousel -->
    <div id="carouselSlide" class="carousel slide fullPage" data-ride="carousel" data-interval="false">
       <ol class="carousel-indicators fixed-bottom">
-         <li data-target="#carouselSlide" style="background-color: rgb(204, 190, 135);" id="btn0" data-slide-to="0" class="active" onclick="indicatorUpdate(event)"></li>
-         <li data-target="#carouselSlide" style="background-color: rgb(204, 190, 135);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
-         <li data-target="#carouselSlide" style="background-color: rgb(204, 190, 135);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
-         <li data-target="#carouselSlide" style="background-color: rgb(204, 190, 135);" id="btn3" onclick="indicatorUpdate(event)" data-slide-to="3"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(140, 199, 80);" id="btn0" data-slide-to="0" class="active" onclick="indicatorUpdate(event)"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(140, 199, 80);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
+         <li data-target="#carouselSlide" style="background-color: rgb(140, 199, 80);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-         <!-- Screen 1: EAUI Vital Signs -->
-         <div class="carousel-item active" id="slide0">
-            <div class="container-fluid">
-               <H1>Screen 1: </H1>
+         <!-- Screen 1 -->
+         <div class="carousel-item active" id="slide0" style="margin-top: 80px;">
+            <div style="background-color: white; zoom: 1; margin: 0px 10px;">
+               <!-- Nav bars -->
+               <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+                     <tbody>
+                        <tr>
+                           <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+                           <td align="right" valign="top" class="slTopNav">
+                              <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
+                              <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
+                              <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+                              <div class="js-notification-toggle c-notification-toggle"><img src="./icons/bellNotification.png" id="box1" onclick="toggleOutline1()" style="margin-top: -12px;" alt=""></div>
+                              </span>
+                              <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+                     <tbody>
+                        <tr>
+                           <td valign="top">
+                              <div class="slMainNavTabs">
+                                 <ul id="topTabs">
+                                    <li id="QTF_HomePageTab">
+                                       <a href="#" class="arrowDrop">Home</a>
+                                    </li>
+                                    <li id="QTF_AdminTab">
+                                       <a href="#" class="arrowDrop">Admin</a>
+                                    </li>
+                                    <li id="QTF_ClinicalTab" class="ClinicalTab">
+                                       <a href="#" class="arrowDrop">Clinical</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab">
+                                       <a href="#" class="arrowDrop">IRM</a>
+                                    </li>
+                                    <li id="QTF_reportingTab">
+                                       <a href="#" class="arrowDrop">Reporting</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="slResidentSearch" style="float: right;">
+                                 <form name="slsearch">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="45">
+                                                <div id="searchSelect">
+                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+                                                            <td>
+                                                               <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+                                             </td>
+                                             <td>
+                                                <input type="text" id="searchField" name="substring" autocomplete="off">
+                                             </td>
+                                             <td>
+                                                <input type="button" class="pccButton" value="Search">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </form>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+                     <tbody>
+                        <tr>
+                           <td align="left">
+                              <ul class="secondNavList"></ul>
+                           </td>
+                           <td valign="top" align="right" width="85"></td>
+                        </tr>
+                     </tbody>
+               </table>
+
+               <!-- Resident Info -->
+               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="residentWrapper">
+                  <tbody>
+                     <tr>
+                        <td valign="top" class="residentProfile">
+                           <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
+                        </td>
+                        <td valign="top" width="100%" class="residentNameBarWrapper">
+                           <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
+                              <tbody><tr>
+                                 <td valign="top" class="residentNameBarName"><span id="name">Smith, Stella  (558874)</span> </td>
+                                    <td valign="top" align="right" class="residentNameBarButtons">
+                                    <span id="clientCountSpan"> 4 of 8
+                                    <input type="button" class="pccButton" value="Prev" >
+                                    <input type="button" class="pccButton" value="Next" > 
+                                          </span>
+                                       </td>
+                                    </tr>
+                           </tbody></table>
+                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                 <tr style="margin-left: -10px;">
+                                    <td valign="top" class="residentProfileDetails" width="35%"" >
+                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
+                                       </p>
+                                       <p><br>       
+                                          Gender: Female
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          DOB: 11/22/1933
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          Age: 85
+                                       </p><br>
+                                       <p>Physician: Aaron Miller</p><br>
+                                          <table class="actionBar">
+                                             <tbody><tr>
+                                                <td class="careProfileBtn">
+                                                   <div style="padding-bottom: 2px;">
+                                                      <input type="button" id="careProfileResidentBtn" style="position: relative; height: 22px; top: -1px;" class="pccButton" value="Care Profile">
+                                                   </div>  
+                                                </td>
+                                                <td valign="top">
+                                                   <div class="residentDropDownWrapperEdit" style="padding-bottom: 2px;">
+                                                   <div class="residentDropDownButtonEdit"><a href="#" class="residentLinkEdit"><span>Edit</span></a></div>
+                                                   <div class="residentDropDownListEdit">
+                                                   <ul id="listcontainerEdit">
+                                                   <li><a href="#">Demographics</a></li>
+                                                   <li><a href="#">Photo</a></li>
+                                                   </ul>
+                                                            </div>
+                                                         </div>
+                                                      </td>
+                                                      <td valign="top">
+                                                            <div class="residentDropDownWrapperPrint">
+                                                               <div class="residentDropDownButtonPrint"><a href="#" class="residentLinkPrint"><span>Print</span></a></div>
+                                                               <div class="residentDropDownListPrint">
+                                                                  <ul id="listcontainerPrint">
+                                                                     <li><a href="#">Audit&nbsp;Demographics</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                            </div>
+                                                      </td>
+                                                         <td colspan="4" valign="top">
+                                                </td>
+                                                   <td valign="top">      
+                                                         </td>
+                                                   </tr>
+                                                </tbody></table>
+                                    </td>
+                                    <td valign="top" align="right" class="residentDetailsStatusWrapper">
+                  
+                                          <table id="vitals" class="pccData residentDetailsStatus" cellpadding="2" width="85%" cellspacing="1" border="0">
+                                                <tbody>
+                                                   <tr>
+                                                         <td valign="top" colspan="3"><b>Current Vitals</b></td>
+                                                         <td align="right" style="padding-top: 0px; padding-right: 0px;padding-bottom: 0px; margin-top: 1px;" colspan="1">
+                                                            <div class="wvTooltip tableFix" align="right">
+                                                               <img src="./care-planning-screens/Care Plan Triggers - 1_files/wv_info.png" style="margin-right: 2px; margin-bottom: 3px;">
+                                                               <span class="wvTooltiptext">Click on any vitals to see graph.</span>
+                                                            </div>
+                                                         </td>
+                                                         </tr>
+                                                   <tr >
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox">
+                                                      
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                            <div>
+                                                            <b>BP: </b> 132/82 mmHg
+                                                            
+                                                            <div>
+                                                               8/1/2019 09:30
+                                                            </div>
+                                                         </div>
+                                                         </div>
+                                                         </td>   
+                                                      
+                                                      
+                                                   
+                                                   
+                                                      <td valign="top" class="vitalBox vitalWithException" >
+                                                         
+                                                
+                                                         <div class="exceptionWarning"><img src="./alerting-screens/alerts - page 1_files/wv_warning.png"></div>
+                                                         <div class="vitalDetails" style="color: red">
+                                                            <div>
+                                                               <b >Temp: </b> 99.7 °F
+                                                               
+                                                               </div>  
+                                                               <div>8/1/2019 09:30</div>
+                                                            </div>
+                                                         </td>
+                                                         
+                                                
+                                                         
+                                                         
+                                                               <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Pulse:
+                                                            </b> 108 npm
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                         </div>
+                                                      </td>
+                                                      
+                                                      
+                                                         
+                                                         
+                                                         <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Weight:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                         </div>
+                                                   </td>
+                                                   </tr>
+                                                   <tr>
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                      
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                         <div>
+                                                         <b>Resp:
+                                                            </b> 12 Breaths/min
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                         </div> 
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>BS:
+                                                            </b> 199 mg/dL
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                      </div>
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                   
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                      <div>
+                                                         <b>O2:
+                                                         </b> 96 %
+                                                         
+                                                      </div>
+                                                      <div>8/1/2019 09:30</div>
+                                                      </div>   
+                                                   </td>
+                                                   
+                                                
+                                                   
+                                                   
+                                                      <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                   
+                                                   
+                                                   <div class="exceptionWarning"><img></div>
+                                                   <div class="vitalDetails">
+                                                      <div>
+                                                      <b>Pain:
+                                                      </b> 3
+                                                      
+                                                      </div>
+                                                      <div>8/1/2019 09:30</div>
+                                                   </div>
+                                                </td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>  
+                        </td>              
+                     </tr>
+                  </tbody>
+               </table>
+
+               <!-- Allergies -->
+               <table cellpadding="0" cellspacing="0" border="0" width="100.1%" class="residentDetailsWrapper" style="margin-left: -1px;">
+                     <tbody><tr>
+                        <td valign="top">
+                           <div class="residentDetailsHeader">
+                           
+                           <div class="residentDetailsBar">
+                              <table cellpadding="4" cellspacing="0" border="0" width="100%" class="pccData residentDetailsSpecifics" style="width:100%;">
+                                 <colgroup>
+                                 
+                                    
+                                    
+                                       <col style="width: 180px">
+                                    
+                                 
+                                 <col style="width: 185px">
+                                 <col style="width: 180px">
+                                 <col>
+                                 </colgroup>
+                                 
+                                 
+                                 
+                                 <tbody><tr>
+                                    <td valign="top" class="residentDetailsLabel ">Allergies:</td>
+                                    
+                                    
+                                    <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    
+                                    <td valign="top" class="residentDetailsLabel residentInfoEmpty">Special Instructions:</td>
+                                    <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">&nbsp;</td>
+                                 </tr>
+                                 
+                              </tbody></table>
+                           </div>
+                           <div id="progressbar"><div class="progress-label"></div></div>
+                           <div class="slider">
+                              <img id="idExtendedDetailSlider" alt="Show Extended Detail" src="./care-planning-screens/Care Plan Triggers - 1_files/schslider.png" border="0">
+                           </div>
+                           <input type="hidden" name="currentState" id="currentState" value="">
+                           </div>
+                        </td>
+                     </tr>
+               </tbody></table>
+
+               <!-- Client Dash Bar -->
+               <table border="0" cellpadding="0" cellspacing="0" class="clientInfoTabs">
+                  <tbody><tr height="5" class="clientInfoLine"><td></td></tr>
+                     <tr><td nowrap="nowrap" colspan="2">
+                     <ul class="pccTabs"><li><a href="#">&nbsp;&nbsp;Dash&nbsp;&nbsp;</a></li><li><a href="#">Profile</a></li><li><a href="#">Census</a></li><li><a href="#">Med Diag</a></li><li><a href="#">Allergy</a></li><li><a href="#">Immun</a></li><li><a href="#">Orders</a></li><li><a href="#">Wts/Vitals</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;MDS&nbsp;&nbsp;&nbsp;</a></li><li class="pccActiveTab"><a href="#">Assmnts</a></li><li><a href="#">Prog Note</a></li><li><a href="#">Care Plan</a></li><li><a href="#">Tasks</a></li><li><a href="#"> Care Pathways</a></li><li><a href="#">Misc</a></li></ul>
+                     </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+<tbody><tr valign="top" height="30">
+   <td class="pccModuleHeader">
+   <table border="0" cellspacing="0" cellpadding="4" width="100%">
+       <tbody><tr valign="middle"><td nowrap="nowrap" width="10%" class="pccModuleHeader">&nbsp;Standard Assessments&nbsp;&nbsp;
+
+           <input type="button" class="pccButton" value="New" onclick="launchNewAssessment();">
+           
+           <input type="button" class="pccButton" value="Edit Schedules" onclick="activateSchedule();">
+       
+       </td><td align="right" class="pccModuleHeader">
+       <div id="noassessments" style="display:none">Type:&nbsp;<label>All</label></div>
+       <div id="assessments">Type:&nbsp;
+       <select style="width: 20%; min-width: 50px" name="ESOLstdassessid" id="ESOLstdassessid" onchange="submitRefresh(client, client.action + '&amp;ESOLstdassessid=' + this.value)" title="All">
+         <option value="-1">All</option>
+         <option value="10816">
+           *Marzena_test (Retired)
+           </option>
+           <option value="14102">
+           AA - PHQ9 BS Fix 190604
+           </option>
+           <option value="14132">
+           AC (QA) - Braden Scale 190702
+           </option>
+           <option value="14362">
+           BB1 (QA) - Respiratory 190715 (Retired)
+           </option>
+           <option value="12301">
+           COMS  - Long Term Care Evaluation 180123 (Retired)
+           </option>
+           <option value="12457">
+           COMS  - Long Term Care Evaluation 180219 (Retired)
+           </option>
+           <option value="13714">
+           COMS  - Skilled Evaluation - V 4.1
+           </option>
+           <option value="13164">
+           COMS  - Skilled Evaluation Re-imagined 181105 (Retired)
+           </option>
+           <option value="12455">
+           COMS  - Skilled Evaluation V3 (Retired)
+           </option>
+           <option value="12220">
+           COMS  - Skilled Evaluation V3 180106 (Retired)
+           </option>
+           <option value="12242">
+           COMS  - Skilled Evaluation V3 180110 (Retired)
+           </option>
+           <option value="12395">
+           COMS  - Skilled Evaluation V3 180209 (Retired)
+           </option>
+           <option value="13791">
+           COMS  - Skilled Evaluation V4 (Retired)
+           </option>
+           <option value="13687">
+           COMS  - Skilled Evaluation V4 ORIGINAL (Retired)
+           </option>
+           <option value="13603">
+           COMS  - Skilled Evaluation V4A 190211 (Retired)
+           </option>
+           <option value="13652">
+           COMS  - Skilled Evaluation V4B 190222 (Retired)
+           </option>
+           <option value="11774">
+           COMS (R) Long Term Care Evaluation - V 1 (Retired)
+           </option>
+           <option value="11733">
+           COMS (R) Long Term Care Evaluation ORIGINAL (Retired)
+           </option>
+           <option value="11502">
+           COMS (R) Skilled Evaluation - Metric 0323 (Retired)
+           </option>
+           <option value="11954">
+           COMS (R) Skilled Evaluation V2 (Retired)
+           </option>
+           <option value="11850">
+           COMS (R) Skilled Evaluation V2 171003 (Retired)
+           </option>
+           <option value="11942">
+           COMS (R) Skilled Evaluation V2 171031 (Retired)
+           </option>
+           <option value="11734">
+           COMS (R) Skilled Evaluation V2 ORIGINAL (Retired)
+           </option>
+           <option value="12461">
+           COMS - ADL Evaluation 180220 (Retired)
+           </option>
+           <option value="12311">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk
+           </option>
+           <option value="11899">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171019 (Retired)
+           </option>
+           <option value="11996">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171129 (Retired)
+           </option>
+           <option value="12022">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171201 (Retired)
+           </option>
+           <option value="11687">
+           COMS - Cincinnati Prehospital Stroke Scale
+           </option>
+           <option value="13192">
+           COMS - Discharge GG Evaluation 181130 (Retired)
+           </option>
+           <option value="13518">
+           COMS - Elopement Risk Evaluation V2 190125 (Retired)
+           </option>
+           <option value="12509">
+           COMS - Fall Risk Evaluation 180308 (Retired)
+           </option>
+           <option value="13520">
+           COMS - Lift / Transfer Evaluation 190125 (Retired)
+           </option>
+           <option value="11606">
+           COMS - Mini Nutritional Assessment Screening(MNA®) (Retired)
+           </option>
+           <option value="12412">
+           COMS - Mini Nutritional Assessment Screening(MNA®)
+           </option>
+           <option value="12342">
+           COMS - Mini Nutritional Assessment Screening(MNA®)180131 (Retired)
+           </option>
+           <option value="11964">
+           COMS - Mini Nutritional Assessment(MNA®) 171205 (Retired)
+           </option>
+           <option value="12240">
+           COMS - Neurologic Focused Evaluation
+           </option>
+           <option value="11875">
+           COMS - Neurologic Focused Evaluation 171009b (Retired)
+           </option>
+           <option value="11944">
+           COMS - Neurologic Focused Evaluation 171031 (Retired)
+           </option>
+           <option value="11883">
+           COMS - Post Fall Evaluation 171010 (Retired)
+           </option>
+           <option value="11901">
+           COMS - Post Fall Evaluation 171018 (Retired)
+           </option>
+           <option value="11943">
+           COMS - Post Fall Evaluation 171031 (Retired)
+           </option>
+           <option value="12015">
+           COMS - Post Fall Evaluation 171130 (Retired)
+           </option>
+           <option value="12134">
+           COMS - Post Fall Evaluation 171220 V2 (Retired)
+           </option>
+           <option value="12081">
+           COMS - Pre/Post Dialysis Evaluation 171207 V5 (Retired)
+           </option>
+           <option value="12210">
+           COMS - Pre/Post Dialysis Evaluation 180105 (Retired)
+           </option>
+           <option value="12733">
+           COMS - Pre/Post Dialysis Evaluation 180613 (Retired)
+           </option>
+           <option value="12487">
+           COMS - Psychotropic Evaluation
+           </option>
+           <option value="12083">
+           COMS - Psychotropic Evaluation 171207 V3 (Retired)
+           </option>
+           <option value="12084">
+           COMS - Psychotropic Evaluation v4 12.8.27 NOT COMS (Retired)
+           </option>
+           <option value="12024">
+           COMS - Respiratory Evaluation 171201 (Retired)
+           </option>
+           <option value="12079">
+           COMS - Respiratory Evaluation 171207 V2 (Retired)
+           </option>
+           <option value="12312">
+           COMS - Respiratory Evaluation 180125 (Retired)
+           </option>
+           <option value="12942">
+           COMS - Respiratory Evaluation V2 180810 (Retired)
+           </option>
+           <option value="12965">
+           COMS - Respiratory Screener 180828 (Retired)
+           </option>
+           <option value="12966">
+           COMS - Respiratory Screener 180911 (Retired)
+           </option>
+           <option value="13132">
+           COMS - Restorative Nursing Screener / GG Evaluation 181023 (Retired)
+           </option>
+           <option value="12652">
+           COMS - Skilled Evaluation REIMAGINEDb (Retired)
+           </option>
+           <option value="12752">
+           COMS - UTI Screener 180621 (Retired)
+           </option>
+           <option value="12714">
+           COMS - Vitals and Pain Only Evaluation 180607 (Retired)
+           </option>
+           <option value="11686">
+           COMS - Wells Evaluation: DVT Probability Score
+           </option>
+           <option value="14000">
+           COMS Clinical Admission FIXED 240519
+           </option>
+           <option value="14462">
+           COMS Skilled Catcher 7.16.19
+           </option>
+           <option value="11730">
+           COMS Skilled Evaluation Rev 5 (Retired)
+           </option>
+           <option value="11693">
+           COMS Skilled Evaluation with Abnormals 170818 (Retired)
+           </option>
+           <option value="11426">
+           COMS(R) Skilled Evaluation V1 (Retired)
+           </option>
+           <option value="14572">
+           LTC Catcher 7.30.19.1
+           </option>
+           <option value="13202">
+           Reimagined Copy for Nicki to Test (Retired)
+           </option>
+           <option value="13222">
+           Reimagined v.2 for Nicki (Retired)
+           </option>
+           <option value="14551">
+           Skilled Catcher 7.26.19
+           </option>
+           <option value="14561">
+           Skilled Catcher 7.29.19
+           </option>
+           
+       </select>
+       </div>
+
+           </td></tr></tbody></table>
+   </td></tr>
+
+   
+   
+   
+
+<tr style="padding: 2px; margin-left: -2px;">
+           <td style="padding: 2px; margin-left: -2px;">
+               <table style="padding: 2px; margin-left: -2px;">
+               
+                   <tbody ><tr >
+                       <td class="btbl" bgcolor="#ffffff" nowrap="nowrap">
+                               <table cellpadding="3" cellspacing="0" border="0" width="100%">
+                                   <tbody><tr >
+                                       <td nowrap="nowrap" style="font-weight:bold;">
+                                           <span id="expandAllSpan"><a href="javascript:showSchedules(0, 'expandAllSpan', 'schedules');" tabindex="-1"><img src="./alerting-screens/alerts - page 1_files/newplus.gif"></a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                               Next Assessment Due:
+                                       </td>
+                                       <td nowrap="nowrap">&nbsp;<a href="javascript:launchAssessmentReason(2631, 11501, 'A', '8/12/2017', 1, 35, 'C', -1, '')" style="color:red">COMS(R) Skilled Evaluation - Metric: 726 days overdue - 8/12/2017</a></td>
+                                       <td nowrap="nowrap"><img src="./alerts - page 1_files/clear.gif" height="1" width="25"></td>
+                                   </tr>
+                                   <tr>
+                                       <td colspan="99">
+                                       <span style="display: none" id="schedules">
+                                           <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                               <tbody><tr>
+                                                   <td width="15"></td>
+                                                   <td>
+                                                       <table class="pccResults">
+                                                       <thead><tr><th width="200">Assessment Name</th><th width="100">Due Date</th><th width="100" nowrap="nowrap">Trigger By / Schedule Frequency</th></tr></thead><tbody><tr><td>&nbsp;&nbsp;<a href="javascript:launchAssessmentReason(2631, 11501, 'A', '8/12/2017', 1, 35, 'C', -1, '')" style="color:red">COMS(R) Skilled Evaluation - Metric</a></td><td><span style="color:red">8/12/2017</span>&nbsp;&nbsp;</td><td><span style="color:red">&nbsp;&nbsp;Admission / Daily</span></td></tr>
+                                                       </tbody></table>
+                                                   </td>
+                                               </tr>
+                                           </tbody></table>
+                                       </span>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                       </tr>
+                   </tbody></table>
+               </td>
+           </tr>
+       
+       <input type="hidden" name="ESOLtabType" value="C">
+       <input type="hidden" name="ESOLeditable" value="Y">
+       <input type="hidden" name="ESOLviewTransferInfo" value="N">
+       <tr><td id="msg" align="left" style="font-size:10pt;color:black">
+
+<div>
+<table border="0" cellspacing="0" cellpadding="3" width="100%">
+   <tbody>
+   <tr>
+      <th class="detailColHeader" nowrap="nowrap">
+         <label><input type="checkbox" name="ESOLviewall" value="Y">View All</label>
+      </th>
+      <th class="detailColHeader" nowrap="nowrap">Date</th>
+      <th class="detailColHeader" nowrap="nowrap">Description</th>
+      <th class="detailColHeader" nowrap="nowrap">Status</th>
+      <th class="detailColHeader" nowrap="nowrap">Type</th>
+      <th class="detailColHeader" nowrap="nowrap">Category</th>
+      <th class="detailColHeader" nowrap="nowrap">Score</th>
+      <th class="detailColHeader" nowrap="nowrap">Created By</th>
+      <th class="detailColHeader" nowrap="nowrap">Revised By</th>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/5/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Skilled Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Full Assessments
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 1&nbsp;</td>
+      <td valign="top">PCC-Nurse 1&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/5/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Skilled Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Full Assessments
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 2&nbsp;</td>
+      <td valign="top">PCC-Nurse 2&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/2/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Clinical Admission Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/2/2019
+         </div>
+      </td>
+      <td valign="top">COMS - AIMS</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/30/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Braden Scale for Predicting Pressure Ulcer Risk</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a href="#">Very High Risk 6.0</a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Fall Risk Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Nestle's Mini Nutrition Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Resident Preferences Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr id="endRow" bgcolor="#d5d5d5">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a class="listbutton" href="#"></a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+         </div>
+      </td>
+      <td valign="top"></td><td valign="top">&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;</span>
+         
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top"></td>
+      <td valign="top"></td>
+   </tr>
+
+</tbody></table>
+</div>
+
+
+
+</td></tr>
+               </tbody></table>
             </div>
          </div>
-         <!-- Screen 2: EAUI Pain Page -->
-         <div class="carousel-item" id="slide1">
-            <div class="container-fluid">
-               <H1>Screen 2: </H1>
+         <!-- Screen 2 -->
+         <div class="carousel-item active" id="slide1" style="margin-top: 80px; height: 800px;">
+            <div class="row justify-content-end" style="margin: 0px; position: absolute; width: 100%; z-index: 10;">
+               <div class="drawer">
+                  <div class="row" style="margin-bottom: 10px;">
+                     <div class="col-6 drawerHeader" style="border-bottom: 2px solid rgb(128, 180, 46);">
+                        ALL
+                     </div>
+                     <div class="col-6 drawerHeader">RESIDENT
+                     </div>
+                  </div>
+                  <div class="row" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 10px;">
+                     <div style="width: 60px; padding-left: 15px;">
+                        UNIT
+                        <div style="font-size: 14px;">
+                           ALL <span class="fa fa-caret-down"></span>
+                        </div>
+                     </div>
+                     <div style="width: 100px; padding-left: 15px;">
+                        UNIT
+                        <div style="font-size: 14px;">
+                           FLOOR <span class="fa fa-caret-down"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" style="padding: 15px;">
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">HIGH RISK ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Smith, Stella (2134)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/05/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 116
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">13:01:01
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           COMS- Braden Score: Very High Risk **Episodic Care Plan Triggered**
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">TEMPERATURE ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Smith, Stella (2134)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/01/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 116
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">10:10:30
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; margin-left: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           <li>High of 100.0 exceeded [ 101.0 ]</li>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">TEMPERATURE ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Case, Don (5)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/01/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 114
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">07:57:24
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           COMS - New Onset/Worsening: Vertigo **Episodic Care Plan Triggered**
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">TEMPERATURE ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Case, Don (5)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/01/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 114
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">07:57:24
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           COMS - New Onset/Worsening: Visual Complaints **Episodic Care Plan Triggered**
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div style="background-color: white; zoom: 1; margin: 0px 10px;">
+               <!-- Nav bars -->
+               <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+                     <tbody>
+                        <tr>
+                           <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+                           <td align="right" valign="top" class="slTopNav">
+                              <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
+                              <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
+                              <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+                              <div class="js-notification-toggle c-notification-toggle"><img src="./icons/bellNotification.png" id="box1" onclick="toggleOutline1()" style="margin-top: -12px;" alt=""></div>
+                              </span>
+                              <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+                     <tbody>
+                        <tr>
+                           <td valign="top">
+                              <div class="slMainNavTabs">
+                                 <ul id="topTabs">
+                                    <li id="QTF_HomePageTab">
+                                       <a href="#" class="arrowDrop">Home</a>
+                                    </li>
+                                    <li id="QTF_AdminTab">
+                                       <a href="#" class="arrowDrop">Admin</a>
+                                    </li>
+                                    <li id="QTF_ClinicalTab" class="ClinicalTab">
+                                       <a href="#" class="arrowDrop">Clinical</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab">
+                                       <a href="#" class="arrowDrop">IRM</a>
+                                    </li>
+                                    <li id="QTF_reportingTab">
+                                       <a href="#" class="arrowDrop">Reporting</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="slResidentSearch" style="float: right;">
+                                 <form name="slsearch">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="45">
+                                                <div id="searchSelect">
+                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+                                                            <td>
+                                                               <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+                                             </td>
+                                             <td>
+                                                <input type="text" id="searchField" name="substring" autocomplete="off">
+                                             </td>
+                                             <td>
+                                                <input type="button" class="pccButton" value="Search">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </form>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+                     <tbody>
+                        <tr>
+                           <td align="left">
+                              <ul class="secondNavList"></ul>
+                           </td>
+                           <td valign="top" align="right" width="85"></td>
+                        </tr>
+                     </tbody>
+               </table>
+
+               <!-- Resident Info -->
+               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="residentWrapper">
+                  <tbody>
+                     <tr>
+                        <td valign="top" class="residentProfile">
+                           <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
+                        </td>
+                        <td valign="top" width="100%" class="residentNameBarWrapper">
+                           <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
+                              <tbody><tr>
+                                 <td valign="top" class="residentNameBarName"><span id="name">Smith, Stella  (558874)</span> </td>
+                                    <td valign="top" align="right" class="residentNameBarButtons">
+                                    <span id="clientCountSpan"> 4 of 8
+                                    <input type="button" class="pccButton" value="Prev" >
+                                    <input type="button" class="pccButton" value="Next" > 
+                                          </span>
+                                       </td>
+                                    </tr>
+                           </tbody></table>
+                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                 <tr style="margin-left: -10px;">
+                                    <td valign="top" class="residentProfileDetails" width="35%"" >
+                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
+                                       </p>
+                                       <p><br>       
+                                          Gender: Female
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          DOB: 11/22/1933
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          Age: 85
+                                       </p><br>
+                                       <p>Physician: Aaron Miller</p><br>
+                                          <table class="actionBar">
+                                             <tbody><tr>
+                                                <td class="careProfileBtn">
+                                                   <div style="padding-bottom: 2px;">
+                                                      <input type="button" id="careProfileResidentBtn" style="position: relative; height: 22px; top: -1px;" class="pccButton" value="Care Profile">
+                                                   </div>  
+                                                </td>
+                                                <td valign="top">
+                                                   <div class="residentDropDownWrapperEdit" style="padding-bottom: 2px;">
+                                                   <div class="residentDropDownButtonEdit"><a href="#" class="residentLinkEdit"><span>Edit</span></a></div>
+                                                   <div class="residentDropDownListEdit">
+                                                   <ul id="listcontainerEdit">
+                                                   <li><a href="#">Demographics</a></li>
+                                                   <li><a href="#">Photo</a></li>
+                                                   </ul>
+                                                            </div>
+                                                         </div>
+                                                      </td>
+                                                      <td valign="top">
+                                                            <div class="residentDropDownWrapperPrint">
+                                                               <div class="residentDropDownButtonPrint"><a href="#" class="residentLinkPrint"><span>Print</span></a></div>
+                                                               <div class="residentDropDownListPrint">
+                                                                  <ul id="listcontainerPrint">
+                                                                     <li><a href="#">Audit&nbsp;Demographics</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                            </div>
+                                                      </td>
+                                                         <td colspan="4" valign="top">
+                                                </td>
+                                                   <td valign="top">      
+                                                         </td>
+                                                   </tr>
+                                                </tbody></table>
+                                    </td>
+                                    <td valign="top" align="right" class="residentDetailsStatusWrapper">
+                  
+                                          <table id="vitals" class="pccData residentDetailsStatus" cellpadding="2" width="85%" cellspacing="1" border="0">
+                                                <tbody>
+                                                   <tr>
+                                                         <td valign="top" colspan="3"><b>Current Vitals</b></td>
+                                                         <td align="right" style="padding-top: 0px; padding-right: 0px;padding-bottom: 0px; margin-top: 1px;" colspan="1">
+                                                            <div class="wvTooltip tableFix" align="right">
+                                                               <img src="./care-planning-screens/Care Plan Triggers - 1_files/wv_info.png" style="margin-right: 2px; margin-bottom: 3px;">
+                                                               <span class="wvTooltiptext">Click on any vitals to see graph.</span>
+                                                            </div>
+                                                         </td>
+                                                         </tr>
+                                                   <tr >
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox">
+                                                      
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                            <div>
+                                                            <b>BP: </b> 132/82 mmHg
+                                                            
+                                                            <div>
+                                                               8/1/2019 09:30
+                                                            </div>
+                                                         </div>
+                                                         </div>
+                                                         </td>   
+                                                      
+                                                      
+                                                   
+                                                   
+                                                      <td valign="top" class="vitalBox vitalWithException" >
+                                                         
+                                                
+                                                         <div class="exceptionWarning"><img src="./alerting-screens/alerts - page 1_files/wv_warning.png"></div>
+                                                         <div class="vitalDetails" style="color: red">
+                                                            <div>
+                                                               <b >Temp: </b> 99.7 °F
+                                                               
+                                                               </div>  
+                                                               <div>8/1/2019 09:30</div>
+                                                            </div>
+                                                         </td>
+                                                         
+                                                
+                                                         
+                                                         
+                                                               <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Pulse:
+                                                            </b> 108 npm
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                         </div>
+                                                      </td>
+                                                      
+                                                      
+                                                         
+                                                         
+                                                         <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Weight:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                         </div>
+                                                   </td>
+                                                   </tr>
+                                                   <tr>
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                      
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                         <div>
+                                                         <b>Resp:
+                                                            </b> 12 Breaths/min
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                         </div> 
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>BS:
+                                                            </b> 199 mg/dL
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                      </div>
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                   
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                      <div>
+                                                         <b>O2:
+                                                         </b> 96 %
+                                                         
+                                                      </div>
+                                                      <div>8/1/2019 09:30</div>
+                                                      </div>   
+                                                   </td>
+                                                   
+                                                
+                                                   
+                                                   
+                                                      <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                   
+                                                   
+                                                   <div class="exceptionWarning"><img></div>
+                                                   <div class="vitalDetails">
+                                                      <div>
+                                                      <b>Pain:
+                                                      </b> 3
+                                                      
+                                                      </div>
+                                                      <div>8/1/2019 09:30</div>
+                                                   </div>
+                                                </td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>  
+                        </td>              
+                     </tr>
+                  </tbody>
+               </table>
+
+               <!-- Allergies -->
+               <table cellpadding="0" cellspacing="0" border="0" width="100.1%" class="residentDetailsWrapper" style="margin-left: -1px;">
+                     <tbody><tr>
+                        <td valign="top">
+                           <div class="residentDetailsHeader">
+                           
+                           <div class="residentDetailsBar">
+                              <table cellpadding="4" cellspacing="0" border="0" width="100%" class="pccData residentDetailsSpecifics" style="width:100%;">
+                                 <colgroup>
+                                 
+                                    
+                                    
+                                       <col style="width: 180px">
+                                    
+                                 
+                                 <col style="width: 185px">
+                                 <col style="width: 180px">
+                                 <col>
+                                 </colgroup>
+                                 
+                                 
+                                 
+                                 <tbody><tr>
+                                    <td valign="top" class="residentDetailsLabel ">Allergies:</td>
+                                    
+                                    
+                                    <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    
+                                    <td valign="top" class="residentDetailsLabel residentInfoEmpty">Special Instructions:</td>
+                                    <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">&nbsp;</td>
+                                 </tr>
+                                 
+                              </tbody></table>
+                           </div>
+                           <div id="progressbar"><div class="progress-label"></div></div>
+                           <div class="slider">
+                              <img id="idExtendedDetailSlider" alt="Show Extended Detail" src="./care-planning-screens/Care Plan Triggers - 1_files/schslider.png" border="0">
+                           </div>
+                           <input type="hidden" name="currentState" id="currentState" value="">
+                           </div>
+                        </td>
+                     </tr>
+               </tbody></table>
+
+               <!-- Client Dash Bar -->
+               <table border="0" cellpadding="0" cellspacing="0" class="clientInfoTabs">
+                  <tbody><tr height="5" class="clientInfoLine"><td></td></tr>
+                     <tr><td nowrap="nowrap" colspan="2">
+                     <ul class="pccTabs"><li><a href="#">&nbsp;&nbsp;Dash&nbsp;&nbsp;</a></li><li><a href="#">Profile</a></li><li><a href="#">Census</a></li><li><a href="#">Med Diag</a></li><li><a href="#">Allergy</a></li><li><a href="#">Immun</a></li><li><a href="#">Orders</a></li><li><a href="#">Wts/Vitals</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;MDS&nbsp;&nbsp;&nbsp;</a></li><li class="pccActiveTab"><a href="#">Assmnts</a></li><li><a href="#">Prog Note</a></li><li><a href="#">Care Plan</a></li><li><a href="#">Tasks</a></li><li><a href="#"> Care Pathways</a></li><li><a href="#">Misc</a></li></ul>
+                     </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+<tbody><tr valign="top" height="30">
+   <td class="pccModuleHeader">
+   <table border="0" cellspacing="0" cellpadding="4" width="100%">
+       <tbody><tr valign="middle"><td nowrap="nowrap" width="10%" class="pccModuleHeader">&nbsp;Standard Assessments&nbsp;&nbsp;
+
+           <input type="button" class="pccButton" value="New" onclick="launchNewAssessment();">
+           
+           <input type="button" class="pccButton" value="Edit Schedules" onclick="activateSchedule();">
+       
+       </td><td align="right" class="pccModuleHeader">
+       <div id="noassessments" style="display:none">Type:&nbsp;<label>All</label></div>
+       <div id="assessments">Type:&nbsp;
+       <select style="width: 20%; min-width: 50px" name="ESOLstdassessid" id="ESOLstdassessid" onchange="submitRefresh(client, client.action + '&amp;ESOLstdassessid=' + this.value)" title="All">
+         <option value="-1">All</option>
+         <option value="10816">
+           *Marzena_test (Retired)
+           </option>
+           <option value="14102">
+           AA - PHQ9 BS Fix 190604
+           </option>
+           <option value="14132">
+           AC (QA) - Braden Scale 190702
+           </option>
+           <option value="14362">
+           BB1 (QA) - Respiratory 190715 (Retired)
+           </option>
+           <option value="12301">
+           COMS  - Long Term Care Evaluation 180123 (Retired)
+           </option>
+           <option value="12457">
+           COMS  - Long Term Care Evaluation 180219 (Retired)
+           </option>
+           <option value="13714">
+           COMS  - Skilled Evaluation - V 4.1
+           </option>
+           <option value="13164">
+           COMS  - Skilled Evaluation Re-imagined 181105 (Retired)
+           </option>
+           <option value="12455">
+           COMS  - Skilled Evaluation V3 (Retired)
+           </option>
+           <option value="12220">
+           COMS  - Skilled Evaluation V3 180106 (Retired)
+           </option>
+           <option value="12242">
+           COMS  - Skilled Evaluation V3 180110 (Retired)
+           </option>
+           <option value="12395">
+           COMS  - Skilled Evaluation V3 180209 (Retired)
+           </option>
+           <option value="13791">
+           COMS  - Skilled Evaluation V4 (Retired)
+           </option>
+           <option value="13687">
+           COMS  - Skilled Evaluation V4 ORIGINAL (Retired)
+           </option>
+           <option value="13603">
+           COMS  - Skilled Evaluation V4A 190211 (Retired)
+           </option>
+           <option value="13652">
+           COMS  - Skilled Evaluation V4B 190222 (Retired)
+           </option>
+           <option value="11774">
+           COMS (R) Long Term Care Evaluation - V 1 (Retired)
+           </option>
+           <option value="11733">
+           COMS (R) Long Term Care Evaluation ORIGINAL (Retired)
+           </option>
+           <option value="11502">
+           COMS (R) Skilled Evaluation - Metric 0323 (Retired)
+           </option>
+           <option value="11954">
+           COMS (R) Skilled Evaluation V2 (Retired)
+           </option>
+           <option value="11850">
+           COMS (R) Skilled Evaluation V2 171003 (Retired)
+           </option>
+           <option value="11942">
+           COMS (R) Skilled Evaluation V2 171031 (Retired)
+           </option>
+           <option value="11734">
+           COMS (R) Skilled Evaluation V2 ORIGINAL (Retired)
+           </option>
+           <option value="12461">
+           COMS - ADL Evaluation 180220 (Retired)
+           </option>
+           <option value="12311">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk
+           </option>
+           <option value="11899">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171019 (Retired)
+           </option>
+           <option value="11996">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171129 (Retired)
+           </option>
+           <option value="12022">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171201 (Retired)
+           </option>
+           <option value="11687">
+           COMS - Cincinnati Prehospital Stroke Scale
+           </option>
+           <option value="13192">
+           COMS - Discharge GG Evaluation 181130 (Retired)
+           </option>
+           <option value="13518">
+           COMS - Elopement Risk Evaluation V2 190125 (Retired)
+           </option>
+           <option value="12509">
+           COMS - Fall Risk Evaluation 180308 (Retired)
+           </option>
+           <option value="13520">
+           COMS - Lift / Transfer Evaluation 190125 (Retired)
+           </option>
+           <option value="11606">
+           COMS - Mini Nutritional Assessment Screening(MNA®) (Retired)
+           </option>
+           <option value="12412">
+           COMS - Mini Nutritional Assessment Screening(MNA®)
+           </option>
+           <option value="12342">
+           COMS - Mini Nutritional Assessment Screening(MNA®)180131 (Retired)
+           </option>
+           <option value="11964">
+           COMS - Mini Nutritional Assessment(MNA®) 171205 (Retired)
+           </option>
+           <option value="12240">
+           COMS - Neurologic Focused Evaluation
+           </option>
+           <option value="11875">
+           COMS - Neurologic Focused Evaluation 171009b (Retired)
+           </option>
+           <option value="11944">
+           COMS - Neurologic Focused Evaluation 171031 (Retired)
+           </option>
+           <option value="11883">
+           COMS - Post Fall Evaluation 171010 (Retired)
+           </option>
+           <option value="11901">
+           COMS - Post Fall Evaluation 171018 (Retired)
+           </option>
+           <option value="11943">
+           COMS - Post Fall Evaluation 171031 (Retired)
+           </option>
+           <option value="12015">
+           COMS - Post Fall Evaluation 171130 (Retired)
+           </option>
+           <option value="12134">
+           COMS - Post Fall Evaluation 171220 V2 (Retired)
+           </option>
+           <option value="12081">
+           COMS - Pre/Post Dialysis Evaluation 171207 V5 (Retired)
+           </option>
+           <option value="12210">
+           COMS - Pre/Post Dialysis Evaluation 180105 (Retired)
+           </option>
+           <option value="12733">
+           COMS - Pre/Post Dialysis Evaluation 180613 (Retired)
+           </option>
+           <option value="12487">
+           COMS - Psychotropic Evaluation
+           </option>
+           <option value="12083">
+           COMS - Psychotropic Evaluation 171207 V3 (Retired)
+           </option>
+           <option value="12084">
+           COMS - Psychotropic Evaluation v4 12.8.27 NOT COMS (Retired)
+           </option>
+           <option value="12024">
+           COMS - Respiratory Evaluation 171201 (Retired)
+           </option>
+           <option value="12079">
+           COMS - Respiratory Evaluation 171207 V2 (Retired)
+           </option>
+           <option value="12312">
+           COMS - Respiratory Evaluation 180125 (Retired)
+           </option>
+           <option value="12942">
+           COMS - Respiratory Evaluation V2 180810 (Retired)
+           </option>
+           <option value="12965">
+           COMS - Respiratory Screener 180828 (Retired)
+           </option>
+           <option value="12966">
+           COMS - Respiratory Screener 180911 (Retired)
+           </option>
+           <option value="13132">
+           COMS - Restorative Nursing Screener / GG Evaluation 181023 (Retired)
+           </option>
+           <option value="12652">
+           COMS - Skilled Evaluation REIMAGINEDb (Retired)
+           </option>
+           <option value="12752">
+           COMS - UTI Screener 180621 (Retired)
+           </option>
+           <option value="12714">
+           COMS - Vitals and Pain Only Evaluation 180607 (Retired)
+           </option>
+           <option value="11686">
+           COMS - Wells Evaluation: DVT Probability Score
+           </option>
+           <option value="14000">
+           COMS Clinical Admission FIXED 240519
+           </option>
+           <option value="14462">
+           COMS Skilled Catcher 7.16.19
+           </option>
+           <option value="11730">
+           COMS Skilled Evaluation Rev 5 (Retired)
+           </option>
+           <option value="11693">
+           COMS Skilled Evaluation with Abnormals 170818 (Retired)
+           </option>
+           <option value="11426">
+           COMS(R) Skilled Evaluation V1 (Retired)
+           </option>
+           <option value="14572">
+           LTC Catcher 7.30.19.1
+           </option>
+           <option value="13202">
+           Reimagined Copy for Nicki to Test (Retired)
+           </option>
+           <option value="13222">
+           Reimagined v.2 for Nicki (Retired)
+           </option>
+           <option value="14551">
+           Skilled Catcher 7.26.19
+           </option>
+           <option value="14561">
+           Skilled Catcher 7.29.19
+           </option>
+           
+       </select>
+       </div>
+
+           </td></tr></tbody></table>
+   </td></tr>
+
+   
+   
+   
+
+<tr style="padding: 2px; margin-left: -2px;">
+           <td style="padding: 2px; margin-left: -2px;">
+               <table style="padding: 2px; margin-left: -2px;">
+               
+                   <tbody ><tr >
+                       <td class="btbl" bgcolor="#ffffff" nowrap="nowrap">
+                               <table cellpadding="3" cellspacing="0" border="0" width="100%">
+                                   <tbody><tr >
+                                       <td nowrap="nowrap" style="font-weight:bold;">
+                                           <span id="expandAllSpan"><a href="javascript:showSchedules(0, 'expandAllSpan', 'schedules');" tabindex="-1"><img src="./alerting-screens/alerts - page 1_files/newplus.gif"></a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                               Next Assessment Due:
+                                       </td>
+                                       <td nowrap="nowrap">&nbsp;<a href="javascript:launchAssessmentReason(2631, 11501, 'A', '8/12/2017', 1, 35, 'C', -1, '')" style="color:red">COMS(R) Skilled Evaluation - Metric: 726 days overdue - 8/12/2017</a></td>
+                                       <td nowrap="nowrap"><img src="./alerts - page 1_files/clear.gif" height="1" width="25"></td>
+                                   </tr>
+                                   <tr>
+                                       <td colspan="99">
+                                       <span style="display: none" id="schedules">
+                                           <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                               <tbody><tr>
+                                                   <td width="15"></td>
+                                                   <td>
+                                                       <table class="pccResults">
+                                                       <thead><tr><th width="200">Assessment Name</th><th width="100">Due Date</th><th width="100" nowrap="nowrap">Trigger By / Schedule Frequency</th></tr></thead><tbody><tr><td>&nbsp;&nbsp;<a href="javascript:launchAssessmentReason(2631, 11501, 'A', '8/12/2017', 1, 35, 'C', -1, '')" style="color:red">COMS(R) Skilled Evaluation - Metric</a></td><td><span style="color:red">8/12/2017</span>&nbsp;&nbsp;</td><td><span style="color:red">&nbsp;&nbsp;Admission / Daily</span></td></tr>
+                                                       </tbody></table>
+                                                   </td>
+                                               </tr>
+                                           </tbody></table>
+                                       </span>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                       </tr>
+                   </tbody></table>
+               </td>
+           </tr>
+       
+       <input type="hidden" name="ESOLtabType" value="C">
+       <input type="hidden" name="ESOLeditable" value="Y">
+       <input type="hidden" name="ESOLviewTransferInfo" value="N">
+       <tr><td id="msg" align="left" style="font-size:10pt;color:black">
+
+<div>
+<table border="0" cellspacing="0" cellpadding="3" width="100%">
+   <tbody>
+   <tr>
+      <th class="detailColHeader" nowrap="nowrap">
+         <label><input type="checkbox" name="ESOLviewall" value="Y">View All</label>
+      </th>
+      <th class="detailColHeader" nowrap="nowrap">Date</th>
+      <th class="detailColHeader" nowrap="nowrap">Description</th>
+      <th class="detailColHeader" nowrap="nowrap">Status</th>
+      <th class="detailColHeader" nowrap="nowrap">Type</th>
+      <th class="detailColHeader" nowrap="nowrap">Category</th>
+      <th class="detailColHeader" nowrap="nowrap">Score</th>
+      <th class="detailColHeader" nowrap="nowrap">Created By</th>
+      <th class="detailColHeader" nowrap="nowrap">Revised By</th>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/5/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Skilled Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Full Assessments
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 1&nbsp;</td>
+      <td valign="top">PCC-Nurse 1&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/5/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Skilled Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Full Assessments
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 2&nbsp;</td>
+      <td valign="top">PCC-Nurse 2&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/2/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Clinical Admission Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/2/2019
+         </div>
+      </td>
+      <td valign="top">COMS - AIMS</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/30/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Braden Scale for Predicting Pressure Ulcer Risk</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a href="#">Very High Risk 6.0</a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Fall Risk Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Nestle's Mini Nutrition Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Resident Preferences Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr id="endRow" bgcolor="#d5d5d5">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a class="listbutton" href="#"></a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+         </div>
+      </td>
+      <td valign="top"></td><td valign="top">&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;</span>
+         
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top"></td>
+      <td valign="top"></td>
+   </tr>
+
+</tbody></table>
+</div>
+
+
+
+</td></tr>
+               </tbody></table>
             </div>
          </div>
-         <!-- Screen 3: EAUI Neuro -->
-         <div class="carousel-item" id="slide2">
-            <div class="container-fluid">
-               <H1>Screen 3: </H1>
+         <!-- Screen 3: -->
+         <div class="carousel-item active" id="slide2" style="margin-top: 80px; height: 800px;">
+            <div class="row justify-content-end" style="margin: 0px; position: absolute; width: 100%; z-index: 10;">
+               <div class="drawer">
+                  <div class="row" style="margin-bottom: 10px;">
+                     <div class="col-6 drawerHeader" style="border-bottom: 2px solid rgb(128, 180, 46);">
+                        ALL
+                     </div>
+                     <div class="col-6 drawerHeader">RESIDENT
+                     </div>
+                  </div>
+                  <div class="row" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 10px;">
+                     <div style="width: 60px; padding-left: 15px;">
+                        UNIT
+                        <div style="font-size: 14px;">
+                           ALL <span class="fa fa-caret-down"></span>
+                        </div>
+                     </div>
+                     <div style="width: 100px; padding-left: 15px;">
+                        UNIT
+                        <div style="font-size: 14px;">
+                           FLOOR <span class="fa fa-caret-down"></span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" style="padding: 15px;">
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">HIGH RISK ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Smith, Stella (2134)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/05/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 116
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">13:01:01
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           COMS- Braden Score: Very High Risk **Episodic Care Plan Triggered**
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233);"></div>
+                        <div class="row" style="padding: 10px;">
+                           <div style="padding: 0px; font-family: 'Segoe UI Medium', Tahoma, Geneva, Verdana, sans-serif; color: rgb(137, 186, 62);">Alert Details
+                           <span style="font-size: 7px" class="fa fa-chevron-down"></span>
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px;">
+                           <div style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Suggestions:
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -8px;">
+                           <div class="col-12" style="padding: 0px;">
+                              <div style="padding: 2px 0px; font-family: 'Segoe UI Medium', Tahoma, Geneva, Verdana, sans-serif; color: rgb(137, 186, 62);">Add Care Plan Item
+                              </div>
+                              <div style="padding: 2px 0px; font-family: 'Segoe UI Medium', Tahoma, Geneva, Verdana, sans-serif; color: rgb(137, 186, 62);">Add Task
+                              </div>
+                              <div style="padding: 2px 0px; font-family: 'Segoe UI Medium', Tahoma, Geneva, Verdana, sans-serif; color: rgb(137, 186, 62);">Add Vital
+                              </div>
+                              <div style="padding: 2px 0px; font-family: 'Segoe UI Medium', Tahoma, Geneva, Verdana, sans-serif; color: rgb(137, 186, 62);">Add Assessment
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px;">
+                           <div class="row" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 0px;">
+                              <div style="font-size: 25px;" class="fa fa-square-o"></div>&nbsp;&nbsp;
+                              <div>Create Progress Note</div>
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           <span style="font-size: 12px;">Note Text</span>
+                           <div class="col-12" style="border-radius: 5px; background-color: rgb(249, 249, 249); border: 1px solid rgb(225,225,225); height: 100px;">COMS -Braden Score: Very High Risk **Episodic Care Plan Triggered**</div>
+                        </div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-up"></span>
+                        </div>
+                     </div>
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">TEMPERATURE ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Smith, Stella (2134)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/01/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 116
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">10:10:30
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; margin-left: 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           <li>High of 100.0 exceeded [ 101.0 ]</li>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">TEMPERATURE ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Case, Don (5)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/01/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 114
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">07:57:24
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           COMS - New Onset/Worsening: Vertigo **Episodic Care Plan Triggered**
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                     <div class="drawerPanel col-12">
+                        <div class="row" style="background-color: #f9f9f9; padding: 10px; border-radius: 5px 5px 0px 0px;">
+                           <div class="col-6" style="padding: 0px;">TEMPERATURE ALERT
+                           </div>
+                           <div class="col-6" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">CLEAR
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Case, Don (5)
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">08/01/2019
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -22px;">
+                           <div class="col-6" style="padding: 0px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Room 114
+                           </div>
+                           <div class="col-6 my-auto" style="padding: 0px; text-align: right; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 12px;">07:57:24
+                           </div>
+                        </div>
+                        <div class="row" style="padding: 10px; margin-top: -10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                           COMS - New Onset/Worsening: Visual Complaints **Episodic Care Plan Triggered**
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid rgb(233, 233, 233); margin-bottom: 10px;"></div>
+                        <div style="text-align: center; margin-bottom: 10px;">
+                           <span class="fa fa-chevron-down"></span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
+            <div style="background-color: white; zoom: 1; margin: 0px 10px;">
+               <!-- Nav bars -->
+               <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
+                     <tbody>
+                        <tr>
+                           <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
+                           <td align="right" valign="top" class="slTopNav">
+                              <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
+                              <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
+                              <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
+                              <div class="js-notification-toggle c-notification-toggle"><img src="./icons/bellNotification.png" id="box1" onclick="toggleOutline1()" style="margin-top: -12px;" alt=""></div>
+                              </span>
+                              <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
+                     <tbody>
+                        <tr>
+                           <td valign="top">
+                              <div class="slMainNavTabs">
+                                 <ul id="topTabs">
+                                    <li id="QTF_HomePageTab">
+                                       <a href="#" class="arrowDrop">Home</a>
+                                    </li>
+                                    <li id="QTF_AdminTab">
+                                       <a href="#" class="arrowDrop">Admin</a>
+                                    </li>
+                                    <li id="QTF_ClinicalTab" class="ClinicalTab">
+                                       <a href="#" class="arrowDrop">Clinical</a>
+                                    </li>
+                                    <li id="QTF_MarketingTab">
+                                       <a href="#" class="arrowDrop">IRM</a>
+                                    </li>
+                                    <li id="QTF_reportingTab">
+                                       <a href="#" class="arrowDrop">Reporting</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="slResidentSearch" style="float: right;">
+                                 <form name="slsearch">
+                                    <table border="0" cellspacing="0" cellpadding="0">
+                                       <tbody>
+                                          <tr>
+                                             <td width="45">
+                                                <div id="searchSelect">
+                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                      <tbody>
+                                                         <tr>
+                                                            <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
+                                                            <td>
+                                                               <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
+                                                            </td>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </div>
+                                             </td>
+                                             <td>
+                                                <input type="text" id="searchField" name="substring" autocomplete="off">
+                                             </td>
+                                             <td>
+                                                <input type="button" class="pccButton" value="Search">
+                                             </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </form>
+                              </div>
+                           </td>
+                        </tr>
+                     </tbody>
+               </table>
+               <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
+                     <tbody>
+                        <tr>
+                           <td align="left">
+                              <ul class="secondNavList"></ul>
+                           </td>
+                           <td valign="top" align="right" width="85"></td>
+                        </tr>
+                     </tbody>
+               </table>
+
+               <!-- Resident Info -->
+               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="residentWrapper">
+                  <tbody>
+                     <tr>
+                        <td valign="top" class="residentProfile">
+                           <img src="./icons/stellaPic.png" height="115" title="No Image Found" border="0">
+                        </td>
+                        <td valign="top" width="100%" class="residentNameBarWrapper">
+                           <table width="100%" border="0" cellspacing="0" cellpadding="2" class="residentNameBar">
+                              <tbody><tr>
+                                 <td valign="top" class="residentNameBarName"><span id="name">Smith, Stella  (558874)</span> </td>
+                                    <td valign="top" align="right" class="residentNameBarButtons">
+                                    <span id="clientCountSpan"> 4 of 8
+                                    <input type="button" class="pccButton" value="Prev" >
+                                    <input type="button" class="pccButton" value="Next" > 
+                                          </span>
+                                       </td>
+                                    </tr>
+                           </tbody></table>
+                           <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tbody>
+                                 <tr style="margin-left: -10px;">
+                                    <td valign="top" class="residentProfileDetails" width="35%"" >
+                                       <p>Status: <span id="res_status">New</span>&nbsp;&nbsp;&nbsp;Location: D / 167-1
+                                       </p>
+                                       <p><br>       
+                                          Gender: Female
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          DOB: 11/22/1933
+                                          &nbsp;&nbsp;&nbsp;&nbsp;
+                                          Age: 85
+                                       </p><br>
+                                       <p>Physician: Aaron Miller</p><br>
+                                          <table class="actionBar">
+                                             <tbody><tr>
+                                                <td class="careProfileBtn">
+                                                   <div style="padding-bottom: 2px;">
+                                                      <input type="button" id="careProfileResidentBtn" style="position: relative; height: 22px; top: -1px;" class="pccButton" value="Care Profile">
+                                                   </div>  
+                                                </td>
+                                                <td valign="top">
+                                                   <div class="residentDropDownWrapperEdit" style="padding-bottom: 2px;">
+                                                   <div class="residentDropDownButtonEdit"><a href="#" class="residentLinkEdit"><span>Edit</span></a></div>
+                                                   <div class="residentDropDownListEdit">
+                                                   <ul id="listcontainerEdit">
+                                                   <li><a href="#">Demographics</a></li>
+                                                   <li><a href="#">Photo</a></li>
+                                                   </ul>
+                                                            </div>
+                                                         </div>
+                                                      </td>
+                                                      <td valign="top">
+                                                            <div class="residentDropDownWrapperPrint">
+                                                               <div class="residentDropDownButtonPrint"><a href="#" class="residentLinkPrint"><span>Print</span></a></div>
+                                                               <div class="residentDropDownListPrint">
+                                                                  <ul id="listcontainerPrint">
+                                                                     <li><a href="#">Audit&nbsp;Demographics</a></li>
+                                                                  </ul>
+                                                               </div>
+                                                            </div>
+                                                      </td>
+                                                         <td colspan="4" valign="top">
+                                                </td>
+                                                   <td valign="top">      
+                                                         </td>
+                                                   </tr>
+                                                </tbody></table>
+                                    </td>
+                                    <td valign="top" align="right" class="residentDetailsStatusWrapper">
+                  
+                                          <table id="vitals" class="pccData residentDetailsStatus" cellpadding="2" width="85%" cellspacing="1" border="0">
+                                                <tbody>
+                                                   <tr>
+                                                         <td valign="top" colspan="3"><b>Current Vitals</b></td>
+                                                         <td align="right" style="padding-top: 0px; padding-right: 0px;padding-bottom: 0px; margin-top: 1px;" colspan="1">
+                                                            <div class="wvTooltip tableFix" align="right">
+                                                               <img src="./care-planning-screens/Care Plan Triggers - 1_files/wv_info.png" style="margin-right: 2px; margin-bottom: 3px;">
+                                                               <span class="wvTooltiptext">Click on any vitals to see graph.</span>
+                                                            </div>
+                                                         </td>
+                                                         </tr>
+                                                   <tr >
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox">
+                                                      
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                            <div>
+                                                            <b>BP: </b> 132/82 mmHg
+                                                            
+                                                            <div>
+                                                               8/1/2019 09:30
+                                                            </div>
+                                                         </div>
+                                                         </div>
+                                                         </td>   
+                                                      
+                                                      
+                                                   
+                                                   
+                                                      <td valign="top" class="vitalBox vitalWithException" >
+                                                         
+                                                
+                                                         <div class="exceptionWarning"><img src="./alerting-screens/alerts - page 1_files/wv_warning.png"></div>
+                                                         <div class="vitalDetails" style="color: red">
+                                                            <div>
+                                                               <b >Temp: </b> 99.7 °F
+                                                               
+                                                               </div>  
+                                                               <div>8/1/2019 09:30</div>
+                                                            </div>
+                                                         </td>
+                                                         
+                                                
+                                                         
+                                                         
+                                                               <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Pulse:
+                                                            </b> 108 npm
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                         </div>
+                                                      </td>
+                                                      
+                                                      
+                                                         
+                                                         
+                                                         <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>Weight:
+                                                            </b>
+                                                            
+                                                         </div>
+                                                         <div></div>
+                                                         </div>
+                                                   </td>
+                                                   </tr>
+                                                   <tr>
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                      
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                         <div>
+                                                         <b>Resp:
+                                                            </b> 12 Breaths/min
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                         </div> 
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                         
+                                                      
+                                                         <div class="exceptionWarning"><img></div>
+                                                         <div class="vitalDetails">
+                                                         <div>
+                                                            <b>BS:
+                                                            </b> 199 mg/dL
+                                                            
+                                                         </div>
+                                                         <div>8/1/2019 09:30</div>
+                                                      </div>
+                                                      </td>
+                                                   
+                                                   
+                                                      
+                                                      
+                                                         <td valign="top" class="vital vitalBox" >
+                                                      
+                                                   
+                                                      <div class="exceptionWarning"><img></div>
+                                                      <div class="vitalDetails">
+                                                      <div>
+                                                         <b>O2:
+                                                         </b> 96 %
+                                                         
+                                                      </div>
+                                                      <div>8/1/2019 09:30</div>
+                                                      </div>   
+                                                   </td>
+                                                   
+                                                
+                                                   
+                                                   
+                                                      <td valign="top" class="vital vitalBox" style="border-right-width: 1px;" >
+                                                   
+                                                   
+                                                   <div class="exceptionWarning"><img></div>
+                                                   <div class="vitalDetails">
+                                                      <div>
+                                                      <b>Pain:
+                                                      </b> 3
+                                                      
+                                                      </div>
+                                                      <div>8/1/2019 09:30</div>
+                                                   </div>
+                                                </td>
+                                                </tr>
+                                             </tbody>
+                                          </table>
+                                       
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>  
+                        </td>              
+                     </tr>
+                  </tbody>
+               </table>
+
+               <!-- Allergies -->
+               <table cellpadding="0" cellspacing="0" border="0" width="100.1%" class="residentDetailsWrapper" style="margin-left: -1px;">
+                     <tbody><tr>
+                        <td valign="top">
+                           <div class="residentDetailsHeader">
+                           
+                           <div class="residentDetailsBar">
+                              <table cellpadding="4" cellspacing="0" border="0" width="100%" class="pccData residentDetailsSpecifics" style="width:100%;">
+                                 <colgroup>
+                                 
+                                    
+                                    
+                                       <col style="width: 180px">
+                                    
+                                 
+                                 <col style="width: 185px">
+                                 <col style="width: 180px">
+                                 <col>
+                                 </colgroup>
+                                 
+                                 
+                                 
+                                 <tbody><tr>
+                                    <td valign="top" class="residentDetailsLabel ">Allergies:</td>
+                                    
+                                    
+                                    <td valign="top" colspan="3" class="residentDetailsSummary  ">PCN, Bees&nbsp;</td>
+                                 </tr>
+                                 <tr>
+                                    
+                                    <td valign="top" class="residentDetailsLabel residentInfoEmpty">Special Instructions:</td>
+                                    <td valign="top" colspan="3" class="residentDetailsSummary residentInfoEmpty">&nbsp;</td>
+                                 </tr>
+                                 
+                              </tbody></table>
+                           </div>
+                           <div id="progressbar"><div class="progress-label"></div></div>
+                           <div class="slider">
+                              <img id="idExtendedDetailSlider" alt="Show Extended Detail" src="./care-planning-screens/Care Plan Triggers - 1_files/schslider.png" border="0">
+                           </div>
+                           <input type="hidden" name="currentState" id="currentState" value="">
+                           </div>
+                        </td>
+                     </tr>
+               </tbody></table>
+
+               <!-- Client Dash Bar -->
+               <table border="0" cellpadding="0" cellspacing="0" class="clientInfoTabs">
+                  <tbody><tr height="5" class="clientInfoLine"><td></td></tr>
+                     <tr><td nowrap="nowrap" colspan="2">
+                     <ul class="pccTabs"><li><a href="#">&nbsp;&nbsp;Dash&nbsp;&nbsp;</a></li><li><a href="#">Profile</a></li><li><a href="#">Census</a></li><li><a href="#">Med Diag</a></li><li><a href="#">Allergy</a></li><li><a href="#">Immun</a></li><li><a href="#">Orders</a></li><li><a href="#">Wts/Vitals</a></li><li><a href="#">&nbsp;&nbsp;&nbsp;MDS&nbsp;&nbsp;&nbsp;</a></li><li class="pccActiveTab"><a href="#">Assmnts</a></li><li><a href="#">Prog Note</a></li><li><a href="#">Care Plan</a></li><li><a href="#">Tasks</a></li><li><a href="#"> Care Pathways</a></li><li><a href="#">Misc</a></li></ul>
+                     </td>
+                     </tr>
+                  </tbody>
+               </table>
+               <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+<tbody><tr valign="top" height="30">
+   <td class="pccModuleHeader">
+   <table border="0" cellspacing="0" cellpadding="4" width="100%">
+       <tbody><tr valign="middle"><td nowrap="nowrap" width="10%" class="pccModuleHeader">&nbsp;Standard Assessments&nbsp;&nbsp;
+
+           <input type="button" class="pccButton" value="New" onclick="launchNewAssessment();">
+           
+           <input type="button" class="pccButton" value="Edit Schedules" onclick="activateSchedule();">
+       
+       </td><td align="right" class="pccModuleHeader">
+       <div id="noassessments" style="display:none">Type:&nbsp;<label>All</label></div>
+       <div id="assessments">Type:&nbsp;
+       <select style="width: 20%; min-width: 50px" name="ESOLstdassessid" id="ESOLstdassessid" onchange="submitRefresh(client, client.action + '&amp;ESOLstdassessid=' + this.value)" title="All">
+         <option value="-1">All</option>
+         <option value="10816">
+           *Marzena_test (Retired)
+           </option>
+           <option value="14102">
+           AA - PHQ9 BS Fix 190604
+           </option>
+           <option value="14132">
+           AC (QA) - Braden Scale 190702
+           </option>
+           <option value="14362">
+           BB1 (QA) - Respiratory 190715 (Retired)
+           </option>
+           <option value="12301">
+           COMS  - Long Term Care Evaluation 180123 (Retired)
+           </option>
+           <option value="12457">
+           COMS  - Long Term Care Evaluation 180219 (Retired)
+           </option>
+           <option value="13714">
+           COMS  - Skilled Evaluation - V 4.1
+           </option>
+           <option value="13164">
+           COMS  - Skilled Evaluation Re-imagined 181105 (Retired)
+           </option>
+           <option value="12455">
+           COMS  - Skilled Evaluation V3 (Retired)
+           </option>
+           <option value="12220">
+           COMS  - Skilled Evaluation V3 180106 (Retired)
+           </option>
+           <option value="12242">
+           COMS  - Skilled Evaluation V3 180110 (Retired)
+           </option>
+           <option value="12395">
+           COMS  - Skilled Evaluation V3 180209 (Retired)
+           </option>
+           <option value="13791">
+           COMS  - Skilled Evaluation V4 (Retired)
+           </option>
+           <option value="13687">
+           COMS  - Skilled Evaluation V4 ORIGINAL (Retired)
+           </option>
+           <option value="13603">
+           COMS  - Skilled Evaluation V4A 190211 (Retired)
+           </option>
+           <option value="13652">
+           COMS  - Skilled Evaluation V4B 190222 (Retired)
+           </option>
+           <option value="11774">
+           COMS (R) Long Term Care Evaluation - V 1 (Retired)
+           </option>
+           <option value="11733">
+           COMS (R) Long Term Care Evaluation ORIGINAL (Retired)
+           </option>
+           <option value="11502">
+           COMS (R) Skilled Evaluation - Metric 0323 (Retired)
+           </option>
+           <option value="11954">
+           COMS (R) Skilled Evaluation V2 (Retired)
+           </option>
+           <option value="11850">
+           COMS (R) Skilled Evaluation V2 171003 (Retired)
+           </option>
+           <option value="11942">
+           COMS (R) Skilled Evaluation V2 171031 (Retired)
+           </option>
+           <option value="11734">
+           COMS (R) Skilled Evaluation V2 ORIGINAL (Retired)
+           </option>
+           <option value="12461">
+           COMS - ADL Evaluation 180220 (Retired)
+           </option>
+           <option value="12311">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk
+           </option>
+           <option value="11899">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171019 (Retired)
+           </option>
+           <option value="11996">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171129 (Retired)
+           </option>
+           <option value="12022">
+           COMS - Braden Scale for Predicting Pressure Ulcer Risk 171201 (Retired)
+           </option>
+           <option value="11687">
+           COMS - Cincinnati Prehospital Stroke Scale
+           </option>
+           <option value="13192">
+           COMS - Discharge GG Evaluation 181130 (Retired)
+           </option>
+           <option value="13518">
+           COMS - Elopement Risk Evaluation V2 190125 (Retired)
+           </option>
+           <option value="12509">
+           COMS - Fall Risk Evaluation 180308 (Retired)
+           </option>
+           <option value="13520">
+           COMS - Lift / Transfer Evaluation 190125 (Retired)
+           </option>
+           <option value="11606">
+           COMS - Mini Nutritional Assessment Screening(MNA®) (Retired)
+           </option>
+           <option value="12412">
+           COMS - Mini Nutritional Assessment Screening(MNA®)
+           </option>
+           <option value="12342">
+           COMS - Mini Nutritional Assessment Screening(MNA®)180131 (Retired)
+           </option>
+           <option value="11964">
+           COMS - Mini Nutritional Assessment(MNA®) 171205 (Retired)
+           </option>
+           <option value="12240">
+           COMS - Neurologic Focused Evaluation
+           </option>
+           <option value="11875">
+           COMS - Neurologic Focused Evaluation 171009b (Retired)
+           </option>
+           <option value="11944">
+           COMS - Neurologic Focused Evaluation 171031 (Retired)
+           </option>
+           <option value="11883">
+           COMS - Post Fall Evaluation 171010 (Retired)
+           </option>
+           <option value="11901">
+           COMS - Post Fall Evaluation 171018 (Retired)
+           </option>
+           <option value="11943">
+           COMS - Post Fall Evaluation 171031 (Retired)
+           </option>
+           <option value="12015">
+           COMS - Post Fall Evaluation 171130 (Retired)
+           </option>
+           <option value="12134">
+           COMS - Post Fall Evaluation 171220 V2 (Retired)
+           </option>
+           <option value="12081">
+           COMS - Pre/Post Dialysis Evaluation 171207 V5 (Retired)
+           </option>
+           <option value="12210">
+           COMS - Pre/Post Dialysis Evaluation 180105 (Retired)
+           </option>
+           <option value="12733">
+           COMS - Pre/Post Dialysis Evaluation 180613 (Retired)
+           </option>
+           <option value="12487">
+           COMS - Psychotropic Evaluation
+           </option>
+           <option value="12083">
+           COMS - Psychotropic Evaluation 171207 V3 (Retired)
+           </option>
+           <option value="12084">
+           COMS - Psychotropic Evaluation v4 12.8.27 NOT COMS (Retired)
+           </option>
+           <option value="12024">
+           COMS - Respiratory Evaluation 171201 (Retired)
+           </option>
+           <option value="12079">
+           COMS - Respiratory Evaluation 171207 V2 (Retired)
+           </option>
+           <option value="12312">
+           COMS - Respiratory Evaluation 180125 (Retired)
+           </option>
+           <option value="12942">
+           COMS - Respiratory Evaluation V2 180810 (Retired)
+           </option>
+           <option value="12965">
+           COMS - Respiratory Screener 180828 (Retired)
+           </option>
+           <option value="12966">
+           COMS - Respiratory Screener 180911 (Retired)
+           </option>
+           <option value="13132">
+           COMS - Restorative Nursing Screener / GG Evaluation 181023 (Retired)
+           </option>
+           <option value="12652">
+           COMS - Skilled Evaluation REIMAGINEDb (Retired)
+           </option>
+           <option value="12752">
+           COMS - UTI Screener 180621 (Retired)
+           </option>
+           <option value="12714">
+           COMS - Vitals and Pain Only Evaluation 180607 (Retired)
+           </option>
+           <option value="11686">
+           COMS - Wells Evaluation: DVT Probability Score
+           </option>
+           <option value="14000">
+           COMS Clinical Admission FIXED 240519
+           </option>
+           <option value="14462">
+           COMS Skilled Catcher 7.16.19
+           </option>
+           <option value="11730">
+           COMS Skilled Evaluation Rev 5 (Retired)
+           </option>
+           <option value="11693">
+           COMS Skilled Evaluation with Abnormals 170818 (Retired)
+           </option>
+           <option value="11426">
+           COMS(R) Skilled Evaluation V1 (Retired)
+           </option>
+           <option value="14572">
+           LTC Catcher 7.30.19.1
+           </option>
+           <option value="13202">
+           Reimagined Copy for Nicki to Test (Retired)
+           </option>
+           <option value="13222">
+           Reimagined v.2 for Nicki (Retired)
+           </option>
+           <option value="14551">
+           Skilled Catcher 7.26.19
+           </option>
+           <option value="14561">
+           Skilled Catcher 7.29.19
+           </option>
+           
+       </select>
+       </div>
+
+           </td></tr></tbody></table>
+   </td></tr>
+
+   
+   
+   
+
+<tr style="padding: 2px; margin-left: -2px;">
+           <td style="padding: 2px; margin-left: -2px;">
+               <table style="padding: 2px; margin-left: -2px;">
+               
+                   <tbody ><tr >
+                       <td class="btbl" bgcolor="#ffffff" nowrap="nowrap">
+                               <table cellpadding="3" cellspacing="0" border="0" width="100%">
+                                   <tbody><tr >
+                                       <td nowrap="nowrap" style="font-weight:bold;">
+                                           <span id="expandAllSpan"><a href="javascript:showSchedules(0, 'expandAllSpan', 'schedules');" tabindex="-1"><img src="./alerting-screens/alerts - page 1_files/newplus.gif"></a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                               Next Assessment Due:
+                                       </td>
+                                       <td nowrap="nowrap">&nbsp;<a href="javascript:launchAssessmentReason(2631, 11501, 'A', '8/12/2017', 1, 35, 'C', -1, '')" style="color:red">COMS(R) Skilled Evaluation - Metric: 726 days overdue - 8/12/2017</a></td>
+                                       <td nowrap="nowrap"><img src="./alerts - page 1_files/clear.gif" height="1" width="25"></td>
+                                   </tr>
+                                   <tr>
+                                       <td colspan="99">
+                                       <span style="display: none" id="schedules">
+                                           <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                                               <tbody><tr>
+                                                   <td width="15"></td>
+                                                   <td>
+                                                       <table class="pccResults">
+                                                       <thead><tr><th width="200">Assessment Name</th><th width="100">Due Date</th><th width="100" nowrap="nowrap">Trigger By / Schedule Frequency</th></tr></thead><tbody><tr><td>&nbsp;&nbsp;<a href="javascript:launchAssessmentReason(2631, 11501, 'A', '8/12/2017', 1, 35, 'C', -1, '')" style="color:red">COMS(R) Skilled Evaluation - Metric</a></td><td><span style="color:red">8/12/2017</span>&nbsp;&nbsp;</td><td><span style="color:red">&nbsp;&nbsp;Admission / Daily</span></td></tr>
+                                                       </tbody></table>
+                                                   </td>
+                                               </tr>
+                                           </tbody></table>
+                                       </span>
+                                       </td>
+                                   </tr>
+                               </tbody></table>
+                           </td>
+                       </tr>
+                   </tbody></table>
+               </td>
+           </tr>
+       
+       <input type="hidden" name="ESOLtabType" value="C">
+       <input type="hidden" name="ESOLeditable" value="Y">
+       <input type="hidden" name="ESOLviewTransferInfo" value="N">
+       <tr><td id="msg" align="left" style="font-size:10pt;color:black">
+
+<div>
+<table border="0" cellspacing="0" cellpadding="3" width="100%">
+   <tbody>
+   <tr>
+      <th class="detailColHeader" nowrap="nowrap">
+         <label><input type="checkbox" name="ESOLviewall" value="Y">View All</label>
+      </th>
+      <th class="detailColHeader" nowrap="nowrap">Date</th>
+      <th class="detailColHeader" nowrap="nowrap">Description</th>
+      <th class="detailColHeader" nowrap="nowrap">Status</th>
+      <th class="detailColHeader" nowrap="nowrap">Type</th>
+      <th class="detailColHeader" nowrap="nowrap">Category</th>
+      <th class="detailColHeader" nowrap="nowrap">Score</th>
+      <th class="detailColHeader" nowrap="nowrap">Created By</th>
+      <th class="detailColHeader" nowrap="nowrap">Revised By</th>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/5/2019
          </div>
-         <!-- Screen 4: EAUI Ed/Notification -->
-         <div class="carousel-item" id="slide3">
-            <div class="container-fluid">
-               <H1>Screen 4: </H1>
+      </td>
+      <td valign="top">COMS - Skilled Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Full Assessments
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 1&nbsp;</td>
+      <td valign="top">PCC-Nurse 1&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/5/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Skilled Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Full Assessments
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 2&nbsp;</td>
+      <td valign="top">PCC-Nurse 2&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/2/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Clinical Admission Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            8/2/2019
+         </div>
+      </td>
+      <td valign="top">COMS - AIMS</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/30/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Braden Scale for Predicting Pressure Ulcer Risk</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a href="#">Very High Risk 6.0</a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Fall Risk Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#efefef">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Nestle's Mini Nutrition Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr bgcolor="#ffffff">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#">view</a>&nbsp;
+         <a href="#" class="listbutton">unlock</a>&nbsp;
+         <a href="#" class="listbutton">copy</a>&nbsp;
+         <a href="#" class="listbutton">print</a>&nbsp;
+         <a class="listbutton" href="#">strike-out</a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+            7/29/2019
+         </div>
+      </td>
+      <td valign="top">COMS - Resident Preferences Evaluation</td><td valign="top">Complete&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;Admission</span>
+         Admission
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+      <td valign="top">PCC-Nurse 3&nbsp;</td>
+   </tr>
+   <tr id="endRow" bgcolor="#d5d5d5">
+      <td valign="top">
+         &nbsp;<a class="listbutton" href="#"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a href="#" class="listbutton"></a>&nbsp;
+         <a class="listbutton" href="#"></a>&nbsp;
+      </td>
+      <td valign="top">
+         <div style="float:left" ;="" class="15593 " title="Lock Date:  ">
+            <span id="15593-assessDate" style="display:none"></span>
+         </div>
+      </td>
+      <td valign="top"></td><td valign="top">&nbsp;</td>
+      <td valign="top">
+         <span id="15593-assessDescription" style="display:none">&nbsp;&nbsp;</span>
+         
+      </td>
+      <td valign="top"><a></a></td>
+      <td valign="top"><a></a></td>
+      <td valign="top"></td>
+      <td valign="top"></td>
+   </tr>
+
+</tbody></table>
+</div>
+
+
+
+</td></tr>
+               </tbody></table>
             </div>
          </div>
       </div>
@@ -156,7 +3136,7 @@
    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 
    <script>
-   var slideCount = 3;  // actual slide count + 1
+   var slideCount = 2;  // actual slide count + 1
    $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
       $('[data-toggle="popover"]').popover({
@@ -265,9 +3245,9 @@
 
    function getPage(){
       var search = document.location.search;
-      var location = search.indexOf("=");
-      if(location == -1){index = 0;}
-      else{index = search[location+1];}
+      var location = search.indexOf("="); 
+      if(location == -1){index = 0;}   // (change)
+      else{index = search[location+1];}   
 
       for(var i = 0; i < slideCount+1; i++){
          //update indicators and slides
@@ -283,13 +3263,15 @@
       updateInfoModal(index);
    }
 
+   var touched1 = false;
    function toggleOutline1(){
-      var box = document.getElementById("box1");
-      if(box.classList.contains("outlined")){
-         box.classList.remove("outlined");
+      if(touched1 == false){
+         touched1 = true;
+         $("#box1").attr("style", "outline: solid 2px red; outline-offset: 3px; margin-top: -12px;")
       }
       else{
-         box.classList.add("outlined");
+         touched1 = false;
+         $("#box1").attr("style", "margin-top: -12px;");
       }
    }
 

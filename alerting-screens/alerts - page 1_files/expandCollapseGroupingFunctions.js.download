@@ -1,0 +1,45 @@
+$(document).ready(function(){
+	var groups = {};
+	$('.collapsible-panels').each(function(){
+			var $this = $(this);
+			var groupId = $this.attr('data-assess-group-id');
+	
+			if(groups[groupId]) {
+				$this.hide();
+			} else {
+				groups[groupId] = true;	
+			}
+		});
+	var keys = Object.keys(groups);
+	$.each(keys, function(index, value) {
+		var $activeGroupedAssessment = $('.collapsible-panels[data-assess-group-id="' + value + '"]');
+		if($activeGroupedAssessment.size() > 1) {
+			$activeGroupedAssessment.each(function(index){
+				if(index == 0) {
+					$(this).prepend("<img class='plussign_img' src='/images/newplus.gif'/>");
+					$(this).attr("class", "plussign");
+					$(this).attr("opened", "false");
+					
+				} else {
+					$(this).prev().css('paddingRight', 0);
+					$(this).closest("td").next().css('paddingLeft', 10);
+					$(this).closest('tr').hide();	
+				}
+			});
+		}
+	});
+	
+	$(".plussign").click(function(){
+		var opened = $(this).attr("opened");
+ 	   	var groupId = $(this).attr("data-assess-group-id");
+        var collapsePanelSelector = ".collapsible-panels[data-assess-group-id=" + groupId + "]";
+        $(collapsePanelSelector).closest('tr').slideToggle('fast');
+        if (opened === "false") {
+     	   $(this).attr("opened", "true");
+     	   $(this).find("img").attr('src', '/images/newminus.gif');
+        } else {
+     	   $(this).attr("opened", "false");
+     	   $(this).find("img").attr('src', '/images/newplus.gif');
+        }
+});
+}); 
