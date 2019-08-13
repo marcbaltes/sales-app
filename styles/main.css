@@ -9,12 +9,12 @@
 
 /* ---------- Main Menu ---------- */
 .svgWheel{
-   height: 667px;
-   width: 667px;
+   height: 668px;
+   width: 666px;
    position: absolute;
    top: 50%;
    left: 50%;
-   margin-left: -343px; /* width divided by 2 */
+   margin-left: -342px; /* width divided by 2 */
    margin-top: -336px; /* height divided by 2 */
 }
 .wheel{
@@ -29,7 +29,7 @@
 /* ipad vertical */
 @media screen and (min-width: 0px) and (max-width: 1023px){
    .logo{
-      height: 92px;
+      height: 40px;
       width: 242px;
       position: absolute;
       top: 50%;
@@ -41,7 +41,7 @@
 /* laptops */
 @media screen and (min-width: 1024px){
    .logo{
-      height: 92px;
+      height: 40px;
       width: 242px;
       position: absolute;
       top: 50%;
@@ -53,7 +53,7 @@
 /* desktops */
 @media screen and (min-width: 1440px){
    .logo{
-      height: 92px;
+      height: 40px;
       width: 242px;
       position: absolute;
       top: 50%;
