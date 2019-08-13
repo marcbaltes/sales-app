@@ -506,7 +506,7 @@
                         </div>
                         <div id="box1" onclick="toggleOutline1()" style="padding: 2px; padding-top: 10px;">
                            <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; background-color: rgb(206, 230, 150);">Profile</div>
-                           <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Vitals</div>
+                           <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; cursor: pointer;" data-slide="next" onclick="updateIndex(event)" href="#carouselSlide">Vitals</div>
                            <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Baselines</div>
                            <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Body Systems</div>
                            <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Other</div>
@@ -1338,7 +1338,7 @@
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Profile</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; color: rgb(44, 115, 0);">Vitals</div>
                         <div style="background-color: rgb(206, 230, 150); padding-left: 30px; font-size: 16px; padding-top: 10px; height: 45px;">Vitals</div>
-                        <div style="padding-left: 30px; font-size: 16px; padding-top: 10px; height: 45px;">Pain</div>
+                        <div style="padding-left: 30px; font-size: 16px; padding-top: 10px; height: 45px; cursor: pointer" href="#carouselSlide" data-slide="next" onclick="updateIndex(event)">Pain</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Baselines</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Body Systems</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Other</div>
@@ -2100,7 +2100,7 @@
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; color: rgb(44, 115, 0);">Vitals</div>
                         <div style="padding-left: 30px; font-size: 16px; padding-top: 10px; height: 45px;">Vitals</div>
                         <div style="background-color: rgb(206, 230, 150); padding-left: 30px; font-size: 16px; padding-top: 10px; height: 45px;">Pain</div>
-                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Baselines</div>
+                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; cursor: pointer;" onclick="updateIndex(event)" href="#carouselSlide" data-slide="next">Baselines</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Body Systems</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Other</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Summary</div>
@@ -2730,7 +2730,7 @@
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Profile</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Vitals</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; background-color: rgb(206, 230, 150);">Baselines</div>
-                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Body Systems</div>
+                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; cursor: pointer;" href='#carouselSlide' data-slide="next" onclick="updateIndex(event)">Body Systems</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Other</div>
                         <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Summary</div>
                      </div>
@@ -3259,11 +3259,13 @@
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Neurologic</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 12px;">Mental Status / Mood</div>
                         <div style="padding-left: 30px; padding-top: 11px; font-size: 16px; margin-bottom: 12px; background-color: rgb(206, 230, 150); height: 45px;">Cardiovascular</div>
-                        <div style="padding-left: 30px; font-size: 16px; margin-top: 12px; margin-bottom: 20px;">Respiratory</div>
+                        <div style="padding-left: 30px; font-size: 16px; margin-top: 12px; margin-bottom: 20px; cursor:pointer;" data-slide="next" href="#carouselSlide" onclick="updateIndex(event)">Respiratory</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Gastrointestinal</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Nutrition</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Genitourinary</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Skin</div>
+                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Other</div>
+                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Summary</div>
                      </div>
                   </div>
                   <div class="col-12 col-xl-6" style="padding-left: 0px; padding-right: 5px; margin-bottom: 10px;">
@@ -3826,6 +3828,8 @@
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Nutrition</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Genitourinary</div>
                         <div style="padding-left: 30px; font-size: 16px; margin-bottom: 20px;">Skin</div>
+                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px;">Other</div>
+                        <div style="padding-left: 15px; font-size: 18px; padding-top: 10px; height: 45px; cursor: pointer" href="#carouselSlide" data-slide="next" onclick="updateIndex(event)">Summary</div>
                      </div>
                   </div>
                   <div class="col-12 col-xl-6" style="padding-left: 0px; padding-right: 5px; margin-bottom: 5px;">
@@ -4479,7 +4483,7 @@
                            <div class="col-6">
                               <div class="softBox2" style="border-radius: 5px; font-weight: bold; height: 100px; padding: 10px; font-size: 16px;">
                                  4 Condition Alerts Identified in 4 untriggered Care Pathways
-                                 <div style="text-align: right; color: rgb(52, 120, 11); font-size: 14px; margin-top: 15px; position: relative;">SEE DETAILS</div>
+                                 <div style="text-align: right; color: rgb(52, 120, 11); font-size: 14px; margin-top: 15px; position: relative; cursor: pointer;" href="#carouselSlide" data-slide="next" onclick="updateIndex(event)">SEE DETAILS</div>
                               </div>
                            </div>
                         </div>
@@ -5022,7 +5026,7 @@
                                     <div class="col-11">Diabetes</div>
                                     <div class="fa fa-chevron-down" style="font-size: 12px; color: dimgrey; padding-top: 5px;"></div>
                                  </div>
-                                 <div class="row summaryBox" style="font-size: 15px; font-weight: 100; margin-top: 10px;">
+                                 <div class="row summaryBox" style="font-size: 15px; font-weight: 100; margin-top: 10px; cursor: pointer;" href="#carouselSlide" data-slide="next" onclick="updateIndex(event)">
                                     <div class="col-11">Infection – General</div>
                                     <div class="fa fa-chevron-down" style="font-size: 12px; color: dimgrey; padding-top: 5px;"></div>
                                  </div>
