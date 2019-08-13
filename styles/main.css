@@ -904,9 +904,9 @@ body {
 }
 .memoOutline{
    border: 2px solid red;
-   margin-top: 2px;
+   margin-top: 5px;
    height: 35px;
-   padding-top: 7px;
+   padding-top: 4px;
    border-radius: 3px;
 }
 .memoOther{

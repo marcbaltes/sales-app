@@ -1551,11 +1551,6 @@
                            <div class="row container-fluid" style="padding: 0px; padding-left: 10px; margin: 0px; margin-top: 10px;">
                               <div class="orangeTriangle"></div>
                               &nbsp;&nbsp;
-                              <div style="font-weight: 100; font-size: 14px;">Rhythm: Regular</div>
-                           </div>
-                           <div class="row container-fluid" style="padding: 0px; padding-left: 10px; margin: 0px; margin-top: 10px;">
-                              <div class="orangeTriangle"></div>
-                              &nbsp;&nbsp;
                               <div style="font-weight: 100; font-size: 14px;">Blood Glucose (mg/DL): 199</div>
                            </div>
                            <div class="row container-fluid" style="padding: 0px; padding-left: 10px; margin: 0px; margin-top: 10px;">
@@ -6291,31 +6286,37 @@
       }
 
       if(index == 0){
-         bodyText.innerHTML = "The evaluation opens to the profile page, information will push/pull from the Care Profile. The left navigation allows the user to move around within each section easily.<br>Diagnosis icon allows the nurse to see active and resolved diagnosis while at the bedside to support an individualized care delivery approach.<br>Memos allows nurse to see memos entered through Care Oversight – this feedback is used to direct and guide nursing staff on appropriate next steps in care."
+         bodyText.innerHTML = "The evaluation opens to the profile page, information pushes/pulls from the Care Profile. The left navigation allows the nurse to navigate easily from section to section."
       }
       else if(index == 1){
-         bodyText.innerHTML = "Vitals will prepopulate evaluation if entered within 1 hour.<br>One example of the detailed rules logic available in the enhanced evaluation experience is the ability to differentiate between expected and unexpected clinical findings. The rules engine is aware of the Resident’s diagnosis and can use the Care Pathway to determine if the finding is expected.<br><i>For example: Diagnosis of arrhythmia. Finding of irregular heart rate would be expected = abnormal. However, if no diagnosis of arrhythmia, the irregular heart rate would not be expected = condition alert.</i><br>Based on the abnormals and condition alerts, clinical suggestions are triggered to guide the nurse on appropriate nursing intervention based on the findings."
+         bodyText.innerHTML = "Vitals will prepopulate evaluation if entered within 1 hour.<br>One example of the detailed rules logic available in the enhanced evaluation is the ability to differentiate between the expected and unexpected clinical findings. The rules engine uses the clinical findings and triggered care pathways to determine this<br>Based on the clinical findings, clinical suggestions are triggered to guide the nurse on the appropriate nursing intervention next steps."
       }
       else if(index == 2){
-         bodyText.innerHTML = "The user can click on a body image bubble to enter multiple unique pain locations / skin issues. Only appropriate questions are asked based on the item documented. These issues are “remembered” the next time a nurse documents and prompts the nurse to provide a status before documenting new items."
+         bodyText.innerHTML = "The user can click on a body image bubble to enter multiple unique locations (we are looking at pain, skin is similar). Only appropriate questions are asked based on the item documented. These issues are “remembered” from assessment to assessment prompted the nurse to provide a status update before documenting a new item."
       }
       else if(index == 3){
-         bodyText.innerHTML = "There are 11 diagnosis identified by CMS as the most common to return to the hospital. The new experience assigns “required” questions to appropriate fields based on the diagnosis / care pathway triggered.<br>Mental status has “required” question within that page, therefore the nurse must complete the section and can’t use baseline."
+         bodyText.innerHTML = "There are 11 diagnosis identified by CMS as the most common to return to the hospital. The new experience assigns “required” questions to appropriate fields based on the diagnosis / care pathways triggered.<br>Mental status has “required” questions within that page, therefore the nurse must complete that section and can’t use the baseline."
       }
       else if(index == 4){
-         bodyText.innerHTML = "Based on the responses to some questions, the evaluation will hard require additional responses. For example – the nurse documents “Cold and discolored extremity”. It is necessary to know the location (which extremity) so that is required to be answered."
+         bodyText.innerHTML = "Based on the responses to some questions, the evaluation will “hard require” additional responses. For example – the nurse documents “cold & discolored extremities”. It is necessary to know the location so that answer is required to be answered."
       }
       else if(index == 5){
-         bodyText.innerHTML = "If the nurse does not answer questions appropriate for the Resident based on the 11 diagnosis the system will softly remind the nurse the question is appropriate for the Resident based on their care pathway."
+         bodyText.innerHTML = "If the nurse does not answer questions appropriate for the Resident based on the 11 diagnosis. The system will softly remind the nurse that the question needs evaluated based on their care pathway.<br>(must click white space in middle of screen to see popup)."
       }
       else if(index == 6){
-         bodyText.innerHTML = "screen 7 text"
+         bodyText.innerHTML = "The Summary Page provides a high-level summary of clinical findings within the assessment. This includes identifying abnormals and condition alerts."
       }
       else if(index == 7){
-         bodyText.innerHTML = "The first three evaluations that will be built in the new format will be Skilled, Long Term Care and Clinical Admission. These have been chosen due to the clinical complexity.<br>Non-clinically complex evaluations will continue be built in the existing UDA engine but, will transition to the new format over time."
+         bodyText.innerHTML = "For the condition alerts – you can see what “untriggered” care pathways the findings are typically a part of."
       }
       else if(index == 8){
-         bodyText.innerHTML = "Example of evaluation structure build in UDA format. As they are completed by the nurse, abnormalities are identified, and clinical suggestions triggered."
+         bodyText.innerHTML = "When expanded, you can see the supporting information for the untriggered care pathways."
+      }
+      else if(index == 9){
+         bodyText.innerHTML = "The first three evaluations that will be built in the new format will be skilled, long term care and clinical admission. These have been chosen due to clinical complexity. Non-clinically complex evaluations will continue to be built in the existing UDA engine but, will transition over time."
+      }
+      else if(index == 10){
+         bodyText.innerHTML = "This is an example of a standard assessment built in the current UDA model. Note that it includes scoring but, also abnormal findings and clinical suggestions."
       }
    }
 

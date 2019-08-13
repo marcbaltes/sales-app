@@ -112,155 +112,10 @@
          <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn0" data-slide-to="0" class="active" onclick="indicatorUpdate(event)"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn1" onclick="indicatorUpdate(event)" data-slide-to="1"></li>
          <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn2" onclick="indicatorUpdate(event)" data-slide-to="2"></li>
-         <li data-target="#carouselSlide" style="background-color: rgb(233, 135, 110);" id="btn3" onclick="indicatorUpdate(event)" data-slide-to="3"></li>
       </ol>
       <div class="carousel-inner">
          <!-- Screen 1 -->
          <div class="carousel-item active" id="slide0" style="margin-top: 80px;">
-            <!-- Nav bars -->
-            <table id="mainPageHeader" width="100%" border="0" cellspacing="0" cellpadding="0" class="slHeader">
-                     <tbody>
-                        <tr>
-                           <td valign="top" class="slPccLogo"><img src="./care-planning-screens/Care Plan Triggers - 1_files/PointClickCare-logo.png" width="170" height="20" alt="Point Click Care logo" border="0"></td>
-                           <td align="right" valign="top" class="slTopNav">
-                              <a id="pccFacLink" title="FACILITY_1 (Shirley - COMS)" href="#" class="innerfac navLink arrowDrop">Shady Elms</a>
-                              <a href="#" id="pccUserLink" class="navLink arrowDrop"><span class="userLabel">Chris Smith</span></a>
-                              <span class="js-clinical-smart-alerts s-clinical-smart-alerts">
-                              <div id="qtf-csa-notificationToggle" class="js-notification-toggle c-notification-toggle"></div>
-                              </span>
-                              <a href="#" class="js-webapp-user-logout-btn" style="margin: 0 0 0 20px;">Sign Off</a>
-                           </td>
-                        </tr>
-                     </tbody>
-            </table>
-            <table id="mainPageNavigation" width="100%" border="0" cellspacing="0" cellpadding="0" class="slMainNav">
-                     <tbody>
-                        <tr>
-                           <td valign="top">
-                              <div class="slMainNavTabs">
-                                 <ul id="topTabs">
-                                    <li id="QTF_HomePageTab">
-                                       <a href="#" class="arrowDrop">Home</a>
-                                    </li>
-                                    <li id="QTF_AdminTab">
-                                       <a href="#" class="arrowDrop">Admin</a>
-                                    </li>
-                                    <li id="QTF_ClinicalTab">
-                                       <a href="#" class="arrowDrop">Clinical</a>
-                                    </li>
-                                    <li id="QTF_MarketingTab">
-                                       <a href="#" class="arrowDrop">QIA</a>
-                                    </li>
-                                    <li id="QTF_MarketingTab">
-                                       <a href="#" class="arrowDrop">GL AP</a>
-                                    </li>
-                                    <li id="QTF_MarketingTab" class="ClinicalTab">
-                                       <a href="#" class="arrowDrop">Insights</a>
-                                    </li>
-                                    <li id="QTF_reportingTab">
-                                       <a href="#" class="arrowDrop">Reporting</a>
-                                    </li>
-                                 </ul>
-                              </div>
-                              <div class="slResidentSearch" style="float: right;">
-                                 <form name="slsearch">
-                                    <table border="0" cellspacing="0" cellpadding="0">
-                                       <tbody>
-                                          <tr>
-                                             <td width="45">
-                                                <div id="searchSelect">
-                                                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                      <tbody>
-                                                         <tr>
-                                                            <td width="34"><img class="facility" src="./care-planning-screens/Care Plan Triggers - 1_files/facilityIcon.png" title="This Facility"></td>
-                                                            <td>
-                                                               <img class="arrow" src="./care-planning-screens/Care Plan Triggers - 1_files/down-arrow.png" aria-hidden="true">
-                                                            </td>
-                                                         </tr>
-                                                      </tbody>
-                                                   </table>
-                                                </div>
-                                             </td>
-                                             <td>
-                                                <input type="text" id="searchField" name="substring" autocomplete="off">
-                                             </td>
-                                             <td>
-                                                <input type="button" class="pccButton" value="Search">
-                                             </td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </form>
-                              </div>
-                           </td>
-                        </tr>
-                     </tbody>
-            </table>
-            <table class="secondNav" width="100%" cellpadding="0" cellspacing="0">
-                     <tbody>
-                        <tr>
-                           <td align="left">
-                              <ul class="secondNavList"></ul>
-                           </td>
-                           <td valign="top" align="right" width="85"></td>
-                        </tr>
-                     </tbody>
-            </table>
-
-            <!-- Cards -->
-            <div class="row container-fluid" style="margin: 0px; margin-top: 20px; padding: 0px;">
-               <div class="col" style="padding: 10px;">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2>Quality</h2>
-                     <p class="h2">Measures</p>
-                  </div>
-               </div>
-               <div class="col" style="padding: 10px;">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2 style="margin-top: 40px;">Clincal KPI</h2>
-                  </div>
-               </div>
-               <div class="col" style="padding: 10px;">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2 style="margin-top: 40px;">Readmissions</h2>
-                  </div>
-               </div>
-               <div class="col" style="padding: 10px;">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2 style="margin-top: 40px;">PIP</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row container-fluid" style="margin: 0px; margin-top: 20px; padding: 0px;">
-               <div class="col-3" style="padding: 10px;">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2>Financial</h2>
-                     <p class="h2">Insights</p>
-                  </div>
-               </div>
-               <div class="col-3" style="padding: 10px;" onclick="toggleOutline1()" id="box1">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2>Care</h2>
-                     <p class="h2">Insights</p>
-                  </div>
-               </div>
-               <div class="col-3" style="padding: 10px;">
-                  <div class="cardBox">
-                     <div style="height: 30px; background-color: rgb(128, 180, 45);"></div>
-                     <h2>Network</h2>
-                     <p class="h2">Insights</p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <!-- Screen 2 -->
-         <div class="carousel-item active" id="slide1" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -503,8 +358,8 @@
                   </tr>
             </table>
          </div>
-         <!-- Screen 3 daily ccm -->
-         <div class="carousel-item active" id="slide2" style="margin-top: 80px;">
+         <!-- Screen 2 daily ccm -->
+         <div class="carousel-item" id="slide1" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -601,8 +456,8 @@
             <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px;padding-left: 50px;">† This report includes Medicare and Managed Medicare payer types.</div>
             <div style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; margin-top: -20px; margin-bottom: 30px; text-align: center;"><input type="text" value="View Details" style="height: 30px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica; font-weight: bold; width: 120px; font-size: 14px; color: rgb(152, 188, 255); border-color: rgb(152, 188, 255);" class="btn btn-outline-primary"></input></div>
          </div>
-         <!-- Screen 4 weekly ccm -->
-         <div class="carousel-item active" id="slide3" style="margin-top: 80px;">
+         <!-- Screen 3 weekly ccm -->
+         <div class="carousel-item" id="slide2" style="margin-top: 80px;">
             <!-- Navbar -->
             <nav class="navbar navbar-expand bg-nav py-0" style="background-color: rgb(128, 180, 45); height: 70px; border: none;">
                <a href="#" class="navbar-brand">
@@ -637,7 +492,7 @@
             <hr style="width: 96%; margin-top: 10px; margin-bottom: 20px;">
             <h2 style="font-family: Proxima-Nova, Tahoma, Arial, Helvetica; text-align: center;"><b>Shady Elms Skilled Nursing</b></h2>
             <h5 style="font-weight: 300; text-align: center; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Weekly Clinical Care Measures</b></h5>
-            <h5 style="font-weight: 300; text-align: center; margin-top: -5px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Week of <span id="ccmDate"></span></b></h5>
+            <h5 style="font-weight: 300; text-align: center; margin-top: -5px; font-family: Proxima-Nova, Tahoma, Arial, Helvetica;"><b>Week of <span id="ccmDate3"></span></b></h5>
             
             <!-- panels -->
             <div class="row">
@@ -809,7 +664,7 @@
    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 
    <script>
-   var slideCount = 3;
+   var slideCount = 2;
    $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip(); 
       $('[data-toggle="popover"]').popover({
@@ -828,6 +683,8 @@
       weekday[6] = "Saturday";
       document.getElementById("ccmDate2").innerText = weekday[d.getDay()];
       document.getElementById("ccmDate").innerText = d.toLocaleDateString();
+      document.getElementById("ccmDate3").innerText = d.toLocaleDateString();
+
 
       getPage();
 
@@ -894,16 +751,13 @@
       }
 
       if(index == 0){
-         bodyText.innerHTML = "The ___________ dashboard is being built a central landing place to access information from a variety of places within the system."
+         bodyText.innerHTML = "Within Care insights, the nursing leader can access the Assessment Timings Report to see how nurses are performing individually."
       }
       else if(index == 1){
-         bodyText.innerHTML = "Within Care Insights, the Nursing leader can access the Assessment timings report to see how nurses are performing individually."
+         bodyText.innerHTML = "The Daily Clinical Care Measures report is sent to the email of those who subscribe to see how the facility performed on their Medicare population the previous day."
       }
       else if(index == 2){
-         bodyText.innerHTML = "The Daily Clinical Care Measures report is sent to the email of those who subscribe to see how the facility performed on the Medicare population the previous day."
-      }
-      else if(index == 3){
-         bodyText.innerHTML = "The Weekly / Monthly Clinical Care Measures report is sent to the email of those who subscribe to see how the facility performed on all Residents the previous week / month."
+         bodyText.innerHTML = "The Weekly / Monthly Clinical Care Measures report is sent to the email of those who subscribe to see how the facility performed on their entire population the previous week / month."
       }
    }
 
