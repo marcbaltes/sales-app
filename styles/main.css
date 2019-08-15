@@ -1304,7 +1304,16 @@ table.asmtTable{
    font-family: 'Arial';
    margin-top: -8px;
    padding: 0px;
-
+}
+@media screen and (min-width: 0px) and (max-width: 1440px){
+   .coordWheel{
+      height: 500px;
+   }
+}
+@media screen and (min-width: 1441px){
+   .coordWheel{
+      height: 100%;
+   }
 }
 .searchAll{
    border-top-left-radius: 100px;
